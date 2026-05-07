@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://til.zyf.im/sitemap-index.xml
+Disallow: /
