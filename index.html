@@ -1,42 +1,423 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Today I Learned"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>things I want to keep around · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 64ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
-.hero[data-astro-cid-bbe6dxrz]{max-width:60ch;margin:0 auto 3rem;padding-bottom:2.5rem;border-bottom:1px solid var(--rule)}.hero-meta[data-astro-cid-bbe6dxrz]{margin-bottom:1.4rem}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz]{font-size:1.85rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz] a[data-astro-cid-bbe6dxrz]{color:var(--fg)}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz] a[data-astro-cid-bbe6dxrz]:hover{color:var(--accent);text-decoration:none}.meta[data-astro-cid-bbe6dxrz]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-bbe6dxrz]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-bbe6dxrz]{color:var(--muted);padding:.15rem .1rem;min-height:1.4em}.prose[data-astro-cid-bbe6dxrz]{font-size:1.05rem;line-height:1.8}.prose[data-astro-cid-bbe6dxrz] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-bbe6dxrz] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-bbe6dxrz] p{margin:1rem 0}.prose[data-astro-cid-bbe6dxrz] ul,.prose[data-astro-cid-bbe6dxrz] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-bbe6dxrz] li{margin:.3rem 0}.prose[data-astro-cid-bbe6dxrz] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-bbe6dxrz] img{max-width:100%;height:auto}@media(max-width:640px){.hero[data-astro-cid-bbe6dxrz]{margin-bottom:2rem;padding-bottom:1.75rem}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz]{font-size:1.5rem}.prose[data-astro-cid-bbe6dxrz]{font-size:1rem;line-height:1.75}}.lede[data-astro-cid-j7pv25f6]{color:var(--muted);margin:0 0 2.5rem;font-size:.95rem;max-width:60ch;margin-left:auto;margin-right:auto}.empty[data-astro-cid-j7pv25f6]{color:var(--muted);font-style:italic;text-align:center;margin:4rem 0}.grid[data-astro-cid-j7pv25f6]{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:8px;column-gap:1.4rem;row-gap:0}.grid[data-astro-cid-j7pv25f6]>*{align-self:start}@media(max-width:640px){.lede[data-astro-cid-j7pv25f6]{margin-bottom:1.75rem}.grid[data-astro-cid-j7pv25f6]{grid-template-columns:1fr;grid-auto-rows:auto;row-gap:1rem}}
-.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.date[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;font-variant-numeric:tabular-nums;letter-spacing:.04em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}.card-tags[data-astro-cid-d6qgp232]{display:flex;flex-wrap:wrap;gap:.4rem;padding-top:.6rem;border-top:1px dotted var(--rule)}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.82rem;padding:.15rem .1rem}
-</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/" class="active">index</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-home">  <p class="lede" data-astro-cid-j7pv25f6>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Today I Learned"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>things I want to keep around · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+.hero[data-astro-cid-bbe6dxrz]{max-width:78ch;margin:0 auto 3rem;padding-bottom:2.5rem;border-bottom:1px solid var(--rule)}.hero-meta[data-astro-cid-bbe6dxrz]{margin-bottom:1.4rem}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz]{font-size:1.85rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz] a[data-astro-cid-bbe6dxrz]{color:var(--fg)}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz] a[data-astro-cid-bbe6dxrz]:hover{color:var(--accent);text-decoration:none}.meta[data-astro-cid-bbe6dxrz]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-bbe6dxrz]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-bbe6dxrz]{color:var(--muted);padding:.15rem .1rem;min-height:1.4em}.prose[data-astro-cid-bbe6dxrz]{font-size:1.05rem;line-height:1.8}.prose[data-astro-cid-bbe6dxrz] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-bbe6dxrz] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-bbe6dxrz] p{margin:1rem 0}.prose[data-astro-cid-bbe6dxrz] ul,.prose[data-astro-cid-bbe6dxrz] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-bbe6dxrz] li{margin:.3rem 0}.prose[data-astro-cid-bbe6dxrz] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-bbe6dxrz] img{max-width:100%;height:auto}@media(max-width:640px){.hero[data-astro-cid-bbe6dxrz]{margin-bottom:2rem;padding-bottom:1.75rem}.hero[data-astro-cid-bbe6dxrz] h1[data-astro-cid-bbe6dxrz]{font-size:1.5rem}.prose[data-astro-cid-bbe6dxrz]{font-size:1rem;line-height:1.75}}.lede[data-astro-cid-j7pv25f6]{color:var(--muted);margin:.5rem auto 3rem;font-size:1.15rem;font-style:italic;line-height:1.55;text-align:center;max-width:56ch;letter-spacing:.005em}.empty[data-astro-cid-j7pv25f6]{color:var(--muted);font-style:italic;text-align:center;margin:4rem 0}.more[data-astro-cid-j7pv25f6]{margin:3rem 0 0;text-align:center;font-size:.9rem;color:var(--muted)}.more[data-astro-cid-j7pv25f6] a[data-astro-cid-j7pv25f6]{color:var(--muted)}.more[data-astro-cid-j7pv25f6] a[data-astro-cid-j7pv25f6]:hover{color:var(--accent)}.grid[data-astro-cid-j7pv25f6]{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:8px;column-gap:2.5rem;row-gap:0}.grid[data-astro-cid-j7pv25f6]>*{align-self:start}@media(max-width:640px){.lede[data-astro-cid-j7pv25f6]{margin-bottom:1.75rem}.grid[data-astro-cid-j7pv25f6]{grid-template-columns:1fr;grid-auto-rows:auto;row-gap:1rem}}
+.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.4rem;border-bottom:1px dotted var(--rule);min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/" class="active">index</a> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-home">  <p class="lede" data-astro-cid-j7pv25f6>
 today I learned, want to remember, and might want to share.
-</p> <article class="hero" data-astro-cid-bbe6dxrz> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/demo/160703-index-hero/" data-astro-cid-bbe6dxrz>Index Hero</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2016-07-03T00:00:00.000Z" data-astro-cid-bbe6dxrz>2016-07-03</time> <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/demo/" class="tag" data-astro-cid-bbe6dxrz>#demo</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p>The newest note shows up here in full — a 60ch slot above the masonry grid. Everything else is a preview card.</p>
+</p> <article class="hero" data-astro-cid-bbe6dxrz> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/git/260508-cloc-tokei-scc/" data-astro-cid-bbe6dxrz>cloc / tokei / scc：codebase LOC 统计的三代工具</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2026-05-08T00:00:00.000Z" data-astro-cid-bbe6dxrz>2026-05-08</time> <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/git/" class="tag" data-astro-cid-bbe6dxrz>#git</a><a href="/tags/loc/" class="tag" data-astro-cid-bbe6dxrz>#loc</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p>数代码行数（LOC by language）这件事有三代工具，每代换语言、换取舍：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th><a href="https://github.com/AlDanial/cloc">cloc</a></th><th><a href="https://github.com/XAMPPRocky/tokei">tokei</a></th><th><a href="https://github.com/boyter/scc">scc</a></th></tr></thead><tbody><tr><td>实现 / 起年</td><td>Perl / 2006</td><td>Rust / 2016</td><td>Go / 2018</td></tr><tr><td>Linux kernel 用时</td><td>~64s</td><td>~1.4s</td><td>~0.8s</td></tr><tr><td>默认并行</td><td>❌（要 <code>--processes=N</code>）</td><td>✓</td><td>✓</td></tr><tr><td>安装</td><td><code>brew install cloc</code></td><td><code>brew install tokei</code></td><td><code>brew install scc</code></td></tr><tr><td>独有能力</td><td><code>--diff</code> 对比两个 commit；读 <code>.zip</code> / <code>.tar</code></td><td>JSON / YAML 输出</td><td>复杂度 / <a href="https://en.wikipedia.org/wiki/COCOMO">COCOMO</a> / 重复检测</td></tr></tbody></table>
+<p>scc 那三个名词各自的意思：</p>
+<ul>
+<li><strong>复杂度</strong>：数代码里 <code>if</code> / <code>for</code> / <code>&#x26;&#x26;</code> 这类分支关键字，估算 cyclomatic complexity。</li>
+<li><strong>COCOMO</strong>：1981 年 Barry Boehm 提出的成本模型，给 KLOC 估”工业平均要多少人月、多少钱”。</li>
+<li><strong>重复检测</strong>：按文件 hash 判定，相同内容只算一次（monorepo / vendor 目录里常见，cloc / tokei 会重复计入）。</li>
+</ul>
+<p>对同一个目录（这个 blog 的 <code>til/src/</code>）跑默认命令，差异自己跳出来：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> cloc</span><span style="color:#032F62"> til/src/</span></span>
+<span class="line"><span style="color:#6F42C1">Language</span><span style="color:#032F62">           files</span><span style="color:#032F62">          blank</span><span style="color:#032F62">        comment</span><span style="color:#032F62">           code</span></span>
+<span class="line"><span style="color:#6F42C1">Astro</span><span style="color:#005CC5">                 10</span><span style="color:#005CC5">            117</span><span style="color:#005CC5">             62</span><span style="color:#005CC5">           1340</span></span>
+<span class="line"><span style="color:#6F42C1">TypeScript</span><span style="color:#005CC5">             7</span><span style="color:#005CC5">             14</span><span style="color:#005CC5">             49</span><span style="color:#005CC5">             89</span></span>
+<span class="line"><span style="color:#6F42C1">SUM:</span><span style="color:#005CC5">                  17</span><span style="color:#005CC5">            131</span><span style="color:#005CC5">            111</span><span style="color:#005CC5">           1429</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> tokei</span><span style="color:#032F62"> til/src/</span></span>
+<span class="line"><span style="color:#6F42C1"> Language</span><span style="color:#032F62">         Files</span><span style="color:#032F62">        Lines</span><span style="color:#032F62">         Code</span><span style="color:#032F62">     Comments</span><span style="color:#032F62">       Blanks</span></span>
+<span class="line"><span style="color:#6F42C1"> Astro</span><span style="color:#005CC5">               10</span><span style="color:#005CC5">         1519</span><span style="color:#005CC5">         1344</span><span style="color:#005CC5">           59</span><span style="color:#005CC5">          116</span></span>
+<span class="line"><span style="color:#6F42C1"> TypeScript</span><span style="color:#005CC5">           7</span><span style="color:#005CC5">          152</span><span style="color:#005CC5">           97</span><span style="color:#005CC5">           44</span><span style="color:#005CC5">           11</span></span>
+<span class="line"><span style="color:#6F42C1"> Total</span><span style="color:#005CC5">               17</span><span style="color:#005CC5">         1671</span><span style="color:#005CC5">         1441</span><span style="color:#005CC5">          103</span><span style="color:#005CC5">          127</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> scc</span><span style="color:#032F62"> til/src/</span></span>
+<span class="line"><span style="color:#6F42C1">Language</span><span style="color:#032F62">        Files</span><span style="color:#032F62">       Lines</span><span style="color:#032F62">    Blanks</span><span style="color:#032F62">  Comments</span><span style="color:#032F62">       Code</span><span style="color:#032F62"> Complexity</span></span>
+<span class="line"><span style="color:#6F42C1">Astro</span><span style="color:#005CC5">              10</span><span style="color:#032F62">       1,519</span><span style="color:#005CC5">        99</span><span style="color:#005CC5">        49</span><span style="color:#032F62">      1,371</span><span style="color:#005CC5">         55</span></span>
+<span class="line"><span style="color:#6F42C1">TypeScript</span><span style="color:#005CC5">          7</span><span style="color:#005CC5">         152</span><span style="color:#005CC5">        11</span><span style="color:#005CC5">        44</span><span style="color:#005CC5">         97</span><span style="color:#005CC5">          2</span></span>
+<span class="line"><span style="color:#6F42C1">Total</span><span style="color:#005CC5">              17</span><span style="color:#032F62">       1,671</span><span style="color:#005CC5">       110</span><span style="color:#005CC5">        93</span><span style="color:#032F62">      1,468</span><span style="color:#005CC5">         57</span></span>
+<span class="line"><span style="color:#6F42C1">Estimated</span><span style="color:#032F62"> Cost</span><span style="color:#032F62"> to</span><span style="color:#032F62"> Develop</span><span style="color:#24292E"> (organic) $40,425</span></span>
+<span class="line"><span style="color:#6F42C1">Estimated</span><span style="color:#032F62"> Schedule</span><span style="color:#032F62"> Effort</span><span style="color:#24292E"> (organic) 4.06 months</span></span>
+<span class="line"><span style="color:#6F42C1">Estimated</span><span style="color:#032F62"> People</span><span style="color:#032F62"> Required</span><span style="color:#24292E"> (organic) 0.88</span></span></code></pre>
+<p>cloc 没有 Lines 总数列（自己加 blank+comment+code）；tokei 加了 Lines；scc 多 Complexity 列 + 一段 COCOMO 估算块。<strong>同样的 17 个文件，三个工具给出三个 Code 总数：1429 / 1441 / 1468</strong>——blank 和 comment 怎么判，每家略不同。</p>
+<p>cloc 的 <code>--diff</code> 是至今没被替代的核心——code review 想量化”这个 PR 改了多少 code 行”时，tokei / scc 都做不到：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> cloc</span><span style="color:#005CC5"> --git</span><span style="color:#005CC5"> --diff</span><span style="color:#032F62"> HEAD~5</span><span style="color:#032F62"> HEAD</span></span>
+<span class="line"><span style="color:#6F42C1">Language</span><span style="color:#032F62">        files</span><span style="color:#032F62">          blank</span><span style="color:#032F62">        comment</span><span style="color:#032F62">           code</span></span>
+<span class="line"><span style="color:#6F42C1">Markdown</span></span>
+<span class="line"><span style="color:#6F42C1"> same</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              2</span><span style="color:#005CC5">            924</span></span>
+<span class="line"><span style="color:#6F42C1"> modified</span><span style="color:#005CC5">          2</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              9</span></span>
+<span class="line"><span style="color:#6F42C1"> added</span><span style="color:#005CC5">             0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              4</span></span>
+<span class="line"><span style="color:#6F42C1"> removed</span><span style="color:#005CC5">           0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">             19</span></span>
+<span class="line"><span style="color:#6F42C1">Bourne</span><span style="color:#032F62"> Shell</span></span>
+<span class="line"><span style="color:#6F42C1"> same</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              5</span><span style="color:#005CC5">             14</span></span>
+<span class="line"><span style="color:#6F42C1"> modified</span><span style="color:#005CC5">          1</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              1</span></span>
+<span class="line"><span style="color:#6F42C1"> added</span><span style="color:#005CC5">             0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              1</span></span>
+<span class="line"><span style="color:#6F42C1"> removed</span><span style="color:#005CC5">           0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span></span>
+<span class="line"><span style="color:#6F42C1">SUM:</span></span>
+<span class="line"><span style="color:#6F42C1"> same</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              7</span><span style="color:#005CC5">            938</span></span>
+<span class="line"><span style="color:#6F42C1"> modified</span><span style="color:#005CC5">          3</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">             10</span></span>
+<span class="line"><span style="color:#6F42C1"> added</span><span style="color:#005CC5">             0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              5</span></span>
+<span class="line"><span style="color:#6F42C1"> removed</span><span style="color:#005CC5">           0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">              0</span><span style="color:#005CC5">             19</span></span></code></pre>
+<p>按语言分组，每组拆 <code>same / modified / added / removed</code>；想细到文件级加 <code>--by-file</code>。比 <code>git diff --stat</code> 信噪比高一截。</p>
+<p><strong>怎么选：</strong> 默认装 scc（最快 + 复杂度）；CI 输出要 JSON 接管线用 tokei；要 git diff 的 LOC 变化才掏 cloc。</p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card" data-href="/php/260508-php-install-tools/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-08T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-08</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/php/260508-php-install-tools/" data-astro-cid-d6qgp232>PHP 安装工具的几条路径</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP 安装按”装什么 + 在哪装”分四条路径，每条各自的工具：</p>
+<p><strong>纯 PHP 代码（复制即用）</strong></p>
+<ul>
+<li><strong><a href="https://pear.php.net/">PEAR</a></strong> — <em>PHP Extension and Application Repository</em>。最早的类库分发，用前要 <code>include</code>。已被 Composer 取代，基本退场。</li>
+<li><strong><a href="https://getcomposer.org/">Composer</a></strong> — <em>PHP 依赖管理工具</em>，灵感来自 npm / Bundler。<code>composer.json</code> 声明依赖，<code>composer install</code> 拉齐，<strong>事实标准</strong>。</li>
+</ul>
+<p><strong>C 扩展，裸机环境（编译 + 改 <code>php.ini</code>）</strong></p>
+<ul>
+<li><strong><a href="https://pecl.php.net/">PECL</a></strong> — <em>PHP Extension Community Library</em>。PEAR 的子项目，分发 redis、apcu 这类底层扩展。<strong>已被官方标记 deprecated。</strong></li>
+<li><strong><a href="https://github.com/php/pie">PIE</a></strong> — <em>The PHP Installer for Extensions</em>。PHP 基金会官方接管，<strong>取代 PECL</strong>，命令风格抄 Composer。</li>
+</ul>
+<p><strong>C 扩展，Docker 容器场景</strong></p>
+<ul>
+<li><strong><a href="https://github.com/docker-library/docs/tree/master/php#how-to-install-more-php-extensions">docker-php-ext-install</a></strong> — 官方 PHP Docker 镜像内置脚本，容器里装 C 扩展的事实标准。</li>
+<li><strong><a href="https://github.com/mlocati/docker-php-extension-installer">install-php-extensions</a></strong> — 上面的友好封装，自动处理依赖、编译选项、共享库。<code>Dockerfile</code> 里写 PHP 几乎人人用它。</li>
+</ul>
+<p><strong>PHAR 形式的 CLI 开发工具（PHPUnit、phpstan、psalm 这种）</strong></p>
+<ul>
+<li><strong><a href="https://phar.io/">PHIVE</a></strong> — <em>PHAR Installation and Verification Environment</em>。装 PHAR 工具并校验签名，避免污染 <code>composer.json</code>。</li>
+</ul>
+<p>七个命令并排看：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 纯 PHP 代码</span></span>
+<span class="line"><span style="color:#6F42C1">pear</span><span style="color:#032F62"> install</span><span style="color:#032F62"> Mail</span><span style="color:#6A737D">                        # 老路子，已退场</span></span>
+<span class="line"><span style="color:#6F42C1">composer</span><span style="color:#032F62"> require</span><span style="color:#032F62"> monolog/monolog</span><span style="color:#6A737D">         # 现代</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># C 扩展（裸机）</span></span>
+<span class="line"><span style="color:#6F42C1">pecl</span><span style="color:#032F62"> install</span><span style="color:#032F62"> apcu</span><span style="color:#6A737D">                        # 老路子（deprecated）</span></span>
+<span class="line"><span style="color:#6F42C1">pie</span><span style="color:#032F62"> install</span><span style="color:#032F62"> apcu/apcu</span><span style="color:#6A737D">                    # 现代</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># C 扩展（Docker），以装 gd 为例——需要系统库 + configure</span></span>
+<span class="line"><span style="color:#6F42C1">apt-get</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -y</span><span style="color:#032F62"> libfreetype-dev</span><span style="color:#032F62"> libjpeg-dev</span><span style="color:#032F62"> libpng-dev</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#24292E">  &#x26;&#x26; </span><span style="color:#6F42C1">docker-php-ext-configure</span><span style="color:#032F62"> gd</span><span style="color:#005CC5"> --with-freetype</span><span style="color:#005CC5"> --with-jpeg</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#24292E">  &#x26;&#x26; </span><span style="color:#6F42C1">docker-php-ext-install</span><span style="color:#032F62"> gd</span><span style="color:#6A737D">            # 官方：3 步联动</span></span>
+<span class="line"><span style="color:#6F42C1">install-php-extensions</span><span style="color:#032F62"> gd</span><span style="color:#6A737D">                 # 友好封装：1 行搞定</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># PHAR CLI 工具</span></span>
+<span class="line"><span style="color:#6F42C1">phive</span><span style="color:#032F62"> install</span><span style="color:#032F62"> phpunit</span></span></code></pre>
+<p>记忆：</p>
+<ul>
+<li><strong>PHP 代码</strong> → Composer</li>
+<li><strong>C 扩展，裸机</strong> → PIE（PECL 已 deprecated）</li>
+<li><strong>C 扩展，Docker</strong> → install-php-extensions</li>
+<li><strong>PHAR CLI 工具</strong> → PHIVE</li>
+</ul> </div> </div> </article><article class="card" data-href="/vim/230202-vim-chinese/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2023-02-02T00:00:00.000Z" data-astro-cid-d6qgp232>2023-02-02</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/vim/" class="tag" data-astro-cid-d6qgp232>#vim</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/vim/230202-vim-chinese/" data-astro-cid-d6qgp232>Vim 中文资源</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Vim 自带英文教程和帮助文档，中文化分两条路：跑自带教程时切语言，装社区维护的帮助文档包。</p>
+<p><code>vimtutor</code> 是 Vim 自带的 30 分钟交互式入门，环境变量切到中文 locale 就能直接读：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#24292E">LANG</span><span style="color:#D73A49">=</span><span style="color:#032F62">zh_CN.UTF-8</span><span style="color:#6F42C1"> vimtutor</span></span></code></pre>
+<p><code>vimcdoc</code> 是 <a href="https://github.com/yianwillis/vimcdoc">yianwillis/vimcdoc</a> 维护的中文帮助包，放进 <code>pack/start</code> 即随 Vim 加载，<code>:help</code> 直接出中文：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">mkdir</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> ~/.vim/pack/my/start</span></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> ~/.vim/pack/my/start</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#032F62"> https://github.com/yianwillis/vimcdoc.git</span></span></code></pre> </div> </div> </article><article class="card" data-href="/git/191203-author-stats/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2019-12-03T00:00:00.000Z" data-astro-cid-d6qgp232>2019-12-03</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/git/191203-author-stats/" data-astro-cid-d6qgp232>按作者统计 git 贡献量</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>只看 commit 次数（git 内置，0 依赖）：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> shortlog</span><span style="color:#005CC5"> -sn</span><span style="color:#005CC5"> --no-merges</span></span></code></pre>
+<p>要带行数的版本，用 <code>--numstat</code> 给出每文件 <code>+N -N filename</code>，再用 <code>--pretty=format</code> 把作者名作定界符让 awk 聚合：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> log</span><span style="color:#005CC5"> --numstat</span><span style="color:#005CC5"> --pretty=</span><span style="color:#032F62">'COMMIT %aN'</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#D73A49">  |</span><span style="color:#6F42C1"> awk</span><span style="color:#032F62"> '/^COMMIT / { a = substr($0, 8); next }</span></span>
+<span class="line"><span style="color:#032F62">         /^[0-9]/   { ins[a] += $1; del[a] += $2 }</span></span>
+<span class="line"><span style="color:#032F62">         END        { for (k in ins) printf "%s\t+%d -%d\n", k, ins[k], del[k] }'</span></span></code></pre>
+<p><code>%aN</code> 会走 <code>.mailmap</code>（同一人不同邮箱自动合并）。<code>^[0-9]</code> 自动跳过 binary 文件（numstat 对 binary 输出 <code>- - file</code>）。加 <code>--author="..."</code> 限单人；加 <code>--since="2024-01-01"</code> 限时段。</p>
+<p><strong>行数易被 reformatting / rename / 生成代码放大，跟 commit 数对照看比单看任一项准。</strong></p> </div> </div> </article><article class="card" data-href="/git/191122-crlf-warning/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2019-11-22T00:00:00.000Z" data-astro-cid-d6qgp232>2019-11-22</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/git/191122-crlf-warning/" data-astro-cid-d6qgp232>CRLF will be replaced by LF</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> git</span><span style="color:#032F62"> add</span><span style="color:#032F62"> .</span></span>
+<span class="line"><span style="color:#6F42C1">warning:</span><span style="color:#032F62"> CRLF</span><span style="color:#032F62"> will</span><span style="color:#032F62"> be</span><span style="color:#032F62"> replaced</span><span style="color:#032F62"> by</span><span style="color:#032F62"> LF</span><span style="color:#032F62"> in</span><span style="color:#032F62"> X.</span></span></code></pre>
+<p>文件含 CRLF 行尾，git 按当前 <code>core.autocrlf</code> / <code>.gitattributes</code> 配置正在把它改成 LF。<strong>只是 warning 不是 error，提交不会被拦。</strong></p>
+<p>跨平台团队（Mac/Linux + Windows）想把行尾问题从 PR review 里彻底抹掉，仓库根放一份 <code>.gitattributes</code>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>* text=auto</span></span>
+<span class="line"><span>*.sh text eol=lf</span></span>
+<span class="line"><span>*.bat text eol=crlf</span></span></code></pre>
+<p>老仓库加这份配置后，跑 <code>git add --renormalize . &#x26;&#x26; git commit</code> 让已入库的文件按新规则重写一遍——否则规则只对未来的修改生效。</p>
+<p><code>* text=auto</code> 一行覆盖 90% 场景。<code>*.sh text eol=lf</code> 是经典救场——Windows 同事 checkout 后行尾被换成 CRLF，<code>bash deploy.sh</code> 直接报 <code>bad interpreter</code>；<code>*.bat</code> 是对称情况。完整规则见 <a href="https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings">GitHub Docs: Configuring Git to handle line endings</a>。</p> </div> </div> </article><article class="card" data-href="/github/171122-camo-image-limit/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2017-11-22T00:00:00.000Z" data-astro-cid-d6qgp232>2017-11-22</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/github/" class="tag" data-astro-cid-d6qgp232>#github</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/github/171122-camo-image-limit/" data-astro-cid-d6qgp232>GitHub README 图片报 Content length exceeded</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>GitHub 把 README / issue / wiki 里所有外链图都走 <a href="https://github.com/atmos/camo">Camo</a> 匿名代理（隐藏访问者 IP 和 referer），代理默认 5 MB 上限。超过的图加载失败，<code>alt</code> 文字被替换成 <code>Content length exceeded</code>。</p>
+<p>5 MB 写死在 <a href="https://github.com/atmos/camo/blob/master/server.coffee#L25"><code>CAMO_LENGTH_LIMIT</code></a>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="coffee"><code><span class="line"><span style="color:#E36209">content_length_limit</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> parseInt</span><span style="color:#24292E">(</span><span style="color:#005CC5">process</span><span style="color:#24292E">.env.</span><span style="color:#005CC5">CAMO_LENGTH_LIMIT</span><span style="color:#D73A49"> ||</span><span style="color:#005CC5"> 5242880</span><span style="color:#24292E">, </span><span style="color:#005CC5">10</span><span style="color:#24292E">)</span></span></code></pre>
+<p><code>5242880 / 1024 / 1024 = 5</code>。压缩或裁剪到 5 MB 以下是唯一办法——GitHub 强制代理，自托管也绕不开。</p> </div> </div> </article><article class="card" data-href="/git/170830-git-checkout-ours-theirs/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2017-08-30T00:00:00.000Z" data-astro-cid-d6qgp232>2017-08-30</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/git/170830-git-checkout-ours-theirs/" data-astro-cid-d6qgp232>git checkout --ours / --theirs</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>冲突里某个文件不想逐行 merge，整文件保留一边即可。批量加 <code>.</code>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> checkout</span><span style="color:#005CC5"> --ours</span><span style="color:#032F62"> .</span><span style="color:#6A737D">    # 保留"当前视角"那边，丢另一边</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> checkout</span><span style="color:#005CC5"> --theirs</span><span style="color:#032F62"> .</span><span style="color:#6A737D">  # 反之</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> add</span><span style="color:#032F62"> .</span></span></code></pre>
+<p><strong>坑：<code>--ours</code> 在 merge 和 rebase 下指向相反的分支。</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>操作</th><th><code>--ours</code></th><th><code>--theirs</code></th></tr></thead><tbody><tr><td><code>git merge feature</code></td><td>当前分支 (<code>HEAD</code>)</td><td>被合入的 <code>feature</code></td></tr><tr><td><code>git rebase upstream</code></td><td><code>upstream</code>（rebase 落点）</td><td>你正在 rebase 的分支</td></tr></tbody></table>
+<p><code>rebase</code> 把你的提交逐个”重放”到 upstream 上，每一步 <code>HEAD</code> 都是 upstream，所以 <code>--ours</code> 指 upstream，反直觉但自洽。</p>
+<p>Source: <a href="https://bitmingw.com/2017/02/16/git-merge-rebase-ours-and-theirs/">https://bitmingw.com/2017/02/16/git-merge-rebase-ours-and-theirs/</a></p> </div> </div> </article><article class="card" data-href="/demo/060703-hero-demo/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2016-07-03T00:00:00.000Z" data-astro-cid-d6qgp232>2016-07-03</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/demo/" class="tag" data-astro-cid-d6qgp232>#demo</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/demo/060703-hero-demo/" data-astro-cid-d6qgp232>Hero Demo</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>The newest note shows up here in full — a 60ch slot above the masonry grid. Everything else is a preview card.</p>
 <p>Astro returns collection entries in <strong>disk order</strong>, not date order. Sort first, then split:</p>
-<pre class="astro-code everforest-light" style="background-color:#fdf6e3;color:#5c6a72; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F57D26">const</span><span style="color:#5C6A72"> notes </span><span style="color:#F57D26">=</span><span style="color:#5C6A72"> (</span><span style="color:#F85552">await</span><span style="color:#8DA101"> getCollection</span><span style="color:#5C6A72">(</span><span style="color:#DFA000">'notes'</span><span style="color:#5C6A72">))</span><span style="color:#939F91">.</span><span style="color:#8DA101">sort</span><span style="color:#5C6A72">(</span></span>
-<span class="line"><span style="color:#5C6A72">  (a, b) </span><span style="color:#F57D26">=></span><span style="color:#5C6A72"> b</span><span style="color:#939F91">.</span><span style="color:#5C6A72">data</span><span style="color:#939F91">.</span><span style="color:#5C6A72">date</span><span style="color:#939F91">.</span><span style="color:#8DA101">valueOf</span><span style="color:#5C6A72">() </span><span style="color:#F57D26">-</span><span style="color:#5C6A72"> a</span><span style="color:#939F91">.</span><span style="color:#5C6A72">data</span><span style="color:#939F91">.</span><span style="color:#5C6A72">date</span><span style="color:#939F91">.</span><span style="color:#8DA101">valueOf</span><span style="color:#5C6A72">(),</span></span>
-<span class="line"><span style="color:#5C6A72">);</span></span>
-<span class="line"><span style="color:#F57D26">const</span><span style="color:#5C6A72"> [hero, </span><span style="color:#F57D26">...</span><span style="color:#5C6A72">rest] </span><span style="color:#F57D26">=</span><span style="color:#5C6A72"> notes;</span></span></code></pre>
-<p>That’s the whole trick.</p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <time datetime="2016-07-02T00:00:00.000Z" class="date" data-astro-cid-d6qgp232>2016-07-02</time> <h2 data-astro-cid-d6qgp232><a href="/demo/160702-nihao-til/" data-astro-cid-d6qgp232>你好，TIL</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <div data-astro-cid-d6qgp232><p>这是一篇用来检验中文排版效果的简短示例：标点、行高、字体回退（Iowan Old Style + 苹方）以及代码块在 CJK 段落中的混排表现。</p>
-<h2>段落与引用</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#D73A49">const</span><span style="color:#005CC5"> notes</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> (</span><span style="color:#D73A49">await</span><span style="color:#6F42C1"> getCollection</span><span style="color:#24292E">(</span><span style="color:#032F62">'notes'</span><span style="color:#24292E">)).</span><span style="color:#6F42C1">sort</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">  (</span><span style="color:#E36209">a</span><span style="color:#24292E">, </span><span style="color:#E36209">b</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> b.data.date.</span><span style="color:#6F42C1">valueOf</span><span style="color:#24292E">() </span><span style="color:#D73A49">-</span><span style="color:#24292E"> a.data.date.</span><span style="color:#6F42C1">valueOf</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#24292E"> [</span><span style="color:#005CC5">hero</span><span style="color:#24292E">, </span><span style="color:#D73A49">...</span><span style="color:#005CC5">rest</span><span style="color:#24292E">] </span><span style="color:#D73A49">=</span><span style="color:#24292E"> notes;</span></span></code></pre>
+<p>That’s the whole trick.</p> </div> </div> </article><article class="card" data-href="/demo/060702-nihao-til/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2016-07-02T00:00:00.000Z" data-astro-cid-d6qgp232>2016-07-02</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/demo/" class="tag" data-astro-cid-d6qgp232>#demo</a><a href="/tags/hello/" class="tag" data-astro-cid-d6qgp232>#hello</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/demo/060702-nihao-til/" data-astro-cid-d6qgp232>你好，今天新知</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>这是一篇用来检验中文排版效果的简短示例：标点、行高、字体回退（Iowan Old Style + 苹方）以及代码块在 CJK 段落中的混排表现。</p>
+<h2 id="段落与引用">段落与引用</h2>
 <p>孔子曰：「学而不思则罔，思而不学则殆。」短短一句话点出了学习与思考相辅相成的道理。这一原则放在工程实践里同样成立——只读文档不动手，或只埋头写代码却不复盘，都会陷入低效循环。</p>
 <blockquote>
 <p>不积跬步，无以至千里；不积小流，无以成江海。</p>
 <p>—— 荀子《劝学》</p>
 </blockquote>
-<h2>列表</h2>
+<h2 id="列表">列表</h2>
 <ul>
 <li>中英混排：使用 <code>git log --oneline</code> 查看提交记录。</li>
-<li>嵌套：<ul>
+<li>嵌套：
+<ul>
 <li>二层项目一</li>
 <li>二层项目二</li>
 </ul>
 </li>
 <li>行内强调：<strong>加粗</strong>、<em>斜体</em>、<code>代码</code>、<del>删除线</del> 都可以正常渲染。</li>
 </ul>
-<h2>表格</h2>
-</div> <p class="read-more-line" data-astro-cid-d6qgp232> <a href="/demo/160702-nihao-til/" class="read-more" data-astro-cid-d6qgp232>read more →</a> </p> </div> </div> <footer class="card-tags" data-astro-cid-d6qgp232> <a href="/tags/demo/" class="tag" data-astro-cid-d6qgp232>#demo</a> </footer> </article><article class="card" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <time datetime="2016-07-01T00:00:00.000Z" class="date" data-astro-cid-d6qgp232>2016-07-01</time> <h2 data-astro-cid-d6qgp232><a href="/demo/160701-hello-til/" data-astro-cid-d6qgp232>Hello, TIL</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <div data-astro-cid-d6qgp232><p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
-<h2>Headings</h2>
-<p>The following HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level while <code>&lt;h6&gt;</code> is the lowest.</p>
-<h1>H1</h1>
-<h2>H2</h2>
-<h3>H3</h3>
-<h4>H4</h4>
-<h5>H5</h5>
-<h6>H6</h6>
-</div> <p class="read-more-line" data-astro-cid-d6qgp232> <a href="/demo/160701-hello-til/" class="read-more" data-astro-cid-d6qgp232>read more →</a> </p> </div> </div> <footer class="card-tags" data-astro-cid-d6qgp232> <a href="/tags/demo/" class="tag" data-astro-cid-d6qgp232>#demo</a> </footer> </article> </section><script>
+<h2 id="表格">表格</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>命令</th><th>用途</th><th>备注</th></tr></thead><tbody><tr><td><code>pwd</code></td><td>当前路径</td><td>常用于脚本调试</td></tr><tr><td><code>ls -alh</code></td><td>列出文件</td><td>含隐藏与可读大小</td></tr><tr><td><code>du -sh *</code></td><td>统计目录大小</td><td>排查空间占用</td></tr></tbody></table>
+<h2 id="代码">代码</h2>
+<p>行内代码：在终端运行 <code>find . -name '.DS_Store' -delete</code> 即可清理 macOS 缓存文件。</p>
+<p>带中文注释的 Bash：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 把当前目录下所有 Markdown 文件按修改时间排序</span></span>
+<span class="line"><span style="color:#6F42C1">ls</span><span style="color:#005CC5"> -lt</span><span style="color:#005CC5"> *</span><span style="color:#032F62">.md</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> head</span><span style="color:#005CC5"> -10</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 替换文件中的全角逗号为半角（保留空格）</span></span>
+<span class="line"><span style="color:#6F42C1">sed</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> ''</span><span style="color:#032F62"> 's/，/, /g'</span><span style="color:#005CC5"> *</span><span style="color:#032F62">.md</span></span></code></pre>
+<p>Go 示例——通道传递中文字符串：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#D73A49">package</span><span style="color:#6F42C1"> main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#032F62"> "</span><span style="color:#6F42C1">fmt</span><span style="color:#032F62">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">func</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    ch </span><span style="color:#D73A49">:=</span><span style="color:#6F42C1"> make</span><span style="color:#24292E">(</span><span style="color:#D73A49">chan</span><span style="color:#D73A49"> string</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    ch </span><span style="color:#D73A49">&#x3C;-</span><span style="color:#032F62"> "通过通信共享内存，而不是通过共享内存通信"</span></span>
+<span class="line"><span style="color:#24292E">    fmt.</span><span style="color:#6F42C1">Println</span><span style="color:#24292E">(</span><span style="color:#D73A49">&#x3C;-</span><span style="color:#24292E">ch)</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="行内元素">行内元素</h2>
+<p>按下 <kbd><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>4</kbd></kbd> 即可截取屏幕区域。</p>
+<p>大多数 <mark>蝾螈</mark>都在夜间活动，以昆虫和蠕虫为食。</p>
+<p>化学式 H<sub>2</sub>O，毕达哥拉斯定理 a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>。</p> </div> </div> </article><article class="card" data-href="/demo/060701-hello-til/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2016-07-01T00:00:00.000Z" data-astro-cid-d6qgp232>2016-07-01</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/demo/" class="tag" data-astro-cid-d6qgp232>#demo</a><a href="/tags/hello/" class="tag" data-astro-cid-d6qgp232>#hello</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/demo/060701-hello-til/" data-astro-cid-d6qgp232>Hello, TIL</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
+<h2 id="headings">Headings</h2>
+<p>The following HTML <code>&#x3C;h1></code>—<code>&#x3C;h6></code> elements represent six levels of section headings. <code>&#x3C;h1></code> is the highest section level while <code>&#x3C;h6></code> is the lowest.</p>
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+<h2 id="paragraph">Paragraph</h2>
+<p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
+<p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
+<h2 id="blockquotes">Blockquotes</h2>
+<p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element, and optionally with in-line changes such as annotations and abbreviations.</p>
+<h4 id="blockquote-without-attribution">Blockquote without attribution</h4>
+<blockquote>
+<p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+<strong>Note</strong> that you can use <em>Markdown syntax</em> within a blockquote.</p>
+</blockquote>
+<h4 id="blockquote-with-attribution">Blockquote with attribution</h4>
+<blockquote>
+<p>Don’t communicate by sharing memory, share memory by communicating.</p>
+<p>— <cite>Rob Pike<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></cite></p>
+</blockquote>
+<h2 id="tables">Tables</h2>
+<p>Tables aren’t part of the core Markdown spec, but Hugo supports them out-of-the-box.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Age</th></tr></thead><tbody><tr><td>Bob</td><td>27</td></tr><tr><td>Alice</td><td>23</td></tr></tbody></table>
+<h4 id="inline-markdown-within-tables">Inline Markdown within tables</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Italics</th><th>Bold</th><th>Code</th></tr></thead><tbody><tr><td><em>italics</em></td><td><strong>bold</strong></td><td><code>code</code></td></tr></tbody></table>
+<h2 id="list-types">List Types</h2>
+<h4 id="ordered-list">Ordered List</h4>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h4 id="unordered-list">Unordered List</h4>
+<ul>
+<li>List item</li>
+<li>Another item</li>
+<li>And another item</li>
+</ul>
+<h4 id="nested-unordered-list">Nested Unordered list</h4>
+<ul>
+<li>Fruit
+<ul>
+<li>Apple</li>
+<li>Orange</li>
+<li>Banana</li>
+</ul>
+</li>
+<li>Dairy
+<ul>
+<li>Milk</li>
+<li>Cheese</li>
+</ul>
+</li>
+</ul>
+<h4 id="nested-ordered-list">Nested Ordered list</h4>
+<ol>
+<li>Fruit
+<ul>
+<li>Apple</li>
+<li>Orange</li>
+<li>Banana</li>
+</ul>
+</li>
+<li>Dairy
+<ol>
+<li>Milk</li>
+<li>Cheese</li>
+</ol>
+</li>
+<li>Third item
+<ol>
+<li>Sub One</li>
+<li>Sub Two</li>
+</ol>
+</li>
+</ol>
+<h2 id="code">Code</h2>
+<h4 id="inline-code">Inline code</h4>
+<p>Use single backticks for inline code: <code>npm install</code>, <code>git commit -m "wip"</code>, or for filenames like <code>package.json</code>.</p>
+<h4 id="fenced-code-blocks">Fenced code blocks</h4>
+<p>Bash — a classic TIL one-liner:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Find and remove every .DS_Store under the current directory</span></span>
+<span class="line"><span style="color:#6F42C1">find</span><span style="color:#032F62"> .</span><span style="color:#005CC5"> -name</span><span style="color:#032F62"> '.DS_Store'</span><span style="color:#005CC5"> -type</span><span style="color:#032F62"> f</span><span style="color:#005CC5"> -delete</span></span>
+<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "done"</span></span></code></pre>
+<p>JavaScript:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#D73A49">const</span><span style="color:#6F42C1"> greet</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> (</span><span style="color:#E36209">name</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#032F62"> `Hello, ${</span><span style="color:#24292E">name</span><span style="color:#032F62">}!`</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#005CC5"> names</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> [</span><span style="color:#032F62">'TIL'</span><span style="color:#24292E">, </span><span style="color:#032F62">'world'</span><span style="color:#24292E">];</span></span>
+<span class="line"><span style="color:#24292E">names.</span><span style="color:#6F42C1">forEach</span><span style="color:#24292E">((</span><span style="color:#E36209">n</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> console.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(</span><span style="color:#6F42C1">greet</span><span style="color:#24292E">(n)));</span></span></code></pre>
+<p>Go — pairs with the Rob Pike quote above:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#D73A49">package</span><span style="color:#6F42C1"> main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#032F62"> "</span><span style="color:#6F42C1">fmt</span><span style="color:#032F62">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">func</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    ch </span><span style="color:#D73A49">:=</span><span style="color:#6F42C1"> make</span><span style="color:#24292E">(</span><span style="color:#D73A49">chan</span><span style="color:#D73A49"> string</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    ch </span><span style="color:#D73A49">&#x3C;-</span><span style="color:#032F62"> "share memory by communicating"</span></span>
+<span class="line"><span style="color:#24292E">    fmt.</span><span style="color:#6F42C1">Println</span><span style="color:#24292E">(</span><span style="color:#D73A49">&#x3C;-</span><span style="color:#24292E">ch)</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p>JSON:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "name"</span><span style="color:#24292E">: </span><span style="color:#032F62">"til"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "version"</span><span style="color:#24292E">: </span><span style="color:#032F62">"0.1.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "private"</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p>A block with no language tag — monospace, no highlighting:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ whoami</span></span>
+<span class="line"><span>zyf</span></span>
+<span class="line"><span>$ uname -s</span></span>
+<span class="line"><span>Darwin</span></span></code></pre>
+<h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark</h2>
+<p><abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.</p>
+<p>H<sub>2</sub>O</p>
+<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
+<p>Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.</p>
+<p>Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.</p>
+<section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes</h2>
+<ol>
+<li id="user-content-fn-1">
+<p>The above quote is excerpted from Rob Pike’s <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk</a> during Gopherfest, November 18, 2015. <a href="#user-content-fnref-1" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section> </div> </div> </article> </section><script>
       (() => {
         const ROW = 8;       // grid-auto-rows unit, in px
         const GAP = 22;      // visual vertical gap between cards, in px
@@ -59,4 +440,127 @@ today I learned, want to remember, and might want to share.
         mobile.addEventListener('change', apply);
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(apply);
       })();
-    </script> </main> <footer class="site-footer"> <span>© <a href="https://zyf.im">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im">GitHub</a></span> </footer> </body> </html>
+    </script> </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>
