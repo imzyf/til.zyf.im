@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged mysql"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#mysql · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+h1[data-astro-cid-tge3q7ae]{font-size:1.4rem;margin:0 0 .3rem}.lede[data-astro-cid-tge3q7ae]{color:var(--muted);margin:0 0 1.75rem;font-size:.88rem}.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.4rem;border-bottom:1px dotted var(--rule);min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/">index</a> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 data-astro-cid-tge3q7ae>#mysql</h1> <p class="lede" data-astro-cid-tge3q7ae>3 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card" data-href="/mysql/220110-group-concat-max-len/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-01-10T00:00:00.000Z" data-astro-cid-d6qgp232>2022-01-10</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/mysql/220110-group-concat-max-len/" data-astro-cid-d6qgp232>GROUP_CONCAT 截断</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>生产踩了一个：<code>GROUP_CONCAT</code> 聚合的结果被悄悄截断，默认上限只有 1024 bytes。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#24292E"> @@GROUP_CONCAT_MAX_LEN;</span></span>
+<span class="line"><span style="color:#6A737D">-- 1024</span></span></code></pre>
+<p>会话临时调大：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SET</span><span style="color:#D73A49"> SESSION</span><span style="color:#24292E"> group_concat_max_len </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 1000000</span><span style="color:#24292E">;</span></span></code></pre>
+<p>永久改 <code>my.cnf</code>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#6F42C1">[mysqld]</span></span>
+<span class="line"><span style="color:#D73A49">group_concat_max_len</span><span style="color:#24292E"> = 1000000</span></span></code></pre>
+<p>参考 <a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len"><code>group_concat_max_len</code></a>。</p> </div> </div> </article><article class="card" data-href="/mysql/200814-mysql-json-indexing/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-08-14T00:00:00.000Z" data-astro-cid-d6qgp232>2020-08-14</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/mysql/200814-mysql-json-indexing/" data-astro-cid-d6qgp232>MySQL JSON 列建索引</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>MySQL 5.7+ 支持原生 <a href="https://dev.mysql.com/doc/refman/8.0/en/json.html"><code>JSON</code> 数据类型</a>。两个坑：</p>
+<ul>
+<li><code>JSON</code> 列<strong>不能有 non-NULL 默认值</strong>——要么 nullable，要么应用层填</li>
+<li><strong>不能直接在 JSON 字段上建索引</strong>——要靠 <a href="https://dev.mysql.com/doc/refman/8.0/en/create-table-generated-columns.html">Generated Column</a> 包一层</li>
+</ul>
+<h2 id="用-generated-column-索引-json-字段">用 Generated Column 索引 JSON 字段</h2>
+<p>把要查的 JSON 路径抽成一个虚拟列，再在虚拟列上建索引：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">CREATE</span><span style="color:#D73A49"> TABLE</span><span style="color:#6F42C1"> players</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#24292E">  id               </span><span style="color:#D73A49">INT</span><span style="color:#24292E"> UNSIGNED </span><span style="color:#D73A49">NOT NULL</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  player_and_games </span><span style="color:#D73A49">JSON</span><span style="color:#D73A49"> NOT NULL</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  name_virtual     </span><span style="color:#D73A49">VARCHAR</span><span style="color:#24292E">(</span><span style="color:#005CC5">20</span><span style="color:#24292E">) </span><span style="color:#D73A49">GENERATED</span><span style="color:#D73A49"> ALWAYS</span><span style="color:#D73A49"> AS</span><span style="color:#24292E"> (player_and_games </span><span style="color:#D73A49">->></span><span style="color:#032F62"> '$.name'</span><span style="color:#24292E">) </span><span style="color:#D73A49">NOT NULL</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#D73A49">  PRIMARY KEY</span><span style="color:#24292E"> (id),</span></span>
+<span class="line"><span style="color:#D73A49">  KEY</span><span style="color:#24292E"> idx_name (name_virtual)</span></span>
+<span class="line"><span style="color:#24292E">);</span></span></code></pre>
+<p><code>->></code> 是 <code>-></code> + <code>JSON_UNQUOTE</code> 的简写——直接拿字符串而不是 quoted JSON value。</p>
+<p>Virtual 列只存元数据不落盘（默认），Stored 列落盘到磁盘。索引 JSON 字段几乎都用 Virtual，省空间且没性能差。</p>
+<h2 id="验证索引命中">验证索引命中</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#24292E">EXPLAIN </span><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> players </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> name_virtual </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'Sally'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">-- key: idx_name</span></span></code></pre>
+<p>参考 <a href="https://www.lnmp.cn/mysql-57-new-features-json.html">MySQL 5.7 新特性 JSON</a> · <a href="http://mysql.taobao.org/monthly/2017/12/09/">如何索引 JSON 字段 | mysql.taobao.org</a> · <a href="https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html">JSON 函数参考</a></p> </div> </div> </article><article class="card" data-href="/mysql/200414-illegal-mix-of-collations/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-04-14T00:00:00.000Z" data-astro-cid-d6qgp232>2020-04-14</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/mysql/200414-illegal-mix-of-collations/" data-astro-cid-d6qgp232>MySQL Illegal mix of collations</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">Illegal</span><span style="color:#032F62"> mix</span><span style="color:#032F62"> of</span><span style="color:#032F62"> collations</span><span style="color:#24292E"> (utf8mb4_general_ci,IMPLICIT) and (</span><span style="color:#6F42C1">utf8mb4_unicode_ci,IMPLICIT</span><span style="color:#24292E">) </span><span style="color:#D73A49">for</span><span style="color:#24292E"> operation</span></span></code></pre>
+<p><code>utf8mb4_general_ci</code> 和 <code>utf8mb4_unicode_ci</code> 两列直接做 JOIN / 比较时报错——MySQL 不会自动转换 collation。</p>
+<h2 id="解决">解决</h2>
+<p><strong>根治：统一字段 collation</strong>。MySQL 8.0+ 默认 <code>utf8mb4_0900_ai_ci</code>（基于 Unicode 9.0），5.7 默认 <code>utf8mb4_general_ci</code>，老库迁 8.0 时 collation 不会自动改，要小心遗留表。</p>
+<p><strong>临时绕：SQL 里 <code>COLLATE</code> 显式转</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> a </span><span style="color:#D73A49">JOIN</span><span style="color:#24292E"> b </span><span style="color:#D73A49">ON</span><span style="color:#005CC5"> a</span><span style="color:#24292E">.</span><span style="color:#005CC5">name</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> b</span><span style="color:#24292E">.</span><span style="color:#005CC5">name</span><span style="color:#D73A49"> COLLATE</span><span style="color:#24292E"> utf8mb4_unicode_ci;</span></span></code></pre>
+<h2 id="三种-collation">三种 collation</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>排序依据</th><th>性能</th><th>用途</th></tr></thead><tbody><tr><td><code>utf8mb4_general_ci</code></td><td>简化 ASCII 规则</td><td>最快</td><td>5.7 老库默认，新库不推荐</td></tr><tr><td><code>utf8mb4_unicode_ci</code></td><td>Unicode 4.0</td><td>略慢</td><td>5.7 推荐</td></tr><tr><td><code>utf8mb4_0900_ai_ci</code></td><td>Unicode 9.0</td><td>≈ unicode_ci</td><td>8.0+ 默认</td></tr></tbody></table>
+<p>性能差距在绝大多数业务里可忽略，<strong>同库统一</strong>比选哪个更重要。</p>
+<p>参考 <a href="https://www.cnblogs.com/wqbin/p/11852376.html">Illegal mix of collations | 少年阿斌</a>。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>
