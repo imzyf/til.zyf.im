@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="和 （8.0.1 之前叫 ）加的锁经常**比写 SQL 时以为的大一圈**。规则不复杂，但每条单独看都反直觉。 ## S 锁 vs X 锁 | | 已有 S | 已有 X | |-----|--------|--------| | 申请 S | ✅ | ❌ | | 申请 X | ❌ | ❌ | - = S 锁，多事务可…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>MySQL FOR UPDATE / FOR SHARE 真实加锁范围 · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note" data-astro-cid-fzx4jmue> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>MySQL FOR UPDATE / FOR SHARE 真实加锁范围</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2021-01-29T00:00:00.000Z" data-astro-cid-fzx4jmue>2021-01-29</time> <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/mysql/" class="tag" data-astro-cid-fzx4jmue>#mysql</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p><code>SELECT ... FOR UPDATE</code> 和 <code>FOR SHARE</code>（8.0.1 之前叫 <code>LOCK IN SHARE MODE</code>）加的锁经常<strong>比写 SQL 时以为的大一圈</strong>。规则不复杂，但每条单独看都反直觉。</p>
+<h2 id="s-锁-vs-x-锁">S 锁 vs X 锁</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>已有 S</th><th>已有 X</th></tr></thead><tbody><tr><td>申请 S</td><td>✅</td><td>❌</td></tr><tr><td>申请 X</td><td>❌</td><td>❌</td></tr></tbody></table>
+<ul>
+<li><code>FOR SHARE</code> = S 锁，多事务可同时拿</li>
+<li><code>FOR UPDATE</code> / <code>INSERT</code> / <code>UPDATE</code> / <code>DELETE</code> = X 锁，互斥</li>
+</ul>
+<p>死锁陷阱：两个事务都拿了同一行 S 锁，<strong>任何一方想升级成 X 锁都会死锁</strong>——必须先等对方释放。所以 <code>FOR SHARE</code> 后立刻 <code>UPDATE</code> 是高危模式。</p>
+<h2 id="锁加在索引上不是行上">锁加在索引上，不是行上</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> non_indexed_col </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'x'</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#24292E">;</span></span></code></pre>
+<p>WHERE 列没索引时 InnoDB 会<strong>对扫描过的所有索引项加锁</strong>——走全表扫描就等于锁全表。EXPLAIN 看到 <code>type=ALL</code> 配上 <code>FOR UPDATE</code> 基本就是事故现场。</p>
+<p>确保 WHERE 列有索引，且 EXPLAIN <code>type</code> 不是 <code>ALL</code>，加锁才能精准。</p>
+<h2 id="repeatable-read-下-next-key-lock-把-gap-也锁了">REPEATABLE READ 下 next-key lock 把 gap 也锁了</h2>
+<p>MySQL 默认隔离级别 REPEATABLE READ，InnoDB 此时用 <strong>next-key lock = record lock + gap lock</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#6A737D">-- 表里现有 id: 1, 5, 10</span></span>
+<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">BETWEEN</span><span style="color:#005CC5"> 3</span><span style="color:#D73A49"> AND</span><span style="color:#005CC5"> 8</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">-- 锁 id=5（record lock）+ (1,5)、(5,10) 区间（gap lock）</span></span>
+<span class="line"><span style="color:#6A737D">-- 另一事务 INSERT id=4 / id=7 全部阻塞</span></span></code></pre>
+<p>更反直觉的是<strong>没匹配上的查询也加 gap 锁</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#6A737D">-- 表里现有 id: 1, 5, 10</span></span>
+<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 7</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">-- 没行可锁，但锁住 (5,10) 区间，INSERT id=6/7/8/9 全部阻塞</span></span></code></pre>
+<p>唯一索引 + 等值匹配<strong>且匹配到</strong>——只加 record lock 不加 gap lock。这是少数能精准加锁的场景。</p>
+<h2 id="read-committed-关掉-gap-锁">READ COMMITTED 关掉 gap 锁</h2>
+<p>会话或事务级改成 RC，<strong>gap lock 全部消失，只剩 record lock</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SET</span><span style="color:#D73A49"> SESSION</span><span style="color:#D73A49"> TRANSACTION</span><span style="color:#D73A49"> ISOLATION</span><span style="color:#D73A49"> LEVEL</span><span style="color:#D73A49"> READ</span><span style="color:#D73A49"> COMMITTED</span><span style="color:#24292E">;</span></span></code></pre>
+<p>代价是放弃可重复读、接受 phantom row。在高并发 OLTP 场景里去 gap lock 能显著降低死锁率，很多 ORM 默认推荐 RC。</p>
+<h2 id="for-share-在-80-多的-nowait--skip-locked">FOR SHARE 在 8.0+ 多的 NOWAIT / SKIP LOCKED</h2>
+<p>默认拿不到锁会等 <code>innodb_lock_wait_timeout</code>（50s），8.0+ 加了两个修饰符——<code>LOCK IN SHARE MODE</code> 不支持，<code>FOR SHARE</code> 才有：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 5</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#D73A49"> NOWAIT</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">-- 拿不到立刻报 ER_LOCK_NOWAIT，不等</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> status</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'pending'</span><span style="color:#D73A49"> ORDER BY</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#D73A49"> SKIP</span><span style="color:#24292E"> LOCKED </span><span style="color:#D73A49">LIMIT</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">-- 跳过被锁的行</span></span></code></pre>
+<p><code>SKIP LOCKED</code> 是写消息队列 / worker 抢任务的标准模式——多个 worker 同时跑这条 SQL，自动每人拿到不同任务，零竞争零冲突。比 <code>FOR UPDATE</code> + 应用层重试简单一个数量级。</p> </div>   <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

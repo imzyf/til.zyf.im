@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="GD 写文字最容易踩的坑： 里的 **不是文字顶部、也不是中线**，而是 _baseline_——拉丁字母 中 的脚底。所以 写出来的字会**完全跑到画布上方**消失。 返回的也是 baseline 坐标系下的 8 元素： **y 轴在 baseline 下为正、之上为负**——和 GD 全局图像坐标（左上角原点、向下…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>PHP GD 文字对齐：imagettfbbox 8 元素 + 坐标系是相对 baseline · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note" data-astro-cid-fzx4jmue> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>PHP GD 文字对齐：imagettfbbox 8 元素 + 坐标系是相对 baseline</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2020-04-16T00:00:00.000Z" data-astro-cid-fzx4jmue>2020-04-16</time> <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/php/" class="tag" data-astro-cid-fzx4jmue>#php</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p>GD 写文字最容易踩的坑：<code>imagettftext($img, $size, $angle, $x, $y, ...)</code> 里的 <code>$y</code> <strong>不是文字顶部、也不是中线</strong>，而是 <em>baseline</em>——拉丁字母 <code>Hxg</code> 中 <code>H</code> 的脚底。所以 <code>imagettftext($img, 12, 0, 0, 0, ...)</code> 写出来的字会<strong>完全跑到画布上方</strong>消失。</p>
+<p><code>imagettfbbox</code> 返回的也是 baseline 坐标系下的 8 元素：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>索引   含义        典型值（angle=0）</span></span>
+<span class="line"><span>[0]   左下 x        0</span></span>
+<span class="line"><span>[1]   左下 y       -1     ← baseline 之下 1 px</span></span>
+<span class="line"><span>[2]   右下 x      198</span></span>
+<span class="line"><span>[3]   右下 y       -1</span></span>
+<span class="line"><span>[4]   右上 x      198</span></span>
+<span class="line"><span>[5]   右上 y      -20    ← baseline 之上 20 px（负值在上）</span></span>
+<span class="line"><span>[6]   左上 x        0</span></span>
+<span class="line"><span>[7]   左上 y      -20</span></span></code></pre>
+<p><strong>y 轴在 baseline 下为正、之上为负</strong>——和 GD 全局图像坐标（左上角原点、向下增长）相反。这是混淆的根源。</p>
+<h2 id="实用算法">实用算法</h2>
+<p>文字宽度：<code>$bbox[2] - $bbox[0]</code>；高度：<code>$bbox[1] - $bbox[7]</code>。</p>
+<p><strong>右对齐到 <code>$rightX</code></strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$bbox </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> imagettfbbox</span><span style="color:#24292E">($size, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, $font, $text);</span></span>
+<span class="line"><span style="color:#24292E">$x </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $rightX </span><span style="color:#D73A49">-</span><span style="color:#24292E"> ($bbox[</span><span style="color:#005CC5">2</span><span style="color:#24292E">] </span><span style="color:#D73A49">-</span><span style="color:#24292E"> $bbox[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]);</span></span>
+<span class="line"><span style="color:#005CC5">imagettftext</span><span style="color:#24292E">($img, $size, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, $x, $y, $color, $font, $text);</span></span></code></pre>
+<p><strong>水平居中到 <code>$centerX</code></strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$x </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $centerX </span><span style="color:#D73A49">-</span><span style="color:#005CC5"> intval</span><span style="color:#24292E">(($bbox[</span><span style="color:#005CC5">2</span><span style="color:#24292E">] </span><span style="color:#D73A49">-</span><span style="color:#24292E"> $bbox[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]) </span><span style="color:#D73A49">/</span><span style="color:#005CC5"> 2</span><span style="color:#24292E">) </span><span style="color:#D73A49">-</span><span style="color:#24292E"> $bbox[</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span></code></pre>
+<p>减 <code>$bbox[0]</code> 是因为有些字体首字符左缘会突出到 x=0 之前（<code>$bbox[0]</code> 为负），不补回来会左偏。</p>
+<p><strong>垂直贴到顶边 <code>$topY</code></strong>（让文字最高点对齐 <code>$topY</code>）：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$y </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $topY </span><span style="color:#D73A49">-</span><span style="color:#24292E"> $bbox[</span><span style="color:#005CC5">7</span><span style="color:#24292E">];   </span><span style="color:#6A737D">// bbox[7] 是负的，等价 topY + |bbox[7]|</span></span></code></pre>
+<h2 id="隐藏坑">隐藏坑</h2>
+<ul>
+<li><strong>descender 不算 bounding box</strong>：g/p/q/y 的下伸尾巴在 bbox 外，多行排版按 bbox 算行高会让下行字头部蹭到上行尾巴。靠 <code>$size * 1.2</code> 这种经验系数加行距更稳</li>
+<li><strong><code>$angle</code> 旋转的是文字，不是 bbox 坐标系含义</strong>——bbox 永远按”如果这段文字是水平正向的”来给点，旋转后想知道屏幕坐标得自己用 <code>$angle</code> 套旋转矩阵</li>
+<li><strong>PHP 8.0 起 <code>imagettfbbox</code> / <code>imagettftext</code> 是 <code>imageftbbox</code> / <code>imagefttext</code> 的别名</strong>——行为一致，新代码两套都行</li>
+</ul>
+<p>字体文件路径必须是真实可读的 <code>.ttf</code> / <code>.otf</code>，相对路径默认相对 CWD 不是 script 目录——线上跑用 <code>__DIR__ . '/font.ttf'</code> 兜底。</p> </div>  <aside class="related" aria-label="related notes" data-astro-cid-fzx4jmue> <h2 data-astro-cid-fzx4jmue>Related</h2> <ul data-astro-cid-fzx4jmue> <li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2026-05-12</span> <a class="title" href="/posts/260512-libvips-text-rendering/" data-astro-cid-fzx4jmue>PHP libvips 写文字：Pango 接管 layout，不用算 bbox</a> </li> </ul> </aside> <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

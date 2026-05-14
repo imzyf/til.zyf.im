@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged docker"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#docker · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+h1[data-astro-cid-tge3q7ae]{font-size:1.4rem;margin:0 0 .3rem}.lede[data-astro-cid-tge3q7ae]{color:var(--muted);margin:0 0 1.75rem;font-size:.88rem}.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.4rem;border-bottom:1px dotted var(--rule);min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 data-astro-cid-tge3q7ae>#docker</h1> <p class="lede" data-astro-cid-tge3q7ae>1 note</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card" data-href="/posts/221117-dockerfile-easy-to-confuse-instructions/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-11-17T00:00:00.000Z" data-astro-cid-d6qgp232>2022-11-17</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/docker/" class="tag" data-astro-cid-d6qgp232>#docker</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/221117-dockerfile-easy-to-confuse-instructions/" data-astro-cid-d6qgp232>Dockerfile 中三组易混指令怎么选</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Dockerfile 里有几组指令名字相近、用途易混。按”什么时候执行 + 写到哪里”两条轴归位即可：</p>
+<ul>
+<li><strong>构建时执行</strong>（写进 image 层）：<code>RUN</code>、<code>COPY</code>、<code>ADD</code>、<code>ARG</code></li>
+<li><strong>运行时执行</strong>（启动 container 时跑）：<code>CMD</code>、<code>ENTRYPOINT</code></li>
+<li><strong>构建期声明、运行时仍可见</strong>：<code>ENV</code></li>
+<li><strong>只是元数据</strong>（不执行也不影响行为）：<code>LABEL</code></li>
+</ul>
+<h2 id="copy-vs-add">COPY vs ADD</h2>
+<p>两者都把构建上下文里的文件复制进 image，但 <code>ADD</code> 多了两个隐式行为：</p>
+<ul>
+<li>源是 <code>.tar</code> / <code>.tar.gz</code> 时<strong>自动解压</strong>到目标目录</li>
+<li>源是远程 URL 时<strong>自动下载</strong></li>
+</ul>
+<p>这两个 “智能” 行为正是 <code>ADD</code> 比 <code>COPY</code> 危险的地方——upstream tarball 内容变了，image 跟着变，且解压结果难审计。</p>
+<p>口诀：<strong>默认用 <code>COPY</code>，确实需要解压本地归档时才上 <code>ADD</code></strong>。远程文件用 <code>RUN curl -O</code> 更显式、更可控。</p>
+<h2 id="run-vs-cmd-vs-entrypoint">RUN vs CMD vs ENTRYPOINT</h2>
+<p><code>RUN</code> 在构建时执行并提交一层。<code>CMD</code> 和 <code>ENTRYPOINT</code> 都只描述启动命令，区别在能不能被 <code>docker run</code> 的尾参覆盖：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>指令</th><th>何时跑</th><th>默认参数？</th><th>被尾参覆盖？</th></tr></thead><tbody><tr><td><code>RUN</code></td><td>构建时</td><td>—</td><td>—</td></tr><tr><td><code>ENTRYPOINT</code></td><td>启动时</td><td>否</td><td>不会（除非 <code>--entrypoint</code>）</td></tr><tr><td><code>CMD</code></td><td>启动时</td><td>是</td><td>会</td></tr></tbody></table>
+<p>两种写法行为不同：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ENTRYPOINT</span><span style="color:#24292E"> [</span><span style="color:#032F62">"/scripts/entrypoint.sh"</span><span style="color:#24292E">]    # exec form</span></span>
+<span class="line"><span style="color:#D73A49">CMD</span><span style="color:#032F62"> "/scripts/start-fpm.sh"</span><span style="color:#24292E">              # shell form</span></span></code></pre>
+<p><em>exec form</em>（JSON 数组）= 直接 execve，进程是 PID 1，能正常收到 <code>SIGTERM</code>。
+<em>shell form</em>（裸字符串）= Docker 包成 <code>/bin/sh -c "..."</code>，再<strong>整串作为参数</strong>传给 <code>ENTRYPOINT</code>，最终启动等价于：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">/scripts/entrypoint.sh</span><span style="color:#032F62"> /bin/sh</span><span style="color:#005CC5"> -c</span><span style="color:#032F62"> "/scripts/start-fpm.sh"</span></span></code></pre>
+<p>只有 <code>CMD ["nginx"]</code> 没 <code>ENTRYPOINT</code> 时，<code>CMD</code> 自己就是启动命令；<code>docker run img bash</code> 会把 <code>nginx</code> 整串替换成 <code>bash</code>。</p>
+<p>口诀：<strong>主程序用 <code>ENTRYPOINT</code> exec form；可被覆盖的默认参数走 <code>CMD</code> exec form</strong>。两个都用 shell form 会丢掉信号转发，容器收不到 <code>docker stop</code> 的 <code>SIGTERM</code>，10 秒后被 <code>SIGKILL</code> 强杀。</p>
+<h2 id="label-vs-arg-vs-env">LABEL vs ARG vs ENV</h2>
+<p>三者都是 “声明值”，但生命周期完全不同：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>指令</th><th>构建时可见？</th><th>运行时可见？</th><th>写进 image？</th></tr></thead><tbody><tr><td><code>ARG</code></td><td>是</td><td>否</td><td>否（但值会出现在 <code>docker history</code>，<strong>别塞密钥</strong>）</td></tr><tr><td><code>ENV</code></td><td>是（声明之后的层）</td><td>是（容器环境变量）</td><td>是</td></tr><tr><td><code>LABEL</code></td><td>否</td><td>否</td><td>是（仅元数据，<code>docker inspect</code> 可见）</td></tr></tbody></table>
+<p><code>ARG</code> 还有一条作用域陷阱：<strong><code>FROM</code> 之前声明的 <code>ARG</code> 只能在 <code>FROM</code> 行里展开</strong>，要在后续指令里用同名 ARG，得在 <code>FROM</code> 之后<strong>再声明一次</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PHP_VERSION=8.3</span></span>
+<span class="line"><span style="color:#D73A49">FROM</span><span style="color:#24292E"> php:${PHP_VERSION}-fpm    # OK，这里能用</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PHP_VERSION                # 必须重新声明，下面才能用</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> echo </span><span style="color:#032F62">"Building PHP ${PHP_VERSION}"</span></span></code></pre>
+<p>口诀：<strong>版本号 / 镜像 tag 用 <code>ARG</code>；运行时配置（端口、路径、非密钥配置）用 <code>ENV</code>；作者 / VCS 地址 / 镜像描述用 <code>LABEL</code></strong>。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

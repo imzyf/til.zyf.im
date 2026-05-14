@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged shell"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#shell · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+h1[data-astro-cid-tge3q7ae]{font-size:1.4rem;margin:0 0 .3rem}.lede[data-astro-cid-tge3q7ae]{color:var(--muted);margin:0 0 1.75rem;font-size:.88rem}.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.4rem;border-bottom:1px dotted var(--rule);min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 data-astro-cid-tge3q7ae>#shell</h1> <p class="lede" data-astro-cid-tge3q7ae>4 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card" data-href="/posts/220728-cdpath/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-cdpath/" data-astro-cid-d6qgp232>CDPATH：让 cd 自动搜多个父目录</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>cd foo</code> 默认只在当前目录找 <code>foo/</code>。<code>CDPATH</code> 给 cd 一份”备选父目录列表”，找不到就依次往里查：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D73A49">export</span><span style="color:#24292E"> CDPATH</span><span style="color:#D73A49">=</span><span style="color:#24292E">.:</span><span style="color:#D73A49">~</span><span style="color:#24292E">/projects:</span><span style="color:#D73A49">~</span><span style="color:#24292E">/work</span></span></code></pre>
+<p>之后无论在哪个目录：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> blog</span><span style="color:#6A737D">          # 命中 ~/projects/blog/</span></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> client-x</span><span style="color:#6A737D">      # 命中 ~/work/client-x/</span></span></code></pre>
+<p>三个坑：</p>
+<ul>
+<li><strong>第一项必须是 <code>.</code></strong>——否则 <code>cd subdir</code> 会优先去 CDPATH 列表里搜，遇到同名目录就把你”传送”到别处</li>
+<li><strong>CDPATH 命中时 <code>cd</code> 会把目标路径打到 stdout</strong>，会污染脚本里 <code>cd "$dir" &#x26;&#x26; do-something</code> 这类捕获 cd 输出的逻辑。<strong>脚本开头 <code>unset CDPATH</code></strong>，并用绝对路径不依赖它</li>
+<li><strong>不要塞太多目录</strong>——顺序匹配，列表越长越容易撞同名；3-5 个就到头</li>
+</ul>
+<p>适合场景：固定的几个 workspace 根目录（<code>~/code</code>、<code>~/work</code>、<code>~/oss</code>）。如果项目散得很（dotfiles 在 home、客户代码在 NAS、个人项目在 iCloud），用 <a href="https://github.com/ajeetdsouza/zoxide">zoxide</a> 这种基于 <em>frecency</em> 的跳转工具更顺手。</p> </div> </div> </article><article class="card" data-href="/posts/220728-disk-space-deleted-files/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-disk-space-deleted-files/" data-astro-cid-d6qgp232>删了文件 df 不掉：lsof | grep deleted 找仍持有的进程</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>经典症状：<code>rm</code> 掉一个大日志，<code>df</code> 看磁盘空间没变。</p>
+<p>根因：unix 文件系统下 <code>rm</code> 做的只是 <em>unlink</em>——把目录项里的引用删掉。inode 真正释放要等到<strong>所有持有它的 file descriptor 都关闭</strong>。如果某个进程还开着这个文件（典型场景：app 把日志 open 后一直 append），inode 就一直挂在 fd 上不释放，磁盘空间也回不来。</p>
+<p>定位是哪个进程：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">lsof</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#032F62"> deleted</span></span>
+<span class="line"><span style="color:#6A737D"># nginx  1234  www-data  3w  REG  8,1  524288000  131  /var/log/nginx/access.log (deleted)</span></span></code></pre>
+<p>第 7 列就是占的字节数，第 1-2 列是进程名 + PID。两条出路：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># A. reload / 重启持有进程，让它关 fd</span></span>
+<span class="line"><span style="color:#6F42C1">nginx</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> reopen</span><span style="color:#6A737D">                  # nginx 专门有这个信号</span></span>
+<span class="line"><span style="color:#6F42C1">systemctl</span><span style="color:#032F62"> restart</span><span style="color:#D73A49"> &#x3C;</span><span style="color:#032F62">sv</span><span style="color:#24292E">c</span><span style="color:#D73A49">></span><span style="color:#6A737D">          # 通用兜底</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># B. 源头改成 truncate 而不是 rm</span></span>
+<span class="line"><span style="color:#6F42C1">truncate</span><span style="color:#005CC5"> -s</span><span style="color:#005CC5"> 0</span><span style="color:#032F62"> /var/log/access.log</span><span style="color:#6A737D">    # 文件保留，内容清空，进程继续写同一 inode</span></span>
+<span class="line"><span style="color:#D73A49">></span><span style="color:#24292E"> /var/log/access.log                </span><span style="color:#6A737D"># 同效果，shell 内置</span></span></code></pre>
+<p><strong>别用 <code>echo "" > file</code></strong>——会写一个换行符进去，不是真清空。</p>
+<p>预防：日志类场景上 <code>logrotate</code> 并开 <code>copytruncate</code> 选项，它就是为了解决 rotate 时进程仍持有老 fd 的问题。</p> </div> </div> </article><article class="card" data-href="/posts/220728-job-control-bg-fg-nohup/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-job-control-bg-fg-nohup/" data-astro-cid-d6qgp232>shell job control：&amp; nohup Ctrl+Z fg bg jobs</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>把命令丢后台、再拽回前台的全套手势。</p>
+<p><code>&#x26;</code> 直接后台跑，但<strong>关 terminal 时会被 SIGHUP 打死</strong>——shell 退出会向自己所有子进程发 <em>HUP</em>。<code>nohup</code> 的作用就是让进程忽略 HUP，于是关 terminal 也不死：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cmd</span><span style="color:#24292E"> &#x26;                            </span><span style="color:#6A737D"># 后台跑，关终端就没了</span></span>
+<span class="line"><span style="color:#6F42C1">nohup</span><span style="color:#032F62"> cmd</span><span style="color:#24292E"> &#x26;                      </span><span style="color:#6A737D"># 关终端不死，stdout 默认写 nohup.out</span></span>
+<span class="line"><span style="color:#6F42C1">nohup</span><span style="color:#032F62"> cmd</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> out.log</span><span style="color:#D73A49"> 2>&#x26;1</span><span style="color:#24292E"> &#x26;       </span><span style="color:#6A737D"># 自己接管输出</span></span></code></pre>
+<p>已经在前台跑的命令想丢后台——按 <code>Ctrl+Z</code> 暂停（SIGTSTP），shell 把它放进 jobs 列表，然后 <code>bg</code> 让它在后台继续跑：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> long-running-cmd</span></span>
+<span class="line"><span style="color:#6F42C1">^Z</span></span>
+<span class="line"><span style="color:#24292E">[1]+ Stopped  long-running-cmd</span></span>
+<span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> bg</span><span style="color:#6A737D">                             # 继续在后台跑</span></span>
+<span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> jobs</span><span style="color:#005CC5"> -l</span><span style="color:#6A737D">                        # 看 jobs 列表（带 PID）</span></span>
+<span class="line"><span style="color:#24292E">[1]+ 12345 Running   long-running-cmd &#x26;</span></span>
+<span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> fg</span><span style="color:#6A737D">                             # 拽回前台</span></span></code></pre>
+<p>多个 job 时用 <code>%N</code> 选：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">fg</span><span style="color:#032F62"> %1</span><span style="color:#6A737D">                            # 拽 job 1 回前台</span></span>
+<span class="line"><span style="color:#005CC5">fg</span><span style="color:#032F62"> %vim</span><span style="color:#6A737D">                          # 按命令名匹配</span></span>
+<span class="line"><span style="color:#005CC5">bg</span><span style="color:#032F62"> %2</span><span style="color:#6A737D">                            # 让 job 2 在后台继续</span></span>
+<span class="line"><span style="color:#005CC5">kill</span><span style="color:#032F62"> %1</span><span style="color:#6A737D">                          # 杀 job 1</span></span></code></pre>
+<p><code>nohup</code> 只挡 HUP，不解决长跑任务的”我下次想接回 session 看实时输出”。生产场景认真用 <code>tmux</code> / <code>screen</code> / systemd unit，nohup 是临时手段。</p> </div> </div> </article><article class="card" data-href="/posts/220728-set-euo-pipefail/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-set-euo-pipefail/" data-astro-cid-d6qgp232>shell 脚本必加 set -euo pipefail</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>bash 默认行为对脚本极不友好——命令失败默认继续往下跑、未定义变量默认空串、管道里前面命令失败被后面成功的命令掩盖。每个长一点的脚本开头都该加：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/usr/bin/env bash</span></span>
+<span class="line"><span style="color:#005CC5">set</span><span style="color:#005CC5"> -euo</span><span style="color:#032F62"> pipefail</span></span></code></pre>
+<p>各位含义：</p>
+<ul>
+<li><strong><code>-e</code>（<em>errexit</em>）</strong>：任一命令非零退出立即终止脚本。<strong>陷阱</strong>：在 <code>||</code> / <code>&#x26;&#x26;</code> / <code>if</code> / <code>while</code> 条件里的命令不算</li>
+<li><strong><code>-u</code>（<em>nounset</em>）</strong>：用未定义变量直接报错。把 <code>rm -rf /$UNDEFINED/</code> 这种灾难挡在执行前。可能未定义的变量用 <code>${VAR:-default}</code> 显式给默认值</li>
+<li><strong><code>-o pipefail</code></strong>：默认 <code>cmd1 | cmd2</code> 的退出码只看 <code>cmd2</code>——<code>curl bad-url | jq .</code> 即便 curl 失败也返 0。开 pipefail 后任一段失败整个 pipeline 就失败</li>
+<li><strong><code>-x</code>（<em>xtrace</em>）</strong>：执行前打印每条命令。debug 用，<strong>生产脚本别开</strong>——会在日志里泄露 password / token</li>
+</ul>
+<p>不开 errexit 时的手动错误处理：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cmd</span><span style="color:#D73A49"> ||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "cmd failed: </span><span style="color:#005CC5">$?</span><span style="color:#032F62">"</span><span style="color:#D73A49"> >&#x26;2</span><span style="color:#24292E">; </span><span style="color:#005CC5">exit</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#D73A49"> !</span><span style="color:#6F42C1"> cmd</span><span style="color:#24292E">; </span><span style="color:#D73A49">then</span></span>
+<span class="line"><span style="color:#005CC5">  echo</span><span style="color:#032F62"> "cmd failed"</span><span style="color:#D73A49"> >&#x26;2</span></span>
+<span class="line"><span style="color:#005CC5">  exit</span><span style="color:#005CC5"> 1</span></span>
+<span class="line"><span style="color:#D73A49">fi</span></span></code></pre>
+<p>errexit 不是银弹——在 pipeline、command substitution、subshell 等场景下都有边界，<code>set -e</code> 会”看起来开了实际没生效”。强约束脚本（部署 / 数据迁移）建议直接上 <a href="https://www.shellcheck.net/"><code>shellcheck</code></a> 做静态检查，比 <code>set -e</code> 兜底更可靠。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

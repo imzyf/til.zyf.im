@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="是 PHP 的 magic method —— 类里定义了它，实例就能当函数直接调用： 价值不在&#34;语法甜&#34;，在**承载状态的 closure**。原生 closure 用 捕获变量； 用 注入依赖、 持有任意复杂状态，还能继承、被 mock、实现接口。 ## 单动作 controller（Laravel） 路由绑类不绑…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>PHP __invoke：实例 callable，相当于带状态闭包 · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note" data-astro-cid-fzx4jmue> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>PHP __invoke：实例 callable，相当于带状态闭包</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2021-07-20T00:00:00.000Z" data-astro-cid-fzx4jmue>2021-07-20</time> <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/php/" class="tag" data-astro-cid-fzx4jmue>#php</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p><code>__invoke</code> 是 PHP 的 magic method —— 类里定义了它，实例就能当函数直接调用：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Adder</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> function</span><span style="color:#005CC5"> __construct</span><span style="color:#24292E">(</span><span style="color:#D73A49">private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> $base) {}</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> function</span><span style="color:#005CC5"> __invoke</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> $x)</span><span style="color:#D73A49">:</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> { </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> $this</span><span style="color:#D73A49">-></span><span style="color:#24292E">base </span><span style="color:#D73A49">+</span><span style="color:#24292E"> $x; }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">$add5 </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#005CC5"> Adder</span><span style="color:#24292E">(</span><span style="color:#005CC5">5</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">$add5(</span><span style="color:#005CC5">3</span><span style="color:#24292E">);                     </span><span style="color:#6A737D">// 8</span></span>
+<span class="line"><span style="color:#005CC5">is_callable</span><span style="color:#24292E">($add5);           </span><span style="color:#6A737D">// true</span></span></code></pre>
+<p>价值不在”语法甜”，在<strong>承载状态的 closure</strong>。原生 closure 用 <code>use ($base)</code> 捕获变量；<code>__invoke</code> 用 <code>__construct</code> 注入依赖、<code>$this</code> 持有任意复杂状态，还能继承、被 mock、实现接口。</p>
+<h2 id="单动作-controllerlaravel">单动作 controller（Laravel）</h2>
+<p>路由绑类不绑方法，文件 = 端点。一个 controller 做一件事，不再有 8 个 action 挤一个 class：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> ShowProfile</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Controller</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> function</span><span style="color:#005CC5"> __invoke</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> $id)</span></span>
+<span class="line"><span style="color:#24292E">    {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#6F42C1"> view</span><span style="color:#24292E">(</span><span style="color:#032F62">'user.profile'</span><span style="color:#24292E">, [</span><span style="color:#032F62">'user'</span><span style="color:#D73A49"> =></span><span style="color:#005CC5"> User</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">findOrFail</span><span style="color:#24292E">($id)]);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">Route</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(</span><span style="color:#032F62">'user/{id}'</span><span style="color:#24292E">, </span><span style="color:#005CC5">ShowProfile</span><span style="color:#D73A49">::class</span><span style="color:#24292E">);</span></span></code></pre>
+<p>文档：<a href="https://laravel.com/docs/controllers#single-action-controllers">Single Action Controllers | Laravel</a>。</p>
+<h2 id="策略--provider-对象">策略 / provider 对象</h2>
+<p>需要”可配置的函数”时 —— 查表、解析、路由匹配 —— 比 closure 更适合，因为有完整 OOP toolkit 可用。AWS SDK 的 <a href="https://github.com/aws/aws-sdk-php/blob/master/src/Endpoint/PatternEndpointProvider.php"><code>PatternEndpointProvider</code></a> 就是这个套路：构造时吃配置 patterns，调用时按 <code>service/region</code> 查规则、返回 endpoint：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$provider </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#005CC5"> PatternEndpointProvider</span><span style="color:#24292E">($patterns);</span></span>
+<span class="line"><span style="color:#24292E">$endpoint </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $provider([</span><span style="color:#032F62">'service'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 's3'</span><span style="color:#24292E">, </span><span style="color:#032F62">'region'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 'us-east-1'</span><span style="color:#24292E">]);</span></span></code></pre>
+<p>调用方不必知道里面是查表、远程 fetch 还是 ML 推理 —— 签名永远是”参数 in, 结果 out”。换实现不动 caller。</p>
+<h2 id="一个坑callable--closure">一个坑：<code>callable</code> ≠ <code>Closure</code></h2>
+<p><code>is_callable($obj)</code> 返回 <code>true</code>，但 <code>$obj instanceof Closure</code> 是 <code>false</code>。type-hint 写 <code>Closure</code> 会拒掉 <code>__invoke</code>-able 对象，写 <code>callable</code> 才接受：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> run</span><span style="color:#24292E">(</span><span style="color:#D73A49">callable</span><span style="color:#24292E"> $fn) { </span><span style="color:#D73A49">return</span><span style="color:#24292E"> $fn(</span><span style="color:#005CC5">1</span><span style="color:#24292E">); }     </span><span style="color:#6A737D">// ✅ 接受 Adder 实例</span></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> run</span><span style="color:#24292E">(</span><span style="color:#005CC5">Closure</span><span style="color:#24292E"> $fn)  { </span><span style="color:#D73A49">return</span><span style="color:#24292E"> $fn(</span><span style="color:#005CC5">1</span><span style="color:#24292E">); }     </span><span style="color:#6A737D">// ❌ TypeError</span></span></code></pre>
+<p>要把 <code>__invoke</code> 对象转成真正的 <code>Closure</code> 实例（比如某 API 强制 <code>Closure</code> 入参），用：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$closure </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> Closure</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">fromCallable</span><span style="color:#24292E">($add5);  </span><span style="color:#6A737D">// PHP 7.1+</span></span>
+<span class="line"><span style="color:#24292E">$closure </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $add5(</span><span style="color:#D73A49">...</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// PHP 8.1+ first-class callable</span></span></code></pre> </div>   <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

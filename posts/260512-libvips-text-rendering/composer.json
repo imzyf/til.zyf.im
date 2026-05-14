@@ -1,0 +1,6 @@
+{
+    "name": "til/260512-libvips-text-rendering",
+    "require": {
+        "jcupitt/vips": "^2.6"
+    }
+}
