@@ -3,7 +3,241 @@
 .card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.4rem;border-bottom:1px dotted var(--rule);min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
 </style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-home">  <p class="lede" data-astro-cid-j7pv25f6>
 today I learned, want to remember, and might want to share.
-</p> <article class="hero" data-astro-cid-bbe6dxrz> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/posts/260512-libvips-text-rendering/" data-astro-cid-bbe6dxrz>PHP libvips 写文字：Pango 接管 layout，不用算 bbox</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2026-05-12T00:00:00.000Z" data-astro-cid-bbe6dxrz>2026-05-12</time> <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/php/" class="tag" data-astro-cid-bbe6dxrz>#php</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p><a href="200416-php-gd-text-bbox-alignment">GD 那一套 baseline / bbox / 减偏移</a> 在 libvips 里<strong>不存在</strong>。<code>Image::text()</code> 走 <em>Pango</em> 做 layout —— 你给一个 <code>width</code> 框 + <code>align</code> 方向，结果 image 直接拿到 <code>$txt->width</code> / <code>$txt->height</code>，没有 baseline 这回事。</p>
+</p> <article class="hero" data-astro-cid-bbe6dxrz> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/posts/260515-bun-joins-anthropic-rust-rewrite/" data-astro-cid-bbe6dxrz>Bun 加入 Anthropic：6 天 AI 重写 Zig→Rust</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2026-05-15T00:00:00.000Z" data-astro-cid-bbe6dxrz>2026-05-15</time> <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/js/" class="tag" data-astro-cid-bbe6dxrz>#js</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p>Bun 在 2025-12-02 被 <strong>Anthropic 收购</strong>（Anthropic 史上第一笔），五个月后 Sumner 用 Claude Code <strong>6 天</strong>把 96 万行 Zig 翻译成 Rust 并合入主分支。这两件事是同一根逻辑链：Claude Code 自己跑在 Bun 上，Anthropic 有最直接的动力修 Bun 的内存泄漏；而 AI Agent 重写大型 codebase 这件事也只有现在的 Anthropic 做得了。</p>
+<h2 id="时间线">时间线</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>2025-12-02  Anthropic 收购 Bun，Bun 继续 MIT 开源 + 团队继续主导</span></span>
+<span class="line"><span>2026-05-04  Sumner commit "Phase-A 移植指南" + LIFETIMES.tsv</span></span>
+<span class="line"><span>2026-05-10  claude/phase-a-port 分支出现，6 天 96 万行 Rust</span></span>
+<span class="line"><span>            Linux x64 通过 99.8% 现有测试</span></span>
+<span class="line"><span>2026-05-13  Bun v1.3.14 发布（"如果 Rust 合入这是最后一个 Zig 版"）</span></span>
+<span class="line"><span>2026-05-14  Rust 版本合入 main，二进制减小 3-8 MB</span></span></code></pre>
+<h2 id="为什么收购claude-code-自己被-bun-烧伤">为什么收购：Claude Code 自己被 Bun 烧伤</h2>
+<p>Claude Code 以单文件 Bun executable 分发给百万级用户，长会话内存能飙到 <strong>14-23 GB</strong> —— 直接踩 Bun 的内存泄漏。Anthropic 当时 Claude Code ARR 已 $1B（2026/2 升到 $2.5B），Bun 一坏 Claude Code 就坏，<strong>直接收购比合作更快</strong>。</p>
+<p>收购动机里 AI Agent 工作流也是关键：agent 写完代码要立刻装包、跑测试、产可执行 —— Bun 的”单二进制 + 冷启动 8-31ms + 装包比 npm 快 25×“对应每一步。</p>
+<h2 id="为什么重写zig-的-no-ai-政策--内存安全">为什么重写：Zig 的 no-AI 政策 + 内存安全</h2>
+<p>四个理由叠加：</p>
+<ol>
+<li><strong>Zig 项目禁止 AI 生成的 issue / PR / 评论</strong> —— Bun 团队 fork 的 Zig 编译器（debug 编译快 4×）永远没法回上游。对一家 AI 公司是政治死结</li>
+<li><strong>内存泄漏与 unsafe</strong> —— Sumner 原话 “I am so tired of worrying about memory leaks and crashes”</li>
+<li><strong>Zig 还是 0.16，破坏性变更频繁</strong> —— 做生产基础设施长期不稳</li>
+<li><strong>Rust 生态成熟</strong> —— AI 训练数据、crate 库都更充足</li>
+</ol>
+<p>注意：<strong>性能不是动机</strong>。Bun 比 Node 快不来自 Zig 比 V8 快，来自架构（JSC 替 V8、原生 HTTP 不走 libuv、内置打包器）。换 Rust 不动这些架构，性能不会变。</p>
+<h2 id="重写方法600-行-rosetta-stone--ai-agent">重写方法：600 行 Rosetta Stone + AI Agent</h2>
+<p>工作流：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>docs/zig-to-rust.md      ← ~600 行类型 / 习惯用法映射文档</span></span>
+<span class="line"><span>LIFETIMES.tsv            ← 每个指针字段的 ownership 分类</span></span>
+<span class="line"><span>Phase A: 翻 Rust 代码（不要求编译）</span></span>
+<span class="line"><span>Phase B: crate-by-crate 让它编译过</span></span></code></pre>
+<p>故意<strong>不用 Tokio / Rayon</strong>，保持低层执行模型，做”直译”非重设计。Sumner 在 X 上：</p>
+<blockquote>
+<p>“this is already the status quo; we haven’t been typing code ourselves for many months now.”</p>
+<p>“我预期 OSS 反过来走：禁止人类贡献代码。讨论和优先级仍由人定，但写代码、提 PR、回应 review，全 LLM 做。“</p>
+</blockquote>
+<h2 id="争议">争议</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>uv (Astral, Rust)：350,000 行 / 73 个 unsafe</span></span>
+<span class="line"><span>Bun Rust 移植：    681,000 行 / 13,000+ 个 unsafe</span></span></code></pre>
+<p>第二个 PR（删 60 万行 Zig）被 GitHub <strong>自动 flag 为 “AI slop”</strong> 关闭。社区核心反对意见：unsafe 块里的 hallucination 风险无法人工 review；commit 大小让 review 不可能；“vibecoded disaster”。</p>
+<h2 id="对生产用户的实际影响">对生产用户的实际影响</h2>
+<ul>
+<li><strong>性能</strong> —— 几乎没差，架构没变</li>
+<li><strong>稳定性</strong> —— 内存泄漏修复（Claude Code 类长会话受益最大）</li>
+<li><strong>二进制</strong> —— 小 3-8 MB</li>
+<li><strong>兼容性</strong> —— v1.3.14 后跑同一份 npm 应用应当无感</li>
+</ul>
+<h2 id="真正值得追踪的事">真正值得追踪的事</h2>
+<p>Bun 是<strong>史上第一个把核心代码所有权交给 AI Agent 维护的生产级开源项目</strong>。这种重写姿势能成立，前提是 Sumner 作为 <strong>BDFL</strong>（Benevolent Dictator For Life —— 开源项目”仁慈终身独裁者”，源自 Guido van Rossum / Python，决策不走委员会投票）一个人就能拍板”6 天试一下，搞不定就扔”。基金会治理的项目（如 Node.js / Python 后 Steering Council 时代）光投票就要几个月。</p>
+<p>两种结局：</p>
+<ul>
+<li><strong>稳住</strong> → “几人 reviewer + 一群 agent + 一个 BDFL” 模式被复制到很多基础设施项目</li>
+<li><strong>崩了</strong> → AI 生成代码不可信论的最大佐证</li>
+</ul>
+<p>无论哪种，未来 1-2 年值得追踪。</p>
+<p><a href="https://bun.com/blog/bun-joins-anthropic">Bun is joining Anthropic</a> · <a href="https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381">Anthropic’s Bun Rust rewrite merged at speed of AI - The Register</a> · <a href="https://weeklyrust.substack.com/p/the-great-zig-to-rust-experiment">The Great Zig-to-Rust Experiment - Rust Bytes</a></p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card" data-href="/posts/260514-git-filter-repo-purge-secrets/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-14T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-14</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260514-git-filter-repo-purge-secrets/" data-astro-cid-d6qgp232>git filter-repo 清除历史敏感文件：为什么必须配 --mirror</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>仓库不小心把 <code>.env</code> / <code>database.yml</code> 推到远程后，<strong>第一动作是轮换密钥</strong>，假定文件已被抓取——改写历史只能挡住”还没看到的人”，已 clone / fork / 爬虫的副本拿不回来。这一步先做完，再谈 <code>git filter-repo</code>：它是第二步，不是第一步。</p>
+<h2 id="为什么不是-filter-branch">为什么不是 filter-branch</h2>
+<p><code>git filter-branch</code> 官方已弃用。每个 commit fork 一个 shell 子进程，大仓库跑数小时；默认保留 <code>refs/original/</code> 和 reflog，旧对象很容易”清理后又复活”。<code>git filter-repo</code> 是 Python 单进程流式管道，快 10–100 倍，且默认要求 fresh clone（拒绝在带遗留 ref 的工作目录上跑）。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> git-filter-repo</span></span></code></pre>
+<h2 id="原理重写而非删除">原理：重写而非删除</h2>
+<p>Git commit 的 SHA-1 由 tree + parent + author + message 哈希得出，不可变。“删一个文件”等价于<strong>生成一份新历史替代旧历史</strong>。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>旧仓库 ── git fast-export ──▶ 事件流 ── 过滤器 ──▶ git fast-import ──▶ 新仓库</span></span></code></pre>
+<p><code>git fast-export</code> 把仓库历史序列化成纯文本指令流（blob、commit、tag）；filter-repo 在内存里按规则改写事件流；<code>git fast-import</code> 把它灌成新对象库。</p>
+<p>关键后果：<strong>一个 commit 的 tree 变了 → 它的 SHA 变 → 子 commit 的 parent 指向新 SHA → 子 SHA 也变 → 一路传染到 HEAD</strong>。所以 force push 是必须的——远程的 commit 链被一条 SHA 完全不同的链替换。</p>
+<h2 id="--invert-paths默认是白名单"><code>--invert-paths</code>：默认是白名单</h2>
+<p>非显然：filter-repo 默认把 <code>--path</code> 当<strong>保留</strong>列表，不是删除列表。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 默认：只保留 src/，其他全删（拆分 monorepo 用法）</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path</span><span style="color:#032F62"> src/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># --invert-paths：删除 src/，其他保留（清理用法）</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path</span><span style="color:#032F62"> src/</span><span style="color:#005CC5"> --invert-paths</span></span></code></pre>
+<p>设计初衷之一是从 monorepo 抽子项目——“列出我要的那部分”比”列出我不要的”自然。清理敏感信息正好相反：99% 留 + 1% 删，<strong>必须</strong>加 <code>--invert-paths</code>。漏写就把整个仓库删干净只剩那个泄露文件，反应过来时已经覆盖远程了。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path</span><span style="color:#032F62"> .env</span><span style="color:#005CC5"> --invert-paths</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path-glob</span><span style="color:#032F62"> '*.pem'</span><span style="color:#005CC5"> --invert-paths</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path-regex</span><span style="color:#032F62"> '^secrets/'</span><span style="color:#005CC5"> --invert-paths</span></span></code></pre>
+<h2 id="--mirror不配它等于没删"><code>--mirror</code>：不配它等于没删</h2>
+<p>普通 <code>git clone</code> + <code>git push --force --all</code> 看似清理，实际<strong>只覆盖 branches</strong>。其他 ref 仍指向旧 commit：</p>
+<ul>
+<li><strong>Tags</strong>：旧 tag 仍含敏感 commit</li>
+<li><strong>Notes、stash、其他自定义 ref</strong></li>
+<li><strong>远程 tracking refs / reflog</strong>：本地 cache 仍可达旧对象</li>
+</ul>
+<p>只要<strong>任何一个 ref 还能可达旧 commit</strong>，那个 blob 就不会被 GC 回收——攻击者拿到 SHA 就能 <code>git cat-file -p &#x3C;sha></code> 读出来。删了等于没删。</p>
+<p><code>git clone --mirror</code> 拉一份裸仓库（<code>.git</code> 结构、无工作区）+ 所有 ref；<code>git push --mirror</code> 把本地 refs 一比一推到远程，远程多出来的 ref 会被删——“让远程完全等于本地”。这才是真清理：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#005CC5"> --mirror</span><span style="color:#032F62"> git@github.com:org/repo.git</span></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> repo.git</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path</span><span style="color:#032F62"> config/database.yml</span><span style="color:#005CC5"> --invert-paths</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> push</span><span style="color:#005CC5"> --force</span><span style="color:#005CC5"> --mirror</span></span></code></pre>
+<h2 id="清理后必做">清理后必做</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>步骤</th><th>说明</th></tr></thead><tbody><tr><td>轮换密钥</td><td>见开篇，第一优先</td></tr><tr><td>通知协作者</td><td>所有人重新 clone，旧本地分支基于已消失的 commit 链</td></tr><tr><td>联系 GitHub Support</td><td>PR refs (<code>refs/pull/&#x3C;n>/head</code>) 由 GitHub 服务端维护，<code>push --mirror</code> 覆盖不了；fork 拷贝也要走 Support 清</td></tr><tr><td>加 <code>.gitignore</code></td><td>防止再次提交</td></tr><tr><td>装 pre-commit 钩子</td><td><code>gitleaks protect --staged</code> 自动拦截</td></tr></tbody></table>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> gitleaks</span></span>
+<span class="line"><span style="color:#6F42C1">gitleaks</span><span style="color:#032F62"> detect</span><span style="color:#6A737D">             # 扫整个历史，确认清理生效</span></span>
+<span class="line"><span style="color:#6F42C1">gitleaks</span><span style="color:#032F62"> protect</span><span style="color:#005CC5"> --staged</span><span style="color:#6A737D">   # pre-commit 钩子里跑</span></span></code></pre>
+<p><a href="https://github.com/newren/git-filter-repo">git-filter-repo 文档</a></p> </div> </div> </article><article class="card" data-href="/posts/260513-js-ecosystem-layers/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-13T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-13</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/js/" class="tag" data-astro-cid-d6qgp232>#js</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260513-js-ecosystem-layers/" data-astro-cid-d6qgp232>JS 生态分层：规范 / 引擎 / 运行时 / 类型</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>JavaScript 生态混乱的根源是<strong>没分清三件事</strong>：写规范的、实现引擎的、做宿主运行时的。再叠加 TypeScript 这个外挂类型层，就是常被混为一谈的”JS”。把四层拆开，整个服务端 JS 世界就不再奇怪。</p>
+<h2 id="规范层ecmascriptecma-262">规范层：ECMAScript（ECMA-262）</h2>
+<p>由 <strong>TC39</strong> 维护（Ecma International 第 39 号技术委员会），每年 6 月发新版。规范定义语法、内置对象、执行模型，<strong>但不定义</strong> DOM、<code>fetch</code>、<code>localStorage</code>、<code>fs</code>、<code>http</code> —— 这些归别处管：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>ECMAScript          ← TC39          (语法 / Promise / Map / async)</span></span>
+<span class="line"><span>DOM / fetch         ← WHATWG        (浏览器 API)</span></span>
+<span class="line"><span>HTTP / TLS          ← IETF          (RFC)</span></span>
+<span class="line"><span>fs / http / process ← Node OpenJS   (Node 自加，不是 Web 标准)</span></span></code></pre>
+<p>写 JS 99% 在调宿主 API（<code>fetch</code> / <code>document</code> / <code>fs</code>），其中只有少数真正是 ECMAScript。<strong><code>fetch</code> 不是 ECMAScript</strong> —— 它是 WHATWG 的，Node / Bun “借”过来内置。</p>
+<p>JS 这语言官方名是 ECMAScript 不是 JavaScript，因为 <em>JavaScript</em> 是 Sun（现 Oracle）的商标。Brendan Eich 自嘲过 “ECMAScript 听起来像皮肤病”，但这名字沿用了 30 年。</p>
+<h2 id="引擎层v8--javascriptcore--spidermonkey">引擎层：V8 / JavaScriptCore / SpiderMonkey</h2>
+<p>不是”标准统一就只该有一个实现” —— 优化目标真的不同：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>V8（Chrome / Edge / Node）</th><th>JSC（Safari / Bun）</th><th>SpiderMonkey（Firefox）</th></tr></thead><tbody><tr><td>出身场景</td><td>标签页常驻几小时</td><td>页面打开就关</td><td>平衡</td></tr><tr><td>优化目标</td><td>长跑峰值</td><td><strong>启动 + 内存</strong></td><td>平衡</td></tr><tr><td>JIT 策略</td><td>激进多层</td><td>克制（保持低层便宜）</td><td>保守</td></tr><tr><td>许可证</td><td>BSD 3-Clause</td><td>LGPL 2.1</td><td>MPL 2.0</td></tr><tr><td>治理</td><td>Google 主导</td><td>WebKit 联盟（Apple + Igalia + Sony）</td><td>Mozilla 基金会</td></tr></tbody></table>
+<p><strong>iOS 上所有浏览器都是 JSC</strong> —— Chrome / Edge / Firefox iOS 版只是 Safari 套了 UI 壳，被 App Store 强制用 WebKit。这条 2024 年起 EU DMA 法案才开始松动，但实际进展缓慢。</p>
+<p><strong>Edge 自 2020 年起 = V8</strong> —— Microsoft 当年用的 Chakra 死了，Edge 重写为 Chromium。所以”V8 阵营”实际控制桌面 80%+。</p>
+<p>许可证差异决定生态形状：V8 的 BSD 才让 Node / Deno / Electron / Cloudflare Workers 这些闭源 / 商业派生敢用；JSC 的 LGPL 允许嵌入式调用但不允许闭源修改引擎本身。这是 Bun 选 JSC 的非技术理由之一。</p>
+<h2 id="运行时层node--bun--deno--浏览器">运行时层：Node / Bun / Deno / 浏览器</h2>
+<p>V8 只是<strong>会跑 JS</strong>，不会读文件、不会发 HTTP、不会监听端口。Node 把 V8 嵌进 C++ 程序，再补上：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Node = V8 (引擎)</span></span>
+<span class="line"><span>     + libuv (事件循环 + 跨平台异步 I/O：Linux epoll / macOS kqueue / Windows IOCP)</span></span>
+<span class="line"><span>     + 标准库 (fs / http / crypto / stream)</span></span>
+<span class="line"><span>     + N-API (C++ addon 接口)</span></span>
+<span class="line"><span>     + 模块系统 (CommonJS / ESM)</span></span></code></pre>
+<p>同一个 V8 嵌进不同宿主就是不同运行时：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>引擎</th><th>事件循环</th><th>默认权限</th></tr></thead><tbody><tr><td>Chrome</td><td>V8</td><td>Blink 自家</td><td>沙盒受限</td></tr><tr><td>Node</td><td>V8</td><td>libuv</td><td>完整 OS 访问</td></tr><tr><td>Deno</td><td>V8</td><td>Tokio (Rust)</td><td>默认无权限，按需授权</td></tr><tr><td>Bun</td><td><strong>JSC</strong></td><td>自家（io_uring / kqueue 直调）</td><td>完整 OS 访问</td></tr><tr><td>Cloudflare Workers</td><td>V8</td><td>V8 isolate + 自家 scheduler</td><td>沙盒</td></tr></tbody></table>
+<p><strong>这就是 Node 不能”换引擎追上 Bun”的根因</strong>：N-API、所有 native addon、调试器协议、profile 工具全围绕 V8 设计。换 V8 等于重写 Node。Bun 走的是从零写所有胶水的路，代价是 95-98% npm 兼容率（剩下的 2-5% 用了 V8/libuv 内部细节的边角库）。</p>
+<h2 id="类型层typescript">类型层：TypeScript</h2>
+<p>TS = JS 严格超集 + 类型注解。<strong>类型在编译后完全消失</strong> —— <code>.ts</code> → <code>.js</code> 后类型一个字符都没了，运行时拿不到任何”这是 User 不是 string”的信息。这是为什么 <code>instanceof</code> 对 interface 没用：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// 写</span></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> greet</span><span style="color:#24292E">(</span><span style="color:#E36209">user</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> User</span><span style="color:#24292E">)</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> string</span><span style="color:#24292E"> { </span><span style="color:#D73A49">return</span><span style="color:#032F62"> `Hi, ${</span><span style="color:#24292E">user</span><span style="color:#032F62">.</span><span style="color:#24292E">name</span><span style="color:#032F62">}`</span><span style="color:#24292E"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 编译后实际跑的</span></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> greet</span><span style="color:#24292E">(</span><span style="color:#E36209">user</span><span style="color:#24292E">) { </span><span style="color:#D73A49">return</span><span style="color:#032F62"> `Hi, ${</span><span style="color:#24292E">user</span><span style="color:#032F62">.</span><span style="color:#24292E">name</span><span style="color:#032F62">}`</span><span style="color:#24292E"> }</span></span></code></pre>
+<p>TS 现在多渠道编译：<code>tsc</code>（官方，慢）/ <code>esbuild</code>（Go）/ <code>swc</code>（Rust）/ <code>bun</code>（直接跑无中间步骤）/ Node 22+ <code>--experimental-strip-types</code>。Microsoft 2025 年用 Go 重写了 <code>tsc</code>，叫 TypeScript Native，快 10×。</p>
+<p><strong>TC39 有 Type Annotations 提案</strong>让 JS 引擎直接忽略类型注解（注释化），TS 代码不用编译就能跑。Stage 1 卡了 4 年还没动 —— 浏览器引擎不愿为”不执行的注解”做语法解析。短期内不会落地。</p>
+<hr>
+<p>写代码时叫 TypeScript、调试时叫 JavaScript、查规范时叫 ECMAScript、谈性能时谈 V8 / JSC、谈部署时谈 Node / Bun / Workers —— <strong>同一件事的五个面</strong>，分清面才不被术语骗。</p> </div> </div> </article><article class="card" data-href="/posts/260512-libvips-text-rendering/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-12T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-12</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260512-libvips-text-rendering/" data-astro-cid-d6qgp232>PHP libvips 写文字：Pango 接管 layout，不用算 bbox</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="200416-php-gd-text-bbox-alignment">GD 那一套 baseline / bbox / 减偏移</a> 在 libvips 里<strong>不存在</strong>。<code>Image::text()</code> 走 <em>Pango</em> 做 layout —— 你给一个 <code>width</code> 框 + <code>align</code> 方向，结果 image 直接拿到 <code>$txt->width</code> / <code>$txt->height</code>，没有 baseline 这回事。</p>
 <h2 id="pango-是什么">Pango 是什么</h2>
 <p>GNOME 项目下的<strong>文字 layout 库</strong>。渲染一段文字本来要分两步，libvips 把第一步外包给了它：</p>
 
@@ -114,7 +348,7 @@ today I learned, want to remember, and might want to share.
 <span class="line"><span style="color:#6F42C1">pecl</span><span style="color:#032F62"> install</span><span style="color:#032F62"> vips</span><span style="color:#6A737D">                                # 传统 C extension</span></span>
 <span class="line"><span style="color:#6A737D"># 或开 FFI（PHP 7.4+），用 jcupitt/php-vips 包，无需编译扩展</span></span>
 <span class="line"><span style="color:#6F42C1">composer</span><span style="color:#032F62"> require</span><span style="color:#032F62"> jcupitt/vips</span></span></code></pre>
-<p>容器里加一行 <code>apt install libvips42</code> 就够，但这一行常被忘。装上之后水印 / 缩略图 / 多行排版量大时，libvips 的内存占用和吞吐都比 GD 强一个数量级 —— 它是流水线架构，不像 GD 把整张图按解压尺寸驻留内存。</p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card" data-href="/posts/260508-cloc-tokei-scc/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-08T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-08</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a><a href="/tags/loc/" class="tag" data-astro-cid-d6qgp232>#loc</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260508-cloc-tokei-scc/" data-astro-cid-d6qgp232>cloc / tokei / scc：codebase LOC 统计的三代工具</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>数代码行数（LOC by language）这件事有三代工具，每代换语言、换取舍：</p>
+<p>容器里加一行 <code>apt install libvips42</code> 就够，但这一行常被忘。装上之后水印 / 缩略图 / 多行排版量大时，libvips 的内存占用和吞吐都比 GD 强一个数量级 —— 它是流水线架构，不像 GD 把整张图按解压尺寸驻留内存。</p> </div> </div> </article><article class="card" data-href="/posts/260508-cloc-tokei-scc/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-08T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-08</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a><a href="/tags/loc/" class="tag" data-astro-cid-d6qgp232>#loc</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260508-cloc-tokei-scc/" data-astro-cid-d6qgp232>cloc / tokei / scc：codebase LOC 统计的三代工具</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>数代码行数（LOC by language）这件事有三代工具，每代换语言、换取舍：</p>
 
 
 
@@ -370,7 +604,99 @@ today I learned, want to remember, and might want to share.
 <p>Node.js 48.7% / React 44.7% / jQuery 23.4% / Next.js 20.8% / Express 19.9%。</p>
 <h2 id="ide">IDE</h2>
 <p>VS Code 75.9% / Visual Studio 29% / Notepad++ 27.4% / IntelliJ IDEA 27.1% / Vim 24.3%。</p>
-<p>完整报告：<a href="https://survey.stackoverflow.co/2025/">https://survey.stackoverflow.co/2025/</a></p> </div> </div> </article><article class="card" data-href="/posts/230202-vim-chinese/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2023-02-02T00:00:00.000Z" data-astro-cid-d6qgp232>2023-02-02</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/vim/" class="tag" data-astro-cid-d6qgp232>#vim</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/230202-vim-chinese/" data-astro-cid-d6qgp232>Vim 中文资源</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Vim 自带英文教程和帮助文档，中文化分两条路：跑自带教程时切语言，装社区维护的帮助文档包。</p>
+<p>完整报告：<a href="https://survey.stackoverflow.co/2025/">https://survey.stackoverflow.co/2025/</a></p> </div> </div> </article><article class="card" data-href="/posts/250726-proto-install-node/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2025-07-26T00:00:00.000Z" data-astro-cid-d6qgp232>2025-07-26</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/node/" class="tag" data-astro-cid-d6qgp232>#node</a><a href="/tags/version-manager/" class="tag" data-astro-cid-d6qgp232>#version-manager</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/250726-proto-install-node/" data-astro-cid-d6qgp232>proto 装 Node.js 多版本</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://moonrepo.dev/docs/proto">proto</a> 是 moonrepo 团队 Rust 写的多 runtime 版本管理器，单二进制管 Node / Bun / Deno / Go / Rust 等。<strong>关键差异：shim-based 架构 + <code>cd</code> 自动切版本，不需要往 <code>.zshrc</code> / <code>.bashrc</code> 里挂任何 shell hook</strong> —— nvm / fnm 都做不到。</p>
+<h2 id="安装">安装</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">bash</span><span style="color:#032F62"> &#x3C;(</span><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -fsSL</span><span style="color:#032F62"> https://moonrepo.dev/install/proto.sh)</span></span></code></pre>
+<p>装到 <code>~/.proto/</code>，shim 写到 <code>~/.proto/shims/</code> 并自动加进 PATH。不污染 <code>/usr/local</code>。</p>
+<h2 id="装--切-node">装 / 切 Node</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> install</span><span style="color:#032F62"> node</span><span style="color:#032F62"> lts</span><span style="color:#6A737D">            # 装最新 LTS</span></span>
+<span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> install</span><span style="color:#032F62"> node</span><span style="color:#005CC5"> 20.10.0</span><span style="color:#6A737D">        # 装指定版本</span></span>
+<span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> pin</span><span style="color:#032F62"> node</span><span style="color:#032F62"> lts</span><span style="color:#005CC5"> --to</span><span style="color:#032F62"> global</span><span style="color:#6A737D">    # 设全局默认</span></span>
+<span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> versions</span><span style="color:#032F62"> node</span><span style="color:#6A737D">               # 看本地装了哪些 + 远端可装版本</span></span></code></pre>
+<h2 id="项目级版本prototools">项目级版本：<code>.prototools</code></h2>
+<p>一文件管所有 runtime，<strong>应该提交进 git</strong>（团队共享工具链版本，类比 <code>composer.json</code> 锁版本但管的是工具链本身）：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#24292E">node = </span><span style="color:#032F62">"20"</span></span>
+<span class="line"><span style="color:#24292E">npm = </span><span style="color:#032F62">"10"</span></span>
+<span class="line"><span style="color:#24292E">bun = </span><span style="color:#032F62">"1.3"</span></span></code></pre>
+<p><code>cd</code> 进项目时无感切换 —— 触发机制是跑 shim 时读最近的 <code>.prototools</code>，不需要 shell hook，不需要 <code>proto use</code>。</p>
+<p><code>--to</code> 三档路径：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>flag</th><th>写到</th><th>用途</th></tr></thead><tbody><tr><td><code>--to local</code>（默认）</td><td><code>./.prototools</code></td><td>项目级，提交进 git</td></tr><tr><td><code>--to user</code></td><td><code>~/.prototools</code></td><td>用户级，覆盖 global</td></tr><tr><td><code>--to global</code></td><td><code>~/.proto/.prototools</code></td><td>系统级默认</td></tr></tbody></table>
+<h2 id="跟-nvm--fnm--mise-比">跟 nvm / fnm / mise 比</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>写法</th><th>多 runtime</th><th>自动切版本</th><th>备注</th></tr></thead><tbody><tr><td>nvm</td><td>bash 函数</td><td>❌ Node only</td><td>需装 <code>avn</code> 等 hook</td><td>每次 shell 启动加载，明显拖慢</td></tr><tr><td>fnm</td><td>Rust</td><td>❌ Node only</td><td>✅ 但需 shell hook</td><td>nvm 平替，仍 Node-only</td></tr><tr><td><strong>mise</strong></td><td>Rust</td><td>✅</td><td>✅</td><td>asdf 插件兼容，生态最大</td></tr><tr><td><strong>proto</strong></td><td>Rust</td><td>✅</td><td>✅ 无 hook</td><td>WebAssembly 插件</td></tr></tbody></table>
+<p>最直接的对手是 <strong>mise</strong>（前身 rtx），asdf 插件兼容、社区大。proto 的差异是<strong>插件用 WASM 写</strong>（mise / asdf 用 shell / Lua 脚本），跨平台 + 沙盒化。<strong>两者都比 nvm / fnm 现代得多，没必要再用 nvm</strong>。按口味选：要生态用 mise，要插件干净 + 一律 shim 用 proto。</p>
+<h2 id="工作原理shim-拦截">工作原理：shim 拦截</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$ which node</span></span>
+<span class="line"><span>~/.proto/shims/node                  ← 一个 shim 可执行</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>执行流程：node arg → shim 拦截 → 找最近 .prototools</span></span>
+<span class="line"><span>       → 解析 node 版本 → exec ~/.proto/tools/node/&#x3C;v>/bin/node</span></span></code></pre>
+<p>PATH 永远指向 <code>~/.proto/shims/</code>，<strong>真二进制路径在每次调用时动态决定</strong>。这是为什么不需要 shell hook、不需要 <code>proto use</code> —— 切版本不动 PATH。代价是每次跑命令多一层 shim 解析，毫秒级，可忽略。</p>
+<p><a href="https://moonrepo.dev/docs/proto">proto docs</a> · <a href="https://github.com/moonrepo/proto">moonrepo/proto on GitHub</a></p> </div> </div> </article><article class="card" data-href="/posts/230202-vim-chinese/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2023-02-02T00:00:00.000Z" data-astro-cid-d6qgp232>2023-02-02</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/vim/" class="tag" data-astro-cid-d6qgp232>#vim</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/230202-vim-chinese/" data-astro-cid-d6qgp232>Vim 中文资源</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Vim 自带英文教程和帮助文档，中文化分两条路：跑自带教程时切语言，装社区维护的帮助文档包。</p>
 <p><code>vimtutor</code> 是 Vim 自带的 30 分钟交互式入门，环境变量切到中文 locale 就能直接读：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#24292E">LANG</span><span style="color:#D73A49">=</span><span style="color:#032F62">zh_CN.UTF-8</span><span style="color:#6F42C1"> vimtutor</span></span></code></pre>
 <p><code>vimcdoc</code> 是 <a href="https://github.com/yianwillis/vimcdoc">yianwillis/vimcdoc</a> 维护的中文帮助包，放进 <code>pack/start</code> 即随 Vim 加载，<code>:help</code> 直接出中文：</p>
@@ -610,19 +936,7 @@ today I learned, want to remember, and might want to share.
 <p>要求远端必须是合法包：含 <code>package.json</code> 和入口脚本。</p>
 <blockquote>
 <p>来源：<a href="https://www.ruanyifeng.com/blog/2019/02/npx.html">npx 使用教程 - 阮一峰</a></p>
-</blockquote> </div> </div> </article><article class="card" data-href="/posts/220726-proto-install-node/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-26T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-26</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/node/" class="tag" data-astro-cid-d6qgp232>#node</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220726-proto-install-node/" data-astro-cid-d6qgp232>proto 装 Node.js 多版本</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://moonrepo.dev/docs/proto">proto</a> 是 moonrepo 出的多 runtime 版本管理器，一个工具搞定 Node / Bun / Deno / Go / Rust 等。装好后 nvm / n / fnm 都可以下了。</p>
-<h2 id="安装">安装</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">bash</span><span style="color:#032F62"> &#x3C;(</span><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -fsSL</span><span style="color:#032F62"> https://moonrepo.dev/install/proto.sh)</span></span></code></pre>
-<h2 id="装--切-node">装 / 切 Node</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> install</span><span style="color:#032F62"> node</span><span style="color:#032F62"> lts</span><span style="color:#6A737D">          # 装最新 LTS</span></span>
-<span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> install</span><span style="color:#032F62"> node</span><span style="color:#005CC5"> 20.10.0</span><span style="color:#6A737D">      # 装指定版本</span></span>
-<span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> pin</span><span style="color:#032F62"> node</span><span style="color:#032F62"> lts</span><span style="color:#005CC5"> --to</span><span style="color:#032F62"> global</span><span style="color:#6A737D">  # 设全局默认</span></span>
-<span class="line"><span style="color:#6F42C1">proto</span><span style="color:#032F62"> versions</span><span style="color:#032F62"> node</span><span style="color:#6A737D">             # 看本地装了哪些 + 远端可装版本</span></span></code></pre>
-<h2 id="项目级版本">项目级版本</h2>
-<p>项目根 <code>.prototools</code>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#24292E">node = </span><span style="color:#032F62">"20"</span></span>
-<span class="line"><span style="color:#24292E">npm = </span><span style="color:#032F62">"10"</span></span></code></pre>
-<p><code>cd</code> 进项目时 proto 自动切到对应版本，不用手动 <code>nvm use</code> 或挂 shell hook。</p> </div> </div> </article><article class="card" data-href="/posts/220110-group-concat-max-len/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-01-10T00:00:00.000Z" data-astro-cid-d6qgp232>2022-01-10</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220110-group-concat-max-len/" data-astro-cid-d6qgp232>GROUP_CONCAT 截断</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>生产踩了一个：<code>GROUP_CONCAT</code> 聚合的结果被悄悄截断，默认上限只有 1024 bytes。</p>
+</blockquote> </div> </div> </article><article class="card" data-href="/posts/220110-group-concat-max-len/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-01-10T00:00:00.000Z" data-astro-cid-d6qgp232>2022-01-10</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220110-group-concat-max-len/" data-astro-cid-d6qgp232>GROUP_CONCAT 截断</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>生产踩了一个：<code>GROUP_CONCAT</code> 聚合的结果被悄悄截断，默认上限只有 1024 bytes。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#24292E"> @@GROUP_CONCAT_MAX_LEN;</span></span>
 <span class="line"><span style="color:#6A737D">-- 1024</span></span></code></pre>
 <p>会话临时调大：</p>
@@ -843,62 +1157,7 @@ today I learned, want to remember, and might want to share.
 <li><strong><code>join_execution</code></strong> — 执行细节</li>
 </ul>
 <p>最常看 <code>join_optimization</code>，里面 <code>range_analysis</code> / <code>chosen_range_access_summary</code> 直接告诉你”为什么没选 <code>idx_email</code>”——通常是 <code>rows_estimation</code> 估算 cost 比全表扫还高，或者 join 顺序变了导致 index 不可用。</p>
-<p>trace 是 session 级别，默认只保留最近一次，且开启后所有 query 都会被 trace（有性能开销），用完立刻关。</p> </div> </div> </article><article class="card" data-href="/posts/200911-illuminate-validation-standalone/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-09-11T00:00:00.000Z" data-astro-cid-d6qgp232>2020-09-11</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/laravel/" class="tag" data-astro-cid-d6qgp232>#laravel</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200911-illuminate-validation-standalone/" data-astro-cid-d6qgp232>脱离 Laravel 跑 illuminate/validation</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://github.com/illuminate">illuminate 组件</a>都是独立 composer 包，<code>illuminate/validation</code> 在非 Laravel 项目里也能跑——手动把 <code>FileLoader → Translator → Factory</code> 三件套接起来即可。</p>
-<h2 id="安装">安装</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">composer</span><span style="color:#032F62"> require</span><span style="color:#032F62"> illuminate/validation</span><span style="color:#032F62"> illuminate/translation</span><span style="color:#032F62"> illuminate/filesystem</span></span></code></pre>
-<blockquote>
-<p><code>illuminate/filesystem</code> 不是 <code>illuminate/validation</code> 的依赖，用 <code>FileLoader</code> 必须单独装。</p>
-</blockquote>
-<h2 id="准备语言文件">准备语言文件</h2>
-<p>从 <a href="https://github.com/Laravel-Lang/lang">Laravel-Lang/lang</a> 复制要用的语言文件到本地，例如 <code>lang/zh-CN/validation.php</code>。</p>
-<h2 id="装配">装配</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">use</span><span style="color:#005CC5"> Illuminate\Filesystem\Filesystem</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#D73A49">use</span><span style="color:#005CC5"> Illuminate\Translation\FileLoader</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#D73A49">use</span><span style="color:#005CC5"> Illuminate\Translation\Translator</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#D73A49">use</span><span style="color:#005CC5"> Illuminate\Validation\Factory</span><span style="color:#24292E">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#24292E">$loader </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#005CC5"> FileLoader</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#005CC5"> Filesystem</span><span style="color:#24292E">(), </span><span style="color:#005CC5">__DIR__</span><span style="color:#D73A49"> .</span><span style="color:#032F62"> '/../lang'</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#24292E">$translator </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#005CC5"> Translator</span><span style="color:#24292E">($loader, </span><span style="color:#032F62">'zh-CN'</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#24292E">$validator </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#005CC5"> Factory</span><span style="color:#24292E">($translator);</span></span></code></pre>
-<h2 id="用">用</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$v </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $validator</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">make</span><span style="color:#24292E">(</span></span>
-<span class="line"><span style="color:#24292E">    [</span><span style="color:#032F62">'name'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> ''</span><span style="color:#24292E">],</span></span>
-<span class="line"><span style="color:#24292E">    [</span><span style="color:#032F62">'name'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 'required|string|min:2'</span><span style="color:#24292E">],</span></span>
-<span class="line"><span style="color:#24292E">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> ($v</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">fails</span><span style="color:#24292E">()) {</span></span>
-<span class="line"><span style="color:#005CC5">    print_r</span><span style="color:#24292E">($v</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">errors</span><span style="color:#24292E">()</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">all</span><span style="color:#24292E">());</span></span>
-<span class="line"><span style="color:#24292E">}</span></span></code></pre>
-<p>完整规则参考 Laravel 文档的 <a href="https://laravel.com/docs/validation#manually-creating-validators">Manually Creating Validators</a>。</p> </div> </div> </article><article class="card" data-href="/posts/200817-redis-delete-keys-by-pattern/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-08-17T00:00:00.000Z" data-astro-cid-d6qgp232>2020-08-17</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/redis/" class="tag" data-astro-cid-d6qgp232>#redis</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200817-redis-delete-keys-by-pattern/" data-astro-cid-d6qgp232>Redis 按 pattern 批量删除 key</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>DEL</code> 不接受 pattern，要按前缀清一批 key 得绕一下。最常见是 <code>EVAL</code> 里用 <code>KEYS</code> 拿全集再分块 <code>DEL</code>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">redis-cli</span><span style="color:#032F62"> EVAL</span><span style="color:#032F62"> "local keys = redis.call('keys', ARGV[1])</span></span>
-<span class="line"><span style="color:#032F62">for i=1,#keys,5000 do</span></span>
-<span class="line"><span style="color:#032F62">  redis.call('del', unpack(keys, i, math.min(i+4999, #keys)))</span></span>
-<span class="line"><span style="color:#032F62">end</span></span>
-<span class="line"><span style="color:#032F62">return #keys"</span><span style="color:#005CC5"> 0</span><span style="color:#032F62"> 'prefix:*'</span></span></code></pre>
-<p>分块是因为 Lua 的 <code>unpack</code> 在几千个参数后会撞 stack 上限，单次 <code>DEL unpack(keys)</code> 在大集合下会直接报错。</p>
-<p>但 <code>KEYS</code> 本身是 O(N) 全表扫，<strong>会阻塞 Redis 主线程</strong>直到扫完整个 keyspace——线上库千万别这么干。生产环境用客户端侧 <code>SCAN</code>，游标式增量取，单次 <code>DEL</code> 控量：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">redis-cli</span><span style="color:#005CC5"> --scan</span><span style="color:#005CC5"> --pattern</span><span style="color:#032F62"> 'prefix:*'</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> xargs</span><span style="color:#005CC5"> -L</span><span style="color:#005CC5"> 1000</span><span style="color:#032F62"> redis-cli</span><span style="color:#032F62"> DEL</span></span></code></pre>
-<p>注意 <code>KEYS</code> / <code>SCAN</code> 的 pattern 是 glob（<code>*</code> <code>?</code> <code>[abc]</code>），不是 regex。</p>
-<p><a href="https://stackoverflow.com/questions/4006324/how-to-atomically-delete-keys-matching-a-pattern-using-redis">Stack Overflow 原帖</a></p> </div> </div> </article><article class="card" data-href="/posts/200814-mysql-json-indexing/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-08-14T00:00:00.000Z" data-astro-cid-d6qgp232>2020-08-14</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200814-mysql-json-indexing/" data-astro-cid-d6qgp232>MySQL JSON 列建索引</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>MySQL 5.7+ 支持原生 <a href="https://dev.mysql.com/doc/refman/8.0/en/json.html"><code>JSON</code> 数据类型</a>。两个坑：</p>
-<ul>
-<li><code>JSON</code> 列<strong>不能有 non-NULL 默认值</strong>——要么 nullable，要么应用层填</li>
-<li><strong>不能直接在 JSON 字段上建索引</strong>——要靠 <a href="https://dev.mysql.com/doc/refman/8.0/en/create-table-generated-columns.html">Generated Column</a> 包一层</li>
-</ul>
-<h2 id="用-generated-column-索引-json-字段">用 Generated Column 索引 JSON 字段</h2>
-<p>把要查的 JSON 路径抽成一个虚拟列，再在虚拟列上建索引：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">CREATE</span><span style="color:#D73A49"> TABLE</span><span style="color:#6F42C1"> players</span><span style="color:#24292E"> (</span></span>
-<span class="line"><span style="color:#24292E">  id               </span><span style="color:#D73A49">INT</span><span style="color:#24292E"> UNSIGNED </span><span style="color:#D73A49">NOT NULL</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#24292E">  player_and_games </span><span style="color:#D73A49">JSON</span><span style="color:#D73A49"> NOT NULL</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#24292E">  name_virtual     </span><span style="color:#D73A49">VARCHAR</span><span style="color:#24292E">(</span><span style="color:#005CC5">20</span><span style="color:#24292E">) </span><span style="color:#D73A49">GENERATED</span><span style="color:#D73A49"> ALWAYS</span><span style="color:#D73A49"> AS</span><span style="color:#24292E"> (player_and_games </span><span style="color:#D73A49">->></span><span style="color:#032F62"> '$.name'</span><span style="color:#24292E">) </span><span style="color:#D73A49">NOT NULL</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#D73A49">  PRIMARY KEY</span><span style="color:#24292E"> (id),</span></span>
-<span class="line"><span style="color:#D73A49">  KEY</span><span style="color:#24292E"> idx_name (name_virtual)</span></span>
-<span class="line"><span style="color:#24292E">);</span></span></code></pre>
-<p><code>->></code> 是 <code>-></code> + <code>JSON_UNQUOTE</code> 的简写——直接拿字符串而不是 quoted JSON value。</p>
-<p>Virtual 列只存元数据不落盘（默认），Stored 列落盘到磁盘。索引 JSON 字段几乎都用 Virtual，省空间且没性能差。</p>
-<h2 id="验证索引命中">验证索引命中</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#24292E">EXPLAIN </span><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> players </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> name_virtual </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'Sally'</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#6A737D">-- key: idx_name</span></span></code></pre>
-<p>参考 <a href="https://www.lnmp.cn/mysql-57-new-features-json.html">MySQL 5.7 新特性 JSON</a> · <a href="http://mysql.taobao.org/monthly/2017/12/09/">如何索引 JSON 字段 | mysql.taobao.org</a> · <a href="https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html">JSON 函数参考</a></p> </div> </div> </article> </section><p class="more" data-astro-cid-j7pv25f6> <a href="/archives/" data-astro-cid-j7pv25f6>→ browse all 55 notes in archives</a> </p><script>
+<p>trace 是 session 级别，默认只保留最近一次，且开启后所有 query 都会被 trace（有性能开销），用完立刻关。</p> </div> </div> </article> </section><p class="more" data-astro-cid-j7pv25f6> <a href="/archives/" data-astro-cid-j7pv25f6>→ browse all 58 notes in archives</a> </p><script>
       (() => {
         const ROW = 8;       // grid-auto-rows unit, in px
         const GAP = 22;      // visual vertical gap between cards, in px

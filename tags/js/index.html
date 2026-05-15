@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged js"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#js · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+h1[data-astro-cid-tge3q7ae]{font-size:1.4rem;margin:0 0 .3rem}.lede[data-astro-cid-tge3q7ae]{color:var(--muted);margin:0 0 1.75rem;font-size:.88rem}.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.4rem;border-bottom:1px dotted var(--rule);min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 data-astro-cid-tge3q7ae>#js</h1> <p class="lede" data-astro-cid-tge3q7ae>2 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card" data-href="/posts/260515-bun-joins-anthropic-rust-rewrite/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-15T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-15</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/js/" class="tag" data-astro-cid-d6qgp232>#js</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260515-bun-joins-anthropic-rust-rewrite/" data-astro-cid-d6qgp232>Bun 加入 Anthropic：6 天 AI 重写 Zig→Rust</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Bun 在 2025-12-02 被 <strong>Anthropic 收购</strong>（Anthropic 史上第一笔），五个月后 Sumner 用 Claude Code <strong>6 天</strong>把 96 万行 Zig 翻译成 Rust 并合入主分支。这两件事是同一根逻辑链：Claude Code 自己跑在 Bun 上，Anthropic 有最直接的动力修 Bun 的内存泄漏；而 AI Agent 重写大型 codebase 这件事也只有现在的 Anthropic 做得了。</p>
+<h2 id="时间线">时间线</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>2025-12-02  Anthropic 收购 Bun，Bun 继续 MIT 开源 + 团队继续主导</span></span>
+<span class="line"><span>2026-05-04  Sumner commit "Phase-A 移植指南" + LIFETIMES.tsv</span></span>
+<span class="line"><span>2026-05-10  claude/phase-a-port 分支出现，6 天 96 万行 Rust</span></span>
+<span class="line"><span>            Linux x64 通过 99.8% 现有测试</span></span>
+<span class="line"><span>2026-05-13  Bun v1.3.14 发布（"如果 Rust 合入这是最后一个 Zig 版"）</span></span>
+<span class="line"><span>2026-05-14  Rust 版本合入 main，二进制减小 3-8 MB</span></span></code></pre>
+<h2 id="为什么收购claude-code-自己被-bun-烧伤">为什么收购：Claude Code 自己被 Bun 烧伤</h2>
+<p>Claude Code 以单文件 Bun executable 分发给百万级用户，长会话内存能飙到 <strong>14-23 GB</strong> —— 直接踩 Bun 的内存泄漏。Anthropic 当时 Claude Code ARR 已 $1B（2026/2 升到 $2.5B），Bun 一坏 Claude Code 就坏，<strong>直接收购比合作更快</strong>。</p>
+<p>收购动机里 AI Agent 工作流也是关键：agent 写完代码要立刻装包、跑测试、产可执行 —— Bun 的”单二进制 + 冷启动 8-31ms + 装包比 npm 快 25×“对应每一步。</p>
+<h2 id="为什么重写zig-的-no-ai-政策--内存安全">为什么重写：Zig 的 no-AI 政策 + 内存安全</h2>
+<p>四个理由叠加：</p>
+<ol>
+<li><strong>Zig 项目禁止 AI 生成的 issue / PR / 评论</strong> —— Bun 团队 fork 的 Zig 编译器（debug 编译快 4×）永远没法回上游。对一家 AI 公司是政治死结</li>
+<li><strong>内存泄漏与 unsafe</strong> —— Sumner 原话 “I am so tired of worrying about memory leaks and crashes”</li>
+<li><strong>Zig 还是 0.16，破坏性变更频繁</strong> —— 做生产基础设施长期不稳</li>
+<li><strong>Rust 生态成熟</strong> —— AI 训练数据、crate 库都更充足</li>
+</ol>
+<p>注意：<strong>性能不是动机</strong>。Bun 比 Node 快不来自 Zig 比 V8 快，来自架构（JSC 替 V8、原生 HTTP 不走 libuv、内置打包器）。换 Rust 不动这些架构，性能不会变。</p>
+<h2 id="重写方法600-行-rosetta-stone--ai-agent">重写方法：600 行 Rosetta Stone + AI Agent</h2>
+<p>工作流：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>docs/zig-to-rust.md      ← ~600 行类型 / 习惯用法映射文档</span></span>
+<span class="line"><span>LIFETIMES.tsv            ← 每个指针字段的 ownership 分类</span></span>
+<span class="line"><span>Phase A: 翻 Rust 代码（不要求编译）</span></span>
+<span class="line"><span>Phase B: crate-by-crate 让它编译过</span></span></code></pre>
+<p>故意<strong>不用 Tokio / Rayon</strong>，保持低层执行模型，做”直译”非重设计。Sumner 在 X 上：</p>
+<blockquote>
+<p>“this is already the status quo; we haven’t been typing code ourselves for many months now.”</p>
+<p>“我预期 OSS 反过来走：禁止人类贡献代码。讨论和优先级仍由人定，但写代码、提 PR、回应 review，全 LLM 做。“</p>
+</blockquote>
+<h2 id="争议">争议</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>uv (Astral, Rust)：350,000 行 / 73 个 unsafe</span></span>
+<span class="line"><span>Bun Rust 移植：    681,000 行 / 13,000+ 个 unsafe</span></span></code></pre>
+<p>第二个 PR（删 60 万行 Zig）被 GitHub <strong>自动 flag 为 “AI slop”</strong> 关闭。社区核心反对意见：unsafe 块里的 hallucination 风险无法人工 review；commit 大小让 review 不可能；“vibecoded disaster”。</p>
+<h2 id="对生产用户的实际影响">对生产用户的实际影响</h2>
+<ul>
+<li><strong>性能</strong> —— 几乎没差，架构没变</li>
+<li><strong>稳定性</strong> —— 内存泄漏修复（Claude Code 类长会话受益最大）</li>
+<li><strong>二进制</strong> —— 小 3-8 MB</li>
+<li><strong>兼容性</strong> —— v1.3.14 后跑同一份 npm 应用应当无感</li>
+</ul>
+<h2 id="真正值得追踪的事">真正值得追踪的事</h2>
+<p>Bun 是<strong>史上第一个把核心代码所有权交给 AI Agent 维护的生产级开源项目</strong>。这种重写姿势能成立，前提是 Sumner 作为 <strong>BDFL</strong>（Benevolent Dictator For Life —— 开源项目”仁慈终身独裁者”，源自 Guido van Rossum / Python，决策不走委员会投票）一个人就能拍板”6 天试一下，搞不定就扔”。基金会治理的项目（如 Node.js / Python 后 Steering Council 时代）光投票就要几个月。</p>
+<p>两种结局：</p>
+<ul>
+<li><strong>稳住</strong> → “几人 reviewer + 一群 agent + 一个 BDFL” 模式被复制到很多基础设施项目</li>
+<li><strong>崩了</strong> → AI 生成代码不可信论的最大佐证</li>
+</ul>
+<p>无论哪种，未来 1-2 年值得追踪。</p>
+<p><a href="https://bun.com/blog/bun-joins-anthropic">Bun is joining Anthropic</a> · <a href="https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381">Anthropic’s Bun Rust rewrite merged at speed of AI - The Register</a> · <a href="https://weeklyrust.substack.com/p/the-great-zig-to-rust-experiment">The Great Zig-to-Rust Experiment - Rust Bytes</a></p> </div> </div> </article><article class="card" data-href="/posts/260513-js-ecosystem-layers/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-13T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-13</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/js/" class="tag" data-astro-cid-d6qgp232>#js</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260513-js-ecosystem-layers/" data-astro-cid-d6qgp232>JS 生态分层：规范 / 引擎 / 运行时 / 类型</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>JavaScript 生态混乱的根源是<strong>没分清三件事</strong>：写规范的、实现引擎的、做宿主运行时的。再叠加 TypeScript 这个外挂类型层，就是常被混为一谈的”JS”。把四层拆开，整个服务端 JS 世界就不再奇怪。</p>
+<h2 id="规范层ecmascriptecma-262">规范层：ECMAScript（ECMA-262）</h2>
+<p>由 <strong>TC39</strong> 维护（Ecma International 第 39 号技术委员会），每年 6 月发新版。规范定义语法、内置对象、执行模型，<strong>但不定义</strong> DOM、<code>fetch</code>、<code>localStorage</code>、<code>fs</code>、<code>http</code> —— 这些归别处管：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>ECMAScript          ← TC39          (语法 / Promise / Map / async)</span></span>
+<span class="line"><span>DOM / fetch         ← WHATWG        (浏览器 API)</span></span>
+<span class="line"><span>HTTP / TLS          ← IETF          (RFC)</span></span>
+<span class="line"><span>fs / http / process ← Node OpenJS   (Node 自加，不是 Web 标准)</span></span></code></pre>
+<p>写 JS 99% 在调宿主 API（<code>fetch</code> / <code>document</code> / <code>fs</code>），其中只有少数真正是 ECMAScript。<strong><code>fetch</code> 不是 ECMAScript</strong> —— 它是 WHATWG 的，Node / Bun “借”过来内置。</p>
+<p>JS 这语言官方名是 ECMAScript 不是 JavaScript，因为 <em>JavaScript</em> 是 Sun（现 Oracle）的商标。Brendan Eich 自嘲过 “ECMAScript 听起来像皮肤病”，但这名字沿用了 30 年。</p>
+<h2 id="引擎层v8--javascriptcore--spidermonkey">引擎层：V8 / JavaScriptCore / SpiderMonkey</h2>
+<p>不是”标准统一就只该有一个实现” —— 优化目标真的不同：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>V8（Chrome / Edge / Node）</th><th>JSC（Safari / Bun）</th><th>SpiderMonkey（Firefox）</th></tr></thead><tbody><tr><td>出身场景</td><td>标签页常驻几小时</td><td>页面打开就关</td><td>平衡</td></tr><tr><td>优化目标</td><td>长跑峰值</td><td><strong>启动 + 内存</strong></td><td>平衡</td></tr><tr><td>JIT 策略</td><td>激进多层</td><td>克制（保持低层便宜）</td><td>保守</td></tr><tr><td>许可证</td><td>BSD 3-Clause</td><td>LGPL 2.1</td><td>MPL 2.0</td></tr><tr><td>治理</td><td>Google 主导</td><td>WebKit 联盟（Apple + Igalia + Sony）</td><td>Mozilla 基金会</td></tr></tbody></table>
+<p><strong>iOS 上所有浏览器都是 JSC</strong> —— Chrome / Edge / Firefox iOS 版只是 Safari 套了 UI 壳，被 App Store 强制用 WebKit。这条 2024 年起 EU DMA 法案才开始松动，但实际进展缓慢。</p>
+<p><strong>Edge 自 2020 年起 = V8</strong> —— Microsoft 当年用的 Chakra 死了，Edge 重写为 Chromium。所以”V8 阵营”实际控制桌面 80%+。</p>
+<p>许可证差异决定生态形状：V8 的 BSD 才让 Node / Deno / Electron / Cloudflare Workers 这些闭源 / 商业派生敢用；JSC 的 LGPL 允许嵌入式调用但不允许闭源修改引擎本身。这是 Bun 选 JSC 的非技术理由之一。</p>
+<h2 id="运行时层node--bun--deno--浏览器">运行时层：Node / Bun / Deno / 浏览器</h2>
+<p>V8 只是<strong>会跑 JS</strong>，不会读文件、不会发 HTTP、不会监听端口。Node 把 V8 嵌进 C++ 程序，再补上：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Node = V8 (引擎)</span></span>
+<span class="line"><span>     + libuv (事件循环 + 跨平台异步 I/O：Linux epoll / macOS kqueue / Windows IOCP)</span></span>
+<span class="line"><span>     + 标准库 (fs / http / crypto / stream)</span></span>
+<span class="line"><span>     + N-API (C++ addon 接口)</span></span>
+<span class="line"><span>     + 模块系统 (CommonJS / ESM)</span></span></code></pre>
+<p>同一个 V8 嵌进不同宿主就是不同运行时：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>引擎</th><th>事件循环</th><th>默认权限</th></tr></thead><tbody><tr><td>Chrome</td><td>V8</td><td>Blink 自家</td><td>沙盒受限</td></tr><tr><td>Node</td><td>V8</td><td>libuv</td><td>完整 OS 访问</td></tr><tr><td>Deno</td><td>V8</td><td>Tokio (Rust)</td><td>默认无权限，按需授权</td></tr><tr><td>Bun</td><td><strong>JSC</strong></td><td>自家（io_uring / kqueue 直调）</td><td>完整 OS 访问</td></tr><tr><td>Cloudflare Workers</td><td>V8</td><td>V8 isolate + 自家 scheduler</td><td>沙盒</td></tr></tbody></table>
+<p><strong>这就是 Node 不能”换引擎追上 Bun”的根因</strong>：N-API、所有 native addon、调试器协议、profile 工具全围绕 V8 设计。换 V8 等于重写 Node。Bun 走的是从零写所有胶水的路，代价是 95-98% npm 兼容率（剩下的 2-5% 用了 V8/libuv 内部细节的边角库）。</p>
+<h2 id="类型层typescript">类型层：TypeScript</h2>
+<p>TS = JS 严格超集 + 类型注解。<strong>类型在编译后完全消失</strong> —— <code>.ts</code> → <code>.js</code> 后类型一个字符都没了，运行时拿不到任何”这是 User 不是 string”的信息。这是为什么 <code>instanceof</code> 对 interface 没用：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// 写</span></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> greet</span><span style="color:#24292E">(</span><span style="color:#E36209">user</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> User</span><span style="color:#24292E">)</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> string</span><span style="color:#24292E"> { </span><span style="color:#D73A49">return</span><span style="color:#032F62"> `Hi, ${</span><span style="color:#24292E">user</span><span style="color:#032F62">.</span><span style="color:#24292E">name</span><span style="color:#032F62">}`</span><span style="color:#24292E"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 编译后实际跑的</span></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> greet</span><span style="color:#24292E">(</span><span style="color:#E36209">user</span><span style="color:#24292E">) { </span><span style="color:#D73A49">return</span><span style="color:#032F62"> `Hi, ${</span><span style="color:#24292E">user</span><span style="color:#032F62">.</span><span style="color:#24292E">name</span><span style="color:#032F62">}`</span><span style="color:#24292E"> }</span></span></code></pre>
+<p>TS 现在多渠道编译：<code>tsc</code>（官方，慢）/ <code>esbuild</code>（Go）/ <code>swc</code>（Rust）/ <code>bun</code>（直接跑无中间步骤）/ Node 22+ <code>--experimental-strip-types</code>。Microsoft 2025 年用 Go 重写了 <code>tsc</code>，叫 TypeScript Native，快 10×。</p>
+<p><strong>TC39 有 Type Annotations 提案</strong>让 JS 引擎直接忽略类型注解（注释化），TS 代码不用编译就能跑。Stage 1 卡了 4 年还没动 —— 浏览器引擎不愿为”不执行的注解”做语法解析。短期内不会落地。</p>
+<hr>
+<p>写代码时叫 TypeScript、调试时叫 JavaScript、查规范时叫 ECMAScript、谈性能时谈 V8 / JSC、谈部署时谈 Node / Bun / Workers —— <strong>同一件事的五个面</strong>，分清面才不被术语骗。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

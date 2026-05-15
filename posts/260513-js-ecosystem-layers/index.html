@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="JavaScript 生态混乱的根源是**没分清三件事**：写规范的、实现引擎的、做宿主运行时的。再叠加 TypeScript 这个外挂类型层，就是常被混为一谈的&#34;JS&#34;。把四层拆开，整个服务端 JS 世界就不再奇怪。 ## 规范层：ECMAScript（ECMA-262） 由 **TC39** 维护（Ecma…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>JS 生态分层：规范 / 引擎 / 运行时 / 类型 · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note" data-astro-cid-fzx4jmue> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>JS 生态分层：规范 / 引擎 / 运行时 / 类型</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2026-05-13T00:00:00.000Z" data-astro-cid-fzx4jmue>2026-05-13</time> <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/js/" class="tag" data-astro-cid-fzx4jmue>#js</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p>JavaScript 生态混乱的根源是<strong>没分清三件事</strong>：写规范的、实现引擎的、做宿主运行时的。再叠加 TypeScript 这个外挂类型层，就是常被混为一谈的”JS”。把四层拆开，整个服务端 JS 世界就不再奇怪。</p>
+<h2 id="规范层ecmascriptecma-262">规范层：ECMAScript（ECMA-262）</h2>
+<p>由 <strong>TC39</strong> 维护（Ecma International 第 39 号技术委员会），每年 6 月发新版。规范定义语法、内置对象、执行模型，<strong>但不定义</strong> DOM、<code>fetch</code>、<code>localStorage</code>、<code>fs</code>、<code>http</code> —— 这些归别处管：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>ECMAScript          ← TC39          (语法 / Promise / Map / async)</span></span>
+<span class="line"><span>DOM / fetch         ← WHATWG        (浏览器 API)</span></span>
+<span class="line"><span>HTTP / TLS          ← IETF          (RFC)</span></span>
+<span class="line"><span>fs / http / process ← Node OpenJS   (Node 自加，不是 Web 标准)</span></span></code></pre>
+<p>写 JS 99% 在调宿主 API（<code>fetch</code> / <code>document</code> / <code>fs</code>），其中只有少数真正是 ECMAScript。<strong><code>fetch</code> 不是 ECMAScript</strong> —— 它是 WHATWG 的，Node / Bun “借”过来内置。</p>
+<p>JS 这语言官方名是 ECMAScript 不是 JavaScript，因为 <em>JavaScript</em> 是 Sun（现 Oracle）的商标。Brendan Eich 自嘲过 “ECMAScript 听起来像皮肤病”，但这名字沿用了 30 年。</p>
+<h2 id="引擎层v8--javascriptcore--spidermonkey">引擎层：V8 / JavaScriptCore / SpiderMonkey</h2>
+<p>不是”标准统一就只该有一个实现” —— 优化目标真的不同：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>V8（Chrome / Edge / Node）</th><th>JSC（Safari / Bun）</th><th>SpiderMonkey（Firefox）</th></tr></thead><tbody><tr><td>出身场景</td><td>标签页常驻几小时</td><td>页面打开就关</td><td>平衡</td></tr><tr><td>优化目标</td><td>长跑峰值</td><td><strong>启动 + 内存</strong></td><td>平衡</td></tr><tr><td>JIT 策略</td><td>激进多层</td><td>克制（保持低层便宜）</td><td>保守</td></tr><tr><td>许可证</td><td>BSD 3-Clause</td><td>LGPL 2.1</td><td>MPL 2.0</td></tr><tr><td>治理</td><td>Google 主导</td><td>WebKit 联盟（Apple + Igalia + Sony）</td><td>Mozilla 基金会</td></tr></tbody></table>
+<p><strong>iOS 上所有浏览器都是 JSC</strong> —— Chrome / Edge / Firefox iOS 版只是 Safari 套了 UI 壳，被 App Store 强制用 WebKit。这条 2024 年起 EU DMA 法案才开始松动，但实际进展缓慢。</p>
+<p><strong>Edge 自 2020 年起 = V8</strong> —— Microsoft 当年用的 Chakra 死了，Edge 重写为 Chromium。所以”V8 阵营”实际控制桌面 80%+。</p>
+<p>许可证差异决定生态形状：V8 的 BSD 才让 Node / Deno / Electron / Cloudflare Workers 这些闭源 / 商业派生敢用；JSC 的 LGPL 允许嵌入式调用但不允许闭源修改引擎本身。这是 Bun 选 JSC 的非技术理由之一。</p>
+<h2 id="运行时层node--bun--deno--浏览器">运行时层：Node / Bun / Deno / 浏览器</h2>
+<p>V8 只是<strong>会跑 JS</strong>，不会读文件、不会发 HTTP、不会监听端口。Node 把 V8 嵌进 C++ 程序，再补上：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Node = V8 (引擎)</span></span>
+<span class="line"><span>     + libuv (事件循环 + 跨平台异步 I/O：Linux epoll / macOS kqueue / Windows IOCP)</span></span>
+<span class="line"><span>     + 标准库 (fs / http / crypto / stream)</span></span>
+<span class="line"><span>     + N-API (C++ addon 接口)</span></span>
+<span class="line"><span>     + 模块系统 (CommonJS / ESM)</span></span></code></pre>
+<p>同一个 V8 嵌进不同宿主就是不同运行时：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>引擎</th><th>事件循环</th><th>默认权限</th></tr></thead><tbody><tr><td>Chrome</td><td>V8</td><td>Blink 自家</td><td>沙盒受限</td></tr><tr><td>Node</td><td>V8</td><td>libuv</td><td>完整 OS 访问</td></tr><tr><td>Deno</td><td>V8</td><td>Tokio (Rust)</td><td>默认无权限，按需授权</td></tr><tr><td>Bun</td><td><strong>JSC</strong></td><td>自家（io_uring / kqueue 直调）</td><td>完整 OS 访问</td></tr><tr><td>Cloudflare Workers</td><td>V8</td><td>V8 isolate + 自家 scheduler</td><td>沙盒</td></tr></tbody></table>
+<p><strong>这就是 Node 不能”换引擎追上 Bun”的根因</strong>：N-API、所有 native addon、调试器协议、profile 工具全围绕 V8 设计。换 V8 等于重写 Node。Bun 走的是从零写所有胶水的路，代价是 95-98% npm 兼容率（剩下的 2-5% 用了 V8/libuv 内部细节的边角库）。</p>
+<h2 id="类型层typescript">类型层：TypeScript</h2>
+<p>TS = JS 严格超集 + 类型注解。<strong>类型在编译后完全消失</strong> —— <code>.ts</code> → <code>.js</code> 后类型一个字符都没了，运行时拿不到任何”这是 User 不是 string”的信息。这是为什么 <code>instanceof</code> 对 interface 没用：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#6A737D">// 写</span></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> greet</span><span style="color:#24292E">(</span><span style="color:#E36209">user</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> User</span><span style="color:#24292E">)</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> string</span><span style="color:#24292E"> { </span><span style="color:#D73A49">return</span><span style="color:#032F62"> `Hi, ${</span><span style="color:#24292E">user</span><span style="color:#032F62">.</span><span style="color:#24292E">name</span><span style="color:#032F62">}`</span><span style="color:#24292E"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 编译后实际跑的</span></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> greet</span><span style="color:#24292E">(</span><span style="color:#E36209">user</span><span style="color:#24292E">) { </span><span style="color:#D73A49">return</span><span style="color:#032F62"> `Hi, ${</span><span style="color:#24292E">user</span><span style="color:#032F62">.</span><span style="color:#24292E">name</span><span style="color:#032F62">}`</span><span style="color:#24292E"> }</span></span></code></pre>
+<p>TS 现在多渠道编译：<code>tsc</code>（官方，慢）/ <code>esbuild</code>（Go）/ <code>swc</code>（Rust）/ <code>bun</code>（直接跑无中间步骤）/ Node 22+ <code>--experimental-strip-types</code>。Microsoft 2025 年用 Go 重写了 <code>tsc</code>，叫 TypeScript Native，快 10×。</p>
+<p><strong>TC39 有 Type Annotations 提案</strong>让 JS 引擎直接忽略类型注解（注释化），TS 代码不用编译就能跑。Stage 1 卡了 4 年还没动 —— 浏览器引擎不愿为”不执行的注解”做语法解析。短期内不会落地。</p>
+<hr>
+<p>写代码时叫 TypeScript、调试时叫 JavaScript、查规范时叫 ECMAScript、谈性能时谈 V8 / JSC、谈部署时谈 Node / Bun / Workers —— <strong>同一件事的五个面</strong>，分清面才不被术语骗。</p> </div>  <aside class="related" aria-label="related notes" data-astro-cid-fzx4jmue> <h2 data-astro-cid-fzx4jmue>Related</h2> <ul data-astro-cid-fzx4jmue> <li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2026-05-15</span> <a class="title" href="/posts/260515-bun-joins-anthropic-rust-rewrite/" data-astro-cid-fzx4jmue>Bun 加入 Anthropic：6 天 AI 重写 Zig→Rust</a> </li> </ul> </aside> <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>
