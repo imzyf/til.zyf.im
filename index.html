@@ -3,7 +3,24 @@
 .card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.4rem;border-bottom:1px dotted var(--rule);min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
 </style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-home">  <p class="lede" data-astro-cid-j7pv25f6>
 today I learned, want to remember, and might want to share.
-</p> <article class="hero" data-astro-cid-bbe6dxrz> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/posts/260515-bun-joins-anthropic-rust-rewrite/" data-astro-cid-bbe6dxrz>Bun 加入 Anthropic：6 天 AI 重写 Zig→Rust</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2026-05-15T00:00:00.000Z" data-astro-cid-bbe6dxrz>2026-05-15</time> <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/js/" class="tag" data-astro-cid-bbe6dxrz>#js</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p>Bun 在 2025-12-02 被 <strong>Anthropic 收购</strong>（Anthropic 史上第一笔），五个月后 Sumner 用 Claude Code <strong>6 天</strong>把 96 万行 Zig 翻译成 Rust 并合入主分支。这两件事是同一根逻辑链：Claude Code 自己跑在 Bun 上，Anthropic 有最直接的动力修 Bun 的内存泄漏；而 AI Agent 重写大型 codebase 这件事也只有现在的 Anthropic 做得了。</p>
+</p> <article class="hero" data-astro-cid-bbe6dxrz> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/posts/260515-github-url-hidden-params/" data-astro-cid-bbe6dxrz>GitHub URL 隐藏参数：`.diff` / `?w=1` / `compare@{时间}` 工作流</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2026-05-15T00:00:00.000Z" data-astro-cid-bbe6dxrz>2026-05-15</time> <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/github/" class="tag" data-astro-cid-bbe6dxrz>#github</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p>GitHub 网页 URL 上有一组 2012 年就存在、UI 从没暴露过的参数。LLM 工作流让它们价值翻倍 —— <code>curl</code> 一个 <code>.diff</code> URL 直接拿到纯文本 diff 喂给 prompt，比让 LLM 自己抓网页快也准。下面所有链接都点得开（用 <code>laravel/framework</code> 演示）。</p>
+<p><strong><code>.diff</code> / <code>.patch</code></strong> —— 任何 PR / commit / compare 页 URL 加扩展名，返回纯文本：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -L</span><span style="color:#032F62"> https://github.com/laravel/framework/pull/10000.diff</span></span>
+<span class="line"><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -L</span><span style="color:#032F62"> https://github.com/laravel/framework/pull/10000.patch</span></span></code></pre>
+<p><code>.diff</code> 体积最小，适合喂 LLM；<code>.patch</code> 多带 commit metadata（作者、邮箱、时间），适合 <code>git am</code> / cherry-pick。commit / compare URL 同样支持。</p>
+<p><strong><code>?w=1</code></strong> —— 任何 diff URL 加上，忽略纯 whitespace 改动：</p>
+<p><a href="https://github.com/laravel/framework/pull/10000/files?w=1">https://github.com/laravel/framework/pull/10000/files?w=1</a></p>
+<p>把 indent 调整 / 换行符变化彻底从视野抹掉，只剩真改动。refactor / formatter 大重写后救命。</p>
+<p><strong><code>?ts=4</code></strong> —— diff / blob 页改 tab 渲染宽度：</p>
+<p><a href="https://github.com/laravel/framework/blob/master/src/Illuminate/Foundation/Application.php?ts=4">https://github.com/laravel/framework/blob/master/src/Illuminate/Foundation/Application.php?ts=4</a></p>
+<p>数值任意（<code>?ts=2</code> / <code>?ts=8</code>），只改你眼里的呈现，远端文件不变。在 tab 缩进的项目（Go / Linux kernel）里效果最直观。</p>
+<p><strong><code>#L16-L25</code></strong> —— 行号锚点 + range：</p>
+<p><a href="https://github.com/laravel/framework/blob/master/src/Illuminate/Foundation/Application.php#L1-L20">https://github.com/laravel/framework/blob/master/src/Illuminate/Foundation/Application.php#L1-L20</a></p>
+<p>提 PR 评论、写文档、给同事丢 issue 时定位用，比”Application.php 大概第 20 行”准多了。</p>
+<p><strong><code>compare/&#x3C;base>@{&#x3C;时间>}...&#x3C;head></code></strong> —— compare 页接受时间锚点，不只是 SHA / branch：</p>
+<p><a href="https://github.com/laravel/framework/compare/master@%7B1.week.ago%7D...master">https://github.com/laravel/framework/compare/master@{1.week.ago}…master</a></p>
+<p><a href="https://github.com/laravel/framework/compare/master@%7B2026-05-01%7D...master">https://github.com/laravel/framework/compare/master@{2026-05-01}…master</a></p>
+<p>语法和 <code>git log @{...}</code> 一致。release notes 起草、“上周改了啥”周报、incident 后回溯都用得上。</p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card" data-href="/posts/260515-bun-joins-anthropic-rust-rewrite/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-15T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-15</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/js/" class="tag" data-astro-cid-d6qgp232>#js</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260515-bun-joins-anthropic-rust-rewrite/" data-astro-cid-d6qgp232>Bun 加入 Anthropic：6 天 AI 重写 Zig→Rust</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Bun 在 2025-12-02 被 <strong>Anthropic 收购</strong>（Anthropic 史上第一笔），五个月后 Sumner 用 Claude Code <strong>6 天</strong>把 96 万行 Zig 翻译成 Rust 并合入主分支。这两件事是同一根逻辑链：Claude Code 自己跑在 Bun 上，Anthropic 有最直接的动力修 Bun 的内存泄漏；而 AI Agent 重写大型 codebase 这件事也只有现在的 Anthropic 做得了。</p>
 <h2 id="时间线">时间线</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>2025-12-02  Anthropic 收购 Bun，Bun 继续 MIT 开源 + 团队继续主导</span></span>
 <span class="line"><span>2026-05-04  Sumner commit "Phase-A 移植指南" + LIFETIMES.tsv</span></span>
@@ -53,7 +70,7 @@ today I learned, want to remember, and might want to share.
 <li><strong>崩了</strong> → AI 生成代码不可信论的最大佐证</li>
 </ul>
 <p>无论哪种，未来 1-2 年值得追踪。</p>
-<p><a href="https://bun.com/blog/bun-joins-anthropic">Bun is joining Anthropic</a> · <a href="https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381">Anthropic’s Bun Rust rewrite merged at speed of AI - The Register</a> · <a href="https://weeklyrust.substack.com/p/the-great-zig-to-rust-experiment">The Great Zig-to-Rust Experiment - Rust Bytes</a></p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card" data-href="/posts/260514-git-filter-repo-purge-secrets/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-14T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-14</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260514-git-filter-repo-purge-secrets/" data-astro-cid-d6qgp232>git filter-repo 清除历史敏感文件：为什么必须配 --mirror</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>仓库不小心把 <code>.env</code> / <code>database.yml</code> 推到远程后，<strong>第一动作是轮换密钥</strong>，假定文件已被抓取——改写历史只能挡住”还没看到的人”，已 clone / fork / 爬虫的副本拿不回来。这一步先做完，再谈 <code>git filter-repo</code>：它是第二步，不是第一步。</p>
+<p><a href="https://bun.com/blog/bun-joins-anthropic">Bun is joining Anthropic</a> · <a href="https://www.theregister.com/devops/2026/05/14/anthropics-bun-rust-rewrite-merged-at-speed-of-ai/5240381">Anthropic’s Bun Rust rewrite merged at speed of AI - The Register</a> · <a href="https://weeklyrust.substack.com/p/the-great-zig-to-rust-experiment">The Great Zig-to-Rust Experiment - Rust Bytes</a></p> </div> </div> </article><article class="card" data-href="/posts/260514-git-filter-repo-purge-secrets/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-14T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-14</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260514-git-filter-repo-purge-secrets/" data-astro-cid-d6qgp232>git filter-repo 清除历史敏感文件</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>仓库不小心把 <code>.env</code> / <code>database.yml</code> 推到远程后，<strong>第一动作是轮换密钥</strong>，假定文件已被抓取 —— 改写历史只能挡住”还没看到的人”，已 clone / fork / 爬虫的副本拿不回来。这一步先做完，再谈 <code>git filter-repo</code>：它是第二步，不是第一步。</p>
 <h2 id="为什么不是-filter-branch">为什么不是 filter-branch</h2>
 <p><code>git filter-branch</code> 官方已弃用。每个 commit fork 一个 shell 子进程，大仓库跑数小时；默认保留 <code>refs/original/</code> 和 reflog，旧对象很容易”清理后又复活”。<code>git filter-repo</code> 是 Python 单进程流式管道，快 10–100 倍，且默认要求 fresh clone（拒绝在带遗留 ref 的工作目录上跑）。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> git-filter-repo</span></span></code></pre>
@@ -61,7 +78,7 @@ today I learned, want to remember, and might want to share.
 <p>Git commit 的 SHA-1 由 tree + parent + author + message 哈希得出，不可变。“删一个文件”等价于<strong>生成一份新历史替代旧历史</strong>。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>旧仓库 ── git fast-export ──▶ 事件流 ── 过滤器 ──▶ git fast-import ──▶ 新仓库</span></span></code></pre>
 <p><code>git fast-export</code> 把仓库历史序列化成纯文本指令流（blob、commit、tag）；filter-repo 在内存里按规则改写事件流；<code>git fast-import</code> 把它灌成新对象库。</p>
-<p>关键后果：<strong>一个 commit 的 tree 变了 → 它的 SHA 变 → 子 commit 的 parent 指向新 SHA → 子 SHA 也变 → 一路传染到 HEAD</strong>。所以 force push 是必须的——远程的 commit 链被一条 SHA 完全不同的链替换。</p>
+<p>关键后果：<strong>一个 commit 的 tree 变了 → 它的 SHA 变 → 子 commit 的 parent 指向新 SHA → 子 SHA 也变 → 一路传染到 HEAD</strong>。所以 force push 是必须的 —— 远程的 commit 链被一条 SHA 完全不同的链替换。</p>
 <h2 id="--invert-paths默认是白名单"><code>--invert-paths</code>：默认是白名单</h2>
 <p>非显然：filter-repo 默认把 <code>--path</code> 当<strong>保留</strong>列表，不是删除列表。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 默认：只保留 src/，其他全删（拆分 monorepo 用法）</span></span>
@@ -69,23 +86,25 @@ today I learned, want to remember, and might want to share.
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># --invert-paths：删除 src/，其他保留（清理用法）</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path</span><span style="color:#032F62"> src/</span><span style="color:#005CC5"> --invert-paths</span></span></code></pre>
-<p>设计初衷之一是从 monorepo 抽子项目——“列出我要的那部分”比”列出我不要的”自然。清理敏感信息正好相反：99% 留 + 1% 删，<strong>必须</strong>加 <code>--invert-paths</code>。漏写就把整个仓库删干净只剩那个泄露文件，反应过来时已经覆盖远程了。</p>
+<p>设计初衷之一是从 monorepo 抽子项目 —— “列出我要的那部分”比”列出我不要的”自然。清理敏感信息正好相反：99% 留 + 1% 删，<strong>必须</strong>加 <code>--invert-paths</code>。漏写就把整个仓库删干净只剩那个泄露文件，反应过来时已经覆盖远程了。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path</span><span style="color:#032F62"> .env</span><span style="color:#005CC5"> --invert-paths</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path-glob</span><span style="color:#032F62"> '*.pem'</span><span style="color:#005CC5"> --invert-paths</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path-regex</span><span style="color:#032F62"> '^secrets/'</span><span style="color:#005CC5"> --invert-paths</span></span></code></pre>
 <h2 id="--mirror不配它等于没删"><code>--mirror</code>：不配它等于没删</h2>
-<p>普通 <code>git clone</code> + <code>git push --force --all</code> 看似清理，实际<strong>只覆盖 branches</strong>。其他 ref 仍指向旧 commit：</p>
+<p>普通 <code>git clone</code> + <code>git push --force --all</code> 看似清理，实际<strong>只覆盖 branches</strong>。远程上 branch 之外的 ref 没动，仍指向旧 commit：</p>
 <ul>
 <li><strong>Tags</strong>：旧 tag 仍含敏感 commit</li>
-<li><strong>Notes、stash、其他自定义 ref</strong></li>
-<li><strong>远程 tracking refs / reflog</strong>：本地 cache 仍可达旧对象</li>
+<li><strong>Notes、其他自定义 ref</strong></li>
 </ul>
-<p>只要<strong>任何一个 ref 还能可达旧 commit</strong>，那个 blob 就不会被 GC 回收——攻击者拿到 SHA 就能 <code>git cat-file -p &#x3C;sha></code> 读出来。删了等于没删。</p>
-<p><code>git clone --mirror</code> 拉一份裸仓库（<code>.git</code> 结构、无工作区）+ 所有 ref；<code>git push --mirror</code> 把本地 refs 一比一推到远程，远程多出来的 ref 会被删——“让远程完全等于本地”。这才是真清理：</p>
+<p>只要<strong>远程任何一个 ref 还能可达旧 commit</strong>，那个 blob 就不会被 GC 回收 —— 攻击者拿到 SHA 就能 <code>git cat-file -p &#x3C;sha></code> 读出来。删了等于没删。</p>
+<p><code>git clone --mirror</code> 拉一份裸仓库（<code>.git</code> 结构、无工作区）+ 所有 ref；<code>git push --mirror</code> 把本地 refs 一比一推到远程，远程多出来的 ref 会被删 —— “让远程完全等于本地”。这才是真清理：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#005CC5"> --mirror</span><span style="color:#032F62"> git@github.com:org/repo.git</span></span>
 <span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> repo.git</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> filter-repo</span><span style="color:#005CC5"> --path</span><span style="color:#032F62"> config/database.yml</span><span style="color:#005CC5"> --invert-paths</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> push</span><span style="color:#005CC5"> --force</span><span style="color:#005CC5"> --mirror</span></span></code></pre>
+<blockquote>
+<p><code>--mirror</code> 只解决服务端的 ref 问题。<strong>任何一个老的本地 clone 仍能通过 reflog 和 remote-tracking refs (<code>refs/remotes/origin/*</code>) <code>cat-file</code> 出旧 blob</strong> —— 这正是 filter-repo 默认要求 fresh clone 的原因，也是清理后必须通知所有协作者删本地仓库重新 clone 的原因。</p>
+</blockquote>
 <h2 id="清理后必做">清理后必做</h2>
 
 
@@ -795,7 +814,57 @@ today I learned, want to remember, and might want to share.
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PHP_VERSION                # 必须重新声明，下面才能用</span></span>
 <span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> echo </span><span style="color:#032F62">"Building PHP ${PHP_VERSION}"</span></span></code></pre>
-<p>口诀：<strong>版本号 / 镜像 tag 用 <code>ARG</code>；运行时配置（端口、路径、非密钥配置）用 <code>ENV</code>；作者 / VCS 地址 / 镜像描述用 <code>LABEL</code></strong>。</p> </div> </div> </article><article class="card" data-href="/posts/221001-git-clean-untracked/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-10-01T00:00:00.000Z" data-astro-cid-d6qgp232>2022-10-01</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/221001-git-clean-untracked/" data-astro-cid-d6qgp232>git clean 删未跟踪文件：先 -n 看，-X 单独清 ignored</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>git clean</code> 删的是 working tree 里<strong>未被追踪</strong>的文件——<code>.gitignore</code> 命中的、和未 <code>add</code> 过的新文件。删完没有 <code>git checkout</code> 可以救，所以<strong>永远先用 <code>-n</code> 走一遍</strong>：</p>
+<p>口诀：<strong>版本号 / 镜像 tag 用 <code>ARG</code>；运行时配置（端口、路径、非密钥配置）用 <code>ENV</code>；作者 / VCS 地址 / 镜像描述用 <code>LABEL</code></strong>。</p> </div> </div> </article><article class="card" data-href="/posts/221109-laradock-patterns/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-11-09T00:00:00.000Z" data-astro-cid-d6qgp232>2022-11-09</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/docker/" class="tag" data-astro-cid-d6qgp232>#docker</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/221109-laradock-patterns/" data-astro-cid-d6qgp232>Laradock 偷师：6 个值得抄走的 Docker 工程模式</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://github.com/laradock/laradock">Laradock</a> 是 PHP/Laravel 的 docker-compose 全家桶模板。近年活跃度下降，新 Laravel 项目更多用 <a href="https://laravel.com/docs/sail">Sail</a>。但它的 Dockerfile / compose 配置里有些经过多年打磨的模式，值得偷师——以下 6 条不限 PHP 场景。</p>
+<h2 id="1-puidpgid容器用户对齐宿主否则-bind-mount-文件全是-root">1. PUID/PGID：容器用户对齐宿主，否则 bind mount 文件全是 root</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PUID=1000</span></span>
+<span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PGID=1000</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> groupadd -g ${PGID} laradock &#x26;&#x26; \</span></span>
+<span class="line"><span style="color:#24292E">    useradd -l -u ${PUID} -g laradock -m laradock</span></span></code></pre>
+<p>容器默认 root 跑，写到 bind mount 的文件宿主端归 root 所有——开发者下次 <code>vim</code> 撞 permission denied，<code>rm</code> 要 sudo。把 host 的 <code>id -u</code> / <code>id -g</code> 通过 <code>.env</code> 注入 ARG，容器内建同 uid 用户，文件落地就是宿主用户。<strong>Linux dev 必踩</strong>；Mac/Win 因 Docker Desktop 自动做 uid 映射，不会感受到这个坑。</p>
+<h2 id="2-debian_frontendnoninteractive-写-run-不写-env">2. <code>DEBIAN_FRONTEND=noninteractive</code> 写 RUN 不写 ENV</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#6A737D"># 不要：会污染容器运行时</span></span>
+<span class="line"><span style="color:#D73A49">ENV</span><span style="color:#24292E"> DEBIAN_FRONTEND=noninteractive</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 这样：只作用于该层 build</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata</span></span></code></pre>
+<p><code>ENV</code> 写进的是镜像层、运行时也生效——之后 <code>docker exec</code> 进容器手动装东西时，所有交互配置询问也被跳过（默认值生效），可能错过冲突选项或时区选择。<code>RUN</code> 内赋值只对那一条命令生效，构建期免提示、运行期保留交互。Docker 官方 <a href="https://docs.docker.com/develop/develop-images/instructions/#env">Dockerfile best practices · ENV</a> 同此建议。</p>
+<h2 id="3-extra_hosts-dockerhost-把容器访问宿主统一掉">3. <code>extra_hosts: dockerhost</code> 把”容器访问宿主”统一掉</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">extra_hosts</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">  - </span><span style="color:#032F62">"dockerhost:${DOCKER_HOST_IP}"</span></span>
+<span class="line"><span style="color:#6A737D">  # Linux 20.10+ 现在还可以这样：</span></span>
+<span class="line"><span style="color:#24292E">  - </span><span style="color:#032F62">"host.docker.internal:host-gateway"</span></span></code></pre>
+<p>Mac/Win Docker Desktop 自带 <code>host.docker.internal</code>，Linux 长期没有（20.10 才支持 <code>host-gateway</code> magic value）。Laradock 给容器塞统一别名 <code>dockerhost</code>——Xdebug 回连 IDE 时永远写 <code>xdebug.client_host=dockerhost</code>，跨平台共用一份 ini。</p>
+<h2 id="4-arg-install_xxxfalse-的-opt-in-扩展矩阵">4. <code>ARG INSTALL_XXX=false</code> 的 opt-in 扩展矩阵</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> INSTALL_XDEBUG=false</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> if [ ${INSTALL_XDEBUG} = true ]; then \</span></span>
+<span class="line"><span style="color:#24292E">    pecl install xdebug &#x26;&#x26; docker-php-ext-enable xdebug; \</span></span>
+<span class="line"><span style="color:#24292E">fi</span></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dotenv"><code><span class="line"><span style="color:#E36209">WORKSPACE_INSTALL_XDEBUG</span><span style="color:#D73A49">=</span><span style="color:#24292E">true</span></span>
+<span class="line"><span style="color:#E36209">PHP_FPM_INSTALL_XDEBUG</span><span style="color:#D73A49">=</span><span style="color:#24292E">true</span></span></code></pre>
+<p>一份 Dockerfile 适配 N 个项目：要 swoole 的项目 <code>INSTALL_SWOOLE=true</code>，不要的 false——不用为每个项目 fork 一份 Dockerfile。代价：build cache 粒度变粗（任一 ARG 变全层失效），高频切换的扩展（xdebug）值得拆独立 stage 减小重建范围。</p>
+<h2 id="5-docker-php-ext-disable-切扩展不重编译">5. <code>docker-php-ext-disable</code> 切扩展不重编译</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 生产关 xdebug，.so 文件仍保留</span></span>
+<span class="line"><span style="color:#6F42C1">docker-php-ext-disable</span><span style="color:#032F62"> xdebug</span><span style="color:#032F62"> pcov</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 开发再 enable</span></span>
+<span class="line"><span style="color:#6F42C1">docker-php-ext-enable</span><span style="color:#032F62"> xdebug</span></span></code></pre>
+<p>PHP 扩展本质是 <code>.so</code> + 一行 <code>extension=xdebug.so</code> ini 引用。<code>docker-php-ext-disable</code> 只移走 ini，<code>.so</code> 还在。开发/生产同一个镜像，不为”是否带 xdebug”重编两套——秒级切换。这条 official PHP image 自带，跟 Laradock 无关，但 Laradock 大量在用，是个被低估的工具。</p>
+<h2 id="6-db--cache-用命名-volume不要-bind-mount">6. db / cache 用命名 volume，不要 bind mount</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">services</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  mysql</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">    volumes</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">      - </span><span style="color:#032F62">mysql:/var/lib/mysql</span><span style="color:#6A737D">            # 这样</span></span>
+<span class="line"><span style="color:#6A737D">      # - ./data/mysql:/var/lib/mysql   # 不要这样</span></span>
+<span class="line"><span style="color:#22863A">volumes</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  mysql</span><span style="color:#24292E">:</span></span></code></pre>
+<p>源码和数据卷分两种挂法 —— 源码要编辑器实时改，bind mount；数据要长期存活、和代码仓库脱钩，named volume。后者具体好在哪：</p>
+<ul>
+<li><strong>误删难</strong> —— <code>rm -rf ./data</code> 碰不到，得 <code>docker volume rm</code> 才删得了</li>
+<li><strong>不污染 git</strong> —— bind mount 的 <code>./data/mysql/</code> 会进工作树，<code>.gitignore</code> 漏一次就把 ibdata 提进仓库</li>
+<li><strong>备份 / 迁移有现成模式</strong> —— named volume 跑一次 helper 容器就能打包；bind mount 还得另处理 owner</li>
+<li><strong>权限不打架</strong> —— 容器里 mysql uid 999 经常 chown 不动 host 目录；named volume 由容器自己初始化，没这层</li>
+</ul>
+<p><strong>规则</strong>：源码 bind mount，数据卷（mysql / postgres / redis / elasticsearch）走 named volume。</p> </div> </div> </article><article class="card" data-href="/posts/221001-git-clean-untracked/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-10-01T00:00:00.000Z" data-astro-cid-d6qgp232>2022-10-01</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/221001-git-clean-untracked/" data-astro-cid-d6qgp232>git clean 删未跟踪文件：先 -n 看，-X 单独清 ignored</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>git clean</code> 删的是 working tree 里<strong>未被追踪</strong>的文件——<code>.gitignore</code> 命中的、和未 <code>add</code> 过的新文件。删完没有 <code>git checkout</code> 可以救，所以<strong>永远先用 <code>-n</code> 走一遍</strong>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clean</span><span style="color:#005CC5"> -n</span><span style="color:#6A737D">           # 列出会删的文件，不动磁盘</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clean</span><span style="color:#005CC5"> -nd</span><span style="color:#6A737D">          # 含未跟踪的目录</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clean</span><span style="color:#005CC5"> -nXd</span><span style="color:#6A737D">         # 只列 .gitignore 命中的（如 build/ dist/）</span></span></code></pre>
@@ -1035,7 +1104,13 @@ today I learned, want to remember, and might want to share.
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>PHP Fatal error: strict_types declaration must be the very first statement in the script</span></span></code></pre>
 <p>不能用 block 形式：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">declare</span><span style="color:#24292E">(</span><span style="color:#005CC5">strict_types</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">) { </span><span style="color:#D73A49">...</span><span style="color:#24292E"> }   </span><span style="color:#6A737D">// ❌ must not use block mode</span></span></code></pre>
-<p>declare 行<strong>只</strong>作用于当前文件，不会污染 require / include 进来的脚本 —— 这正是允许逐文件渐进迁移的设计。</p> </div> </div> </article><article class="card" data-href="/posts/210129-and-or-precedence/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-01-29T00:00:00.000Z" data-astro-cid-d6qgp232>2021-01-29</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210129-and-or-precedence/" data-astro-cid-d6qgp232>SQL AND / OR 执行优先级</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>AND</code> 优先级高于 <code>OR</code>，所有 SQL 方言通用：</p>
+<p>declare 行<strong>只</strong>作用于当前文件，不会污染 require / include 进来的脚本 —— 这正是允许逐文件渐进迁移的设计。</p> </div> </div> </article><article class="card" data-href="/posts/210712-git-allow-empty-init-commit/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-07-12T00:00:00.000Z" data-astro-cid-d6qgp232>2021-07-12</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210712-git-allow-empty-init-commit/" data-astro-cid-d6qgp232>Git `--allow-empty`：init repo 先打个空 commit 占位</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> commit</span><span style="color:#005CC5"> -m</span><span style="color:#032F62"> "init repo"</span><span style="color:#005CC5"> --allow-empty</span></span></code></pre>
+<p>第一个 commit 是 git history 的根。<code>git rebase -i HEAD~N</code> 默认从<strong>根之后</strong>开始，<strong>根 commit 不在 todo list 里</strong> —— 除非显式 <code>git rebase --root -i</code>（操作复杂度陡增）。先放一个空 init commit 占位，后面所有内容性 commit 都可以正常 rebase / squash / reorder。</p>
+<p><code>--allow-empty</code> 的其他真实场景：</p>
+<ul>
+<li>CI 只在 push 时触发但 working tree 没改 —— 强推一个空 commit 触发流水线</li>
+<li>给一批工作起点打锚点（<code>feat: kick off auth refactor</code>）方便后续 <code>git log --grep</code></li>
+</ul> </div> </div> </article><article class="card" data-href="/posts/210129-and-or-precedence/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-01-29T00:00:00.000Z" data-astro-cid-d6qgp232>2021-01-29</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210129-and-or-precedence/" data-astro-cid-d6qgp232>SQL AND / OR 执行优先级</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>AND</code> 优先级高于 <code>OR</code>，所有 SQL 方言通用：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> c1 </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> c2 </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> c3;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">-- 实际等价于（AND 先绑定）：</span></span>
@@ -1044,120 +1119,7 @@ today I learned, want to remember, and might want to share.
 <span class="line"><span style="color:#6A737D">-- 不是这样（很多人下意识这么想）：</span></span>
 <span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> (c1 </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> c2) </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> c3;</span></span></code></pre>
 <p>口诀：<code>AND</code> 看成 <code>*</code>，<code>OR</code> 看成 <code>+</code>，乘号先算。</p>
-<p>Bug 不会报错——query 跑成功，只是结果错——所以 <code>WHERE</code> 里只要 <code>AND</code> 和 <code>OR</code> 混用，<strong>永远写括号</strong>，别赌读者（或几个月后的自己）记得优先级。</p> </div> </div> </article><article class="card" data-href="/posts/210129-delete-self-reference-1093/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-01-29T00:00:00.000Z" data-astro-cid-d6qgp232>2021-01-29</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210129-delete-self-reference-1093/" data-astro-cid-d6qgp232>MySQL DELETE 子查询自引 1093 错误</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>想删一张表里的重复数据，按 <code>name</code> 分组保留 <code>MIN(id)</code> 那条：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">DELETE</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> student</span></span>
-<span class="line"><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">NOT</span><span style="color:#D73A49"> IN</span><span style="color:#24292E"> (</span><span style="color:#D73A49">SELECT</span><span style="color:#005CC5"> MIN</span><span style="color:#24292E">(id) </span><span style="color:#D73A49">FROM</span><span style="color:#24292E"> student </span><span style="color:#D73A49">GROUP BY</span><span style="color:#032F62"> `name`</span><span style="color:#24292E">);</span></span></code></pre>
-<p>直接跑会报：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">ERROR</span><span style="color:#005CC5"> 1093</span><span style="color:#24292E"> (HY000): You can</span><span style="color:#032F62">'t specify target table '</span><span style="color:#24292E">student</span><span style="color:#032F62">' for update in FROM clause</span></span></code></pre>
-<p>MySQL 不允许在 <code>DELETE</code> / <code>UPDATE</code> 的子查询里<strong>直接引用目标表</strong>——执行时一边扫一边改会让结果不确定，干脆禁掉。</p>
-<p>绕开的办法：再套一层 derived table，强制 MySQL 把子查询<strong>物化成临时表</strong>后再用，与目标表解耦：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">DELETE</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> student</span></span>
-<span class="line"><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">NOT</span><span style="color:#D73A49"> IN</span><span style="color:#24292E"> (</span></span>
-<span class="line"><span style="color:#D73A49">  SELECT</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FROM</span><span style="color:#24292E"> (</span></span>
-<span class="line"><span style="color:#D73A49">    SELECT</span><span style="color:#005CC5"> MIN</span><span style="color:#24292E">(id) </span><span style="color:#D73A49">AS</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FROM</span><span style="color:#24292E"> student </span><span style="color:#D73A49">GROUP BY</span><span style="color:#032F62"> `name`</span></span>
-<span class="line"><span style="color:#24292E">  ) tmp                                              </span><span style="color:#6A737D">-- 关键：再包一层</span></span>
-<span class="line"><span style="color:#24292E">);</span></span></code></pre>
-<p>MySQL 8.0+ 用 CTE 写更清晰，CTE 同样会被物化，所以一样能绕开 1093：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">WITH</span><span style="color:#D73A49"> keep</span><span style="color:#D73A49"> AS</span><span style="color:#24292E"> (</span><span style="color:#D73A49">SELECT</span><span style="color:#005CC5"> MIN</span><span style="color:#24292E">(id) </span><span style="color:#D73A49">AS</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FROM</span><span style="color:#24292E"> student </span><span style="color:#D73A49">GROUP BY</span><span style="color:#032F62"> `name`</span><span style="color:#24292E">)</span></span>
-<span class="line"><span style="color:#D73A49">DELETE</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> student </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">NOT</span><span style="color:#D73A49"> IN</span><span style="color:#24292E"> (</span><span style="color:#D73A49">SELECT</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FROM</span><span style="color:#D73A49"> keep</span><span style="color:#24292E">);</span></span></code></pre>
-<p>PostgreSQL / SQL Server 没这个限制，直接写第一种形式就行。</p> </div> </div> </article><article class="card" data-href="/posts/210129-for-update-lock-scope/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-01-29T00:00:00.000Z" data-astro-cid-d6qgp232>2021-01-29</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210129-for-update-lock-scope/" data-astro-cid-d6qgp232>MySQL FOR UPDATE / FOR SHARE 真实加锁范围</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>SELECT ... FOR UPDATE</code> 和 <code>FOR SHARE</code>（8.0.1 之前叫 <code>LOCK IN SHARE MODE</code>）加的锁经常<strong>比写 SQL 时以为的大一圈</strong>。规则不复杂，但每条单独看都反直觉。</p>
-<h2 id="s-锁-vs-x-锁">S 锁 vs X 锁</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th></th><th>已有 S</th><th>已有 X</th></tr></thead><tbody><tr><td>申请 S</td><td>✅</td><td>❌</td></tr><tr><td>申请 X</td><td>❌</td><td>❌</td></tr></tbody></table>
-<ul>
-<li><code>FOR SHARE</code> = S 锁，多事务可同时拿</li>
-<li><code>FOR UPDATE</code> / <code>INSERT</code> / <code>UPDATE</code> / <code>DELETE</code> = X 锁，互斥</li>
-</ul>
-<p>死锁陷阱：两个事务都拿了同一行 S 锁，<strong>任何一方想升级成 X 锁都会死锁</strong>——必须先等对方释放。所以 <code>FOR SHARE</code> 后立刻 <code>UPDATE</code> 是高危模式。</p>
-<h2 id="锁加在索引上不是行上">锁加在索引上，不是行上</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> non_indexed_col </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'x'</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#24292E">;</span></span></code></pre>
-<p>WHERE 列没索引时 InnoDB 会<strong>对扫描过的所有索引项加锁</strong>——走全表扫描就等于锁全表。EXPLAIN 看到 <code>type=ALL</code> 配上 <code>FOR UPDATE</code> 基本就是事故现场。</p>
-<p>确保 WHERE 列有索引，且 EXPLAIN <code>type</code> 不是 <code>ALL</code>，加锁才能精准。</p>
-<h2 id="repeatable-read-下-next-key-lock-把-gap-也锁了">REPEATABLE READ 下 next-key lock 把 gap 也锁了</h2>
-<p>MySQL 默认隔离级别 REPEATABLE READ，InnoDB 此时用 <strong>next-key lock = record lock + gap lock</strong>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#6A737D">-- 表里现有 id: 1, 5, 10</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">BETWEEN</span><span style="color:#005CC5"> 3</span><span style="color:#D73A49"> AND</span><span style="color:#005CC5"> 8</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#6A737D">-- 锁 id=5（record lock）+ (1,5)、(5,10) 区间（gap lock）</span></span>
-<span class="line"><span style="color:#6A737D">-- 另一事务 INSERT id=4 / id=7 全部阻塞</span></span></code></pre>
-<p>更反直觉的是<strong>没匹配上的查询也加 gap 锁</strong>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#6A737D">-- 表里现有 id: 1, 5, 10</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 7</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#6A737D">-- 没行可锁，但锁住 (5,10) 区间，INSERT id=6/7/8/9 全部阻塞</span></span></code></pre>
-<p>唯一索引 + 等值匹配<strong>且匹配到</strong>——只加 record lock 不加 gap lock。这是少数能精准加锁的场景。</p>
-<h2 id="read-committed-关掉-gap-锁">READ COMMITTED 关掉 gap 锁</h2>
-<p>会话或事务级改成 RC，<strong>gap lock 全部消失，只剩 record lock</strong>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SET</span><span style="color:#D73A49"> SESSION</span><span style="color:#D73A49"> TRANSACTION</span><span style="color:#D73A49"> ISOLATION</span><span style="color:#D73A49"> LEVEL</span><span style="color:#D73A49"> READ</span><span style="color:#D73A49"> COMMITTED</span><span style="color:#24292E">;</span></span></code></pre>
-<p>代价是放弃可重复读、接受 phantom row。在高并发 OLTP 场景里去 gap lock 能显著降低死锁率，很多 ORM 默认推荐 RC。</p>
-<h2 id="for-share-在-80-多的-nowait--skip-locked">FOR SHARE 在 8.0+ 多的 NOWAIT / SKIP LOCKED</h2>
-<p>默认拿不到锁会等 <code>innodb_lock_wait_timeout</code>（50s），8.0+ 加了两个修饰符——<code>LOCK IN SHARE MODE</code> 不支持，<code>FOR SHARE</code> 才有：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> id </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 5</span><span style="color:#D73A49"> FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#D73A49"> NOWAIT</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#6A737D">-- 拿不到立刻报 ER_LOCK_NOWAIT，不等</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> status</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'pending'</span><span style="color:#D73A49"> ORDER BY</span><span style="color:#24292E"> id </span><span style="color:#D73A49">FOR</span><span style="color:#D73A49"> UPDATE</span><span style="color:#D73A49"> SKIP</span><span style="color:#24292E"> LOCKED </span><span style="color:#D73A49">LIMIT</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#6A737D">-- 跳过被锁的行</span></span></code></pre>
-<p><code>SKIP LOCKED</code> 是写消息队列 / worker 抢任务的标准模式——多个 worker 同时跑这条 SQL，自动每人拿到不同任务，零竞争零冲突。比 <code>FOR UPDATE</code> + 应用层重试简单一个数量级。</p> </div> </div> </article><article class="card" data-href="/posts/210129-optimizer-trace/" data-astro-cid-d6qgp232> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-01-29T00:00:00.000Z" data-astro-cid-d6qgp232>2021-01-29</time> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210129-optimizer-trace/" data-astro-cid-d6qgp232>MySQL 看优化器决策的三件套</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>想知道 MySQL 内部怎么处理你的 SQL，按”看的层次”挑工具：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>工具</th><th>看到什么</th><th>适用场景</th></tr></thead><tbody><tr><td><code>EXPLAIN</code></td><td>物理执行计划（join 顺序、用了哪个 index、估算扫描行数）</td><td>日常 SQL 优化第一站</td></tr><tr><td><code>SHOW WARNINGS</code> after <code>EXPLAIN</code></td><td>MySQL 重写 / 改写后的 SQL</td><td>联表、视图、子查询场景，看实际跑的版本</td></tr><tr><td><code>OPTIMIZER_TRACE</code></td><td>优化器完整决策过程（cost 估算、为什么没选某 index）</td><td>选 index 反常识时排查</td></tr></tbody></table>
-<h2 id="explain--show-warnings">EXPLAIN + SHOW WARNINGS</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#24292E">EXPLAIN </span><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#032F62"> `order`</span><span style="color:#24292E"> o </span><span style="color:#D73A49">JOIN</span><span style="color:#24292E"> user u </span><span style="color:#D73A49">ON</span><span style="color:#005CC5"> o</span><span style="color:#24292E">.</span><span style="color:#005CC5">uid</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> u</span><span style="color:#24292E">.</span><span style="color:#005CC5">id</span><span style="color:#D73A49"> WHERE</span><span style="color:#005CC5"> u</span><span style="color:#24292E">.</span><span style="color:#005CC5">email</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'a@b.com'</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#24292E">SHOW WARNINGS;</span></span></code></pre>
-<p><code>SHOW WARNINGS</code> 里 <code>Note 1003</code> 行就是 MySQL 改写后的 SQL——优化器可能调换 join 顺序、把外连接转内连接、把子查询折成 join。看了重写版才知道<strong>实际跑的是什么</strong>，原 SQL 已经不重要了。</p>
-<h2 id="optimizer_trace">optimizer_trace</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SET</span><span style="color:#24292E"> optimizer_trace </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'enabled=on'</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#24292E"> ... ;                                         </span><span style="color:#6A737D">-- 你要分析的 SQL</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#005CC5"> information_schema</span><span style="color:#24292E">.</span><span style="color:#005CC5">OPTIMIZER_TRACE</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#D73A49">SET</span><span style="color:#24292E"> optimizer_trace </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'enabled=off'</span><span style="color:#24292E">;</span></span></code></pre>
-<p>返回的 <code>TRACE</code> 列是一大坨 JSON，覆盖三个阶段：</p>
-<ul>
-<li><strong><code>join_preparation</code></strong> — SQL 解析、视图展开、子查询改写</li>
-<li><strong><code>join_optimization</code></strong> — 候选 index、各 index 的估算 cost、最终选谁</li>
-<li><strong><code>join_execution</code></strong> — 执行细节</li>
-</ul>
-<p>最常看 <code>join_optimization</code>，里面 <code>range_analysis</code> / <code>chosen_range_access_summary</code> 直接告诉你”为什么没选 <code>idx_email</code>”——通常是 <code>rows_estimation</code> 估算 cost 比全表扫还高，或者 join 顺序变了导致 index 不可用。</p>
-<p>trace 是 session 级别，默认只保留最近一次，且开启后所有 query 都会被 trace（有性能开销），用完立刻关。</p> </div> </div> </article> </section><p class="more" data-astro-cid-j7pv25f6> <a href="/archives/" data-astro-cid-j7pv25f6>→ browse all 58 notes in archives</a> </p><script>
+<p>Bug 不会报错——query 跑成功，只是结果错——所以 <code>WHERE</code> 里只要 <code>AND</code> 和 <code>OR</code> 混用，<strong>永远写括号</strong>，别赌读者（或几个月后的自己）记得优先级。</p> </div> </div> </article> </section><p class="more" data-astro-cid-j7pv25f6> <a href="/archives/" data-astro-cid-j7pv25f6>→ browse all 64 notes in archives</a> </p><script>
       (() => {
         const ROW = 8;       // grid-auto-rows unit, in px
         const GAP = 22;      // visual vertical gap between cards, in px

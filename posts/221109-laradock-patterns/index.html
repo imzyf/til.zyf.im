@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="[Laradock](https://github.com/laradock/laradock) 是 PHP/Laravel 的 docker-compose 全家桶模板。近年活跃度下降，新 Laravel 项目更多用 [Sail](https://laravel.com/docs/sail)。但它的…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Laradock 偷师：6 个值得抄走的 Docker 工程模式 · TIL</title><style>:root{--bg: #f7f2e8;--fg: #2a2520;--muted: #6b6660;--rule: #d8d0c2;--accent: #9d5234;--code-bg: #ede5d4;--serif: "Iowan Old Style", "Charter", "PingFang SC", "Hiragino Sans GB", Georgia, "Source Han Serif SC", "Noto Serif CJK SC", serif;--mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;--container-home: 96ch;--container-note: 76ch}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--fg);background:var(--bg);padding:1.5rem 1.25rem 4rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}code{background:var(--code-bg);padding:.1em .35em;border-radius:3px;font-family:var(--mono);font-size:.88em}pre{background:var(--code-bg);padding:.85rem 1rem;border-radius:4px;overflow-x:auto;font-family:var(--mono);font-size:.88em;line-height:1.55}pre code{background:none;padding:0;font-size:inherit}pre.astro-code,pre.shiki{background:var(--code-bg)!important}.code-block{margin:1rem 0;border-radius:4px;background:var(--code-bg);overflow:hidden}.code-block-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .85rem;font-family:var(--mono);font-size:.72rem;line-height:1.4;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid rgba(0,0,0,.06)}.code-block-lang{user-select:none}.code-block-copy{font:inherit;color:var(--muted);background:transparent;border:none;padding:.1rem .45rem;border-radius:3px;cursor:pointer;text-transform:inherit;letter-spacing:inherit}.code-block-copy:hover{color:var(--fg);background:#0000000d}.code-block-copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.code-block-copy.is-copied{color:var(--accent)}.code-block pre{margin:0;border-radius:0}table{border-collapse:collapse;margin:1.2rem 0;font-size:.92em;width:auto;max-width:100%}th,td{border:1px solid var(--rule);padding:.45rem .8rem;text-align:left;vertical-align:top}thead th{background:var(--code-bg);font-weight:700}tbody tr:nth-child(2n){background:#00000005}mark{background:#9d52342e;color:inherit;padding:.05em .2em;border-radius:2px}kbd{font-family:var(--mono);font-size:.82em;background:var(--code-bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;padding:.05em .4em;color:var(--fg)}.site-header,.site-main,.site-footer{margin-left:auto;margin-right:auto}.site-header,.site-footer,.site-main.width-home{max-width:var(--container-home)}.site-main.width-note{max-width:var(--container-note)}.site-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;margin-bottom:2rem;border-bottom:1px solid var(--rule)}.site-title{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--fg)}.site-nav{display:flex;gap:1.1rem;font-size:.92rem}.site-nav a{color:var(--muted)}.site-nav a.active{color:var(--fg)}.site-footer{margin-top:4rem;padding-top:.85rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;gap:.6rem}.site-footer a{color:var(--muted)}@media(prefers-reduced-motion:no-preference){a{transition:color .12s ease}}@media(max-width:640px){body{padding:1.25rem 1rem 3rem;font-size:16px}.site-header{margin-bottom:1.5rem}.site-title{font-size:1.05rem}.site-nav{gap:.85rem;font-size:.88rem}}
+.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <a href="/" class="site-title">TIL</a> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note" data-astro-cid-fzx4jmue> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>Laradock 偷师：6 个值得抄走的 Docker 工程模式</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2022-11-09T00:00:00.000Z" data-astro-cid-fzx4jmue>2022-11-09</time> <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/docker/" class="tag" data-astro-cid-fzx4jmue>#docker</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p><a href="https://github.com/laradock/laradock">Laradock</a> 是 PHP/Laravel 的 docker-compose 全家桶模板。近年活跃度下降，新 Laravel 项目更多用 <a href="https://laravel.com/docs/sail">Sail</a>。但它的 Dockerfile / compose 配置里有些经过多年打磨的模式，值得偷师——以下 6 条不限 PHP 场景。</p>
+<h2 id="1-puidpgid容器用户对齐宿主否则-bind-mount-文件全是-root">1. PUID/PGID：容器用户对齐宿主，否则 bind mount 文件全是 root</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PUID=1000</span></span>
+<span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PGID=1000</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> groupadd -g ${PGID} laradock &#x26;&#x26; \</span></span>
+<span class="line"><span style="color:#24292E">    useradd -l -u ${PUID} -g laradock -m laradock</span></span></code></pre>
+<p>容器默认 root 跑，写到 bind mount 的文件宿主端归 root 所有——开发者下次 <code>vim</code> 撞 permission denied，<code>rm</code> 要 sudo。把 host 的 <code>id -u</code> / <code>id -g</code> 通过 <code>.env</code> 注入 ARG，容器内建同 uid 用户，文件落地就是宿主用户。<strong>Linux dev 必踩</strong>；Mac/Win 因 Docker Desktop 自动做 uid 映射，不会感受到这个坑。</p>
+<h2 id="2-debian_frontendnoninteractive-写-run-不写-env">2. <code>DEBIAN_FRONTEND=noninteractive</code> 写 RUN 不写 ENV</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#6A737D"># 不要：会污染容器运行时</span></span>
+<span class="line"><span style="color:#D73A49">ENV</span><span style="color:#24292E"> DEBIAN_FRONTEND=noninteractive</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 这样：只作用于该层 build</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata</span></span></code></pre>
+<p><code>ENV</code> 写进的是镜像层、运行时也生效——之后 <code>docker exec</code> 进容器手动装东西时，所有交互配置询问也被跳过（默认值生效），可能错过冲突选项或时区选择。<code>RUN</code> 内赋值只对那一条命令生效，构建期免提示、运行期保留交互。Docker 官方 <a href="https://docs.docker.com/develop/develop-images/instructions/#env">Dockerfile best practices · ENV</a> 同此建议。</p>
+<h2 id="3-extra_hosts-dockerhost-把容器访问宿主统一掉">3. <code>extra_hosts: dockerhost</code> 把”容器访问宿主”统一掉</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">extra_hosts</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">  - </span><span style="color:#032F62">"dockerhost:${DOCKER_HOST_IP}"</span></span>
+<span class="line"><span style="color:#6A737D">  # Linux 20.10+ 现在还可以这样：</span></span>
+<span class="line"><span style="color:#24292E">  - </span><span style="color:#032F62">"host.docker.internal:host-gateway"</span></span></code></pre>
+<p>Mac/Win Docker Desktop 自带 <code>host.docker.internal</code>，Linux 长期没有（20.10 才支持 <code>host-gateway</code> magic value）。Laradock 给容器塞统一别名 <code>dockerhost</code>——Xdebug 回连 IDE 时永远写 <code>xdebug.client_host=dockerhost</code>，跨平台共用一份 ini。</p>
+<h2 id="4-arg-install_xxxfalse-的-opt-in-扩展矩阵">4. <code>ARG INSTALL_XXX=false</code> 的 opt-in 扩展矩阵</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> INSTALL_XDEBUG=false</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> if [ ${INSTALL_XDEBUG} = true ]; then \</span></span>
+<span class="line"><span style="color:#24292E">    pecl install xdebug &#x26;&#x26; docker-php-ext-enable xdebug; \</span></span>
+<span class="line"><span style="color:#24292E">fi</span></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dotenv"><code><span class="line"><span style="color:#E36209">WORKSPACE_INSTALL_XDEBUG</span><span style="color:#D73A49">=</span><span style="color:#24292E">true</span></span>
+<span class="line"><span style="color:#E36209">PHP_FPM_INSTALL_XDEBUG</span><span style="color:#D73A49">=</span><span style="color:#24292E">true</span></span></code></pre>
+<p>一份 Dockerfile 适配 N 个项目：要 swoole 的项目 <code>INSTALL_SWOOLE=true</code>，不要的 false——不用为每个项目 fork 一份 Dockerfile。代价：build cache 粒度变粗（任一 ARG 变全层失效），高频切换的扩展（xdebug）值得拆独立 stage 减小重建范围。</p>
+<h2 id="5-docker-php-ext-disable-切扩展不重编译">5. <code>docker-php-ext-disable</code> 切扩展不重编译</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 生产关 xdebug，.so 文件仍保留</span></span>
+<span class="line"><span style="color:#6F42C1">docker-php-ext-disable</span><span style="color:#032F62"> xdebug</span><span style="color:#032F62"> pcov</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 开发再 enable</span></span>
+<span class="line"><span style="color:#6F42C1">docker-php-ext-enable</span><span style="color:#032F62"> xdebug</span></span></code></pre>
+<p>PHP 扩展本质是 <code>.so</code> + 一行 <code>extension=xdebug.so</code> ini 引用。<code>docker-php-ext-disable</code> 只移走 ini，<code>.so</code> 还在。开发/生产同一个镜像，不为”是否带 xdebug”重编两套——秒级切换。这条 official PHP image 自带，跟 Laradock 无关，但 Laradock 大量在用，是个被低估的工具。</p>
+<h2 id="6-db--cache-用命名-volume不要-bind-mount">6. db / cache 用命名 volume，不要 bind mount</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">services</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  mysql</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">    volumes</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">      - </span><span style="color:#032F62">mysql:/var/lib/mysql</span><span style="color:#6A737D">            # 这样</span></span>
+<span class="line"><span style="color:#6A737D">      # - ./data/mysql:/var/lib/mysql   # 不要这样</span></span>
+<span class="line"><span style="color:#22863A">volumes</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  mysql</span><span style="color:#24292E">:</span></span></code></pre>
+<p>源码和数据卷分两种挂法 —— 源码要编辑器实时改，bind mount；数据要长期存活、和代码仓库脱钩，named volume。后者具体好在哪：</p>
+<ul>
+<li><strong>误删难</strong> —— <code>rm -rf ./data</code> 碰不到，得 <code>docker volume rm</code> 才删得了</li>
+<li><strong>不污染 git</strong> —— bind mount 的 <code>./data/mysql/</code> 会进工作树，<code>.gitignore</code> 漏一次就把 ibdata 提进仓库</li>
+<li><strong>备份 / 迁移有现成模式</strong> —— named volume 跑一次 helper 容器就能打包；bind mount 还得另处理 owner</li>
+<li><strong>权限不打架</strong> —— 容器里 mysql uid 999 经常 chown 不动 host 目录；named volume 由容器自己初始化，没这层</li>
+</ul>
+<p><strong>规则</strong>：源码 bind mount，数据卷（mysql / postgres / redis / elasticsearch）走 named volume。</p> </div>   <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>
