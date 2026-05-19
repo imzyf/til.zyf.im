@@ -1,8 +1,341 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged llm"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#llm · TIL</title><link rel="stylesheet" href="/_astro/Base.Cpo8pTgG.css">
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged llm"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#llm · TIL</title><link rel="stylesheet" href="/_astro/Base.B2Seo8w3.css">
 <style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
 .card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
 </style></head> <body> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline"><span class="tagline-echo"><span>today I learned, </span></span>want
-          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#llm</h1> <p class="page-lede" data-astro-cid-tge3q7ae>1 note</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260518-reasoning-vs-cot-prompts/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-18T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-18</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/prompt-engineering/" class="tag" data-astro-cid-d6qgp232>#prompt-engineering</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/reasoning-models/" class="tag" data-astro-cid-d6qgp232>#reasoning-models</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260518-reasoning-vs-cot-prompts/" data-astro-cid-d6qgp232>Reasoning model 别再写 CoT prompt</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>老的 CoT prompt 技巧（<code>Let's think step by step</code>、few-shot CoT 示例）在 reasoning model 上不仅多余，还会<strong>降低</strong>性能 —— OpenAI 在 o1 的 prompting guide 里明确说了这一点。原因不在”模型更聪明所以不需要”，而在 CoT 和 reasoning model 根本不是一回事。</p>
+          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#llm</h1> <p class="page-lede" data-astro-cid-tge3q7ae>5 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260519-llm-orchestration-layers/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-19T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-19</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/langgraph/" class="tag" data-astro-cid-d6qgp232>#langgraph</a><a href="/tags/python/" class="tag" data-astro-cid-d6qgp232>#python</a><a href="/tags/workflow/" class="tag" data-astro-cid-d6qgp232>#workflow</a><a href="/tags/agent/" class="tag" data-astro-cid-d6qgp232>#agent</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260519-llm-orchestration-layers/" data-astro-cid-d6qgp232>Workflow / Agent / Function Calling：三层位置和分水岭（LangGraph demo）</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>讨论 LLM 应用编排，<strong>workflow、agent、function calling</strong> 是三个绕不过去的基础词；外加一个编排框架（LangGraph / CrewAI / Pydantic AI / OpenAI Agents SDK 任选其一）就构成完整讨论。它们<strong>不是平行关系</strong> —— 先分清各自位置，再谈选型，问题会简单很多。</p>
+<h2 id="三层位置图">三层位置图</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>[ 应用形态 ]  Workflow（图固定） /  Agent（图运行时才长出来）</span></span>
+<span class="line"><span>                              ↓ 用</span></span>
+<span class="line"><span>[ 编排框架 ]  LangGraph：节点 + 边 + 共享 state</span></span>
+<span class="line"><span>                              ↓ 调</span></span>
+<span class="line"><span>[ LLM 协议 ]  Function Calling：强约束 JSON schema</span></span></code></pre>
+<ul>
+<li><strong>Function Calling</strong>：LLM API 的协议能力，给 LLM 一份 JSON Schema，逼它按 schema 输出。<strong>最底层、最稳定</strong>，OpenAI / Anthropic / Gemini 都有。</li>
+<li><strong>LangGraph</strong>：本文用的编排框架（同族还有 CrewAI / Pydantic AI / OpenAI Agents SDK 等），把流程画成「节点 + 边 + 共享 state」。<strong>工具层</strong>，本身不发明能力，只是把节点间的传递标准化。下面的位置图和分水岭判断对其他框架同样适用。</li>
+<li><strong>Workflow / Agent</strong>：两种应用形态，区别只有一个 —— <strong>控制流在你的代码手里，还是在 LLM 手里</strong>。抽象层的差异见 <a href="./260518-agent-vs-workflow">Workflow vs Agent 的本质差异</a>。</li>
+</ul>
+<p>关键认知：Workflow 和 Agent <strong>不是 LangGraph 提供的「模式开关」</strong>，是你用同一套 LangGraph + Function Calling <strong>拼出来的两种不同形态</strong>。LangGraph 两种都能做，分水岭在你怎么写边。</p>
+<h2 id="function-calling-是两种形态共用的底层">Function Calling 是两种形态共用的底层</h2>
+<p>同一个 function calling API，两种用法决定你做出的是 workflow 还是 agent：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>维度</th><th>Workflow 用法</th><th>Agent 用法</th></tr></thead><tbody><tr><td>给 LLM 几个 function</td><td>1 个（= 输出 schema）</td><td>N 个（每个工具一个）</td></tr><tr><td><code>tool_choice</code></td><td><code>required</code>，必须调</td><td><code>auto</code>，LLM 自己挑</td></tr><tr><td>function 的角色</td><td>数据合同</td><td>可调用工具</td></tr><tr><td>下一步谁定</td><td>Python 看返回字段</td><td>LLM 看 observation 决定</td></tr><tr><td>LangChain 写法</td><td><code>llm.with_structured_output(Schema)</code></td><td><code>llm.bind_tools([t1, t2, ...])</code></td></tr></tbody></table>
+<p>底层 HTTP 请求几乎一样，差别只在<strong>给几个 tool</strong>、<strong><code>tool_choice</code> 设成什么</strong>。</p>
+<blockquote>
+<p>一句话：<strong>function calling 是协议层；workflow / agent 是你怎么用这个协议</strong>。</p>
+</blockquote>
+<h2 id="demo分水岭具体在代码哪一行">demo：分水岭具体在代码哪一行</h2>
+<p>配套两个文件，<strong>同一段业务逻辑（理财顾问会议笔记 → 抽字段 → 合规检查 → 分支生成文档）、两种控制流形态</strong>，对照看一目了然：</p>
+<ul>
+<li><a href="./260519-llm-orchestration-layers/financial_workflow.py"><code>financial_workflow.py</code></a> —— workflow 版，每个关键点标 <code>[WORKFLOW vs AGENT]</code> 告诉你这一行换成 agent 会变什么样</li>
+<li><a href="./260519-llm-orchestration-layers/financial_agent.py"><code>financial_agent.py</code></a> —— 同业务的 agent 版，每个关键点标 <code>[WORKFLOW → AGENT]</code> 给出实际改造结果</li>
+</ul>
+<p>workflow 文件里三段注释对应三个设计决策，正好覆盖上面三层：</p>
+<ol>
+<li><strong>Function Calling 层</strong> —— <code>with_structured_output(Pydantic)</code> 锁死 LLM 返回 schema，下游节点拿到的是类型化对象，不是裸文本要 <code>json.loads</code> 加 <code>try/except</code></li>
+<li><strong>LangGraph 层</strong> —— <code>state</code> 是节点间的「信封」，节点 <code>return dict</code> 由 LangGraph 自动 merge，加节点 / 改顺序 / 插 human-in-the-loop 都不动函数签名</li>
+<li><strong>应用形态层（分水岭）</strong> —— <code>add_conditional_edges</code> 的路由参数：是你的 Python 函数 → workflow；是 <code>tools_condition</code>（读 LLM last message 判定）→ agent</li>
+</ol>
+<p>对照两个文件最直接的一组改造：workflow 里的 <code>route_by_risk</code> Python 函数 → agent 里替换成 <code>tools_condition</code>；workflow 的 <code>TypedDict</code> 业务字段 state → agent 的 <code>MessagesState</code>；workflow 的 <code>(state)→dict</code> 节点 → agent 的 <code>@tool</code> 函数。那一瞬间失去的代码控制力，就是 agent 多出来的不确定性的具体形态，也是你为什么需要 trace / eval / guardrail 那一整套基础设施的根因。</p>
+<h2 id="跑起来">跑起来</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">python</span><span style="color:#005CC5"> -m</span><span style="color:#032F62"> venv</span><span style="color:#032F62"> .venv</span><span style="color:#24292E"> &#x26;&#x26; </span><span style="color:#005CC5">source</span><span style="color:#032F62"> .venv/bin/activate</span></span>
+<span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> requirements.txt</span></span>
+<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "OPENAI_API_KEY=sk-xxx"</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> .env</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> financial_workflow.py</span><span style="color:#6A737D">   # workflow 版：固定流程，编译期就能 draw_ascii</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> financial_agent.py</span><span style="color:#6A737D">      # agent 版：LLM 决定每一步，stream 打印实际 loop</span></span></code></pre>
+<p>样本对白故意写满合规雷点（<code>绝对能保证 8% 复利</code> / <code>从来没跌过</code> / 未审批私募），所以默认走 P1 分支。把这些词删掉重跑，能看到 safe 分支怎么走。两个文件用同一段样本，方便对照输出。</p>
+<h2 id="相关词地图">相关词地图</h2>
+<p>上面三层每层都有兄弟词，列在这里方便选型时快速定位 —— 每个词的展开看各自的笔记。</p>
+<h3 id="应用形态层workflow--agent-同族">应用形态层（Workflow / Agent 同族）</h3>
+<ul>
+<li>Anthropic《Building Effective Agents》给的 workflow 五模式：<strong>Prompt chaining / Routing / Parallelization / Orchestrator-workers / Evaluator-optimizer</strong></li>
+<li>Agent 经典模式：<strong>ReAct / Reflexion / Plan-and-Execute / Multi-agent / Swarm</strong></li>
+<li>语义重叠但定位不同：<strong>Assistant / Copilot / Chatbot / Autonomous agent</strong></li>
+</ul>
+<h3 id="编排框架层langgraph-同族">编排框架层（LangGraph 同族）</h3>
+<ul>
+<li>Python：<strong>LangChain / LangGraph / LlamaIndex / CrewAI / AutoGen / Pydantic AI / Haystack</strong></li>
+<li>TypeScript：<strong>Vercel AI SDK / Mastra</strong></li>
+<li>厂商原生：<strong>OpenAI Agents SDK / Anthropic Claude Agent SDK / Google ADK / Semantic Kernel</strong></li>
+</ul>
+<h3 id="llm-协议层function-calling-同族">LLM 协议层（Function Calling 同族）</h3>
+<ul>
+<li>同义/近义：<strong>Tool use</strong>（Anthropic 叫法）/ <strong>Tool calling</strong></li>
+<li>强约束输出：<strong>Structured Outputs / JSON mode / Guided decoding</strong></li>
+<li>新协议：<strong>MCP</strong>（Model Context Protocol，Anthropic 推的跨厂商 tool/resource 标准协议）</li>
+<li>相邻能力：<strong>Computer Use / Prompt Caching</strong></li>
+</ul>
+<h3 id="常被一起提其实在别层的词">常被一起提、其实在别层的词</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>词</th><th>实际位置</th><th>关系</th></tr></thead><tbody><tr><td><strong>RAG / Retrieval</strong></td><td>另一种应用形态</td><td>和 workflow/agent 不互斥，可做节点也可做 tool</td></tr><tr><td><strong>Memory</strong></td><td>跨会话状态</td><td>和 LangGraph 的 state（会话内）不是一回事</td></tr><tr><td><strong>Tracing / Eval / Guardrails</strong></td><td>基础设施层（LangSmith / Langfuse / Arize / Helicone）</td><td>Agent 多起来后这层比框架更重要</td></tr><tr><td><strong>CoT / ToT / Self-consistency</strong></td><td>Prompt engineering 技巧</td><td>和编排同层但更内层</td></tr><tr><td><strong>Embeddings / Vector DB</strong></td><td>检索基础设施</td><td>服务 RAG，不参与编排</td></tr></tbody></table> </div> </div> </article><article class="card card-shell" data-href="/posts/260519-rtk-per-command-parser/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-19T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-19</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/context-engineering/" class="tag" data-astro-cid-d6qgp232>#context-engineering</a><a href="/tags/cli/" class="tag" data-astro-cid-d6qgp232>#cli</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260519-rtk-per-command-parser/" data-astro-cid-d6qgp232>LLM CLI proxy：rtk 是命令字典而非算法</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://github.com/rtk-ai/rtk">rtk</a> 是夹在 AI 编码助手和 shell 之间的 Rust CLI proxy，宣称帮 LLM 省 60-90% 的 token。它做的是 <em>context compression</em> —— LLM 想跑 <code>git status</code>，rtk 把噪音过滤后再喂回去。看着像”魔法压缩算法”，拆开后发现根本不是。</p>
+<h2 id="核心30-条命令各一份手写-parser">核心：30+ 条命令各一份手写 parser</h2>
+<p>rtk 没有通用压缩引擎。代码里是 <code>git_status.rs</code>、<code>cargo_test.rs</code>、<code>docker_logs.rs</code> …… 每条命令一段 Rust 代码，里面写死”这条命令该怎么 fork、哪些字段是噪音、压缩后长什么样”。</p>
+<p>新加一种工具支持 = 提一个 PR 写一个新文件。changelog 看得清清楚楚：v0.38.0 加 GitLab <code>glab</code>、v0.40.0 加 Gradle，一条一条加。</p>
+<h2 id="工作流以-rtk-git-status-为例">工作流（以 <code>rtk git status</code> 为例）</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>LLM 决定跑 git status</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>Claude Code PreToolUse hook 拦截 Bash 调用</span></span>
+<span class="line"><span>  ↓ 改写成 `rtk git status`</span></span>
+<span class="line"><span>rtk 进程：</span></span>
+<span class="line"><span>  1. fork 真命令但用机器格式：git status --porcelain=v2 --branch</span></span>
+<span class="line"><span>  2. parser 切字段：branch / ahead-behind / modified / untracked</span></span>
+<span class="line"><span>  3. 紧凑模板渲染成单行</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>返给 LLM，LLM 完全不知道有中间层</span></span></code></pre>
+<p>步骤 1 是关键 —— 拿<strong>给机器看的格式</strong>做解析，比逆向给人看的输出稳得多。</p>
+<h2 id="四种策略是工具箱不是原理">四种策略是工具箱，不是原理</h2>
+<p>官网讲的 <em>filtering / grouping / truncation / dedup</em> 是共享字符串处理函数（<code>dedup_lines()</code>、<code>truncate_middle()</code> 之类），被 per-command parser 当乐高块挑用：</p>
+<ul>
+<li><code>git_status</code> 用 filtering（删 progress 行）</li>
+<li><code>lint</code> 用 grouping（按 rule 聚合）</li>
+<li><code>read --aggressive</code> 用 truncation（删函数体留 signature）</li>
+<li><code>docker_logs</code> 用 dedup（同行折叠 + 计数）</li>
+</ul>
+<p>每条命令”该用哪几种、按什么字段切”是手写的领域知识，不是算法推导。</p>
+<h2 id="为什么不选其他路">为什么不选其他路</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>候选方案</th><th>为什么 rtk 没用</th></tr></thead><tbody><tr><td>gzip 通用压缩</td><td>LLM 不解压，喂进去还是压缩字节</td></tr><tr><td>让 LLM 自己 summarize</td><td>慢、贵、丢信息，summarize 本身吃 token</td></tr><tr><td>盲截前 N 行</td><td>没语义，可能切掉关键 error 行</td></tr><tr><td><strong>per-command parser</strong></td><td>&#x3C;10ms、确定性、保关键信号 —— 代价是每条命令要单独写</td></tr></tbody></table>
+<h2 id="推论">推论</h2>
+<ol>
+<li><strong>护城河是命令字典而非算法</strong>。任何人能写 <code>git_status.rs</code>，但要覆盖 90% 日常命令、跟着每个工具升级（git 改输出 / pytest 升级）才是真功夫。</li>
+<li><strong>工具支持决定收益</strong>。<code>rtk hugo</code>、<code>rtk astro</code> 不存在就是裸过。</li>
+<li><strong>永远滞后于命令本身</strong>。git 改了 porcelain 格式得等 rtk 跟上。</li>
+<li><strong>PreToolUse hook 才是 UX 关键</strong>。靠 prompt 教 LLM “记得用 rtk” 不可靠；hook 把改写做在协议层，LLM 不感知。</li>
+</ol>
+<p>工程上这是一类典型的 <em>protocol-aware tooling</em>：不在 LLM 那侧改东西，而是在 LLM 和环境的接缝处做改写。比 prompt 工程稳，比 fine-tuning 轻。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260518-agent-vs-workflow/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-18T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-18</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/agent/" class="tag" data-astro-cid-d6qgp232>#agent</a><a href="/tags/architecture/" class="tag" data-astro-cid-d6qgp232>#architecture</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260518-agent-vs-workflow/" data-astro-cid-d6qgp232>Agent vs Workflow：控制流在谁手里</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>把 LLM 包进应用的写法分两种：<strong>Workflow</strong>（你的代码画好流程图，LLM 只填某些节点）和 <strong>Agent</strong>（LLM 自己决定下一步调哪个工具、什么时候停）。两者长得很像 —— 都接输入、都调 LLM、都返结果。本质差异只有一条：<strong>下一步该干什么，是你的代码决定，还是 LLM 自己决定</strong>。这条线划在哪，决定了你在写哪种东西。</p>
+<p>Anthropic 把两者合称 <em>agentic systems</em>，但坚持把 workflow 和 agent 分清楚 —— 它们的成本、延迟、可控性差着一个数量级。</p>
+<h2 id="控制流在谁手里">控制流在谁手里</h2>
+<p><strong>Workflow：控制流写死在你的代码里。</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>用户输入</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>你的代码：调 LLM 提取意图</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>你的代码：switch case 分发</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>你的代码：调对应函数</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>返回</span></span></code></pre>
+<p>LLM 只是流程里的一个 <code>text-in / text-out</code> 节点。流程图你画，模型填格子。</p>
+<p><strong>Agent：控制流在 LLM 手里。</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>用户目标</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>LLM 决定：调哪个工具、给什么参数</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>工具返回结果</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>LLM 决定：要不要继续，继续就调下一个</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>（循环，直到 LLM 说"完了"）</span></span></code></pre>
+<p>你的代码只负责执行 LLM 给的指令。每一步「下一步干嘛」由模型自己判断。</p>
+<p>判准：把工作流画出来 —— <strong>如果存在「LLM 决定要不要进下一步 / 进哪一步」的节点 = Agent；只有「LLM 帮我填空 / 分类 / 改写」的节点 = Workflow</strong>。</p>
+<h2 id="五件套model--prompt--tools--memory--orchestrator">五件套：Model + Prompt + Tools + Memory + Orchestrator</h2>
+<p>Agent 的最小完备架构。少一个就跑不起来：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>组件</th><th>干嘛</th><th>工程上最容易翻车的点</th></tr></thead><tbody><tr><td><strong>Model</strong></td><td>决策核心；要支持 Function Calling</td><td>指令遵循 / 工具选择准确率</td></tr><tr><td><strong>Prompt</strong></td><td>system prompt + tool 描述 + few-shot</td><td>工具描述写糊 → Agent 调错或调不出</td></tr><tr><td><strong>Tools</strong></td><td>真正改变外部世界的接口（读写文件、调 API、跑 SQL）</td><td>工具粒度 / 错误信息可读性</td></tr><tr><td><strong>Memory</strong></td><td>工作记忆（context）+ 短期（会话）+ 长期（跨会话）</td><td>塞太多炸 context，塞太少失忆</td></tr><tr><td><strong>Orchestrator</strong></td><td>主循环：把上面四个串起来跑</td><td>最大轮数 / 超时 / 错误重试 / human-in-the-loop</td></tr></tbody></table>
+<p>OpenAI 的 <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf">Practical guide</a> 只列三件套（Model / Tools / Instructions），把 Memory 和 Orchestrator 视作框架默认配置。从底层实现角度五件套缺一不可；从 API 使用者角度三件套是你能感知到的部分 —— 别被简化版误导以为不存在剩下两个。</p>
+<p>反直觉的踩坑权重：<strong>大部分 Agent 做不好不是模型不够强，是 tool 描述写得稀烂 + memory 策略乱设计</strong>。换模型贵又简单，写描述便宜又关键。</p>
+<h2 id="react-循环agent-的心跳">ReAct 循环：Agent 的心跳</h2>
+<p><code>Thought → Action → Observation</code> 三拍循环，是当前几乎所有 Agent 框架的内核：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>┌─────────────────────────────────────────┐</span></span>
+<span class="line"><span>│  Thought      —— 我现在该干嘛？          │</span></span>
+<span class="line"><span>│     ↓                                    │</span></span>
+<span class="line"><span>│  Action       —— 调 tool X，参数 {...}   │</span></span>
+<span class="line"><span>│     ↓                                    │</span></span>
+<span class="line"><span>│  Observation  —— 工具返回了 Y            │</span></span>
+<span class="line"><span>│     ↓                                    │</span></span>
+<span class="line"><span>│  （回到 Thought，直到决定 Finish）        │</span></span>
+<span class="line"><span>└─────────────────────────────────────────┘</span></span></code></pre>
+<p>每一轮 Orchestrator 把 <code>[目标 + 工具列表 + 历史 Thought/Action/Observation]</code> 整包扔给 Model，Model 输出下一个 Thought + Action 或最终答案。<strong>模型本身无状态</strong>，所有「记忆」都靠 Orchestrator 把历史拼回 prompt 里 —— 这也是为什么 context window 总不够用，也是为什么 Agent 的 token 成本随轮数指数增长。</p>
+<p>Claude Code 跑一句「把 User 的 email 字段改成 unique」内部大致就是：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Thought: 先定位 User 在哪</span></span>
+<span class="line"><span>Action:  Grep "class User"</span></span>
+<span class="line"><span>Observation: src/User.php:12</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Thought: 看现在 email 怎么定义的</span></span>
+<span class="line"><span>Action:  Read src/User.php</span></span>
+<span class="line"><span>Observation: &#x3C;文件内容></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Thought: 字段约束在 migration 不在 model，找 migration</span></span>
+<span class="line"><span>Action:  Grep "users" 在 migration 目录</span></span>
+<span class="line"><span>Observation: 2025_01_users_table.php</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Thought: 写新 migration 加 unique</span></span>
+<span class="line"><span>Action:  Write add_unique_to_users_email.php</span></span>
+<span class="line"><span>Observation: ok</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Thought: 跑测试确认</span></span>
+<span class="line"><span>Action:  Bash 跑测试</span></span>
+<span class="line"><span>Observation: 失败 —— 现有数据里有 3 行重复 email</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Thought: 那要先去重再加约束，改方案</span></span>
+<span class="line"><span>Action:  Edit migration，先 DELETE 重复行再 ALTER</span></span>
+<span class="line"><span>...</span></span></code></pre>
+<p>每步「下一步该干嘛」全是模型根据上一步 Observation 自己决定的 —— 没人写死 <code>if grep_success then read</code>。报错也是模型自己看到 Observation 后调整策略，不是你代码 <code>catch</code> 的。<strong>Agent 与 Workflow 的本质差异，在终端里就长这样</strong>。</p>
+<h2 id="什么时候真的需要-agent">什么时候真的需要 Agent</h2>
+<p>Anthropic 和 OpenAI 在这点上罕见地一致：<strong>能用 Workflow 跑通的就不要上 Agent</strong>。控制流的不确定性是 Agent 所有成本和风险的来源 —— 慢、贵、不可预测。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>场景</th><th>选什么</th></tr></thead><tbody><tr><td>用户提一个明确问题，答完就完</td><td>直接调 LLM API</td></tr><tr><td>流程固定，只是某几步要 LLM 抽信息 / 总结 / 分类</td><td><strong>Workflow</strong> + LLM 节点（LangGraph 这类）</td></tr><tr><td>任务能拆但步骤不确定，路径依赖中间结果</td><td><strong>Agent</strong></td></tr><tr><td>需要试错 / 自我纠错 / 调多个外部系统</td><td><strong>Agent</strong></td></tr><tr><td>单步深推理（数学 / 代码）</td><td><strong>Reasoning model 直调</strong>，不需要 Agent</td></tr></tbody></table>
+<p>判准：<strong>「下一步该做什么」如果你能提前画清楚流程图，就不是 Agent 该解决的问题</strong>。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li>Anthropic <a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents</a></li>
+<li>OpenAI <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf">A practical guide to building agents</a>（PDF）</li>
+<li><a href="https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents">anthropic-cookbook/patterns/agents</a></li>
+</ul> </div> </div> </article><article class="card card-shell" data-href="/posts/260518-reasoning-vs-cot-prompts/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-18T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-18</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/prompt-engineering/" class="tag" data-astro-cid-d6qgp232>#prompt-engineering</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/reasoning-models/" class="tag" data-astro-cid-d6qgp232>#reasoning-models</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260518-reasoning-vs-cot-prompts/" data-astro-cid-d6qgp232>Reasoning model 别再写 CoT prompt</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>老的 CoT prompt 技巧（<code>Let's think step by step</code>、few-shot CoT 示例）在 reasoning model 上不仅多余，还会<strong>降低</strong>性能 —— OpenAI 在 o1 的 prompting guide 里明确说了这一点。原因不在”模型更聪明所以不需要”，而在 CoT 和 reasoning model 根本不是一回事。</p>
 <h2 id="cot-是提示技巧reasoning-是模型能力">CoT 是提示技巧，reasoning 是模型能力</h2>
 
 
@@ -47,8 +380,9 @@
 <li><strong><code>Let's think step by step</code></strong> —— 纯噪音 tokens，模型本来就在 think</li>
 <li><strong>Few-shot CoT 示例</strong> —— OpenAI 实测显示<strong>降低</strong> o1 性能，因为示例会污染模型自有推理风格。注意区分：<strong>few-shot 本身 OK</strong>（给格式 / 领域示例没问题），<strong>few-shot CoT</strong> 才有害</li>
 <li><strong>“请仔细分析”、“深入思考”、“一步步来”</strong> —— 全是冗余 tokens，思考预算被消耗在”读你的废话”上</li>
-<li><strong>角色扮演</strong>（“你是数学专家”）—— 对推理任务收益接近零</li>
+<li><strong>角色扮演</strong>（“你是数学专家”）—— <a href="https://arxiv.org/html/2408.08631v2">Kim 2024</a> 实测在 12 个 reasoning 数据集里 7 个<strong>降低</strong>准确率</li>
 </ul>
+<p>角色扮演翻车的机制是 persona 注入了和题目无关的 domain prior —— Kim 2024 的例子：一道数学题套了 civil engineering 故事壳，模型就把自己往土木工程师方向调，忽略了本质是道数学题。AQuA 上 13.78% 题因 persona 从对变错，Coin Flip 18%。<strong>匹配的 persona 也救不回来</strong>：<a href="https://arxiv.org/html/2311.10054v3">Zheng 2024</a> 测 in-domain persona（律师做法律题、医生做医学题）是 “minimal effect size”，期望收益约等于 0，且自动选 persona 的策略几乎打不过随机 —— 不存在”选对 persona”这件事。经验法则：<strong>匹配 persona 期望收益 ≈ 0，不匹配 &#x3C; 0，默认别加</strong>。</p>
 <h2 id="新范式减噪音胜过加技巧">新范式：减噪音胜过加技巧</h2>
 <p>OpenAI 官方建议是 <a href="https://platform.openai.com/docs/guides/reasoning-best-practices">“Keep prompts simple and direct”</a> 和 “Avoid chain-of-thought prompts”。</p>
 <p>老 prompt 风格（CoT 时代）：</p>
@@ -87,7 +421,72 @@
 <ul>
 <li>OpenAI <a href="https://platform.openai.com/docs/guides/reasoning-best-practices">Reasoning best practices</a></li>
 <li>Anthropic <a href="https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking">Extended thinking</a></li>
-</ul> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+</ul> </div> </div> </article><article class="card card-shell" data-href="/posts/260518-review-over-prompt/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-18T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-18</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/agent/" class="tag" data-astro-cid-d6qgp232>#agent</a><a href="/tags/prompt-engineering/" class="tag" data-astro-cid-d6qgp232>#prompt-engineering</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260518-review-over-prompt/" data-astro-cid-d6qgp232>Agent 写代码时代：review 比 prompt 值钱</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Reasoning model 让 prompt 技巧失效已是共识（CoT、persona 反而拖性能）。更大的变化在另一边 —— agent 一天写出比 2024 一整周还多的代码，看起来都很 idiomatic。<strong>瓶颈从「模型懂不懂我」换成了「我看不看得出它错」</strong>。</p>
+<h2 id="把力气从-prompt-转到-context-engineering">把力气从 prompt 转到 context engineering</h2>
+<p>省下 prompt 技巧的力气，花在塞进 context 的内容质量：</p>
+<ul>
+<li><strong>任务定义</strong> —— 模糊需求 = 在错的方向上 deep think 几千 tokens</li>
+<li><strong>约束 / 边界</strong> —— <code>必须 PHP 8.2</code>、<code>不能改 schema</code>、<code>通过 tests/UserTest.php</code></li>
+<li><strong>输出格式</strong> —— 显式 JSON / 表格 / 仅函数体</li>
+<li><strong>Thinking budget</strong> —— Claude <code>budget_tokens</code> / GPT-5 <code>reasoning_effort</code> / Gemini <code>thinking_config</code>。Token 成本暴跌，但思考预算成了新成本中心；简单任务别开 high</li>
+<li><strong>上下文质量</strong> —— garbage in, deeply-reasoned garbage out</li>
+</ul>
+<h2 id="review-是新护城河">Review 是新护城河</h2>
+<p>Agent 写 PR，你 merge。Agent 不签字，<strong>你签字</strong>。看不出问题就是你的问题，没有「AI 写错了」这个免责条款。</p>
+<p>Agent 最爱踩的雷（PHP / Laravel 视角）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>典型样子</th></tr></thead><tbody><tr><td>N+1</td><td>测试都过，本地慢 200ms，prod 上炸</td></tr><tr><td>静默 scope creep</td><td>让它修一个 method，顺手「改进」旁边三个</td></tr><tr><td>幻觉 API</td><td>用了 Laravel 里不存在但听起来很像的方法</td></tr><tr><td>删测试</td><td>测试碍它的事，agent 默默改 / 删，PR diff 漏看</td></tr><tr><td>过度抽象</td><td>一个 if 包成三层 strategy pattern</td></tr><tr><td>危险 migration</td><td>加 NOT NULL 列在 5000 万行表上，本地秒过 prod 锁半小时</td></tr><tr><td>摘 middleware</td><td>改 controller 时把 auth / validation 顺手干掉</td></tr><tr><td>放宽类型</td><td><code>int</code> 改 <code>int|null</code> 让测试过，业务不该 null</td></tr></tbody></table>
+<p>这些都不是 prompt 写得不好导致，是 review 没看出来。<strong>再好的 prompt 也防不住</strong>。</p>
+<p>2026 的「好 review」不是逐行读完，是几个具体动作：</p>
+<ul>
+<li>读 diff 时先问「<strong>我没让它改的它改了吗</strong>」—— 比「它写的对吗」更重要</li>
+<li>对 agent 盲区有 muscle memory —— 它爱过度抽象、爱兜底 try/catch、爱删测试、爱写「为了向后兼容」的 if</li>
+<li><strong>守 invariants 而不是守语法</strong> —— 类型对 / 测试过 / lint 过都没用，问「我的业务规则还成立吗」</li>
+<li>怀疑「太像样」的代码 —— agent 最危险的输出是 idiomatic 到让你想直接 approve 的</li>
+</ul>
+<h2 id="一句话">一句话</h2>
+<p><strong>2024 年「会写代码」值钱，2025 年「会用 AI 写代码」值钱，2026 年「会判断 AI 写的代码对不对」值钱。</strong></p>
+<p>写代码的肌肉记忆贬值最快；taste、code smell 嗅觉、review 时的怀疑反射，越来越值钱。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
       (() => {
         const enhance = () => {
           const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');

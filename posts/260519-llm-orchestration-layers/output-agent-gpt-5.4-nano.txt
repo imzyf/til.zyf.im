@@ -1,0 +1,75 @@
+Agent graph (编译期只能看到循环骨架 —— 真实路径在 messages 历史里):
+        +-----------+       
+        | __start__ |       
+        +-----------+       
+              *             
+              *             
+              *             
+          +-----+           
+          | llm |           
+          +-----+*          
+          .       *         
+        ..         **       
+       .             *      
++---------+       +-------+ 
+| __end__ |       | tools | 
++---------+       +-------+ 
+
+============================================================
+AGENT LOOP (运行时才知道走几轮)
+============================================================
+
+[LLM → tool] extract_info(args=['transcript'])
+
+[tool → LLM] extract_info
+    {"client_sentiment": "concerned", "products_mentioned": ["分红型年金组合", "私募基金（年化预期15-20%，门槛100万起）"], "advisor_commitments": ["保证该分红型年金组合绝不亏损", "拍胸脯保证8%复利收益并在60岁实现", "确认分红部分免个税/不用担心税务", "下周二发送私募基金材料", "下周三...
+
+[LLM → tool] compliance_check(args=['commitments'])
+
+[tool → LLM] compliance_check
+    {"has_risk": true, "flags": [{"commitment": "保证该分红型年金组合绝不亏损", "issue": "Guarantees no loss, which is a high-risk claim of no downside.", "severity": "high"}, {"commitment": "拍胸脯保证8%复利收益并在60岁实现", "issu...
+
+[LLM → tool] queue_for_review(args=['summary', 'flags'])
+
+🚨  [P1] Routed to compliance review queue
+    Verdict: Multiple commitments include high-severity guaranteed returns/no-loss claims and tax promises, plus private-offering handling without confirmed suitability/risk disclosure.
+    - [HIGH] 保证该分红型年金组合绝不亏损
+      → Guarantees no loss, which is a high-risk claim of no downside.
+    - [HIGH] 拍胸脯保证8%复利收益并在60岁实现
+      → Provides a specific return prediction with a guarantee and no risk disclaimer.
+    - [HIGH] 确认分红部分免个税/不用担心税务
+      → Promises a tax outcome without including a “consult a tax professional” style disclaimer.
+    - [HIGH] 下周二发送私募基金材料
+      → Refers to a private offering; regulatory risk if suitability review/registration is not addressed.
+    - [LOW] 下周三准备合同并请客户签字
+      → Requests client to sign next-day contract without confirming required risk disclosures/suitability review.
+
+[tool → LLM] queue_for_review
+    Queued. 5 flag(s) recorded.
+
+[LLM → tool] generate_documents(args=['extract_json', 'has_risk'])
+
+[tool → LLM] generate_documents
+    === ADVISOR ACTION ITEMS ===
+- Draft and send the 分红型年金组合 product summary ahead of next Tuesday
+- Send the 私募基金 materials next Tuesday for the client’s review
+- Prepare the contract package by next We...
+
+[LLM final] 已将该会议逐步完成：先从转录中抽取关键信息，再进行合规风险审查（发现含“保证不亏损/保证8%复利/税务免税承诺”等高风险表述并涉及私募处理），随后已将会议排入合规复核队列，并生成了带合规标注的（待签批）行动项与客户会议纪要。
+
+============================================================
+FINAL DOCUMENTS (从 messages 里挑出最后一次 generate_documents 的输出)
+============================================================
+=== ADVISOR ACTION ITEMS ===
+- Draft and send the 分红型年金组合 product summary ahead of next Tuesday
+- Send the 私募基金 materials next Tuesday for the client’s review
+- Prepare the contract package by next Wednesday and request the client’s signature
+- Provide an evidence-based explanation of tax treatment to be reviewed/confirmed (no assurances; include sources)
+- Address market risk questions with a clear risk disclosure and scenario discussion (no guarantees)
+
+=== CLIENT MEETING NOTES ===
+[DRAFT—pending compliance sign-off] 客户对方案整体较为担心，主要关注分红型年金相关的税务情况，以及如果市场表现不佳时的风险与应对方式。我们确认客户希望获得更清晰、可核实的说明，并表示后续将提供相应材料供其评估。
+
+客户提问：税务上是否存在免税/优惠情形（客户听说分红年金可能免税）以及若市场波动，资金与收益表现的风险如何。我们同步说明，相关税务结论需以正式政策与材料为准，将在提供资料时附上依据与适用条件，并通过风险披露帮助客户理解可能的波动与不确定性。
+
+后续约定：下周二发送分红型年金组合说明及私募基金材料；下周三准备合同并请客户签字。所有表述将以合规口径为准，避免任何不确定承诺。

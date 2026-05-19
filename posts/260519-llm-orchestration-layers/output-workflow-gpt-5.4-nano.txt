@@ -1,0 +1,136 @@
+Workflow graph (编译期就能画出来 —— 这本身就是 workflow 的特征):
+           +-----------+       
+           | __start__ |       
+           +-----------+       
+                  *            
+                  *            
+                  *            
+            +---------+        
+            | extract |        
+            +---------+        
+                  *            
+                  *            
+                  *            
+          +------------+       
+          | compliance |       
+          +------------+       
+           ...        ...      
+          .              .     
+        ..                ...  
++----------+                 . 
+| queue_p1 |              ...  
++----------+             .     
+           ***        ...      
+              *      .         
+               **  ..          
+            +----------+       
+            | generate |       
+            +----------+       
+                  *            
+                  *            
+                  *            
+            +---------+        
+            | __end__ |        
+            +---------+        
+
+🚨  [P1] Routed to compliance review queue
+    Verdict: Multiple commitments include guaranteed returns/no-loss claims, tax outcome assertions, and private-offering suitability gaps, indicating high regulatory risk overall.
+    - [HIGH] 保证年化8%复利收益
+      → Guarantees a specific return rate/compound yield without appropriate risk disclaimer.
+    - [HIGH] 保证绝不亏损
+      → Guarantees no-loss / no risk outcome.
+    - [HIGH] 说明分红部分免个税
+      → Promises/claims a tax outcome without advising to consult a tax professional.
+    - [HIGH] 下周二发送私募基金材料
+      → Refers to private offering materials without any stated suitability/consumer risk review.
+    - [HIGH] 承诺过去10年组合从未下跌
+      → Claims a complete lack of downturn history (no risk/never-moves type claim).
+    - [HIGH] 承诺60岁账户最低480万
+      → Guarantees a specific future minimum value, implying return protection.
+    - [LOW] 下周三准备合同供签字
+      → Promises a vague timeline to prepare contract without standard risk disclosure context.
+
+============================================================
+EXTRACTED
+============================================================
+{
+  "client_sentiment": "concerned",
+  "products_mentioned": [
+    "分红型年金组合",
+    "私募基金"
+  ],
+  "advisor_commitments": [
+    "保证年化8%复利收益",
+    "保证绝不亏损",
+    "说明分红部分免个税",
+    "下周二发送私募基金材料",
+    "承诺过去10年组合从未下跌",
+    "承诺60岁账户最低480万",
+    "下周三准备合同供签字"
+  ],
+  "client_questions": [
+    "税务上分红年金是否免税？",
+    "如果市场不好会怎样（如何控制风险）？"
+  ]
+}
+
+============================================================
+COMPLIANCE
+============================================================
+{
+  "has_risk": true,
+  "flags": [
+    {
+      "commitment": "保证年化8%复利收益",
+      "issue": "Guarantees a specific return rate/compound yield without appropriate risk disclaimer.",
+      "severity": "high"
+    },
+    {
+      "commitment": "保证绝不亏损",
+      "issue": "Guarantees no-loss / no risk outcome.",
+      "severity": "high"
+    },
+    {
+      "commitment": "说明分红部分免个税",
+      "issue": "Promises/claims a tax outcome without advising to consult a tax professional.",
+      "severity": "high"
+    },
+    {
+      "commitment": "下周二发送私募基金材料",
+      "issue": "Refers to private offering materials without any stated suitability/consumer risk review.",
+      "severity": "high"
+    },
+    {
+      "commitment": "承诺过去10年组合从未下跌",
+      "issue": "Claims a complete lack of downturn history (no risk/never-moves type claim).",
+      "severity": "high"
+    },
+    {
+      "commitment": "承诺60岁账户最低480万",
+      "issue": "Guarantees a specific future minimum value, implying return protection.",
+      "severity": "high"
+    },
+    {
+      "commitment": "下周三准备合同供签字",
+      "issue": "Promises a vague timeline to prepare contract without standard risk disclosure context.",
+      "severity": "low"
+    }
+  ],
+  "summary": "Multiple commitments include guaranteed returns/no-loss claims, tax outcome assertions, and private-offering suitability gaps, indicating high regulatory risk overall."
+}
+
+============================================================
+ADVISOR ACTION ITEMS
+============================================================
+- Send the private fund materials by next Tuesday
+- Prepare the contract for client signature by next Wednesday
+- Provide a tax explanation about dividend annuities in neutral terms and reference applicable rules
+- Share a risk-control overview (how downside scenarios are handled) without making outcome promises
+- Compile product summary for “分红型年金组合” and related “私募基金” discussion points
+
+============================================================
+CLIENT MEETING NOTES
+============================================================
+DRAFT — Pending compliance sign-off. The client expressed concern and asked follow-up questions regarding whether dividend-related annuity benefits are exempt from tax and what happens in less favorable market conditions. We discussed the “分红型年金组合” and its structure, along with the “私募基金” materials to be reviewed.
+
+We reviewed the client’s key questions on tax treatment (to be clarified using applicable regulatory guidance) and requested risk-management details for scenario planning. The advisor will provide supporting information in the next documents and prepare the contract package for signature.

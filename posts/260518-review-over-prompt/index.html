@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Reasoning model 让 prompt 技巧失效已是共识（CoT、persona 反而拖性能）。更大的变化在另一边 —— agent 一天写出比 2024 一整周还多的代码，看起来都很 idiomatic。**瓶颈从「模型懂不懂我」换成了「我看不看得出它错」**。 ## 把力气从 prompt 转到…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Agent 写代码时代：review 比 prompt 值钱 · TIL</title><link rel="stylesheet" href="/_astro/Base.B2Seo8w3.css">
+<style>.note[data-astro-cid-fzx4jmue]{padding:2rem 2.1rem 1.8rem}@media(max-width:640px){.note[data-astro-cid-fzx4jmue]{padding:1.4rem 1.4rem 1.3rem}}.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px dotted var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.updated[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.82rem;font-style:italic}.updated[data-astro-cid-fzx4jmue] time[data-astro-cid-fzx4jmue]{font-variant-numeric:tabular-nums}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px dotted var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline"><span class="tagline-echo"><span>today I learned, </span></span>want
+          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note card-shell" data-astro-cid-fzx4jmue> <a href="/tags/ai/" class="chip" data-astro-cid-fzx4jmue>ai</a> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>Agent 写代码时代：review 比 prompt 值钱</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2026-05-18T00:00:00.000Z" data-astro-cid-fzx4jmue>2026-05-18</time>  <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/ai/" class="tag" data-astro-cid-fzx4jmue>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-fzx4jmue>#llm</a><a href="/tags/agent/" class="tag" data-astro-cid-fzx4jmue>#agent</a><a href="/tags/prompt-engineering/" class="tag" data-astro-cid-fzx4jmue>#prompt-engineering</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p>Reasoning model 让 prompt 技巧失效已是共识（CoT、persona 反而拖性能）。更大的变化在另一边 —— agent 一天写出比 2024 一整周还多的代码，看起来都很 idiomatic。<strong>瓶颈从「模型懂不懂我」换成了「我看不看得出它错」</strong>。</p>
+<h2 id="把力气从-prompt-转到-context-engineering">把力气从 prompt 转到 context engineering</h2>
+<p>省下 prompt 技巧的力气，花在塞进 context 的内容质量：</p>
+<ul>
+<li><strong>任务定义</strong> —— 模糊需求 = 在错的方向上 deep think 几千 tokens</li>
+<li><strong>约束 / 边界</strong> —— <code>必须 PHP 8.2</code>、<code>不能改 schema</code>、<code>通过 tests/UserTest.php</code></li>
+<li><strong>输出格式</strong> —— 显式 JSON / 表格 / 仅函数体</li>
+<li><strong>Thinking budget</strong> —— Claude <code>budget_tokens</code> / GPT-5 <code>reasoning_effort</code> / Gemini <code>thinking_config</code>。Token 成本暴跌，但思考预算成了新成本中心；简单任务别开 high</li>
+<li><strong>上下文质量</strong> —— garbage in, deeply-reasoned garbage out</li>
+</ul>
+<h2 id="review-是新护城河">Review 是新护城河</h2>
+<p>Agent 写 PR，你 merge。Agent 不签字，<strong>你签字</strong>。看不出问题就是你的问题，没有「AI 写错了」这个免责条款。</p>
+<p>Agent 最爱踩的雷（PHP / Laravel 视角）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>典型样子</th></tr></thead><tbody><tr><td>N+1</td><td>测试都过，本地慢 200ms，prod 上炸</td></tr><tr><td>静默 scope creep</td><td>让它修一个 method，顺手「改进」旁边三个</td></tr><tr><td>幻觉 API</td><td>用了 Laravel 里不存在但听起来很像的方法</td></tr><tr><td>删测试</td><td>测试碍它的事，agent 默默改 / 删，PR diff 漏看</td></tr><tr><td>过度抽象</td><td>一个 if 包成三层 strategy pattern</td></tr><tr><td>危险 migration</td><td>加 NOT NULL 列在 5000 万行表上，本地秒过 prod 锁半小时</td></tr><tr><td>摘 middleware</td><td>改 controller 时把 auth / validation 顺手干掉</td></tr><tr><td>放宽类型</td><td><code>int</code> 改 <code>int|null</code> 让测试过，业务不该 null</td></tr></tbody></table>
+<p>这些都不是 prompt 写得不好导致，是 review 没看出来。<strong>再好的 prompt 也防不住</strong>。</p>
+<p>2026 的「好 review」不是逐行读完，是几个具体动作：</p>
+<ul>
+<li>读 diff 时先问「<strong>我没让它改的它改了吗</strong>」—— 比「它写的对吗」更重要</li>
+<li>对 agent 盲区有 muscle memory —— 它爱过度抽象、爱兜底 try/catch、爱删测试、爱写「为了向后兼容」的 if</li>
+<li><strong>守 invariants 而不是守语法</strong> —— 类型对 / 测试过 / lint 过都没用，问「我的业务规则还成立吗」</li>
+<li>怀疑「太像样」的代码 —— agent 最危险的输出是 idiomatic 到让你想直接 approve 的</li>
+</ul>
+<h2 id="一句话">一句话</h2>
+<p><strong>2024 年「会写代码」值钱，2025 年「会用 AI 写代码」值钱，2026 年「会判断 AI 写的代码对不对」值钱。</strong></p>
+<p>写代码的肌肉记忆贬值最快；taste、code smell 嗅觉、review 时的怀疑反射，越来越值钱。</p> </div>  <aside class="related" aria-label="related notes" data-astro-cid-fzx4jmue> <h2 data-astro-cid-fzx4jmue>Related</h2> <ul data-astro-cid-fzx4jmue> <li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2026-05-18</span> <a class="title" href="/posts/260518-reasoning-vs-cot-prompts/" data-astro-cid-fzx4jmue>Reasoning model 别再写 CoT prompt</a> </li><li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2026-05-18</span> <a class="title" href="/posts/260518-agent-vs-workflow/" data-astro-cid-fzx4jmue>Agent vs Workflow：控制流在谁手里</a> </li> </ul> </aside> <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>
