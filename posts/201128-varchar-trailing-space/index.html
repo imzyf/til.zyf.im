@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="命中 （带尾部空格）的行，UNIQUE 索引把 和 视为重复 —— 这是 collation 的 _PAD SPACE_ 属性决定的：比较时两侧尾部空格当作不存在。**前导空格保留，尾部空格忽略**，是 SQL 标准行为。 ## 8.0 默认 collation 已经改为 NO PAD 跨版本最容易翻车的点： |…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>MySQL VARCHAR `=` 忽略尾部空格（PAD SPACE） · TIL</title><link rel="stylesheet" href="/_astro/Base.BOVztmkQ.css">
+<style>.note[data-astro-cid-fzx4jmue]{padding:2rem 2.1rem 1.8rem}@media(max-width:640px){.note[data-astro-cid-fzx4jmue]{padding:1.4rem 1.4rem 1.3rem}}.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px dotted var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.updated[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.82rem;font-style:italic}.updated[data-astro-cid-fzx4jmue] time[data-astro-cid-fzx4jmue]{font-variant-numeric:tabular-nums}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px dotted var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline"><span class="tagline-echo"><span>today I learned, </span></span>want
+          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note card-shell" data-astro-cid-fzx4jmue> <a href="/tags/mysql/" class="chip" data-astro-cid-fzx4jmue>mysql</a> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>MySQL VARCHAR `=` 忽略尾部空格（PAD SPACE）</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2020-11-28T00:00:00.000Z" data-astro-cid-fzx4jmue>2020-11-28</time> <span class="updated" data-astro-cid-fzx4jmue>
+updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-fzx4jmue>2026-05-20</time> </span> <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/mysql/" class="tag" data-astro-cid-fzx4jmue>#mysql</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p><code>WHERE uid = 'abc'</code> 命中 <code>'abc '</code>（带尾部空格）的行，UNIQUE 索引把 <code>'abc'</code> 和 <code>'abc '</code> 视为重复 —— 这是 collation 的 <em>PAD SPACE</em> 属性决定的：比较时两侧尾部空格当作不存在。<strong>前导空格保留，尾部空格忽略</strong>，是 SQL 标准行为。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">CREATE</span><span style="color:#D73A49"> TABLE</span><span style="color:#6F42C1"> t</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#D73A49">  uid</span><span style="color:#D73A49"> VARCHAR</span><span style="color:#24292E">(</span><span style="color:#005CC5">10</span><span style="color:#24292E">) </span><span style="color:#D73A49">COLLATE</span><span style="color:#24292E"> utf8mb4_unicode_ci </span><span style="color:#D73A49">PRIMARY KEY</span></span>
+<span class="line"><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">INSERT INTO</span><span style="color:#24292E"> t </span><span style="color:#D73A49">VALUES</span><span style="color:#24292E"> (</span><span style="color:#032F62">'abc '</span><span style="color:#24292E">), (</span><span style="color:#032F62">' abc'</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> uid</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'abc'</span><span style="color:#24292E">;     </span><span style="color:#6A737D">-- 命中 'abc '</span></span>
+<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> uid</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> ' abc'</span><span style="color:#24292E">;    </span><span style="color:#6A737D">-- 命中 ' abc'</span></span>
+<span class="line"><span style="color:#D73A49">INSERT INTO</span><span style="color:#24292E"> t </span><span style="color:#D73A49">VALUES</span><span style="color:#24292E"> (</span><span style="color:#032F62">'abc'</span><span style="color:#24292E">);           </span><span style="color:#6A737D">-- ERROR 1062 Duplicate</span></span>
+<span class="line"><span style="color:#D73A49">INSERT INTO</span><span style="color:#24292E"> t </span><span style="color:#D73A49">VALUES</span><span style="color:#24292E"> (</span><span style="color:#032F62">'abc   '</span><span style="color:#24292E">);        </span><span style="color:#6A737D">-- ERROR 1062 Duplicate</span></span></code></pre>
+<h2 id="80-默认-collation-已经改为-no-pad">8.0 默认 collation 已经改为 NO PAD</h2>
+<p>跨版本最容易翻车的点：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>collation</th><th>PAD 属性</th><th>默认版本</th></tr></thead><tbody><tr><td><code>utf8mb4_general_ci</code></td><td>PAD SPACE</td><td>5.7</td></tr><tr><td><code>utf8mb4_unicode_ci</code></td><td>PAD SPACE</td><td>(从未默认)</td></tr><tr><td><code>utf8mb4_0900_ai_ci</code></td><td><strong>NO PAD</strong></td><td><strong>8.0</strong></td></tr><tr><td><code>utf8mb4_bin</code></td><td>NO PAD</td><td>—</td></tr></tbody></table>
+<p><strong>8.0 默认建表的 <code>=</code> 比较尾部空格敏感</strong>，上面这段 SQL 用 8.0 默认 collation 不会产生 duplicate —— 和 5.7 完全反着来。查当前默认的 PAD 属性：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#24292E">SHOW COLLATION </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> Charset </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'utf8mb4'</span><span style="color:#D73A49"> AND</span><span style="color:#032F62"> `Default`</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'Yes'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">-- 看 Pad_attribute 列</span></span></code></pre>
+<h2 id="三条解决路径">三条解决路径</h2>
+<p><strong>根治</strong> —— 换成 NO PAD collation：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">ALTER</span><span style="color:#D73A49"> TABLE</span><span style="color:#24292E"> t CONVERT </span><span style="color:#D73A49">TO</span><span style="color:#D73A49"> CHARACTER</span><span style="color:#D73A49"> SET</span><span style="color:#24292E"> utf8mb4 </span><span style="color:#D73A49">COLLATE</span><span style="color:#24292E"> utf8mb4_0900_ai_ci;</span></span></code></pre>
+<p>迁移前先 <code>SELECT * FROM t WHERE uid &#x3C;> TRIM(uid)</code> 扫一遍尾部带空格的脏数据。</p>
+<p><strong>临时绕</strong> —— 单次查询加 <code>COLLATE</code> 子句：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> uid</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'abc'</span><span style="color:#D73A49"> COLLATE</span><span style="color:#24292E"> utf8mb4_bin;</span></span></code></pre>
+<p>比老写法 <code>WHERE uid = BINARY 'abc'</code> 现代，保留字符集语义。</p>
+<p><strong>改用 <code>LIKE</code></strong> —— <code>LIKE</code> 是逐字符模式匹配，<strong>不走 collation 的 PAD 规则</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> uid</span><span style="color:#D73A49"> LIKE</span><span style="color:#032F62"> 'abc'</span><span style="color:#24292E">;    </span><span style="color:#6A737D">-- 0 行</span></span>
+<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> t </span><span style="color:#D73A49">WHERE</span><span style="color:#D73A49"> uid</span><span style="color:#D73A49"> LIKE</span><span style="color:#032F62"> 'abc '</span><span style="color:#24292E">;   </span><span style="color:#6A737D">-- 命中 'abc '</span></span></code></pre>
+<p><code>=</code> 和 <code>LIKE</code> 在尾部空格上的语义差异根因在此。</p>
+<h2 id="经典攻击sql-constraint-truncation">经典攻击：SQL Constraint Truncation</h2>
+<p>非严格 mode + PAD SPACE 联手能绕过登录鉴权：注册超长用户名 <code>'admin     1'</code>（11 字符，超出 <code>VARCHAR(10)</code>）→ 数据库截断成 <code>'admin     '</code> → 登录时 PAD SPACE 让 <code>'admin' = 'admin     '</code> 等值，匹配到攻击者那行，应用层一看 <code>username = admin</code> 就当真 admin 处理 → 越权。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SET</span><span style="color:#24292E"> sql_mode </span><span style="color:#D73A49">=</span><span style="color:#032F62"> ''</span><span style="color:#24292E">;   </span><span style="color:#6A737D">-- 必须关掉严格模式才能复现</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CREATE</span><span style="color:#D73A49"> TABLE</span><span style="color:#6F42C1"> users</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#24292E">  username </span><span style="color:#D73A49">VARCHAR</span><span style="color:#24292E">(</span><span style="color:#005CC5">10</span><span style="color:#24292E">) </span><span style="color:#D73A49">COLLATE</span><span style="color:#24292E"> utf8mb4_unicode_ci </span><span style="color:#D73A49">PRIMARY KEY</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#D73A49">  password</span><span style="color:#D73A49"> VARCHAR</span><span style="color:#24292E">(</span><span style="color:#005CC5">64</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">INSERT INTO</span><span style="color:#24292E"> users </span><span style="color:#D73A49">VALUES</span><span style="color:#24292E"> (</span><span style="color:#032F62">'admin'</span><span style="color:#24292E">, </span><span style="color:#032F62">'real_pwd'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">INSERT INTO</span><span style="color:#24292E"> users </span><span style="color:#D73A49">VALUES</span><span style="color:#24292E"> (</span><span style="color:#032F62">'admin     1'</span><span style="color:#24292E">, </span><span style="color:#032F62">'pwn'</span><span style="color:#24292E">);  </span><span style="color:#6A737D">-- 实际写入 'admin     '</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#D73A49"> *</span><span style="color:#D73A49"> FROM</span><span style="color:#24292E"> users </span><span style="color:#D73A49">WHERE</span><span style="color:#24292E"> username </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'admin'</span><span style="color:#D73A49"> AND</span><span style="color:#D73A49"> password</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'pwn'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">-- 命中攻击者那行：(admin     , pwn)</span></span></code></pre>
+<p>5.7+ 默认 <code>sql_mode</code> 含 <code>STRICT_TRANS_TABLES</code>（超长直接报错）、8.0 默认 NO PAD（等值不成立），两道默认都封死了这条路径 —— 主要是老库审计时查 <code>sql_mode</code> 和表 collation。</p>
+<h2 id="char-是另一套机制">CHAR 是另一套机制</h2>
+<p><code>CHAR(N)</code> 存储时空格补齐到 N 位，读取时剥掉尾部空格（除非 SQL mode 打开 <code>PAD_CHAR_TO_FULL_LENGTH</code>）。CHAR 上「找不到尾部空格」是<strong>存储层</strong>的事，VARCHAR 上是 <strong>collation 层</strong>的事 —— 同样的症状，两套机制，两套修法。</p>
+<p>参考 <a href="https://dev.mysql.com/doc/refman/8.0/en/char.html">CHAR/VARCHAR 官方文档 trailing-space 章节</a>、<a href="https://dev.mysql.com/doc/refman/8.0/en/charset-binary-collations.html#charset-binary-collations-trailing-space">Collation Pad Attributes</a>。</p> </div>  <aside class="related" aria-label="related notes" data-astro-cid-fzx4jmue> <h2 data-astro-cid-fzx4jmue>Related</h2> <ul data-astro-cid-fzx4jmue> <li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2020-04-14</span> <a class="title" href="/posts/200414-illegal-mix-of-collations/" data-astro-cid-fzx4jmue>MySQL Illegal mix of collations</a> </li> </ul> </aside> <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

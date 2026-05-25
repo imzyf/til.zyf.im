@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged xdebug"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#xdebug · TIL</title><link rel="stylesheet" href="/_astro/Base.BOVztmkQ.css">
+<style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
+</style></head> <body> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline"><span class="tagline-echo"><span>today I learned, </span></span>want
+          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#xdebug</h1> <p class="page-lede" data-astro-cid-tge3q7ae>1 note</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/200526-phpstorm-xdebug-name-match/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2020-05-26</time> <span class="updated" data-astro-cid-d6qgp232>
+updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-20</time> </span> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-d6qgp232>#phpstorm</a><a href="/tags/xdebug/" class="tag" data-astro-cid-d6qgp232>#xdebug</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200526-phpstorm-xdebug-name-match/" data-astro-cid-d6qgp232>PhpStorm + Xdebug 容器联调，3 个名字必须对齐</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PhpStorm 容器化 Xdebug 跑不通，最常见的根因不是端口、不是网络，而是 3 个魔法字符串没对齐 —— 错位时 IDE 静默忽略，没有任何报错。挨个对完，剩下的就是常规网络问题。</p>
+<h2 id="前置mode--触发方式">前置：mode + 触发方式</h2>
+<p>Xdebug 3 默认完全 disabled，要先开 mode；然后选 <em>trigger</em> 还是 <em>always</em>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#D73A49">xdebug.mode</span><span style="color:#24292E">=debug</span></span>
+<span class="line"><span style="color:#D73A49">xdebug.start_with_request</span><span style="color:#24292E">=trigger    </span><span style="color:#6A737D">; 推荐 dev 默认</span></span></code></pre>
+<ul>
+<li><code>trigger</code>：只有请求带 <code>XDEBUG_SESSION</code> cookie / GET / POST / env 时才挂 debug；其他请求零开销。HTTP 场景永远选这个</li>
+<li><code>yes</code>：所有请求都进 debug session。每个请求都要给 IDE 发 connect，开发体感慢；只在 CLI 一次性脚本场景用（见最后一节）</li>
+</ul>
+<h2 id="1-servername--servers--name">1. <code>serverName</code> ↔ Servers > Name</h2>
+<p>容器内 PHP 通过环境变量告诉 Xdebug “我是哪个项目”：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#24292E">PHP_IDE_CONFIG</span><span style="color:#D73A49">=</span><span style="color:#24292E">serverName</span><span style="color:#D73A49">=</span><span style="color:#032F62">laradock</span></span></code></pre>
+<p><code>Preferences > PHP > Servers</code> 里那条 Server 的 <strong>Name</strong> 字段必须<strong>完全等于</strong> <code>serverName=</code> 的值（这里是 <code>laradock</code>）。匹配上之后 PhpStorm 才会用这条 Server 上配的 <em>path mapping</em> 把容器里的 <code>/var/www/...</code> 翻译回宿主项目根，断点才落在正确文件上。</p>
+<p><strong>失败模式</strong>：debug session 建立成功（右下角图标变绿、Variables 面板出现），但断点永远不停 —— path mapping 找不到对应 Server，PhpStorm 不知道容器路径对应宿主哪个文件。</p>
+<h2 id="2-xdebugidekey--xdebug_session-value--run-configuration-ide-key">2. <code>xdebug.idekey</code> ↔ <code>XDEBUG_SESSION</code> value ↔ Run Configuration IDE key</h2>
+<p>三处的 IDE key 必须一致，默认值约定俗成是 <code>PHPSTORM</code>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#D73A49">xdebug.idekey</span><span style="color:#24292E">=PHPSTORM</span></span></code></pre>
+<ul>
+<li>浏览器：Xdebug helper 扩展给请求加 <code>Cookie: XDEBUG_SESSION=PHPSTORM</code></li>
+<li>CLI：<code>XDEBUG_SESSION=PHPSTORM php some-script.php</code></li>
+<li>PhpStorm：<code>Run > Edit Configurations > PHP Remote Debug</code> 里 IDE key 填 <code>PHPSTORM</code></li>
+</ul>
+<p>cookie / env 的 <strong>value</strong> 同时承担两个角色 —— 触发 <code>start_with_request=trigger</code> 模式启动 session，且把 value 当作本次 session 的 IDE key 上报给 IDE。</p>
+<p><strong>失败模式</strong>：连接建立、断点也命中，但 PhpStorm 把 session 路由给错的 Run Configuration —— 看不到该 config 里配的环境变量、看不到自定义 evaluator。多人共享一台 Xdebug proxy 时尤其容易撞。</p>
+<h2 id="3-xdebugclient_host--容器回连宿主的地址">3. <code>xdebug.client_host</code> ↔ 容器回连宿主的地址</h2>
+<p>Xdebug 是 <em>reverse connection</em>：容器里的 PHP 主动回连 IDE，不是 IDE 拨进容器。所以 <code>xdebug.client_host</code> 必须能从容器解析到宿主 IP：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#D73A49">xdebug.client_host</span><span style="color:#24292E">=host.docker.internal   </span><span style="color:#6A737D">; Mac / Win / Linux 20.10+</span></span>
+<span class="line"><span style="color:#D73A49">xdebug.client_port</span><span style="color:#24292E">=9003</span></span></code></pre>
+<p>跨平台统一写法（<code>dockerhost</code> 别名、<code>host-gateway</code> magic）。</p>
+<p><strong>失败模式</strong>：容器里 <code>tail -f</code> Xdebug 日志能看到 <code>Could not connect to client. Tried: host.docker.internal:9003</code> —— 这条是少数不静默的失败，因为 Xdebug 自己在抱怨连不上。</p>
+<h2 id="cli--artisan-用--d-覆盖">CLI / Artisan 用 <code>-d</code> 覆盖</h2>
+<p>PHP CLI 走的不是 fpm，加载的是 <code>/etc/php/X.Y/cli/conf.d/*.ini</code> 而不是 fpm 的 ini。fpm 那边配好 Xdebug、CLI 仍然没动静是常见盲区。两种解法：</p>
+<ul>
+<li>把同样的 <code>xdebug.*</code> 配到 <code>cli/conf.d/20-xdebug.ini</code>，CLI 全局开（开发机 OK，生产别这么干）</li>
+<li>用 <code>php -d</code> 临时覆盖，只在需要时调试某条命令：</li>
+</ul>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D73A49">alias</span><span style="color:#24292E"> artisandebug</span><span style="color:#D73A49">=</span><span style="color:#032F62">'php \</span></span>
+<span class="line"><span style="color:#032F62">  -dxdebug.mode=debug \</span></span>
+<span class="line"><span style="color:#032F62">  -dxdebug.client_host=host.docker.internal \</span></span>
+<span class="line"><span style="color:#032F62">  -dxdebug.client_port=9003 \</span></span>
+<span class="line"><span style="color:#032F62">  -dxdebug.start_with_request=yes \</span></span>
+<span class="line"><span style="color:#032F62">  artisan'</span></span></code></pre>
+<p>CLI 场景用 <code>start_with_request=yes</code> 是对的 —— 一次性进程，没机会注入 trigger，进来就要挂 debug。然后 <code>artisandebug migrate:status</code> 跑起来就能停断点。</p>
+<h2 id="排查顺序">排查顺序</h2>
+<p>跑不通时按这个顺序查，每一步都是上一步的前提：</p>
+<ol>
+<li>容器里 <code>php -i | grep xdebug</code> 确认 <code>mode=debug</code>、<code>idekey</code>、<code>client_host</code> 都加载（CLI 调试要 <code>php-cli</code> 而不是 fpm 的输出）</li>
+<li>PhpStorm 右下角点过 <em>Start Listening for PHP Debug Connections</em>（电话图标变绿）</li>
+<li>三对名字（serverName / idekey / client_host）逐一对齐</li>
+<li>Server 里 path mapping 设了容器 ↔ 宿主路径</li>
+</ol>
+<p>排到 4 还不行，看 <code>Help > Show Log in Finder</code> 的 <code>idea.log</code>，搜 <code>xdebug</code> —— 99% 能直接定位到具体 mismatch。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>
