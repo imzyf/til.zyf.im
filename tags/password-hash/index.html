@@ -2,7 +2,58 @@
 <style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
 .card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
 </style></head> <body> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline"><span class="tagline-echo"><span>today I learned, </span></span>want
-          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#password-hash</h1> <p class="page-lede" data-astro-cid-tge3q7ae>1 note</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/argon2/" class="tag" data-astro-cid-d6qgp232>#argon2</a><a href="/tags/base64/" class="tag" data-astro-cid-d6qgp232>#base64</a><a href="/tags/password-hash/" class="tag" data-astro-cid-d6qgp232>#password-hash</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232>Argon2id PHC 串拆解：salt 来源与 Base64 编码</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP <code>password_hash($pwd, PASSWORD_ARGON2ID)</code> 吐出来这种东西：</p>
+          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#password-hash</h1> <p class="page-lede" data-astro-cid-tge3q7ae>2 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260525-binary-safe/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/password-hash/" class="tag" data-astro-cid-d6qgp232>#password-hash</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260525-binary-safe/" data-astro-cid-d6qgp232>二进制安全 是什么意思</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://www.php.net/manual/en/function.crypt.php">PHP 文档里 <code>crypt()</code></a> 顶上挂着一行：</p>
+<blockquote>
+<p>Warning: This function is not (yet) binary safe!</p>
+</blockquote>
+<p>binary safe 指函数能完整处理任意字节序列，含 NUL 字节（<code>\0</code>、<code>0x00</code>）。失安全的两种姿势：<strong>遇 <code>\0</code> 截断</strong>、<strong>结果随 locale 变化</strong>。</p>
+<h2 id="crypt-怎么不-binary-safe">crypt() 怎么”不 binary safe”</h2>
+<p>底层是 C <code>crypt(3)</code>，C 字符串以 <code>\0</code> 终止：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$salt </span><span style="color:#D73A49">=</span><span style="color:#032F62"> '$2y$10$'</span><span style="color:#D73A49"> .</span><span style="color:#005CC5"> str_repeat</span><span style="color:#24292E">(</span><span style="color:#032F62">'a'</span><span style="color:#24292E">, </span><span style="color:#005CC5">22</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#005CC5">crypt</span><span style="color:#24292E">(</span><span style="color:#032F62">"secret</span><span style="color:#005CC5">\0</span><span style="color:#032F62">extra1"</span><span style="color:#24292E">, $salt) </span><span style="color:#D73A49">===</span><span style="color:#005CC5"> crypt</span><span style="color:#24292E">(</span><span style="color:#032F62">"secret</span><span style="color:#005CC5">\0</span><span style="color:#032F62">extra2"</span><span style="color:#24292E">, $salt);  </span><span style="color:#6A737D">// true</span></span></code></pre>
+<p>C 端只读到 <code>"secret"</code>，<code>\0</code> 后的字节全部丢弃。把 <code>random_bytes()</code> 出来的 32 字节 key 当密码直接喂 <code>crypt()</code> / <code>password_hash()</code> 时这就是定时炸弹 —— 32 字节里含 <code>\0</code> 的概率是 <code>1 - (255/256)^32 ≈ 12%</code>，碰上就把高熵 key 蒸发掉一截。</p>
+<p>修法是先编码再哈希：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$key </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> random_bytes</span><span style="color:#24292E">(</span><span style="color:#005CC5">32</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#005CC5">password_hash</span><span style="color:#24292E">(</span><span style="color:#005CC5">base64_encode</span><span style="color:#24292E">($key), </span><span style="color:#005CC5">PASSWORD_BCRYPT</span><span style="color:#24292E">);</span></span></code></pre>
+<p>更对路的做法：哈希二进制 key 别走 <code>crypt</code> 家族，用 <code>hash_hmac('sha256', $msg, $key)</code>，它本身 binary safe。</p>
+<h2 id="yet-是什么意思">“(yet)” 是什么意思</h2>
+<p>不是 typo —— 是文档作者留的”想修但修不动”的尾巴。<code>crypt()</code> 走 libc，要 binary safe 得绕开 libc 自己实现一份，跨平台一致性破坏。从 PHP 4 挂到 PHP 8，括号里这两字大概会一直挂下去。</p>
+<h2 id="不-binary-safe-分两类">不 binary safe 分两类</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>典型函数</th><th>触发</th></tr></thead><tbody><tr><td><code>\0</code> 截断</td><td><code>crypt()</code>、所有 fs 路径参数（<code>fopen</code> / <code>include</code> / <code>file_get_contents</code>）</td><td>入参含 <code>\0</code></td></tr><tr><td>locale 依赖</td><td><code>strcoll</code></td><td>字节落在 <code>0x80-0xFF</code></td></tr></tbody></table>
+<p>路径那条历史上是 <a href="https://nvd.nist.gov/vuln/detail/CVE-2006-7243">CVE-2006-7243</a> —— <code>include $_GET['page'] . '.php'</code> + 攻击者传 <code>evil.so\0</code> 能绕扩展名白名单包含任意文件。PHP 5.3.4 起 fs 函数拒收含 <code>\0</code> 的路径（PHP 8.0 起直接抛 <code>TypeError</code>），但<strong>拼接前先过用户输入</strong>仍是写代码的人的责任。</p>
+<p>locale 那条更隐蔽 —— <code>strcoll</code> 按 <code>LC_COLLATE</code> 排序，同样两字节给相反答案：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#005CC5">setlocale</span><span style="color:#24292E">(</span><span style="color:#005CC5">LC_COLLATE</span><span style="color:#24292E">, </span><span style="color:#032F62">'C'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// > 0（按字节 0xE4 > 0x7A）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">setlocale</span><span style="color:#24292E">(</span><span style="color:#005CC5">LC_COLLATE</span><span style="color:#24292E">, </span><span style="color:#032F62">'de_DE.UTF-8'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// &#x3C; 0（德语排序 ä 紧挨 a，在 z 前）</span></span></code></pre>
+<p>同一段代码在 CI（默认 <code>C</code>）、生产容器（可能装了 <code>de_DE.UTF-8</code>）、本地 mac 跑出不同结果，debug 极难找。要可移植的国际化排序走 <code>Collator</code>（intl 扩展）显式给 locale；要大小写转换走 <code>mb_strtolower($s, 'UTF-8')</code> 明确指定编码 —— <code>strtolower</code> 自 PHP 8.2 起只处理 ASCII，对非 ASCII 字节原样返回。</p>
+<h2 id="哪些是-binary-safe-的">哪些是 binary safe 的</h2>
+<p><code>strlen</code> <code>strpos</code> <code>strrpos</code> <code>substr</code> <code>str_replace</code> <code>strcmp</code> <code>strncmp</code> <code>explode</code> <code>implode</code> <code>hash</code> <code>hash_hmac</code> <code>fread</code> <code>fwrite</code> <code>md5</code> <code>sha1</code> —— 核心字符串和 hash 族基本全是。判别口诀：函数文档说”以字节为单位”且不依赖 locale。</p>
+<blockquote>
+<p><code>strcmp()</code> 是 binary safe，但<strong>不是 constant-time</strong> —— 校验 token / HMAC / CSRF 用 <code>hash_equals()</code>，否则吃时序攻击。两个正交属性，别混。</p>
+</blockquote>
+<p><code>mb_*</code> 系列是<strong>多字节安全</strong>（认得 UTF-8 多字节序列），不等于”任意二进制安全” —— 喂非法 UTF-8 字节会报警或返回 <code>false</code>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/argon2/" class="tag" data-astro-cid-d6qgp232>#argon2</a><a href="/tags/base64/" class="tag" data-astro-cid-d6qgp232>#base64</a><a href="/tags/password-hash/" class="tag" data-astro-cid-d6qgp232>#password-hash</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232>Argon2id PHC 串拆解：salt 来源与 Base64 编码</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP <code>password_hash($pwd, PASSWORD_ARGON2ID)</code> 吐出来这种东西：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$argon2id$v=19$m=65536,t=4,p=1$UlhrVTlVbVI2S08wa2szSQ$gGGk/8NtsxcSbFOxcSkWOSf3fFE/a2KbMEqRiTrFmes</span></span></code></pre>
 <p>这是 <a href="https://github.com/P-H-C/phc-string-format">PHC string format</a> —— 2013-2015 年那场 <strong>Password Hashing Competition</strong> 顺带产出的字符串格式规范（竞赛本身是算法选秀，Argon2 胜出后由 <a href="https://www.rfc-editor.org/rfc/rfc9106">RFC 9106</a> 标准化；格式规范是副产品，让所有现代密码 hash 都能用自包含字符串表达，便于跨算法升级 / 跨语言迁移）。6 段用 <code>$</code> 分隔。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$&#x3C;id>[$v=&#x3C;version>][$&#x3C;param>=&#x3C;value>(,&#x3C;param>=&#x3C;value>)*][$&#x3C;salt>[$&#x3C;hash>]]</span></span></code></pre>
@@ -87,12 +138,84 @@
 </ol>
 <h2 id="字节--字符编码的换算">字节 ↔ 字符：编码的换算</h2>
 <p>字节是 8 bit 的存储单位；字符是表示单位。两者的转换由编码定义。</p>
-<p>Base64 把每 <strong>3 字节</strong> 打包成 <strong>4 字符</strong>，因为 <code>LCM(8, 6) = 24 bit</code>：</p>
+<p><strong>为什么不能 1 字节 → 1 字符？</strong> 一个字节有 256 种值（0<del>255），但可打印 ASCII 只有 <strong>95 个</strong>（<code>0x20</code></del><code>0x7E</code>，即 128 个 7-bit ASCII 编码点扣掉 33 个控制符 —— <code>0x00~0x1F</code> + <code>0x7F</code>。控制符是 NUL / Tab / 换行 / Esc / DEL 等，不能透传文本，所以 128 根本不是候选档位）。1:1 至少缺 161 个对应。退一步：能不能扩到 256 字符？</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>候选方案</th><th>为什么不行</th></tr></thead><tbody><tr><td>全 256 ASCII</td><td><code>0x00~0x1F</code> 是 NUL / Tab / 换行 / Esc，终端、字符串、协议都会炸</td></tr><tr><td>Latin-1 全 256 字符</td><td>UTF-8 时代字节 <code>0x80~0xFF</code> 不是合法 UTF-8 序列，存数据库 / 走 JSON / 进 URL 全报错</td></tr><tr><td>强行透传二进制</td><td>URL、JSON、shell、HTTP header、email、<code>.env</code>、<code>grep</code> 输出全部假设 ASCII-safe</td></tr></tbody></table>
+<p>所以真正约束是：<strong>字符集必须落在「绝对安全的可打印 ASCII 子集」里</strong>。理论上界 95，实操还要扣掉 <code>"</code> <code>\</code> <code>&#x3C;</code> <code>></code> <code>&#x26;</code> <code>=</code> <code>+</code> <code>?</code> <code>#</code> 等在 URL / JSON / shell 里有特殊含义的字符，安全集合一般 60~80 个。各档编码的取舍：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>字符集大小</th><th>编码</th><th>bit/字符</th><th>膨胀率</th><th>16 字节后</th></tr></thead><tbody><tr><td>16</td><td>Hex</td><td>4</td><td>2×</td><td>32 字符</td></tr><tr><td>32</td><td>Base32</td><td>5</td><td>1.6×</td><td>26~32</td></tr><tr><td>64</td><td>Base64</td><td>6</td><td>1.33×</td><td>22~24</td></tr><tr><td>85</td><td>Base85 / Ascii85</td><td>6.4</td><td>1.25×</td><td>20~21</td></tr><tr><td>95</td><td>全可打印 ASCII 上界</td><td>~6.57</td><td>1.22×</td><td>20</td></tr></tbody></table>
+<p>Base64 字符表是 <code>A-Z a-z 0-9 + /</code>（62 个字母数字 + 2 个填空），「安全字符够多」+「6 bit 整齐对齐 24 bit 包」的双重最优解：再上一档要 128 字符，超出可打印 ASCII 上界；再下一档 32 字符膨胀率明显更高。</p>
+<p>Base64 把每 <strong>3 字节</strong> 打包成 <strong>4 字符</strong>，因为 <code>LCM(8, 6) = 24 bit</code> —— 字节 8 bit 和 Base64 字符 6 bit 不能整除，得找两边都数得齐的最小公共单位。24 bit 既是 3 个字节，也是 4 个 Base64 字符：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>[byte 1] [byte 2] [byte 3]      ← 24 bit</span></span>
 <span class="line"><span> 6 bit  6 bit  6 bit  6 bit</span></span>
 <span class="line"><span>[char 1][char 2][char 3][char 4]</span></span></code></pre>
-<p>每个 Base64 字符 6 bit（2⁶ = 64 种可能）。选 6 是因为可打印 ASCII 里挑得出 64 个<strong>绝对安全</strong>的字符（<code>A-Z a-z 0-9 + /</code>），再多就找不齐了。</p>
-<p>三种常见编码膨胀率：</p>
+<p>试别的字节数都凑不齐：</p>
 
 
 
@@ -126,7 +249,10 @@
 
 
 
-<table><thead><tr><th></th><th>bit/字符</th><th>字符表</th><th>膨胀率</th><th>16 字节 → 多少字符</th></tr></thead><tbody><tr><td>Hex</td><td>4</td><td><code>0-9 a-f</code></td><td>2×</td><td>32</td></tr><tr><td>Base64</td><td>6</td><td><code>A-Z a-z 0-9 + /</code></td><td>1.33×</td><td>22~24</td></tr><tr><td>Base32</td><td>5</td><td><code>A-Z 2-7</code></td><td>1.6×</td><td>26~32</td></tr></tbody></table>
+
+
+<table><thead><tr><th>输入字节</th><th>bit</th><th>÷ 6 = 字符</th><th>问题</th></tr></thead><tbody><tr><td>1</td><td>8</td><td>1.33</td><td>余 2 bit，半字符存不下</td></tr><tr><td>2</td><td>16</td><td>2.67</td><td>余 4 bit，半字符存不下</td></tr><tr><td><strong>3</strong></td><td>24</td><td><strong>4</strong></td><td><strong>整除</strong></td></tr><tr><td>4</td><td>32</td><td>5.33</td><td>回到 8 bit 周期</td></tr></tbody></table>
+<p>所以 3 字节是「最小成块单位」，每 3 字节切一刀、吐 4 字符、循环。输入不是 3 的倍数时，结尾凑不齐 24 bit，要补 0 bit 到下一个 6 bit 边界，再用 <code>=</code> 标记「这是补的、不是真数据」 —— padding 的来历，下一节正好展开 PHC 为什么把 <code>=</code> 删了。</p>
 <p>所以 PHC 串里 16 字节 salt → 22 字符；32 字节 hash → 43 字符。反推也成立：看见 32 hex 是 MD5 / UUID（16 字节），64 hex 是 SHA256（32 字节）。</p>
 <h2 id="phc-的-base64-不带-padding">PHC 的 Base64 不带 padding</h2>
 <p>标准 Base64 末尾会用 <code>=</code> 补齐到 4 的倍数：</p>

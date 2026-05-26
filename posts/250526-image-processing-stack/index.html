@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="PHP 圈做图像处理有三个 native 选择 —— GD、Imagick、libvips。它们看起来功能重叠（都能 resize / 转格式 / 合成），关键差异不在「支持哪些格式」（最终都调 libpng / libjpeg / libwebp 同一层 codec），而在 **C 引擎怎么调度内存**，以及**它们…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>PHP 图像处理：GD / Imagick / libvips 选型与层级 · TIL</title><link rel="stylesheet" href="/_astro/Base.BOVztmkQ.css">
+<style>.note[data-astro-cid-fzx4jmue]{padding:2rem 2.1rem 1.8rem}@media(max-width:640px){.note[data-astro-cid-fzx4jmue]{padding:1.4rem 1.4rem 1.3rem}}.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px dotted var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.updated[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.82rem;font-style:italic}.updated[data-astro-cid-fzx4jmue] time[data-astro-cid-fzx4jmue]{font-variant-numeric:tabular-nums}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px dotted var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline"><span class="tagline-echo"><span>today I learned, </span></span>want
+          to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> <main class="site-main width-note">  <article class="note card-shell" data-astro-cid-fzx4jmue> <a href="/tags/php/" class="chip" data-astro-cid-fzx4jmue>php</a> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>PHP 图像处理：GD / Imagick / libvips 选型与层级</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2025-05-26T00:00:00.000Z" data-astro-cid-fzx4jmue>2025-05-26</time>  <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/php/" class="tag" data-astro-cid-fzx4jmue>#php</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p>PHP 圈做图像处理有三个 native 选择 —— GD、Imagick、libvips。它们看起来功能重叠（都能 resize / 转格式 / 合成），关键差异不在「支持哪些格式」（最终都调 libpng / libjpeg / libwebp 同一层 codec），而在 <strong>C 引擎怎么调度内存</strong>，以及<strong>它们在调用链里所处的层级</strong>。</p>
+<h2 id="三个-lib-对比">三个 lib 对比</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Lib</th><th>安装</th><th>内存模型</th><th>适用</th></tr></thead><tbody><tr><td><strong>GD</strong></td><td><code>apt install php-gd</code>（PHP 自带 ext）</td><td>整张图按解压尺寸驻留</td><td>90% 项目默认</td></tr><tr><td><strong>Imagick</strong></td><td><code>apt install imagemagick php-imagick</code></td><td>整图驻留，内存最大</td><td>要 HEIC / PSD / PDF / 色彩配置文件</td></tr><tr><td><strong>libvips</strong></td><td><code>apt install libvips42</code> + <code>composer require jcupitt/vips</code></td><td><strong>流水线</strong>，按 chunk 处理</td><td>高吞吐缩略图、大图（> 4K）</td></tr></tbody></table>
+<p>GD 的「整张图驻留」是常被忽略的成本：一张 4000×3000 的 JPEG 压缩后 2 MB，解压到内存是 <code>4000 × 3000 × 4 byte</code> ≈ <strong>46 MB raw</strong>。PHP-FPM 默认 <code>memory_limit = 128M</code>，并发处理两三张就 OOM kill。libvips 是 demand-driven streaming，同一张图峰值内存可压到几 MB（<a href="260512-libvips-text-rendering">详见 libvips 写文字那篇</a>）。</p>
+<p>Imagick 在 2026 仍是「功能最全但坑最多」 —— CVE 历史长，上游 <code>policy.xml</code> 默认禁用一堆 coder（PDF / PS / HTTPS / MSL），运维要反向解锁才能用全。容器镜像也最大。除非真要 HEIC / PSD，否则 GD 或 libvips 更划算。</p>
+<h2 id="调用层级">调用层级</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>┌──────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│ Layer 1  应用 wrapper（PHP userland）                         │</span></span>
+<span class="line"><span>│   Intervention v3 / Glide / 自写代码                          │</span></span>
+<span class="line"><span>│   ↑ driver 可切换                                             │</span></span>
+<span class="line"><span>├──────────────────────────────────────────────────────────────┤</span></span>
+<span class="line"><span>│ Layer 2  PHP 扩展（C 绑定 / FFI）                             │</span></span>
+<span class="line"><span>│   ext-gd        ext-imagick       ext-vips / FFI              │</span></span>
+<span class="line"><span>├──────────────────────────────────────────────────────────────┤</span></span>
+<span class="line"><span>│ Layer 3  Native C 引擎                                        │</span></span>
+<span class="line"><span>│   libgd         ImageMagick       libvips                     │</span></span>
+<span class="line"><span>│   （内存模型差异在这一层）                                     │</span></span>
+<span class="line"><span>├──────────────────────────────────────────────────────────────┤</span></span>
+<span class="line"><span>│ Layer 4  格式 codec（三个引擎共享）                            │</span></span>
+<span class="line"><span>│   libpng  libjpeg(IJG)  libwebp  libavif  FreeType            │</span></span>
+<span class="line"><span>├──────────────────────────────────────────────────────────────┤</span></span>
+<span class="line"><span>│ Layer 5  系统库                                                │</span></span>
+<span class="line"><span>│   zlib（libpng 依赖）  fontconfig（FreeType 字体查找）         │</span></span>
+<span class="line"><span>└──────────────────────────────────────────────────────────────┘</span></span></code></pre>
+<p>两个非显然结论：</p>
+<p><strong>Layer 4 是共享的</strong> —— 三个 C 引擎最终都调 libpng / libjpeg / libwebp 读写格式字节。所以问「GD 能不能输出 WebP」本质是问「GD 编译时有没有 link libwebp」，而不是 GD 算法层面的能力。<code>apt install php-gd</code> 把 libpng / libjpeg 作为依赖一起拉进来，要 WebP 还得加 <code>--with-webp</code> 重编。Imagick 多出来的 HEIC / PSD 也只是它在 Layer 3 自己挂了更多 codec wrapper，不是 Layer 4 神奇变多。</p>
+<p><strong>Layer 1 跟 Layer 2/3 解耦</strong> —— Intervention v3 是 driver-swappable，业务代码写在 Layer 1 抽象层，未来从 GD 升 libvips 只换 driver 注册不动业务：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#6A737D">// config/image.php</span></span>
+<span class="line"><span style="color:#032F62">'driver'</span><span style="color:#D73A49"> =></span><span style="color:#6F42C1"> env</span><span style="color:#24292E">(</span><span style="color:#032F62">'IMAGE_DRIVER'</span><span style="color:#24292E">, </span><span style="color:#032F62">'gd'</span><span style="color:#24292E">),   </span><span style="color:#6A737D">// 切 'imagick' / 'vips' 不动业务代码</span></span></code></pre>
+<p>写代码时该有意识地利用这一层 —— 直接 <code>imagecreatefromjpeg()</code> 把自己钉死在 Layer 2 上，迁移成本就再也下不来了。</p> </div>  <aside class="related" aria-label="related notes" data-astro-cid-fzx4jmue> <h2 data-astro-cid-fzx4jmue>Related</h2> <ul data-astro-cid-fzx4jmue> <li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2026-05-12</span> <a class="title" href="/posts/260512-libvips-text-rendering/" data-astro-cid-fzx4jmue>PHP libvips 写文字：Pango 接管 layout，不用算 bbox</a> </li><li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2020-04-16</span> <a class="title" href="/posts/200416-php-gd-text-bbox-alignment/" data-astro-cid-fzx4jmue>PHP GD 文字对齐：imagettfbbox 8 元素 + 坐标系是相对 baseline</a> </li> </ul> </aside> <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

@@ -1,0 +1,25 @@
+# Minimal runnable justfile showing Just's distinctive features.
+# Install: brew install just     Docs: https://just.systems/
+#
+# Try:
+#   just                # list recipes (default)
+#   just build          # always runs (Just has no incremental)
+#   just ci             # lint then test, serial (Just doesn't parallelize deps)
+#   just greet Alice    # positional argument: native syntax (Task uses VAR=value)
+
+default:
+    @just --list
+
+build:
+    go build -o bin/app ./cmd/app
+
+test: build
+    go test ./...
+
+lint:
+    go vet ./...
+
+ci: lint test
+
+greet name="world":
+    echo "Hello, {{name}}!"

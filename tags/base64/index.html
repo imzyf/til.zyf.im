@@ -87,12 +87,84 @@
 </ol>
 <h2 id="字节--字符编码的换算">字节 ↔ 字符：编码的换算</h2>
 <p>字节是 8 bit 的存储单位；字符是表示单位。两者的转换由编码定义。</p>
-<p>Base64 把每 <strong>3 字节</strong> 打包成 <strong>4 字符</strong>，因为 <code>LCM(8, 6) = 24 bit</code>：</p>
+<p><strong>为什么不能 1 字节 → 1 字符？</strong> 一个字节有 256 种值（0<del>255），但可打印 ASCII 只有 <strong>95 个</strong>（<code>0x20</code></del><code>0x7E</code>，即 128 个 7-bit ASCII 编码点扣掉 33 个控制符 —— <code>0x00~0x1F</code> + <code>0x7F</code>。控制符是 NUL / Tab / 换行 / Esc / DEL 等，不能透传文本，所以 128 根本不是候选档位）。1:1 至少缺 161 个对应。退一步：能不能扩到 256 字符？</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>候选方案</th><th>为什么不行</th></tr></thead><tbody><tr><td>全 256 ASCII</td><td><code>0x00~0x1F</code> 是 NUL / Tab / 换行 / Esc，终端、字符串、协议都会炸</td></tr><tr><td>Latin-1 全 256 字符</td><td>UTF-8 时代字节 <code>0x80~0xFF</code> 不是合法 UTF-8 序列，存数据库 / 走 JSON / 进 URL 全报错</td></tr><tr><td>强行透传二进制</td><td>URL、JSON、shell、HTTP header、email、<code>.env</code>、<code>grep</code> 输出全部假设 ASCII-safe</td></tr></tbody></table>
+<p>所以真正约束是：<strong>字符集必须落在「绝对安全的可打印 ASCII 子集」里</strong>。理论上界 95，实操还要扣掉 <code>"</code> <code>\</code> <code>&#x3C;</code> <code>></code> <code>&#x26;</code> <code>=</code> <code>+</code> <code>?</code> <code>#</code> 等在 URL / JSON / shell 里有特殊含义的字符，安全集合一般 60~80 个。各档编码的取舍：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>字符集大小</th><th>编码</th><th>bit/字符</th><th>膨胀率</th><th>16 字节后</th></tr></thead><tbody><tr><td>16</td><td>Hex</td><td>4</td><td>2×</td><td>32 字符</td></tr><tr><td>32</td><td>Base32</td><td>5</td><td>1.6×</td><td>26~32</td></tr><tr><td>64</td><td>Base64</td><td>6</td><td>1.33×</td><td>22~24</td></tr><tr><td>85</td><td>Base85 / Ascii85</td><td>6.4</td><td>1.25×</td><td>20~21</td></tr><tr><td>95</td><td>全可打印 ASCII 上界</td><td>~6.57</td><td>1.22×</td><td>20</td></tr></tbody></table>
+<p>Base64 字符表是 <code>A-Z a-z 0-9 + /</code>（62 个字母数字 + 2 个填空），「安全字符够多」+「6 bit 整齐对齐 24 bit 包」的双重最优解：再上一档要 128 字符，超出可打印 ASCII 上界；再下一档 32 字符膨胀率明显更高。</p>
+<p>Base64 把每 <strong>3 字节</strong> 打包成 <strong>4 字符</strong>，因为 <code>LCM(8, 6) = 24 bit</code> —— 字节 8 bit 和 Base64 字符 6 bit 不能整除，得找两边都数得齐的最小公共单位。24 bit 既是 3 个字节，也是 4 个 Base64 字符：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>[byte 1] [byte 2] [byte 3]      ← 24 bit</span></span>
 <span class="line"><span> 6 bit  6 bit  6 bit  6 bit</span></span>
 <span class="line"><span>[char 1][char 2][char 3][char 4]</span></span></code></pre>
-<p>每个 Base64 字符 6 bit（2⁶ = 64 种可能）。选 6 是因为可打印 ASCII 里挑得出 64 个<strong>绝对安全</strong>的字符（<code>A-Z a-z 0-9 + /</code>），再多就找不齐了。</p>
-<p>三种常见编码膨胀率：</p>
+<p>试别的字节数都凑不齐：</p>
 
 
 
@@ -126,7 +198,10 @@
 
 
 
-<table><thead><tr><th></th><th>bit/字符</th><th>字符表</th><th>膨胀率</th><th>16 字节 → 多少字符</th></tr></thead><tbody><tr><td>Hex</td><td>4</td><td><code>0-9 a-f</code></td><td>2×</td><td>32</td></tr><tr><td>Base64</td><td>6</td><td><code>A-Z a-z 0-9 + /</code></td><td>1.33×</td><td>22~24</td></tr><tr><td>Base32</td><td>5</td><td><code>A-Z 2-7</code></td><td>1.6×</td><td>26~32</td></tr></tbody></table>
+
+
+<table><thead><tr><th>输入字节</th><th>bit</th><th>÷ 6 = 字符</th><th>问题</th></tr></thead><tbody><tr><td>1</td><td>8</td><td>1.33</td><td>余 2 bit，半字符存不下</td></tr><tr><td>2</td><td>16</td><td>2.67</td><td>余 4 bit，半字符存不下</td></tr><tr><td><strong>3</strong></td><td>24</td><td><strong>4</strong></td><td><strong>整除</strong></td></tr><tr><td>4</td><td>32</td><td>5.33</td><td>回到 8 bit 周期</td></tr></tbody></table>
+<p>所以 3 字节是「最小成块单位」，每 3 字节切一刀、吐 4 字符、循环。输入不是 3 的倍数时，结尾凑不齐 24 bit，要补 0 bit 到下一个 6 bit 边界，再用 <code>=</code> 标记「这是补的、不是真数据」 —— padding 的来历，下一节正好展开 PHC 为什么把 <code>=</code> 删了。</p>
 <p>所以 PHC 串里 16 字节 salt → 22 字符；32 字节 hash → 43 字符。反推也成立：看见 32 hex 是 MD5 / UUID（16 字节），64 hex 是 SHA256（32 字节）。</p>
 <h2 id="phc-的-base64-不带-padding">PHC 的 Base64 不带 padding</h2>
 <p>标准 Base64 末尾会用 <code>=</code> 补齐到 4 的倍数：</p>

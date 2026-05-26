@@ -1,0 +1,32 @@
+# Minimal runnable Taskfile showing Task's distinctive features.
+# Install: brew install go-task     Docs: https://taskfile.dev/
+#
+# Try:
+#   task            # list tasks (default)
+#   task build      # first run compiles; second run skips (sources unchanged)
+#   task ci         # lint + test run in parallel via deps
+
+version: '3'
+
+tasks:
+  default:
+    cmds: [task --list]
+
+  build:
+    desc: compile (skips when sources unchanged)
+    cmds: [go build -o bin/app ./cmd/app]
+    sources: ['**/*.go']
+    generates: [bin/app]
+
+  test:
+    desc: go test
+    deps: [build]
+    cmds: [go test ./...]
+
+  lint:
+    desc: go vet (ships with the Go toolchain)
+    cmds: [go vet ./...]
+
+  ci:
+    desc: lint + test in parallel
+    deps: [lint, test]
