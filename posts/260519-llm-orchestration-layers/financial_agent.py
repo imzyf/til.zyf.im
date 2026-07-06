@@ -4,7 +4,7 @@ LangGraph Agent Demo —— 理财顾问会议笔记处理（agent 版）
 
 和 financial_workflow.py 同样的业务目标，但控制流交给 LLM。
 公共部分（LLM 客户端、Pydantic schemas、核心业务逻辑 do_extract / do_compliance /
-do_generate、样本对白）都在 _common.py。这个文件只保留 agent 范式独有的部分:
+do_generate、样本对白）都在 _common.py。这个文件只保留 agent 范式独有的部分：
 @tool 包装、system prompt、tools_condition、build_agent、运行时 stream loop。
 
 对照 financial_workflow.py 看 [WORKFLOW → AGENT] 标记 —— 每条都是 workflow 版本里
@@ -21,7 +21,7 @@ Agent 的样子（这个文件）:
         ↓
     （循环，运行时才知道走几轮）
 
-编译期能画出的图只有:
+编译期能画出的图只有：
     START → llm ⇄ tools → END
 具体跑了几轮、每轮调了哪个工具 —— 看 messages 历史。
 
@@ -97,7 +97,7 @@ def compliance_check(commitments: list[str]) -> dict:
 # ────────────────────────────────────────────────────────────────────────
 # ★ Agent 经典失败模式 ★ —— 为什么 flags 默认 None 是防御性设计
 # ────────────────────────────────────────────────────────────────────────
-# 小模型 (gpt-5.4-nano / Haiku 等) 实测经常这样调:
+# 小模型 (gpt-5.4-nano / Haiku 等) 实测经常这样调：
 #     queue_for_review(summary="...合规风险...")    ← 漏了 flags
 # 然后 Pydantic 抛 "flags: Field required"，ToolNode 把错误塞回 messages，
 # LLM 才会重试。重试一两次就要多烧好几倍 token。
@@ -112,7 +112,7 @@ def compliance_check(commitments: list[str]) -> dict:
 #   4. 系统提示里明确每个工具的必填字段       —— belt & suspenders
 #   5. 上更强的模型（gpt-5.4 / Claude Opus）  —— 推理能力直接解决一部分
 #
-# 对比 workflow 版本: route_by_risk 直接读 state["risk_level"] 字段，
+# 对比 workflow 版本：route_by_risk 直接读 state["risk_level"] 字段，
 # 根本不存在"LLM 要记得在工具间传参"这回事。这就是控制流归属换人付出的代价。
 # ────────────────────────────────────────────────────────────────────────
 
@@ -235,7 +235,7 @@ def build_agent():
 # ════════════════════════════════════════════════════════════════════════
 # [WORKFLOW → AGENT] ④ ── 你也可以一行写完整个 agent
 # ════════════════════════════════════════════════════════════════════════
-# 上面这个 build_agent() 等价于:
+# 上面这个 build_agent() 等价于：
 #
 #     from langgraph.prebuilt import create_react_agent
 #     app = create_react_agent(llm, TOOLS, prompt=SYSTEM_PROMPT)

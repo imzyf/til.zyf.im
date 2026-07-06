@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="生成文件（、、lock 文件）有两个麻烦：把仓库语言占比统计带歪，把 PR diff 撑出几千行。两个平台都在 里解决，但**机制差别比想象大**——GitHub 一个 attribute 全包，GitLab 按用途拆成三套，标错只生效一半。 ## GitHub： 一个搞定两件事 GitHub 的语言统计和 diff…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>折叠生成文件：linguist-generated vs gitlab-generated · TIL</title><link rel="stylesheet" href="/_astro/Base.BW7bO-F5.css">
+<style>.note[data-astro-cid-fzx4jmue]{padding:2rem 2.1rem 1.8rem}@media(max-width:640px){.note[data-astro-cid-fzx4jmue]{padding:1.4rem 1.4rem 1.3rem}}.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px dotted var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.updated[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.82rem;font-style:italic}.updated[data-astro-cid-fzx4jmue] time[data-astro-cid-fzx4jmue]{font-variant-numeric:tabular-nums}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px dotted var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body>  <script>
+      (() => {
+        const T = 24;
+        const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
+        sync();
+        addEventListener('scroll', sync, { passive: true });
+      })();
+    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <article class="note card-shell" data-astro-cid-fzx4jmue> <a href="/tags/github/" class="chip" data-astro-cid-fzx4jmue>github</a> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>折叠生成文件：linguist-generated vs gitlab-generated</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2026-06-03T00:00:00.000Z" data-astro-cid-fzx4jmue>2026-06-03</time>  <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/github/" class="tag" data-astro-cid-fzx4jmue>#github</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p>生成文件（<code>dist/</code>、<code>*.min.js</code>、lock 文件）有两个麻烦：把仓库语言占比统计带歪，把 PR diff 撑出几千行。两个平台都在 <code>.gitattributes</code> 里解决，但<strong>机制差别比想象大</strong>——GitHub 一个 attribute 全包，GitLab 按用途拆成三套，标错只生效一半。</p>
+<h2 id="githublinguist--一个搞定两件事">GitHub：<code>linguist-*</code> 一个搞定两件事</h2>
+<p>GitHub 的语言统计和 diff 折叠都归 <a href="https://github.com/github-linguist/linguist">Linguist</a> 一套管，所以 <code>linguist-generated</code> <strong>一标同时</strong>踢出语言统计 + 折叠 diff：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>dist/* linguist-generated</span></span>
+<span class="line"><span>package-lock.json -linguist-generated   # 前导 - = 反向排除</span></span></code></pre>
+<p>同家族还有 <code>linguist-vendored</code>（第三方库）、<code>linguist-documentation</code>（文档）、<code>linguist-language=PHP</code>（改判语言）。判准：<strong>generated = 机器产物，vendored = 别人的代码</strong>，都被踢出统计，区别只在 diff 折不折叠。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>attribute</th><th>不计统计</th><th>diff 折叠</th></tr></thead><tbody><tr><td><code>linguist-generated</code></td><td>✅</td><td>✅</td></tr><tr><td><code>linguist-vendored</code></td><td>✅</td><td>❌</td></tr><tr><td><code>linguist-documentation</code></td><td>✅</td><td>❌</td></tr></tbody></table>
+<h2 id="gitlab三套各管一摊">GitLab：三套各管一摊</h2>
+<p>GitLab 只有<strong>两个</strong> <code>gitlab-</code> 专属 attribute，各自只干一件事；<strong>语言统计反而借用 GitHub 的 <code>linguist-*</code></strong>——它的统计引擎 <a href="https://github.com/go-enry/go-enry">go-enry</a> 是 Linguist 的 Go 移植，认 <code>linguist-</code> 前缀。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>用途</th><th>GitLab 用什么</th></tr></thead><tbody><tr><td>MR diff 折叠</td><td><code>gitlab-generated</code>（专属）</td></tr><tr><td>语法高亮改判</td><td><code>gitlab-language=prolog</code>（专属，<code>=text</code> 关高亮）</td></tr><tr><td>语言统计排除/改判</td><td><code>linguist-generated</code> / <code>linguist-vendored</code> / …</td></tr></tbody></table>
+<p><strong>最大的坑</strong>：在 GitLab 标 <code>gitlab-generated</code> 只折叠了 diff，文件照样算进语言占比；想同时从统计里拿掉，得再补一条 <code>linguist-generated</code>。和 GitHub 一个 attribute 全包正相反。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>*.min.js gitlab-generated      # 只折叠 diff</span></span>
+<span class="line"><span>*.min.js linguist-generated    # 才会从语言统计条消失</span></span></code></pre>
+<p>另注：GitLab 会自动识别部分生成文件（protobuf 产物、<code>go generate</code> 的 Go 文件、source map），不标也可能折叠，这也是”有的折有的没折”不一致反馈的来源（<a href="https://gitlab.com/gitlab-org/gitlab/-/issues/572763">#572763</a>）。</p>
+<h2 id="共同点都是-gitattributes-的-override">共同点：都是 <code>.gitattributes</code> 的 override</h2>
+<p><code>linguist-*</code> / <code>gitlab-*</code> 和 LFS 的 <a href="260603-git-lfs.md"><code>filter=lfs</code></a>、文件锁 <code>lockable</code>、行尾 <code>text=auto</code> 堆在同一个文件。记法：<strong>git 原生 attribute（<code>filter</code> / <code>text</code> / <code>merge</code>）各平台通用；带平台前缀的只在对应平台网页生效</strong>，换到本地仓库一律失效。</p>
+<p>See <a href="https://github.com/github-linguist/linguist/blob/main/docs/overrides.md">Linguist overrides</a> / <a href="https://docs.gitlab.com/user/project/repository/files/git_attributes/">GitLab Git attributes</a>。</p> </div>  <aside class="related" aria-label="related notes" data-astro-cid-fzx4jmue> <h2 data-astro-cid-fzx4jmue>Related</h2> <ul data-astro-cid-fzx4jmue> <li data-astro-cid-fzx4jmue> <span class="date" data-astro-cid-fzx4jmue>2026-06-03</span> <a class="title" href="/posts/260603-git-lfs/" data-astro-cid-fzx4jmue>Git LFS</a> </li> </ul> </aside> <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

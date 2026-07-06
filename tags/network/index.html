@@ -8,7 +8,105 @@
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#network</h1> <p class="page-lede" data-astro-cid-tge3q7ae>5 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260526-httpbingo/" data-astro-cid-d6qgp232> <a href="/tags/network/" class="chip" data-astro-cid-d6qgp232>network</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-26</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/network/" class="tag" data-astro-cid-d6qgp232>#network</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260526-httpbingo/" data-astro-cid-d6qgp232>httpbingo.org —— 按需返回任意 HTTP 响应</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>写 HTTP 客户端时最难造的是失败：500、慢响应、3xx 链、basic auth 401。靠真实业务 API 不可控也污染数据。<a href="https://httpbingo.org/">httpbingo.org</a> 就是干这个——按 URL 告诉它要什么响应，它就回什么。</p>
+    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#network</h1> <p class="page-lede" data-astro-cid-tge3q7ae>7 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260703-dn42-bgp-sandbox/" data-astro-cid-d6qgp232> <a href="/tags/network/" class="chip" data-astro-cid-d6qgp232>network</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-07-03T00:00:00.000Z" data-astro-cid-d6qgp232>2026-07-03</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/network/" class="tag" data-astro-cid-d6qgp232>#network</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260703-dn42-bgp-sandbox/" data-astro-cid-d6qgp232>DN42 —— 改 git repo 申请 ASN 的 BGP 沙盒</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>DN42 是一张「长得跟真实互联网一模一样」的 overlay 网络——同一套 BGP / whois / DNS，但发号不用求 RIR：fork 一个 git 仓库、改几个文件、提 PR，脚本校验通过就合并，你就正式拥有了自己的 ASN 和地址段。核心价值是<strong>安全网</strong>：你在里面扮演一家 mini-ISP 练 BGP，配错了也不会有大运营商打电话来骂。</p>
+<p>最反直觉的一点：它用 WireGuard 这类 VPN 隧道把成员互联，乍看像 Tor 那类 darknet，<strong>目标却相反</strong>——不做匿名，专做「去 NAT 的真实路由练习」。成员之间要的是能直连、能互相暴露服务，而不是藏起来。</p>
+<h2 id="注册是-git-pr不是找管理员">注册是 git PR，不是找管理员</h2>
+<p>真实互联网上申请 ASN / IP 要走 APNIC 那套官僚流程；DN42 把它压成一次 PR——这是它整个设计的题眼。你要建的对象跟真实 whois 一一对应：</p>
+<ul>
+<li><code>mntner</code>（维护者，带签名 auth）、<code>person</code>（<code>nic-hdl</code> 以 <code>-DN42</code> 结尾）</li>
+<li><code>aut-num</code>（你的 ASN）、<code>inetnum</code> / <code>inet6num</code>（你的地址段）</li>
+<li><code>route</code> / <code>route6</code>——<strong>仿照真实互联网的 RPKI/ROA</strong>，没有它别人会因 ROA 校验失败而不收你的路由</li>
+</ul>
+<p>坑在校验：一个自动脚本会在合并前检查语法，格式错一个字符就打回，拖慢管理员审核。所以是「严格按语法填」而不是「大概填填」。</p>
+<h2 id="号段为什么是私有的">号段为什么是私有的</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>资源</th><th>DN42 用的段</th><th>备注</th></tr></thead><tbody><tr><td>ASN</td><td><code>4242420000–4242429999</code>（RFC 6996 私有段）</td><td>新人建议在 <code>4242420000–4242423999</code> 里挑</td></tr><tr><td>IPv4</td><td><code>172.20.0.0/14</code></td><td>默认分 /27（32 个地址）够用</td></tr><tr><td>IPv6</td><td>ULA <code>fd00::/8</code></td><td>默认分 /48</td></tr></tbody></table>
+<p>全用<strong>私有号段</strong>是刻意的：这样 DN42 的路由永远不会泄进公网 BGP 表、也不会跟公网 IP 撞车。代价是这些地址空间跟 ChaosVPN（<code>172.31.0.0/16</code>）、NeoNetwork 等<strong>兄弟网络重叠</strong>——DN42 只敢用 <code>172.20.0.0/14</code> 而非整个 <code>172.16/12</code>，就是给这些互联网络留位置，它们之间是打通的。</p>
+<p>AS / ASN / BGP 选路的基础概念这里不重复，见同目录 CN2 那篇（那篇讲的是运营商的<strong>真实</strong> ASN 就是线路名，这篇是你自己<strong>申请一个私有</strong> ASN 来玩，正好两面）。</p>
+<h2 id="加入四步">加入四步</h2>
+<ol>
+<li><strong>注册</strong>：按上面建好对象，提 PR，合并即「持号」。</li>
+<li><strong>找 peer</strong>：没有中心服务器，必须连另一个成员。新手直接连 <strong>Kioubit</strong>——它连接数最多、中心性最高，且有全自动 peering 向导（填 ASN + WireGuard 公钥 + 隧道 IP，几分钟出结果），所以大半个网都直连它。也可用官方 Peer Finder 挑低延迟的。</li>
+<li><strong>建隧道</strong>：主流是 WireGuard（好配、够安全），也支持 OpenVPN / GRE / IPsec。</li>
+<li><strong>跑 BGP</strong>：装 BIRD 或 FRR，跟 peer 起 eBGP 会话，把自己的段 announce 出去。</li>
+</ol>
+<p>门槛不高：一台 24/7 在线的 Linux VPS + 会配 WireGuard 和 BGP 就够。</p>
+<h2 id="dn42us-不是官方入口">dn42.us 不是官方入口</h2>
+<p>官方主站是 <strong>dn42.eu</strong>（wiki + registry 说明都在这）。<strong>dn42.us</strong> 是成员 <code>xuu</code> 自建的一个节点门户，挂着他自己的 wiki / paste / git 镜像等服务——它本身就是「在 DN42 里对外提供服务」的活样板，别把它当成注册入口。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260616-cn2-gia-9929-cmin2/" data-astro-cid-d6qgp232> <a href="/tags/network/" class="chip" data-astro-cid-d6qgp232>network</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-16T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-16</time> <span class="updated" data-astro-cid-d6qgp232>
+updated <time datetime="2026-07-06T00:00:00.000Z" data-astro-cid-d6qgp232>2026-07-06</time> </span> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/network/" class="tag" data-astro-cid-d6qgp232>#network</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260616-cn2-gia-9929-cmin2/" data-astro-cid-d6qgp232>CN2 GIA / 9929 / CMIN2：三网回国线路分层</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>回国线路好坏，本质是数据包<strong>进国内后走「精品网」还是「普通骨干网」</strong>——三网都能按 <strong>普通线 / 优质线 / 顶级线</strong> 三档理解（VPS、跨境专线圈的俗称）。看线的前提：<strong>回程比去程重要</strong>——下载占 90%+，回程决定体感。</p>
+<h2 id="as-号就是线路名的真身">AS 号就是线路名的真身</h2>
+<p><em>AS</em>（Autonomous System，自治系统）= 由同一机构统一管理、对外采用统一路由策略的一组网络。互联网是「网络的网络」，每个大网络就是一个 AS。</p>
+<ul>
+<li><em>ASN</em>（AS 号）是网络层的身份证，全球唯一；BGP 选路靠它：IP 像门牌号定位主机，ASN 像区域号——BGP 先决定送到哪个 AS，再在 AS 内细分到具体地址。</li>
+<li>ASN 原本 16 位（1–65535），号段不够用扩成了 32 位——移动的 AS58453 / AS58807 就是 32 位号，所以位数明显比电信 AS4809 长。</li>
+</ul>
+<p>所谓 CN2 GIA、9929、CMIN2，本质就是 AS4809、AS9929、AS58807——运营商不同精品骨干网的「身份证号」。</p>
+<h2 id="精品网-vs-普通骨干差在哪">精品网 vs 普通骨干：差在哪</h2>
+<p>普通骨干（电信 163、联通 169、移动 CMNET）是共享、超售的大网，国际带宽受限，晚高峰拥堵、抖动大。精品网是<strong>独立轻负载链路</strong>，绕开大量公共交换点（IX），<strong>一跳入境、一跳落地</strong>，所以延迟低、丢包少、高峰稳——代价是带宽小、价格贵。这就是 CN2 GIA 被当成回国「黄金标准」的根因。</p>
+<p>优质线是<strong>半程精品</strong>：只在出国段走精品网，国内段仍回普通骨干（电信 CN2 GT 典型——国内段走 163，出境才汇入 CN2），比纯普通线好，但高峰国内段仍会堵；顶级线<strong>全程精品</strong>、不降级，才是天花板。</p>
+<h2 id="三网分层总表">三网分层总表</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>运营商</th><th>普通线（普通骨干）</th><th>优质线（半程精品）</th><th>顶级线（全程精品）</th></tr></thead><tbody><tr><td>电信</td><td>163（AS4134）</td><td>CN2 GT（AS4809，国内仍走 163）</td><td><strong>CN2 GIA</strong>（AS4809）</td></tr><tr><td>联通</td><td>169（AS4837）</td><td>—（无 GT 式半程档）</td><td><strong>9929 / CUII</strong>（AS9929）</td></tr><tr><td>移动</td><td>CMNET（AS9808）</td><td>CMI（AS58453）</td><td><strong>CMIN2</strong>（AS58807，CMI 的 N2 精品网）</td></tr></tbody></table>
+<p>综合性能大致：<strong>CN2 GIA ≈ 9929 ≥ CMIN2 > CN2 GT / CTGNet > 163 / 169 / CMNET</strong>。</p>
+<p>商家宣传只说「CN2」是泛称，要追问是 GT 还是 GIA——两者差价常有 2–3 倍。</p>
+<p>选线一句话：电信用户选 CN2 GIA，联通用户选 9929，移动用户选 CMIN2；三网优化 VPS 就是按运营商把三条线分流，是目前回国线路的天花板。</p>
+<h2 id="怎么自测拿到的是哪条线">怎么自测拿到的是哪条线</h2>
+<p>两个工具都跑在被测的境外 VPS 上：</p>
+<p><strong><a href="https://nodequality.com/">NodeQuality</a></strong>——一键综合测评，除硬件 / IP 质量外，其 <code>backroute_trace</code> 会自动判断三网回程各走哪条骨干，最省事：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">bash</span><span style="color:#032F62"> &#x3C;(</span><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -sL</span><span style="color:#032F62"> https://run.nodequality.com)</span></span></code></pre>
+<p><strong><a href="https://github.com/nxtrace/NTrace-core">NextTrace</a></strong>（<code>nexttrace</code>）——想手动细看回程路径用它，每跳直接标 AS 号 + 地理位置，比裸 <code>traceroute</code> 清楚。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260526-httpbingo/" data-astro-cid-d6qgp232> <a href="/tags/network/" class="chip" data-astro-cid-d6qgp232>network</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-26</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/network/" class="tag" data-astro-cid-d6qgp232>#network</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260526-httpbingo/" data-astro-cid-d6qgp232>httpbingo.org —— 按需返回任意 HTTP 响应</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>写 HTTP 客户端时最难造的是失败：500、慢响应、3xx 链、basic auth 401。靠真实业务 API 不可控也污染数据。<a href="https://httpbingo.org/">httpbingo.org</a> 就是干这个——按 URL 告诉它要什么响应，它就回什么。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://httpbingo.org/status/503</span><span style="color:#6A737D">         # 强制 503</span></span>
 <span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://httpbingo.org/delay/5</span><span style="color:#6A737D">            # 5 秒后响应（测超时）</span></span>
 <span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://httpbingo.org/redirect/3</span><span style="color:#6A737D">         # 3 次 302 链（测 follow 上限）</span></span>

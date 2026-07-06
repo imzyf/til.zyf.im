@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="DN42 是一张「长得跟真实互联网一模一样」的 overlay 网络——同一套 BGP / whois / DNS，但发号不用求 RIR：fork 一个 git 仓库、改几个文件、提 PR，脚本校验通过就合并，你就正式拥有了自己的 ASN 和地址段。核心价值是**安全网**：你在里面扮演一家 mini-ISP 练…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>DN42 —— 改 git repo 申请 ASN 的 BGP 沙盒 · TIL</title><link rel="stylesheet" href="/_astro/Base.BW7bO-F5.css">
+<style>.note[data-astro-cid-fzx4jmue]{padding:2rem 2.1rem 1.8rem}@media(max-width:640px){.note[data-astro-cid-fzx4jmue]{padding:1.4rem 1.4rem 1.3rem}}.note-meta[data-astro-cid-fzx4jmue]{margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px dotted var(--rule)}h1[data-astro-cid-fzx4jmue]{font-size:1.65rem;line-height:1.25;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}.meta[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.88rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.tags[data-astro-cid-fzx4jmue]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-fzx4jmue]{color:var(--muted);padding:.15rem .1rem}.updated[data-astro-cid-fzx4jmue]{color:var(--muted);font-size:.82rem;font-style:italic}.updated[data-astro-cid-fzx4jmue] time[data-astro-cid-fzx4jmue]{font-variant-numeric:tabular-nums}.prose[data-astro-cid-fzx4jmue]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-fzx4jmue] h2{font-size:1.2rem;margin-top:2rem;font-weight:700}.prose[data-astro-cid-fzx4jmue] h3{font-size:1.05rem;margin-top:1.5rem}.prose[data-astro-cid-fzx4jmue] p{margin:1rem 0}.prose[data-astro-cid-fzx4jmue] ul,.prose[data-astro-cid-fzx4jmue] ol{padding-left:1.5rem;margin:1rem 0}.prose[data-astro-cid-fzx4jmue] li{margin:.3rem 0}.prose[data-astro-cid-fzx4jmue] blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin:1.2rem 0;font-style:italic}.prose[data-astro-cid-fzx4jmue] img{max-width:100%;height:auto}.files[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.files[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem}.files[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.2rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue] a[data-astro-cid-fzx4jmue]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-fzx4jmue]{margin-top:2.5rem;padding-top:1rem;border-top:1px dotted var(--rule)}.related[data-astro-cid-fzx4jmue] h2[data-astro-cid-fzx4jmue]{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem}.related[data-astro-cid-fzx4jmue] ul[data-astro-cid-fzx4jmue]{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;align-items:baseline}.related[data-astro-cid-fzx4jmue] .date[data-astro-cid-fzx4jmue]{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;letter-spacing:.04em}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]{color:var(--fg)}.related[data-astro-cid-fzx4jmue] .title[data-astro-cid-fzx4jmue]:hover{color:var(--accent)}@media(max-width:640px){.related[data-astro-cid-fzx4jmue] li[data-astro-cid-fzx4jmue]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-fzx4jmue]{margin-top:3rem;padding-top:1rem;border-top:1px dotted var(--rule);font-size:.88rem;color:var(--muted)}@media(max-width:640px){h1[data-astro-cid-fzx4jmue]{font-size:1.4rem}.prose[data-astro-cid-fzx4jmue]{font-size:.95rem;line-height:1.75}}
+</style></head> <body>  <script>
+      (() => {
+        const T = 24;
+        const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
+        sync();
+        addEventListener('scroll', sync, { passive: true });
+      })();
+    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <article class="note card-shell" data-astro-cid-fzx4jmue> <a href="/tags/network/" class="chip" data-astro-cid-fzx4jmue>network</a> <header class="note-meta" data-astro-cid-fzx4jmue> <h1 data-astro-cid-fzx4jmue>DN42 —— 改 git repo 申请 ASN 的 BGP 沙盒</h1> <p class="meta" data-astro-cid-fzx4jmue> <time datetime="2026-07-03T00:00:00.000Z" data-astro-cid-fzx4jmue>2026-07-03</time>  <span class="tags" data-astro-cid-fzx4jmue> <a href="/tags/network/" class="tag" data-astro-cid-fzx4jmue>#network</a> </span> </p> </header> <div class="prose" data-astro-cid-fzx4jmue> <p>DN42 是一张「长得跟真实互联网一模一样」的 overlay 网络——同一套 BGP / whois / DNS，但发号不用求 RIR：fork 一个 git 仓库、改几个文件、提 PR，脚本校验通过就合并，你就正式拥有了自己的 ASN 和地址段。核心价值是<strong>安全网</strong>：你在里面扮演一家 mini-ISP 练 BGP，配错了也不会有大运营商打电话来骂。</p>
+<p>最反直觉的一点：它用 WireGuard 这类 VPN 隧道把成员互联，乍看像 Tor 那类 darknet，<strong>目标却相反</strong>——不做匿名，专做「去 NAT 的真实路由练习」。成员之间要的是能直连、能互相暴露服务，而不是藏起来。</p>
+<h2 id="注册是-git-pr不是找管理员">注册是 git PR，不是找管理员</h2>
+<p>真实互联网上申请 ASN / IP 要走 APNIC 那套官僚流程；DN42 把它压成一次 PR——这是它整个设计的题眼。你要建的对象跟真实 whois 一一对应：</p>
+<ul>
+<li><code>mntner</code>（维护者，带签名 auth）、<code>person</code>（<code>nic-hdl</code> 以 <code>-DN42</code> 结尾）</li>
+<li><code>aut-num</code>（你的 ASN）、<code>inetnum</code> / <code>inet6num</code>（你的地址段）</li>
+<li><code>route</code> / <code>route6</code>——<strong>仿照真实互联网的 RPKI/ROA</strong>，没有它别人会因 ROA 校验失败而不收你的路由</li>
+</ul>
+<p>坑在校验：一个自动脚本会在合并前检查语法，格式错一个字符就打回，拖慢管理员审核。所以是「严格按语法填」而不是「大概填填」。</p>
+<h2 id="号段为什么是私有的">号段为什么是私有的</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>资源</th><th>DN42 用的段</th><th>备注</th></tr></thead><tbody><tr><td>ASN</td><td><code>4242420000–4242429999</code>（RFC 6996 私有段）</td><td>新人建议在 <code>4242420000–4242423999</code> 里挑</td></tr><tr><td>IPv4</td><td><code>172.20.0.0/14</code></td><td>默认分 /27（32 个地址）够用</td></tr><tr><td>IPv6</td><td>ULA <code>fd00::/8</code></td><td>默认分 /48</td></tr></tbody></table>
+<p>全用<strong>私有号段</strong>是刻意的：这样 DN42 的路由永远不会泄进公网 BGP 表、也不会跟公网 IP 撞车。代价是这些地址空间跟 ChaosVPN（<code>172.31.0.0/16</code>）、NeoNetwork 等<strong>兄弟网络重叠</strong>——DN42 只敢用 <code>172.20.0.0/14</code> 而非整个 <code>172.16/12</code>，就是给这些互联网络留位置，它们之间是打通的。</p>
+<p>AS / ASN / BGP 选路的基础概念这里不重复，见同目录 CN2 那篇（那篇讲的是运营商的<strong>真实</strong> ASN 就是线路名，这篇是你自己<strong>申请一个私有</strong> ASN 来玩，正好两面）。</p>
+<h2 id="加入四步">加入四步</h2>
+<ol>
+<li><strong>注册</strong>：按上面建好对象，提 PR，合并即「持号」。</li>
+<li><strong>找 peer</strong>：没有中心服务器，必须连另一个成员。新手直接连 <strong>Kioubit</strong>——它连接数最多、中心性最高，且有全自动 peering 向导（填 ASN + WireGuard 公钥 + 隧道 IP，几分钟出结果），所以大半个网都直连它。也可用官方 Peer Finder 挑低延迟的。</li>
+<li><strong>建隧道</strong>：主流是 WireGuard（好配、够安全），也支持 OpenVPN / GRE / IPsec。</li>
+<li><strong>跑 BGP</strong>：装 BIRD 或 FRR，跟 peer 起 eBGP 会话，把自己的段 announce 出去。</li>
+</ol>
+<p>门槛不高：一台 24/7 在线的 Linux VPS + 会配 WireGuard 和 BGP 就够。</p>
+<h2 id="dn42us-不是官方入口">dn42.us 不是官方入口</h2>
+<p>官方主站是 <strong>dn42.eu</strong>（wiki + registry 说明都在这）。<strong>dn42.us</strong> 是成员 <code>xuu</code> 自建的一个节点门户，挂着他自己的 wiki / paste / git 镜像等服务——它本身就是「在 DN42 里对外提供服务」的活样板，别把它当成注册入口。</p> </div>   <p class="back" data-astro-cid-fzx4jmue><a href="/" data-astro-cid-fzx4jmue>← back to index</a></p> </article>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+      (() => {
+        const enhance = () => {
+          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          for (const pre of blocks) {
+            if (pre.parentElement?.classList.contains('code-block')) continue;
+            const lang = pre.getAttribute('data-language') || 'text';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'code-block';
+
+            const header = document.createElement('div');
+            header.className = 'code-block-header';
+
+            const langSpan = document.createElement('span');
+            langSpan.className = 'code-block-lang';
+            langSpan.textContent = lang;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'code-block-copy';
+            btn.setAttribute('aria-label', 'copy code to clipboard');
+            btn.textContent = 'copy';
+            btn.addEventListener('click', async () => {
+              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+              try {
+                await navigator.clipboard.writeText(code);
+                btn.textContent = 'copied';
+                btn.classList.add('is-copied');
+              } catch {
+                btn.textContent = 'failed';
+              }
+              setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('is-copied');
+              }, 1500);
+            });
+
+            header.appendChild(langSpan);
+            header.appendChild(btn);
+            pre.parentNode?.insertBefore(wrap, pre);
+            wrap.appendChild(header);
+            wrap.appendChild(pre);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        } else {
+          enhance();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const BUDGET = 360;
+        const collapse = () => {
+          const cards = document.querySelectorAll('.card[data-href]');
+          for (const card of cards) {
+            const prose = card.querySelector('.card-body > .prose');
+            if (!prose || prose.dataset.collapsed === '1') continue;
+            const proseTop = prose.getBoundingClientRect().top;
+            if (prose.getBoundingClientRect().height <= BUDGET) continue;
+
+            const children = Array.from(prose.children);
+            let cutAt = -1;
+            for (let i = 0; i < children.length; i++) {
+              const r = children[i].getBoundingClientRect();
+              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+            }
+            if (cutAt === -1) continue;
+            if (cutAt === 0) cutAt = 1;
+
+            for (let i = cutAt; i < children.length; i++) {
+              children[i].style.display = 'none';
+            }
+
+            const more = document.createElement('p');
+            more.className = 'read-more-line';
+            const a = document.createElement('a');
+            a.className = 'read-more';
+            a.href = card.dataset.href;
+            a.textContent = 'read more →';
+            more.appendChild(a);
+            prose.appendChild(more);
+            prose.dataset.collapsed = '1';
+          }
+        };
+        const run = () => {
+          collapse();
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(collapse);
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run, { once: true });
+        } else {
+          run();
+        }
+      })();
+    </script>  <script>
+      (() => {
+        const mark = () => {
+          const here = location.host;
+          for (const a of document.querySelectorAll('a[href]')) {
+            if (a.dataset.extMarked === '1') continue;
+            const href = a.getAttribute('href');
+            if (!href) continue;
+            if (href.startsWith('#')) continue;
+            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            let url;
+            try { url = new URL(href, location.href); } catch { continue; }
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            if (url.host === here) continue;
+            a.target = '_blank';
+            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
+            a.dataset.extMarked = '1';
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        } else {
+          mark();
+        }
+      })();
+    </script> </body> </html>

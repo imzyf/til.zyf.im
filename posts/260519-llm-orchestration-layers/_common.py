@@ -4,7 +4,7 @@ Shared helpers for the workflow vs agent demo
 
 公共部分集中在这里 —— 两个 demo 的核心区别（控制流由谁决定）就在各自文件里。
 
-抽到这里的:
+抽到这里的：
 - LLM 客户端
 - Pydantic schemas（structured output 锁死返回 schema）
 - 核心业务逻辑 do_extract / do_compliance / do_generate

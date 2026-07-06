@@ -1,8 +1,8 @@
 <?php
 
 // Demo: PHP binary safety —— 配合 260525-binary-safe.md
-// 跑法: php binary-safe.php
-// 验证环境: PHP 8.5 (macOS) —— 不同 PHP 版本下 strto* 行为有差异，见 #5 注释
+// 跑法：php binary-safe.php
+// 验证环境：PHP 8.5 (macOS) —— 不同 PHP 版本下 strto* 行为有差异，见 #5 注释
 
 declare(strict_types=1);
 
@@ -39,7 +39,7 @@ for ($i = 0; $i < $samples; $i++) {
 $rate = $contains_null / $samples * 100;
 printf("在 %d 次采样里 %d 次含 \\0 (≈ %.2f%%)\n", $samples, $contains_null, $rate);
 
-// 3. 修法: 把二进制 key 先编码再喂 password_hash
+// 3. 修法：把二进制 key 先编码再喂 password_hash
 section('3. Fix: base64_encode binary key before password_hash');
 
 $key = random_bytes(32);
@@ -60,9 +60,9 @@ echo "key 'abc'      (len=" . strlen($key_truncated) . "):\n";
 echo '  hmac: ' . hash_hmac('sha256', $msg, $key_truncated) . "\n";
 echo "→ 两个 hmac 不同, 证明 hash_hmac 读到了 \\0 后面的字节\n";
 
-// 5. locale 影响行为 —— strcoll 按 LC_COLLATE 排序, 同样字节给相反结果
+// 5. locale 影响行为 —— strcoll 按 LC_COLLATE 排序，同样字节给相反结果
 //
-// 注: PHP 8.2 起 strtolower / strtoupper / ucfirst / ucwords 不再吃 locale,
+// 注：PHP 8.2 起 strtolower / strtoupper / ucfirst / ucwords 不再吃 locale,
 //     永远只处理 ASCII (https://wiki.php.net/rfc/strtolower-ascii)。
 //     当下仍 locale-aware 的是 strcoll。
 section('5. strcoll order depends on locale');
@@ -72,7 +72,7 @@ $c_cmp = strcoll("\xE4", 'z');
 echo "locale=C:                strcoll(0xE4, 'z') = {$c_cmp} → "
     . ($c_cmp > 0 ? "ä > z (按字节 0xE4 > 0x7A)" : "ä < z") . "\n";
 
-// macOS / Linux 上 de_DE.UTF-8 locale 名可能略有差异, 多试几个
+// macOS / Linux 上 de_DE.UTF-8 locale 名可能略有差异，多试几个
 $de_set = setlocale(LC_COLLATE, 'de_DE.UTF-8', 'de_DE.utf8', 'de_DE');
 if ($de_set !== false) {
     $de_cmp = strcoll("\xC3\xA4", 'z');  // UTF-8 ä

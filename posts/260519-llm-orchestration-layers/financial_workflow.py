@@ -2,7 +2,7 @@
 LangGraph Workflow Demo —— 理财顾问会议笔记处理
 ==================================================
 
-回答问题:
+回答问题：
     "Workflow vs Agent 的本质差异 '控制流在谁手里'，在代码里到底是哪一行？"
 
 Workflow 的样子（这个文件）:
@@ -16,7 +16,7 @@ Agent 的样子（升级成 agent 后）:
                                 每次跑的流程图都不一样
 
 公共部分（LLM 客户端、Pydantic schemas、核心业务逻辑 do_extract / do_compliance /
-do_generate、样本对白）都在 _common.py。这个文件只保留 workflow 范式独有的部分:
+do_generate、样本对白）都在 _common.py。这个文件只保留 workflow 范式独有的部分：
 state 定义、节点装配、Python 路由函数、build_graph。对照 financial_agent.py
 看 [WORKFLOW vs AGENT] 标记 —— 每条都标了"升级到 agent 那一行要改成什么"。
 
@@ -55,7 +55,7 @@ from _common import (
 # 节点之间不直接传参 —— 每个节点 return dict，LangGraph 自动 merge 进
 # 共享 state。total=False 让 invoke 时只传初始字段，其他由后续节点写入。
 #
-# 工程收益:
+# 工程收益：
 #   - 加节点 / 改顺序 / 中间插一步 human-in-the-loop，函数签名不用动
 #   - state 字段就是节点间的 API 契约，比 args 列表更明确
 #
@@ -77,9 +77,9 @@ class WorkflowState(TypedDict, total=False):
 # ════════════════════════════════════════════════════════════════════════
 # 节点 —— 把 _common 的业务函数包成 (state) -> dict 形状
 # ════════════════════════════════════════════════════════════════════════
-# [WORKFLOW vs AGENT] 节点 vs tool 的签名差异:
+# [WORKFLOW vs AGENT] 节点 vs tool 的签名差异：
 #
-#   Workflow 节点:   def fn(state: WorkflowState) -> dict
+#   Workflow 节点：def fn(state: WorkflowState) -> dict
 #                    LangGraph 按 add_edge 顺序调，参数全在 state 里取
 #
 #   Agent  tool:    @tool def fn(business_arg: T) -> JSON-able
@@ -128,7 +128,7 @@ def generate_documents(state: WorkflowState) -> dict:
 # ════════════════════════════════════════════════════════════════════════
 # 设计决策 ★ ── 路由函数是普通 Python，不是 LLM ★★★
 # ════════════════════════════════════════════════════════════════════════
-# 这一行就是 Workflow 和 Agent 在代码里的分水岭:
+# 这一行就是 Workflow 和 Agent 在代码里的分水岭：
 #
 #   - 我们的代码 (route_by_risk) 根据 state 字段决定走哪个分支
 #   - 不是 LLM 在运行时决定 "我现在该走哪个节点"

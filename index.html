@@ -8,256 +8,41 @@
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-home"> <article class="hero card-shell" data-astro-cid-bbe6dxrz> <a href="/tags/english/" class="chip" data-astro-cid-bbe6dxrz>english</a> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/posts/260601-saas-contract-acronyms/" data-astro-cid-bbe6dxrz>MSA / SOW / SLA / DPA / NDA 区别</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2026-06-01T00:00:00.000Z" data-astro-cid-bbe6dxrz>2026-06-01</time>  <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/english/" class="tag" data-astro-cid-bbe6dxrz>#english</a><a href="/tags/jargon/" class="tag" data-astro-cid-bbe6dxrz>#jargon</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p>B2B SaaS 谈企业客户时反复出现的五个合同缩写。最常见的错是把它们当<strong>并列</strong>选项挑一个签——实际是<strong>分层</strong>的：一份主协议套着其余几份，各管一层。</p>
-<p>口诀：<strong>MSA 定规则，SOW 定范围，SLA 定质量，DPA 定数据，NDA 定保密。</strong></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>缩写</th><th>全称</th><th>管什么</th><th>签几次</th></tr></thead><tbody><tr><td><strong>MSA</strong></td><td>Master Service Agreement</td><td>长期合作的法律框架</td><td>一次（关系建立时）</td></tr><tr><td><strong>SOW</strong></td><td>Statement of Work</td><td>单个项目的范围 / 工期 / 报价 / 交付物</td><td>每个项目一份</td></tr><tr><td><strong>SLA</strong></td><td>Service Level Agreement</td><td>服务质量承诺 + 不达标的赔偿</td><td>一次（嵌进 MSA 或 SOW）</td></tr><tr><td><strong>DPA</strong></td><td>Data Processing Agreement</td><td>数据怎么存 / 删 / 出境 / 合规</td><td>一次（常作 MSA 附件）</td></tr><tr><td><strong>NDA</strong></td><td>Non-Disclosure Agreement</td><td>保密义务</td><td>一次（常在 MSA 之前）</td></tr></tbody></table>
-<h2 id="分层关系">分层关系</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>MSA  主协议（法律框架，长期不变）</span></span>
-<span class="line"><span> ├── DPA  数据处理协议（附件 Exhibit）</span></span>
-<span class="line"><span> ├── SLA  服务等级（可在 MSA，也可下放到每份 SOW）</span></span>
-<span class="line"><span> ├── SOW #1  上线核心模块</span></span>
-<span class="line"><span> └── SOW #2  做 SSO / 数据对接定制</span></span></code></pre>
-<p>MSA 是顶层框架，DPA / SLA 通常作为它的附件（<em>Exhibit</em>）；SOW 挂在 MSA 下面，一个项目一份。所以听到 “we have an MSA with them” 基本等于”我们是签了长期合同的正式企业客户关系”。</p>
-<h2 id="msa-和-sow-为什么拆开">MSA 和 SOW 为什么拆开</h2>
-<p>拆开的价值是<strong>谈判频率不同</strong>：付款、责任上限、保密、终止这类通用条款变化慢，写进 MSA 谈一次管几年；范围、工期、报价这类项目细节每次都变，每个项目单独走一份 SOW，不重谈主合同。后续加功能只追加新 SOW——这就是框架协议省时间的地方。</p>
-<p>冲突时谁优先？合同里一般写明 <strong>MSA 优先</strong>，除非某份 SOW 明确声明覆盖某条。判别归属也靠这条：看到”通用、反复用”的归 MSA，看到”这个项目、这个价”的归 SOW。</p>
-<h2 id="dpa谁是-controller谁是-processor">DPA：谁是 controller，谁是 processor</h2>
-<p>金融 / 医疗 / 涉及 PII 的 SaaS 几乎必签 DPA，核心是把双方角色定死：</p>
+    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-home"> <article class="hero card-shell" data-astro-cid-bbe6dxrz> <a href="/tags/devops/" class="chip" data-astro-cid-bbe6dxrz>devops</a> <header class="hero-meta" data-astro-cid-bbe6dxrz> <h1 data-astro-cid-bbe6dxrz><a href="/posts/260706-helm-package-manager/" data-astro-cid-bbe6dxrz>Helm 不是 controller：模板引擎 + release 状态机</a></h1> <p class="meta" data-astro-cid-bbe6dxrz> <time datetime="2026-07-06T00:00:00.000Z" data-astro-cid-bbe6dxrz>2026-07-06</time>  <span class="tags" data-astro-cid-bbe6dxrz> <a href="/tags/devops/" class="tag" data-astro-cid-bbe6dxrz>#devops</a><a href="/tags/kubernetes/" class="tag" data-astro-cid-bbe6dxrz>#kubernetes</a> </span> </p> </header> <div class="prose" data-astro-cid-bbe6dxrz> <p>Helm 常被说成「Kubernetes 的 apt / npm」——对，但这个类比藏了最关键的一点：<strong>Helm 是一次性的（one-shot）</strong>。<code>helm install</code> 把模板渲染成 YAML、提交给 apiserver、把这次结果记下来，然后就退出了。之后<strong>没有任何进程持续盯着 drift</strong>。这是理解 Helm 一切行为的锚点：它不是 controller、不是 GitOps，跟 Operator / ArgoCD 的持续 reconcile 是两码事。记住它，下面每个「反直觉」都顺理成章。</p>
+<h2 id="release-状态存在集群里不在你本地">release 状态存在集群里，不在你本地</h2>
+<p><code>helm install</code> 之后，状态被写进 release namespace 的一个 Secret，名字是 <code>sh.helm.release.v1.&#x3C;name>.v&#x3C;revision></code>。每 upgrade 一次多一个 revision Secret，<code>helm history</code> / <code>helm rollback</code> 就是读它们。内容是 <code>json.Marshal → gzip → base64</code>（Helm 3 默认 driver 从 Helm 2 的 ConfigMap 换成了 Secret）。想亲眼看：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">kubectl</span><span style="color:#032F62"> get</span><span style="color:#032F62"> secret</span><span style="color:#032F62"> sh.helm.release.v1.my-pg.v3</span><span style="color:#005CC5"> -o</span><span style="color:#032F62"> jsonpath='{.data.release}'</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#D73A49">  |</span><span style="color:#6F42C1"> base64</span><span style="color:#005CC5"> -d</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> base64</span><span style="color:#005CC5"> -d</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> gunzip</span><span style="color:#6A737D">   # 两次 base64：先解 k8s Secret 层，再解 Helm 自己那层</span></span></code></pre>
+<p>两个非显然后果：① 这个 Secret 受 etcd ~1MB 上限约束，chart 塞太多东西（比如把大文件写进 ConfigMap 模板）会在 install 时炸；② 谁手滑删了它，Helm 就<strong>失忆</strong>——<code>helm list</code> 里 release 消失，但集群里的 Deployment 还在裸奔。换 driver 用 <code>HELM_DRIVER=secret|configmap|sql</code>（sql 是 beta，只支持 PostgreSQL）。</p>
+<h2 id="upgrade-是三方合并不是覆盖">upgrade 是三方合并，不是覆盖</h2>
+<p>Helm 3 的 <code>helm upgrade</code> 用 <strong>3-way strategic merge patch</strong>：同时看旧 manifest、<strong>集群里的 live state</strong>、新 manifest。Helm 2 只做两方，<code>kubectl edit</code> 的带外改动直接被无视。差别很实：</p>
 <ul>
-<li><strong>Data Controller（控制方）</strong>——决定数据用来干什么的一方，通常是<strong>客户</strong>。</li>
-<li><strong>Data Processor（处理方）</strong>——替控制方处理数据的一方，通常是 <strong>SaaS 厂商</strong>。</li>
+<li>你手动把 replicas 从 3 调到 0。Helm 2 rollback 觉得 manifest 没变，保持 0；Helm 3 发现「记录 3 / 现状 0 / 目标 3」不一致，拉回 3。</li>
+<li>服务网格给 Pod 注入了 sidecar。Helm 2 upgrade 会把它抹掉，Helm 3 保留 sidecar，同时改你要改的 image。</li>
 </ul>
-<p>这个区分不是文字游戏：GDPR / CCPA 下两种角色的法律责任不同。DPA 还会写明子处理商（sub-processor，如厂商用的云）清单、数据保留期、合同结束后的删除义务、以及发生 breach 后多少小时内必须通知。</p>
-<h2 id="nda-已被-msa-的保密条款覆盖为什么还单独签">NDA 已被 MSA 的保密条款覆盖，为什么还单独签</h2>
-<p>时间点不同。NDA 常在<strong>还没决定合作</strong>时就签——评估、技术对接、看 demo 阶段就要交换敏感信息，而这时 MSA 远没谈成。MSA 里的保密条款只在合作期内、且范围限于这次合作；NDA 是更早、更独立的一道闸。</p>
-<p>另一个区别是方向：NDA 可以是 <strong>mutual（双向）</strong> 或 <strong>one-way（单向）</strong>，谁向谁披露、谁负保密义务可以不对称；MSA 的保密条款默认是双向且绑死在主合作上。</p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card card-shell" data-href="/posts/260527-vowel-reduction/" data-astro-cid-d6qgp232> <a href="/tags/english/" class="chip" data-astro-cid-d6qgp232>english</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-27T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-27</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/english/" class="tag" data-astro-cid-d6qgp232>#english</a><a href="/tags/phonetics/" class="tag" data-astro-cid-d6qgp232>#phonetics</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260527-vowel-reduction/" data-astro-cid-d6qgp232>English Vowel Reduction: Why Spelling ≠ Pronunciation</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>英语的元音弱化（<em>vowel reduction</em>）规律：<strong>重音所在的音节，元音发得清楚；非重读音节的元音，几乎都退化成 <code>/ə/</code>（schwa，中央元音）或 <code>/ɪ/</code></strong>。跟字母拼写无关，只跟重音位置有关。</p>
-<h2 id="同词根重音移动读音跟着变">同词根，重音移动，读音跟着变</h2>
-<p>派生词加后缀时，重音常常跳到别的音节，原来被重读的元音就”塌陷”成 schwa。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>基础词</th><th>音标</th><th>派生词</th><th>音标</th><th>弱化的元音</th></tr></thead><tbody><tr><td><strong>au</strong>·thor</td><td>/ˈɔːθər/</td><td>au·<strong>thor</strong>·i·ty</td><td>/əˈθɒrɪti/</td><td><code>au</code> /ɔː/ → /ə/</td></tr><tr><td><strong>pho</strong>·to</td><td>/ˈfoʊtoʊ/</td><td>pho·<strong>tog</strong>·ra·phy</td><td>/fəˈtɒɡrəfi/</td><td><code>o</code> /oʊ/ → /ə/</td></tr><tr><td><strong>a</strong>·tom</td><td>/ˈeɪtəm/</td><td>a·<strong>tom</strong>·ic</td><td>/əˈtɒmɪk/</td><td><code>a</code> /eɪ/ → /ə/</td></tr><tr><td><strong>e</strong>·qual</td><td>/ˈiːkwəl/</td><td>e·<strong>qual</strong>·i·ty</td><td>/ɪˈkwɒlɪti/</td><td><code>e</code> /iː/ → /ɪ/</td></tr><tr><td><strong>te</strong>·le·graph</td><td>/ˈtelɪɡrɑːf/</td><td>te·<strong>leg</strong>·ra·phy</td><td>/tɪˈlɛɡrəfi/</td><td><code>e</code> /ɛ/ → /ɪ/</td></tr><tr><td><strong>Di</strong>·vine</td><td>/dɪˈvaɪn/</td><td>di·<strong>vin</strong>·i·ty</td><td>/dɪˈvɪnɪti/</td><td><code>i</code> /aɪ/ → /ɪ/</td></tr></tbody></table>
-<h2 id="介词冠词助动词弱读形式是默认形式">介词、冠词、助动词——弱读形式是默认形式</h2>
-<p>这类词在句子中几乎永远是非重读的，英语母语者日常会自动用弱读形式，重读版反而显得刻意或强调。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>词</th><th>强读（单独说 / 强调时）</th><th>弱读（句中默认）</th></tr></thead><tbody><tr><td>and</td><td>/ænd/</td><td>/ənd/ 或 /ən/</td></tr><tr><td>to</td><td>/tuː/</td><td>/tə/</td></tr><tr><td>for</td><td>/fɔːr/</td><td>/fər/</td></tr><tr><td>of</td><td>/ɒv/</td><td>/əv/ 或 /ə/</td></tr><tr><td>can</td><td>/kæn/</td><td>/kən/</td></tr><tr><td>have</td><td>/hæv/</td><td>/həv/ 或 /əv/</td></tr><tr><td>was</td><td>/wɒz/</td><td>/wəz/</td></tr><tr><td>them</td><td>/ðɛm/</td><td>/ðəm/</td></tr></tbody></table>
-<p>“I’ll go to the store and get some for you.” 实际说出来是：<br>
-<code>/aɪl ɡoʊ tə ðə stɔːr ən ɡɛt səm fər juː/</code><br>
-其中 <code>to</code> / <code>and</code> / <code>for</code> 全部弱化，这才是自然语速。</p>
-<h2 id="-tion---ment---ness-后缀固定弱化模式">-tion / -ment / -ness 后缀——固定弱化模式</h2>
-<p>这类后缀本身就是非重读音节，<code>o</code> / <code>e</code> 恒弱化为 schwa，不因词根变化。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>词</th><th>音标</th><th>弱化点</th></tr></thead><tbody><tr><td>na·tion</td><td>/ˈneɪʃən/</td><td><code>-tion</code> 中 <code>o</code> → /ə/</td></tr><tr><td>sta·tion</td><td>/ˈsteɪʃən/</td><td>同上</td></tr><tr><td>gov·ern·ment</td><td>/ˈɡʌvərnmənt/</td><td><code>-ment</code> 中 <code>e</code> → /ə/</td></tr><tr><td>hap·pi·ness</td><td>/ˈhæpinəs/</td><td><code>-ness</code> 中 <code>e</code> → /ə/</td></tr></tbody></table>
-<h2 id="为什么会弱化">为什么会弱化</h2>
-<p>英语是 <em>stress-timed</em> 语言——重读音节之间的时间间隔大致相等，为了维持节奏，非重读音节必须”压缩”。Schwa <code>/ə/</code> 是嘴巴最放松时发出的音，发音成本最低，所以成了弱化的终点。</p>
-<p>这也是为什么英语听力难：母语者不是”说清楚每个字母”，而是在保持节奏的前提下把非重读部分尽量压缩。</p>
-<h2 id="实践口诀">实践口诀</h2>
-<p><strong>重音在哪，元音在哪；离开重音，退化成 schwa。</strong></p>
-<p>背新词时，先标重音位置，再确认非重读音节哪些会弱化——比死记每个字母的读法省力得多。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260526-task-make-alternative/" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="chip" data-astro-cid-d6qgp232>devops</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-26</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="tag" data-astro-cid-d6qgp232>#devops</a><a href="/tags/build-tool/" class="tag" data-astro-cid-d6qgp232>#build-tool</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260526-task-make-alternative/" data-astro-cid-d6qgp232>Task：YAML 写的 Make 替代，自带 sh 解释器</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://taskfile.dev/">Task</a> 是 Go 写的 task runner，单二进制 + YAML 配置，定位”现代 Make 替代”。同代工具里 <a href="https://github.com/casey/just">Just</a> 名气更大，但两者其实不在一条线上 —— Task 真正的差异点是<strong>自带 POSIX sh 解释器</strong>和<strong>原生增量 / 并行依赖</strong>，这两点决定了它能当轻量构建系统用，Just 不能。</p>
-<h2 id="make-真痛点不在-make-本身">Make 真痛点不在 Make 本身</h2>
-<p>GNU Make 三大平台都有，跨平台坑出在 Makefile 里每条命令依赖的<strong>宿主 shell 和 coreutils</strong>：</p>
+<h2 id="tiller-之死一个被删掉的攻击面">Tiller 之死：一个被删掉的攻击面</h2>
+<p>Helm 2 有个集群内服务端 <strong>Tiller</strong>，默认以 <code>cluster-admin</code> 跑且<strong>无认证</strong>——任何能连上它的 Pod 都能操纵整个集群，是经典提权入口。Helm 3 直接砍掉，变成纯客户端，权限完全走你 kubeconfig 的 RBAC。所以网上任何出现 <code>helm init</code> / Tiller 的教程都是 Helm 2 时代的，别抄。</p>
+<h2 id="lookup-在-dry-run-会静默返回空">lookup 在 dry-run 会静默返回空</h2>
+<p>有个常见模式：用 <code>lookup</code> 查 Secret 是否已存在，没有才生成随机密码，好让密码在 upgrade 间保持稳定。坑在于——<code>helm template</code> 和 <code>helm install --dry-run</code>（客户端）<strong>根本不连 apiserver</strong>，<code>lookup</code> 永远返回空。于是 diff 工具（helm-diff、ArgoCD）每次 render 都看到「密码变了」，天天误报。要真查集群得用 <code>--dry-run=server</code>。</p>
+<h2 id="默认不等就绪数组不合并只替换">默认不等就绪；数组不合并只替换</h2>
+<p>两个静默 footgun：</p>
 <ul>
-<li><strong>Shell 方言</strong>：<code>/bin/sh</code> 在 Ubuntu 是 dash、在老 macOS 是 bash、Alpine 是 ash，<code>[[ ]]</code> / 数组 / <code>echo -e</code> 行为各不一样。本机 macOS 跑通的 Makefile 一进 CI 就 silently 行为漂移</li>
-<li><strong>Coreutils 分裂</strong>：macOS 自带 <strong>BSD 版</strong> <code>sed</code> / <code>find</code> / <code>xargs</code>，GNU 习惯的 <code>sed -i 's/x/y/g' f</code> 在 BSD 上必须写成 <code>sed -i '' 's/x/y/g' f</code>（<code>-i</code> 必须吃一个空字符串参数）；GNU 的 <code>find -printf</code> / <code>xargs -r</code> / <code>date -d</code> 在 BSD 上整个不存在</li>
-<li><strong>Tab vs 空格</strong>：Makefile 命令行必须 Tab 开头，VS Code 默认设置把 Tab 转空格 → <code>missing separator</code> 红一片</li>
+<li><code>helm install</code> 返回 ≠ 应用 ready，它只保证 manifest 提交成功。CI 里不加 <code>--wait</code> 的绿是假绿；再配 <code>--atomic</code> 让失败自动 rollback。</li>
+<li>values 合并对 map 是深合并，对<strong>数组是整体替换</strong>（不是 append）。想往默认 list 里加一项，结果整个 list 被你那一项顶掉。多个 <code>-f</code> 后者盖前者，<code>--set</code> 优先级最高。</li>
 </ul>
-<p>要让一个 Makefile 跨 macOS / Linux 都跑通，迟早塞进 <code>ifeq ($(shell uname),Darwin)</code> 分支，维护成本爆炸。</p>
-<h2 id="task-解法bundled-sh--原生-incremental">Task 解法：bundled sh + 原生 incremental</h2>
-<p>Task 内嵌 <a href="https://github.com/mvdan/sh">mvdan/sh</a>，一个纯 Go 实现的 POSIX shell 解释器。<code>for f in src/*.go; do echo $f; done</code> 不再走 <code>/bin/sh</code>，macOS / Linux 行为一致，dash vs bash 的”在我机器上能跑”问题消失。</p>
-<p><strong>边界要写清楚</strong>：Task 只 bundle 了 shell <strong>语法</strong>，没 bundle coreutils。<code>rm</code> / <code>sed</code> / <code>find</code> 仍然调系统的那份 —— BSD <code>sed -i ''</code> vs GNU <code>sed -i</code> 的坑 Task 不替你解决，要么显式 <code>gsed</code>，要么改写成只用 POSIX 公共子集。这一点官方文档也提：<em>“any executables called must be available as a built-in or in the system’s PATH.”</em></p>
-<p>增量构建走 <code>sources</code> + <code>generates</code>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">version</span><span style="color:#24292E">: </span><span style="color:#032F62">'3'</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#22863A">tasks</span><span style="color:#24292E">:</span></span>
-<span class="line"><span style="color:#22863A">  build</span><span style="color:#24292E">:</span></span>
-<span class="line"><span style="color:#22863A">    cmds</span><span style="color:#24292E">:</span></span>
-<span class="line"><span style="color:#24292E">      - </span><span style="color:#032F62">go build -o bin/app ./cmd/app</span></span>
-<span class="line"><span style="color:#22863A">    sources</span><span style="color:#24292E">:</span></span>
-<span class="line"><span style="color:#24292E">      - </span><span style="color:#032F62">./**/*.go</span></span>
-<span class="line"><span style="color:#22863A">    generates</span><span style="color:#24292E">:</span></span>
-<span class="line"><span style="color:#24292E">      - </span><span style="color:#032F62">bin/app</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#22863A">  test</span><span style="color:#24292E">:</span></span>
-<span class="line"><span style="color:#22863A">    deps</span><span style="color:#24292E">: [</span><span style="color:#032F62">build</span><span style="color:#24292E">]          </span><span style="color:#6A737D"># deps 列表默认并行</span></span>
-<span class="line"><span style="color:#22863A">    cmds</span><span style="color:#24292E">:</span></span>
-<span class="line"><span style="color:#24292E">      - </span><span style="color:#032F62">go test ./...</span></span></code></pre>
+<h2 id="chart-存哪oci-已取代-indexyaml">chart 存哪：OCI 已取代 index.yaml</h2>
+<p>老式 repo 靠一个 <code>index.yaml</code> 索引（<code>helm repo add</code>）。3.8.0 起 <strong>OCI 支持转正 GA 且默认开启</strong>，底层是 ORAS——chart 像容器镜像一样 <code>helm push</code> / <code>pull</code> 到镜像仓库，没有 index.yaml。一个隐藏坑：OCI tag 不允许 <code>+</code>，Helm 会把 SemVer build metadata 里的 <code>+</code> 悄悄转成 <code>_</code>。</p>
+<p>一句话记牢：<strong>Helm 只在你敲命令的那一刻工作</strong>——渲染、提交、记账，然后什么都不管了。想要持续 reconcile 抹平 drift，那是 ArgoCD / Flux 的活。</p> </div> </article><section class="grid" data-astro-cid-j7pv25f6> <article class="card card-shell" data-href="/posts/260703-dn42-bgp-sandbox/" data-astro-cid-d6qgp232> <a href="/tags/network/" class="chip" data-astro-cid-d6qgp232>network</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-07-03T00:00:00.000Z" data-astro-cid-d6qgp232>2026-07-03</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/network/" class="tag" data-astro-cid-d6qgp232>#network</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260703-dn42-bgp-sandbox/" data-astro-cid-d6qgp232>DN42 —— 改 git repo 申请 ASN 的 BGP 沙盒</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>DN42 是一张「长得跟真实互联网一模一样」的 overlay 网络——同一套 BGP / whois / DNS，但发号不用求 RIR：fork 一个 git 仓库、改几个文件、提 PR，脚本校验通过就合并，你就正式拥有了自己的 ASN 和地址段。核心价值是<strong>安全网</strong>：你在里面扮演一家 mini-ISP 练 BGP，配错了也不会有大运营商打电话来骂。</p>
+<p>最反直觉的一点：它用 WireGuard 这类 VPN 隧道把成员互联，乍看像 Tor 那类 darknet，<strong>目标却相反</strong>——不做匿名，专做「去 NAT 的真实路由练习」。成员之间要的是能直连、能互相暴露服务，而不是藏起来。</p>
+<h2 id="注册是-git-pr不是找管理员">注册是 git PR，不是找管理员</h2>
+<p>真实互联网上申请 ASN / IP 要走 APNIC 那套官僚流程；DN42 把它压成一次 PR——这是它整个设计的题眼。你要建的对象跟真实 whois 一一对应：</p>
 <ul>
-<li><code>sources</code> 里所有文件算 <strong>checksum</strong>（可切 <code>method: timestamp</code>），下次跑发现指纹没变就跳过该 task —— 大项目 <code>task build</code> 没改代码时几毫秒返回</li>
-<li><code>deps:</code> 默认<strong>并行</strong>执行（前提是 deps 之间互不依赖），串行用 <code>cmds:</code> 里 <code>- task: foo</code> 调用</li>
-<li>配合 <code>task --watch</code> 监听文件变化自动重跑</li>
+<li><code>mntner</code>（维护者，带签名 auth）、<code>person</code>（<code>nic-hdl</code> 以 <code>-DN42</code> 结尾）</li>
+<li><code>aut-num</code>（你的 ASN）、<code>inetnum</code> / <code>inet6num</code>（你的地址段）</li>
+<li><code>route</code> / <code>route6</code>——<strong>仿照真实互联网的 RPKI/ROA</strong>，没有它别人会因 ROA 校验失败而不收你的路由</li>
 </ul>
-<h2 id="跟-just-的分野">跟 Just 的分野</h2>
-<p>Just 和 Task 经常被并列推荐，但 Just README 自己写得很清楚：<em>“just is a command runner, not a build system, so it avoids much of make’s complexity and idiosyncrasies.”</em> —— <strong>故意不做依赖图也不做增量</strong>，任务每次从头跑。</p>
+<p>坑在校验：一个自动脚本会在合并前检查语法，格式错一个字符就打回，拖慢管理员审核。所以是「严格按语法填」而不是「大概填填」。</p>
+<h2 id="号段为什么是私有的">号段为什么是私有的</h2>
 
 
 
@@ -283,965 +68,216 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>维度</th><th>Just</th><th>Task</th></tr></thead><tbody><tr><td>定位</td><td>command runner（不是 build system）</td><td>task runner + 轻量 build tool</td></tr><tr><td>Shell</td><td>走宿主 shell</td><td>自带 mvdan/sh，跨平台一致</td></tr><tr><td>依赖并行</td><td>串行</td><td>默认并行</td></tr><tr><td>增量跳过</td><td>无</td><td><code>sources</code> + <code>generates</code> checksum</td></tr><tr><td><code>--watch</code></td><td>无</td><td>内置</td></tr><tr><td>语法</td><td>自定义 DSL（精简 Makefile 风）</td><td>YAML</td></tr><tr><td>参数传递</td><td>位置参数一等公民：<code>just deploy prod</code></td><td>走变量：<code>task deploy ENV=prod</code></td></tr></tbody></table>
-<p>判准：</p>
-<ul>
-<li>项目里命令独立、每次都该完整跑（lint、deploy、clear-cache） → Just，手感更轻</li>
-<li>任务有产物链、改一个文件只想重建受影响下游 → Task</li>
-<li>命令需要传位置参数（<code>just deploy prod</code>） → Just 直观</li>
-<li>团队里 Makefile 已经在用 <code>sources / .PHONY / -j</code> 这些 Make 特性，想替换 → Task 一对一替</li>
-</ul>
-<p>装：<code>brew install go-task</code>。文档：<a href="https://taskfile.dev/">https://taskfile.dev/</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260526-httpbingo/" data-astro-cid-d6qgp232> <a href="/tags/network/" class="chip" data-astro-cid-d6qgp232>network</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-26</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/network/" class="tag" data-astro-cid-d6qgp232>#network</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260526-httpbingo/" data-astro-cid-d6qgp232>httpbingo.org —— 按需返回任意 HTTP 响应</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>写 HTTP 客户端时最难造的是失败：500、慢响应、3xx 链、basic auth 401。靠真实业务 API 不可控也污染数据。<a href="https://httpbingo.org/">httpbingo.org</a> 就是干这个——按 URL 告诉它要什么响应，它就回什么。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://httpbingo.org/status/503</span><span style="color:#6A737D">         # 强制 503</span></span>
-<span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://httpbingo.org/delay/5</span><span style="color:#6A737D">            # 5 秒后响应（测超时）</span></span>
-<span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://httpbingo.org/redirect/3</span><span style="color:#6A737D">         # 3 次 302 链（测 follow 上限）</span></span>
-<span class="line"><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -u</span><span style="color:#032F62"> user:pass</span><span style="color:#032F62"> https://httpbingo.org/basic-auth/user/pass</span></span>
-<span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://httpbingo.org/anything</span><span style="color:#6A737D">           # 把请求 headers / body / query 原样 echo 回来</span></span></code></pre>
-<p><code>/anything</code> 是 debug 神器——客户端实际发了什么 header、是不是按预期带了 cookie、proxy 有没有偷改 body，一行 curl 看到。</p>
-<p>域名容易和老前辈 httpbin.org 混。httpbingo.org 是 <code>mccutchen/go-httpbin</code> 跑的公网实例，Kenneth Reitz 那个老 httpbin 的 Go 重写。老版自 v0.6.1（2017-08）后没再发版，README 还挂着 <code>travis-ci.org</code> 的 badge（travis 早已对 OSS 停服）。go-httpbin 零依赖、stdlib only、持续发版（v2.22 / 2026），多了 <code>/sse</code> <code>/jsonl</code> <code>/websocket/echo</code>，少了 <code>/brotli</code>（Go stdlib 不带）。</p>
-<h2 id="ci-里别直接打公网">CI 里别直接打公网</h2>
-<p>免费服务限流 / 下线一次就 red 一片。CI 里起个 sidecar：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">docker</span><span style="color:#032F62"> run</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> 8080:8080</span><span style="color:#032F62"> ghcr.io/mccutchen/go-httpbin</span></span></code></pre>
-<p>写 Go 的话还能直接当 library 嵌进单测起 <code>httptest.Server</code>，连 sidecar 都省了。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260526-concat-null-mysql-vs-postgres/" data-astro-cid-d6qgp232> <a href="/tags/postgresql/" class="chip" data-astro-cid-d6qgp232>postgresql</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-26</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/postgresql/" class="tag" data-astro-cid-d6qgp232>#postgresql</a><a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260526-concat-null-mysql-vs-postgres/" data-astro-cid-d6qgp232>CONCAT 遇到 NULL：MySQL vs PostgreSQL</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>CONCAT(a, NULL, b)</code> 在 MySQL 是 <code>NULL</code>，在 PostgreSQL 是 <code>'ab'</code>。<strong>默认行为相反</strong>，跨库写 SQL 极易踩。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#6A737D">-- MySQL 8.0</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#005CC5"> CONCAT</span><span style="color:#24292E">(</span><span style="color:#032F62">'hello'</span><span style="color:#24292E">, </span><span style="color:#D73A49">NULL</span><span style="color:#24292E">, </span><span style="color:#032F62">'world'</span><span style="color:#24292E">);  </span><span style="color:#6A737D">-- NULL</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D">-- PostgreSQL 16</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#005CC5"> CONCAT</span><span style="color:#24292E">(</span><span style="color:#032F62">'hello'</span><span style="color:#24292E">, </span><span style="color:#D73A49">NULL</span><span style="color:#24292E">, </span><span style="color:#032F62">'world'</span><span style="color:#24292E">);  </span><span style="color:#6A737D">-- 'helloworld'</span></span></code></pre>
-<h2 id="为什么相反">为什么相反</h2>
-<p>SQL 标准守三值逻辑：<code>NULL</code> 表示「未知」，未知和任何值拼接结果仍是未知，所以传染整个表达式。MySQL 的 <code>CONCAT</code> 按这条走；PostgreSQL 引入 <code>CONCAT()</code> 时刻意违反标准 —— 文档直接写 <em>NULL arguments are ignored</em> —— 理由是实战拼姓名 / 地址 / URL 时 NULL 传染几乎从来不是想要的行为。</p>
-<p><code>||</code> 是 SQL 标准的字符串拼接操作符，两个 DB 都让 NULL 传染：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#6A737D">-- PostgreSQL</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#032F62"> 'hello'</span><span style="color:#D73A49"> ||</span><span style="color:#D73A49"> NULL</span><span style="color:#D73A49"> ||</span><span style="color:#032F62"> 'world'</span><span style="color:#24292E">;  </span><span style="color:#6A737D">-- NULL</span></span></code></pre>
-<p>MySQL 默认 <code>||</code> 是逻辑 OR，要 <code>SET sql_mode = 'PIPES_AS_CONCAT'</code> 才当拼接 —— 所以 MySQL 项目里基本看不到 <code>||</code> 拼字符串。</p>
-<p>记口诀：<strong><code>CONCAT</code> 跨库不一致，<code>||</code> 跨库一致传染</strong>。</p>
-<h2 id="写法对照">写法对照</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>写法</th><th>MySQL</th><th>PostgreSQL</th></tr></thead><tbody><tr><td><code>CONCAT(a, NULL, b)</code></td><td><code>NULL</code></td><td><code>'ab'</code></td></tr><tr><td><code>CONCAT_WS(',', a, NULL, b)</code></td><td><code>'a,b'</code></td><td><code>'a,b'</code></td></tr><tr><td><code>CONCAT_WS(NULL, 'a', 'b')</code></td><td><code>NULL</code></td><td><code>NULL</code></td></tr><tr><td><code>CONCAT_WS(',', 'a', '', 'b')</code></td><td><code>'a,,b'</code></td><td><code>'a,,b'</code></td></tr><tr><td><code>a || NULL || b</code></td><td>逻辑 OR</td><td><code>NULL</code></td></tr></tbody></table>
-<p><code>CONCAT_WS</code> 跨库一致：其余 NULL 自动跳过，但<strong>分隔符自己是 NULL 整表达式仍是 NULL</strong>、<strong>空串保留不当 NULL</strong> —— 想把空串也跳过，外层先 <code>NULLIF(col, '')</code>。</p>
-<p>最常踩 <code>CONCAT(first_name, ' ', middle_name, ' ', last_name)</code> —— <code>middle_name</code> 为 <code>NULL</code> 时整个名字消失，前端只显示空白，业务侧不报错。改 <code>CONCAT_WS(' ', first_name, middle_name, last_name)</code> 立刻修好。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260525-binary-safe/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/password-hash/" class="tag" data-astro-cid-d6qgp232>#password-hash</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260525-binary-safe/" data-astro-cid-d6qgp232>二进制安全 是什么意思</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://www.php.net/manual/en/function.crypt.php">PHP 文档里 <code>crypt()</code></a> 顶上挂着一行：</p>
-<blockquote>
-<p>Warning: This function is not (yet) binary safe!</p>
-</blockquote>
-<p>binary safe 指函数能完整处理任意字节序列，含 NUL 字节（<code>\0</code>、<code>0x00</code>）。失安全的两种姿势：<strong>遇 <code>\0</code> 截断</strong>、<strong>结果随 locale 变化</strong>。</p>
-<h2 id="crypt-怎么不-binary-safe">crypt() 怎么”不 binary safe”</h2>
-<p>底层是 C <code>crypt(3)</code>，C 字符串以 <code>\0</code> 终止：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$salt </span><span style="color:#D73A49">=</span><span style="color:#032F62"> '$2y$10$'</span><span style="color:#D73A49"> .</span><span style="color:#005CC5"> str_repeat</span><span style="color:#24292E">(</span><span style="color:#032F62">'a'</span><span style="color:#24292E">, </span><span style="color:#005CC5">22</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#005CC5">crypt</span><span style="color:#24292E">(</span><span style="color:#032F62">"secret</span><span style="color:#005CC5">\0</span><span style="color:#032F62">extra1"</span><span style="color:#24292E">, $salt) </span><span style="color:#D73A49">===</span><span style="color:#005CC5"> crypt</span><span style="color:#24292E">(</span><span style="color:#032F62">"secret</span><span style="color:#005CC5">\0</span><span style="color:#032F62">extra2"</span><span style="color:#24292E">, $salt);  </span><span style="color:#6A737D">// true</span></span></code></pre>
-<p>C 端只读到 <code>"secret"</code>，<code>\0</code> 后的字节全部丢弃。把 <code>random_bytes()</code> 出来的 32 字节 key 当密码直接喂 <code>crypt()</code> / <code>password_hash()</code> 时这就是定时炸弹 —— 32 字节里含 <code>\0</code> 的概率是 <code>1 - (255/256)^32 ≈ 12%</code>，碰上就把高熵 key 蒸发掉一截。</p>
-<p>修法是先编码再哈希：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$key </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> random_bytes</span><span style="color:#24292E">(</span><span style="color:#005CC5">32</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#005CC5">password_hash</span><span style="color:#24292E">(</span><span style="color:#005CC5">base64_encode</span><span style="color:#24292E">($key), </span><span style="color:#005CC5">PASSWORD_BCRYPT</span><span style="color:#24292E">);</span></span></code></pre>
-<p>更对路的做法：哈希二进制 key 别走 <code>crypt</code> 家族，用 <code>hash_hmac('sha256', $msg, $key)</code>，它本身 binary safe。</p>
-<h2 id="yet-是什么意思">“(yet)” 是什么意思</h2>
-<p>不是 typo —— 是文档作者留的”想修但修不动”的尾巴。<code>crypt()</code> 走 libc，要 binary safe 得绕开 libc 自己实现一份，跨平台一致性破坏。从 PHP 4 挂到 PHP 8，括号里这两字大概会一直挂下去。</p>
-<h2 id="不-binary-safe-分两类">不 binary safe 分两类</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>类型</th><th>典型函数</th><th>触发</th></tr></thead><tbody><tr><td><code>\0</code> 截断</td><td><code>crypt()</code>、所有 fs 路径参数（<code>fopen</code> / <code>include</code> / <code>file_get_contents</code>）</td><td>入参含 <code>\0</code></td></tr><tr><td>locale 依赖</td><td><code>strcoll</code></td><td>字节落在 <code>0x80-0xFF</code></td></tr></tbody></table>
-<p>路径那条历史上是 <a href="https://nvd.nist.gov/vuln/detail/CVE-2006-7243">CVE-2006-7243</a> —— <code>include $_GET['page'] . '.php'</code> + 攻击者传 <code>evil.so\0</code> 能绕扩展名白名单包含任意文件。PHP 5.3.4 起 fs 函数拒收含 <code>\0</code> 的路径（PHP 8.0 起直接抛 <code>TypeError</code>），但<strong>拼接前先过用户输入</strong>仍是写代码的人的责任。</p>
-<p>locale 那条更隐蔽 —— <code>strcoll</code> 按 <code>LC_COLLATE</code> 排序，同样两字节给相反答案：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#005CC5">setlocale</span><span style="color:#24292E">(</span><span style="color:#005CC5">LC_COLLATE</span><span style="color:#24292E">, </span><span style="color:#032F62">'C'</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// > 0（按字节 0xE4 > 0x7A）</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#005CC5">setlocale</span><span style="color:#24292E">(</span><span style="color:#005CC5">LC_COLLATE</span><span style="color:#24292E">, </span><span style="color:#032F62">'de_DE.UTF-8'</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// &#x3C; 0（德语排序 ä 紧挨 a，在 z 前）</span></span></code></pre>
-<p>同一段代码在 CI（默认 <code>C</code>）、生产容器（可能装了 <code>de_DE.UTF-8</code>）、本地 mac 跑出不同结果，debug 极难找。要可移植的国际化排序走 <code>Collator</code>（intl 扩展）显式给 locale；要大小写转换走 <code>mb_strtolower($s, 'UTF-8')</code> 明确指定编码 —— <code>strtolower</code> 自 PHP 8.2 起只处理 ASCII，对非 ASCII 字节原样返回。</p>
-<h2 id="哪些是-binary-safe-的">哪些是 binary safe 的</h2>
-<p><code>strlen</code> <code>strpos</code> <code>strrpos</code> <code>substr</code> <code>str_replace</code> <code>strcmp</code> <code>strncmp</code> <code>explode</code> <code>implode</code> <code>hash</code> <code>hash_hmac</code> <code>fread</code> <code>fwrite</code> <code>md5</code> <code>sha1</code> —— 核心字符串和 hash 族基本全是。判别口诀：函数文档说”以字节为单位”且不依赖 locale。</p>
-<blockquote>
-<p><code>strcmp()</code> 是 binary safe，但<strong>不是 constant-time</strong> —— 校验 token / HMAC / CSRF 用 <code>hash_equals()</code>，否则吃时序攻击。两个正交属性，别混。</p>
-</blockquote>
-<p><code>mb_*</code> 系列是<strong>多字节安全</strong>（认得 UTF-8 多字节序列），不等于”任意二进制安全” —— 喂非法 UTF-8 字节会报警或返回 <code>false</code>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260525-caffeinate/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a><a href="/tags/macos/" class="tag" data-astro-cid-d6qgp232>#macos</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260525-caffeinate/" data-astro-cid-d6qgp232>caffeinate：macOS 临时防睡眠</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>macOS 自带 <code>/usr/bin/caffeinate</code>，临时阻止系统进入睡眠。最常见用法是给一条长任务套一层 caffeinate，命令跑完它自己退：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> ./long-task.sh</span><span style="color:#6A737D">        # long-task.sh 跑完，防睡眠也撤销</span></span></code></pre>
-<p>核心设计：<strong>caffeinate 的生命周期跟着另一个进程走</strong>。子命令结束它跟着退，不会忘关导致整天不睡。</p>
-<h2 id="flag-阻止不同层级的睡">flag 阻止不同层级的「睡」</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>flag</th><th>阻止的层级</th></tr></thead><tbody><tr><td><code>-i</code></td><td>system idle sleep（默认，最常用）</td></tr><tr><td><code>-d</code></td><td>display sleep（屏幕睡）</td></tr><tr><td><code>-m</code></td><td>disk idle sleep（磁盘空闲休眠）</td></tr><tr><td><code>-s</code></td><td>system sleep —— <strong>仅在插电源时生效</strong></td></tr><tr><td><code>-u</code></td><td>user-active assertion（声明用户活跃；屏幕关着会唤醒；默认 5s）</td></tr><tr><td><code>-t &#x3C;秒></code></td><td>给 assertion 加上限，到点自动撤销</td></tr><tr><td><code>-w &#x3C;pid></code></td><td>跟某 PID 命运绑，那 PID 退出就退</td></tr></tbody></table>
-<p><code>caffeinate</code> 不带任何 flag 等同于 <code>-i</code> —— 很多教程不点明，以为「随便加 caffeinate」就万事大吉，结果屏幕照睡。需要屏幕也亮着（演示 / 仪表盘看板 / 长亮场景）就显式加 <code>-d</code>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -di</span></span></code></pre>
-<h2 id="四种生命周期">四种生命周期</h2>
-<p>对应四种调用形态：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#005CC5"> -t</span><span style="color:#005CC5"> 7200</span><span style="color:#6A737D">          # 接下来 2 小时不空闲睡，到点自动退</span></span>
-<span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> ./long-task.sh</span><span style="color:#6A737D">   # 跟着子进程走，子进程结束就退</span></span>
-<span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#005CC5"> -w</span><span style="color:#005CC5"> 12345</span><span style="color:#6A737D">         # 跟某已有 PID 命运绑，PID 退出就退</span></span>
-<span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#6A737D">                  # 永远不退，要 Ctrl+C</span></span></code></pre>
-<p><code>-w</code> 是事后补救手段：长任务已经在跑了才想起套 caffeinate，不用 kill 重启，<code>caffeinate -i -w "$!"</code> 抓刚 bg 的任务，或 <code>caffeinate -i -w $(pgrep -f long-task)</code> 抓按名找到的 PID。</p>
-<p>第四种是初学者最常踩的坑 —— 开了一个 <code>caffeinate -i</code> 然后 Ctrl+Z + <code>bg</code>（或一开始就 <code>&#x26;</code> 后台化），关掉那个终端 tab，zsh 默认 <code>nohup</code> on <strong>不向后台任务转发 SIGHUP</strong>，进程留在后台，Mac 几天不睡。避免方式：<strong>永远用前三种，绝不裸跑</strong>。即使「先开着以防万一」也强制带 <code>-t &#x3C;秒></code> 给个上限。</p>
-<p>怀疑有残留时：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">pgrep</span><span style="color:#005CC5"> -lf</span><span style="color:#032F62"> caffeinate</span><span style="color:#6A737D">     # 列出当前所有 caffeinate 进程及参数</span></span>
-<span class="line"><span style="color:#6F42C1">pkill</span><span style="color:#032F62"> caffeinate</span><span style="color:#6A737D">         # 全部杀掉（确认没有正在用的）</span></span></code></pre>
-<h2 id="-s-为什么只在插电源时生效"><code>-s</code> 为什么只在插电源时生效</h2>
-<p>苹果的设计假设：电池模式下用户「确实希望它睡」，否则损耗续航。要在电池模式下也不睡，用 <code>-i</code> —— idle sleep 在两种电源模式都能挡住。<code>-s</code> 是写给「插电时跑 CI / build 别中途睡」这类场景的。</p>
-<h2 id="debug谁在阻止-sleep">debug：谁在阻止 sleep</h2>
-<p>Mac 莫名不睡时，看当前所有 PowerManagement assertion：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">pmset</span><span style="color:#005CC5"> -g</span><span style="color:#032F62"> assertions</span></span></code></pre>
-<p>会列出每个进程持有的 assertion（<code>PreventUserIdleSystemSleep</code>、<code>PreventUserIdleDisplaySleep</code> 等）。caffeinate 在底层调用同一套 <code>IOPMAssertion*</code> API；Amphetamine 这类 GUI 工具、视频会议、多媒体播放也通过同样机制声明 assertion。<code>pmset -g assertions</code> 是排查根因的金钥匙。</p>
-<h2 id="跟-pmset--gui-工具区分">跟 <code>pmset</code> / GUI 工具区分</h2>
-<ul>
-<li><code>caffeinate</code> —— 临时声明，进程级，跟生命周期绑</li>
-<li><code>pmset</code> —— 改全局电源配置，持久（<code>sudo pmset -a sleep 0</code> 是核选项）</li>
-<li>Amphetamine / Lungo —— GUI 包装的 assertion，本质同 caffeinate</li>
-</ul>
-<p><code>man caffeinate</code> 看完整文档。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260525-tmux-detach/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260525-tmux-detach/" data-astro-cid-d6qgp232>tmux：detach 让进程独立于窗口</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>iTerm2 + tmux 不是二选一，是叠两层。iTerm2 画像素（terminal emulator），tmux 在里面再开一组逻辑终端（terminal multiplexer）—— <strong>核心收益是 <em>detach</em></strong>：关窗、断 SSH、合盖，里面的进程都不死，下次 <code>tmux a</code> 接回来。再加 session / window / pane 三层结构，一个工作区拆成多视图共存。</p>
-<h2 id="iterm2-跟-tmux-各管什么">iTerm2 跟 tmux 各管什么</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>维度</th><th>iTerm2</th><th>tmux</th></tr></thead><tbody><tr><td>角色</td><td>terminal emulator</td><td>terminal multiplexer</td></tr><tr><td>实现</td><td>画 PTY master 端的像素</td><td>一个 server 进程持有多个 PTY pair</td></tr><tr><td>关掉窗口</td><td>里面 zsh 收 SIGHUP 死</td><td>client 断开，server 不受影响，PTY 和子进程继续跑</td></tr><tr><td>多窗口 / 分屏</td><td>原生 tab / split</td><td>session / window / pane 三层</td></tr><tr><td>多客户端 attach</td><td>不支持</td><td>同一 session 多客户端同时连（结对编程刚需）</td></tr></tbody></table>
-<p>tmux server 给每个 pane 自己 <code>openpty()</code> 拿一对 PTY，里面跑的 shell 以为自己面对真终端。client 跟 server 通过 socket（<code>/tmp/tmux-501/default</code>）通信 —— <strong>client 死了 server 不死</strong>，这是 detach 的根因。</p>
-<h2 id="三层结构">三层结构</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>server</span></span>
-<span class="line"><span>└── session "mywork"             ← detach / attach 的单位</span></span>
-<span class="line"><span>    ├── window 0 "edit"           ← 一个 window 一个 tab</span></span>
-<span class="line"><span>    │   ├── pane 0  vim</span></span>
-<span class="line"><span>    │   └── pane 1  rg            ← 一个 window 内的 split</span></span>
-<span class="line"><span>    └── window 1 "test"</span></span>
-<span class="line"><span>        └── pane 0  pytest --watch</span></span></code></pre>
-<p>记忆口诀：session 是工作区，window 是 tab，pane 是 split。</p>
-<h2 id="4-个-session-命令">4 个 session 命令</h2>
-<p>下面 <code>mywork</code> 是 session 名（自取），不是命令：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> new</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> mywork</span><span style="color:#6A737D">              # 创建并 attach</span></span>
-<span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> ls</span><span style="color:#6A737D">                         # 列出所有 session</span></span>
-<span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> a</span><span style="color:#005CC5"> -t</span><span style="color:#032F62"> mywork</span><span style="color:#6A737D">                # attach 到名为 mywork 的 session</span></span>
-<span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> kill-session</span><span style="color:#005CC5"> -t</span><span style="color:#032F62"> mywork</span><span style="color:#6A737D">     # 结束某个 session</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> new-session</span><span style="color:#005CC5"> -A</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> mywork</span><span style="color:#6A737D">   # 幂等：没有就建，有就 attach</span></span></code></pre>
-<p>最后一条的 <code>-A</code> 是写脚本和 <code>.zshrc</code> 别名时的核心 —— 同一别名反复跑永远落到同一 session，不会因为重跑而创建第二个。</p>
-<h2 id="必记的-4-个-prefix-键">必记的 4 个 prefix 键</h2>
-<p><code>-CC</code> 模式下切 window / pane / 滚屏 / 复制全被 iTerm2 native 接管（⌘ 系列），不再需要记几十个 tmux 按键。剩下这 4 个还得手动：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>键</th><th>作用</th></tr></thead><tbody><tr><td><code>prefix + d</code></td><td>detach（最高频）</td></tr><tr><td><code>prefix + ?</code></td><td>列所有按键（忘了直接查）</td></tr><tr><td><code>prefix + :</code></td><td>进命令模式（什么都能干）</td></tr><tr><td><code>prefix + z</code></td><td>当前 pane 全屏 / 还原（看长输出用）</td></tr></tbody></table>
-<p>默认 prefix 是 <code>Ctrl-b</code>，先按 prefix 松开，再按命令键，<strong>不是同时按</strong>。</p>
-<p>不用 <code>-CC</code>（远端 SSH / Ghostty / Alacritty）时按键多用一些 —— 那就靠 <code>prefix + ?</code> 现场查，不必硬记。</p>
-<h2 id="detach-能扛哪些场景">detach 能扛哪些场景</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> a</span><span style="color:#005CC5"> -t</span><span style="color:#032F62"> mywork</span><span style="color:#6A737D">            # 合盖再开，session 状态完整</span></span></code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>场景</th><th>没 tmux</th><th>有 tmux</th></tr></thead><tbody><tr><td><code>⌘Q</code> 关 iTerm</td><td>进程收 SIGHUP 死</td><td>继续跑</td></tr><tr><td>SSH 断线</td><td>进程死</td><td>继续跑</td></tr><tr><td>Mac 空闲睡眠</td><td>全机 SIGSTOP 暂停</td><td>全机 SIGSTOP 暂停（tmux 不解决，需 caffeinate）</td></tr><tr><td>Mac 重启</td><td>进程必死</td><td>进程必死，session 元信息靠 tmux-resurrect</td></tr></tbody></table>
-<p>Mac 重启时 <code>tmux-resurrect</code> 能再画一遍 window / pane 布局，但<strong>默认只恢复布局不重起程序</strong> —— 除非 <code>@resurrect-processes</code> 配白名单（<code>'~vim->vim *' 'ssh->ssh'</code> 这种 pattern）。</p>
-<h2 id="iterm2--tmux--cc">iTerm2 + tmux -CC</h2>
-<p>iTerm2 独有的 <code>-CC</code> 控制模式：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#005CC5"> -CC</span><span style="color:#032F62"> new-session</span><span style="color:#005CC5"> -A</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> mywork</span></span></code></pre>
-<p>tmux 的 window / pane 被 iTerm2 渲染成<strong>原生 tab / split</strong>，复制粘贴、滚动、字体、tab 切换全走 iTerm2，detach 持久能力同时保留。肌肉记忆零迁移，是 iTerm2 用户的最佳形态。</p>
-<h2 id="长跑-agent-实战">长跑 agent 实战</h2>
-<p>Claude Code / Codex 跑大重构、批量测试改写，单次任务 30 分钟到几小时起步。关掉终端 / Mac 睡了，烧掉的 token 全废。配进 <code>~/.zshrc</code>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cc</span><span style="color:#24292E">() { </span><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> new-session</span><span style="color:#005CC5"> -A</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> "cc-$(</span><span style="color:#6F42C1">basename</span><span style="color:#032F62"> "</span><span style="color:#24292E">$PWD</span><span style="color:#032F62">")"</span><span style="color:#005CC5"> -c</span><span style="color:#032F62"> "</span><span style="color:#24292E">$PWD</span><span style="color:#032F62">"</span><span style="color:#032F62"> "caffeinate -i claude"</span><span style="color:#24292E">; }</span></span></code></pre>
-<p>每个项目目录一个独立 session，<code>tmux ls</code> 一眼看全。<code>caffeinate -i</code> 套在 tmux <strong>内层</strong> —— caffeinate 命脉跟 claude 进程绑，detach 不影响。<strong>反过来包错位</strong>（<code>caffeinate -i tmux ...</code>）会出问题：caffeinate 跟外层 tmux 命令绑，detach 后 caffeinate 退出，Mac 该睡照睡，session 里的 claude 被 SIGSTOP 暂停。</p>
-<p>tmux 和 caffeinate 是两条正交的防线：tmux 让 agent 跟窗口脱钩，caffeinate 让 Mac 不进睡眠，缺一边都漏。agent 的对话上下文不在 tmux 这一层 —— 它存在 Claude Code 自己的 session 文件里（路径按 cwd 编码，如 <code>~/.claude/projects/-Users-you-myproj/</code>），靠 <code>--resume</code> 接回。</p>
-<h2 id="同类怎么选">同类怎么选</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>选</th><th>何时</th></tr></thead><tbody><tr><td>tmux</td><td>远程 SSH / 长跑任务 / 多 client attach</td></tr><tr><td>screen</td><td>老服务器装不上 tmux 时的 fallback</td></tr><tr><td>Zellij</td><td>本地、不想写配置、要按键提示和悬浮 pane</td></tr><tr><td>WezTerm</td><td>本地、要 GPU 加速 + 内置多路复用</td></tr></tbody></table>
-<p>screen 也能 detach + multi-attach（<code>screen -x</code>），但脚本化接口糙、配置默认值停留在 90 年代，agent 时代的工具链（mosh / overmind / 各家 AI CLI 的 tmux integration）几乎都只面向 tmux。</p>
-<p><code>man tmux</code> 看完整命令；按键速查见 <a href="https://tmuxcheatsheet.com/">tmux cheat sheet</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260522-failure-jer-ending/" data-astro-cid-d6qgp232> <a href="/tags/english/" class="chip" data-astro-cid-d6qgp232>english</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-22T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-22</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/english/" class="tag" data-astro-cid-d6qgp232>#english</a><a href="/tags/pronunciation/" class="tag" data-astro-cid-d6qgp232>#pronunciation</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260522-failure-jer-ending/" data-astro-cid-d6qgp232>failure 与 /-jər/ 词尾</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>failure /ˈfeɪljər/ 的坑：拼写 -ure 容易被中文母语者读成 “your” 的尾音，实际是 /-jər/ —— 一个 /j/（y 滑音）紧跟 /ər/。</p>
-<p>把它拆成 <strong>fail + y + er</strong>，重音在 fail。</p>
-<h2 id="字母-u--i-在词尾担任-j-滑音">字母 U / I 在词尾担任 /j/ 滑音</h2>
-<p>英语词尾 -ure / -ular / -liar 几乎都是这个套路：<strong>U 或 I 不发元音，担任 /j/ 滑音</strong>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>词尾</th><th>发音</th><th>例</th></tr></thead><tbody><tr><td>-ure</td><td>/jər/</td><td>failure, figure /ˈfɪɡjər/</td></tr><tr><td>-ular</td><td>/jələr/</td><td>regular /ˈreɡjələr/, popular, particular</td></tr><tr><td>-liar</td><td>/ljər/</td><td>familiar /fəˈmɪljər/, peculiar /pɪˈkjuːljər/</td></tr></tbody></table>
-<p>念法套同一模式：fail-y-er、fig-y-er、reg-y-ler、fa-mil-y-er。</p>
-<h2 id="变体-sure-词尾的-ʒər">变体：-sure 词尾的 /ʒər/</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>measure  /ˈmeʒər/</span></span>
-<span class="line"><span>pleasure /ˈpleʒər/</span></span>
-<span class="line"><span>treasure /ˈtreʒər/</span></span>
-<span class="line"><span>leisure  /ˈliːʒər/</span></span></code></pre>
-<p>U 仍然担任 /j/ 滑音，只是和前面的 <code>s</code> 融合（palatalization），合成一个浊擦音 /ʒ/，表面看不见 U 的痕迹了。</p>
-<p>/ʒ/ 汉语里没有，最近似 <code>热 / 日 / 人</code> 的声母 /ʐ/ —— 把翘舌放平就是 /ʒ/。别和拼音的 <code>zh</code> 混：<code>zh</code> 是塞擦音 /ʈʂ/（先停后擦），跟 /ʒ/ 不是一类音。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260522-fzf-ssh/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-22T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-22</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a><a href="/tags/ssh/" class="tag" data-astro-cid-d6qgp232>#ssh</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260522-fzf-ssh/" data-astro-cid-d6qgp232>fzf 一行做 SSH host picker</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>~/.ssh/config</code> 已经把所有 host 写好了，fzf 把它当数据源就有了 picker，preview 窗口顺便显示选中 host 的完整配置：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">s</span><span style="color:#24292E">() {</span></span>
-<span class="line"><span style="color:#D73A49">  local</span><span style="color:#24292E"> config</span><span style="color:#D73A49">=</span><span style="color:#032F62">"${</span><span style="color:#24292E">HOME</span><span style="color:#032F62">}/.ssh/config"</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-f</span><span style="color:#032F62"> "</span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] </span><span style="color:#D73A49">||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "no </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
-<span class="line"><span style="color:#005CC5">  command</span><span style="color:#005CC5"> -v</span><span style="color:#032F62"> fzf</span><span style="color:#D73A49"> ></span><span style="color:#032F62">/dev/null</span><span style="color:#D73A49"> ||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "fzf not installed"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D73A49">  local</span><span style="color:#24292E"> hosts</span></span>
-<span class="line"><span style="color:#24292E">  hosts</span><span style="color:#D73A49">=</span><span style="color:#24292E">$(</span><span style="color:#6F42C1">awk</span><span style="color:#032F62"> 'tolower($1)=="host" &#x26;&#x26; $2 !~ /\*/ {print $2}'</span><span style="color:#032F62"> "</span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">)</span></span>
-<span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-z</span><span style="color:#032F62"> "</span><span style="color:#24292E">$hosts</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] &#x26;&#x26; { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "no hosts in </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#D73A49">  local</span><span style="color:#24292E"> host</span></span>
-<span class="line"><span style="color:#24292E">  host</span><span style="color:#D73A49">=</span><span style="color:#24292E">$(</span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "</span><span style="color:#24292E">$hosts</span><span style="color:#032F62">"</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> fzf</span><span style="color:#005CC5"> \</span></span>
-<span class="line"><span style="color:#005CC5">    --preview</span><span style="color:#032F62"> "awk '/^Host / &#x26;&#x26; </span><span style="color:#005CC5">\$</span><span style="color:#032F62">2 == </span><span style="color:#005CC5">\"</span><span style="color:#032F62">{}</span><span style="color:#005CC5">\"</span><span style="color:#032F62"> {p=1; next} /^Host / {p=0} p' </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#005CC5"> \</span></span>
-<span class="line"><span style="color:#005CC5">    --preview-window</span><span style="color:#032F62"> 'right:50%'</span><span style="color:#24292E">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-n</span><span style="color:#032F62"> "</span><span style="color:#24292E">$host</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] &#x26;&#x26; </span><span style="color:#6F42C1">ssh</span><span style="color:#032F62"> "</span><span style="color:#24292E">$host</span><span style="color:#032F62">"</span></span>
-<span class="line"><span style="color:#24292E">}</span></span></code></pre>
-<p>跑 <code>s</code> → fzf 弹列表 → 选 → SSH 上。光标停某个 host 时<strong>右半屏实时显示该 host 的 <code>HostName</code> / <code>User</code> / <code>Port</code> / <code>IdentityFile</code></strong>，连之前一眼确认是不是要那台。</p>
-<p>几个细节：</p>
-<ul>
-<li>三个 fail-fast 检查（config 文件存在 / fzf 命令在 / awk 出非空），任一项不满足立刻报具体原因，不静默退出</li>
-<li><code>awk tolower($1)=="host"</code> 大小写不敏感识别（ssh config 本身就不区分），过滤 <code>Host *.dev</code> 这种通配符规则，<code>$2</code> 取 host 别名</li>
-<li>preview 那条 awk 是个状态机：匹配到 <code>Host &#x3C;选中></code> 起 <code>p=1</code> 开始打印，遇到下一个 <code>Host</code> 行 <code>p=0</code> 停止——精确抓单段配置，比 <code>grep -A 10</code> 更准（不会跨到下一段）</li>
-<li>preview 字符串的转义陷阱：外层用 <code>"..."</code> 让 fzf 展开 <code>{}</code> 和 shell 展开 <code>$config</code>，内层 <code>\$2</code> / <code>\"</code> 转义是为了让 shell 把 <code>$2</code> 和 <code>"</code> 原样递给 awk</li>
-<li><code>[[ -n "$host" ]]</code> 空选保护，避免 <code>ssh ""</code> 报错</li>
-</ul>
-<h2 id="维护-sshconfig">维护 <code>~/.ssh/config</code></h2>
-<p>picker 的数据源是 <code>~/.ssh/config</code>，没这文件 picker 空。最小骨架：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Host blog</span></span>
-<span class="line"><span>    HostName 1.2.3.4</span></span>
-<span class="line"><span>    User deploy</span></span>
-<span class="line"><span>    Port 22</span></span>
-<span class="line"><span>    IdentityFile ~/.ssh/blog_ed25519</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>Host *.dev</span></span>
-<span class="line"><span>    IdentityAgent ~/.bitwarden-ssh-agent.sock</span></span>
-<span class="line"><span>    AddKeysToAgent yes</span></span>
-<span class="line"><span>    IgnoreUnknown UseKeychain</span></span>
-<span class="line"><span>    UseKeychain yes</span></span></code></pre>
-<p>几个不踩坑必知：</p>
-<ul>
-<li><strong>文件权限必须 <code>chmod 600 ~/.ssh/config</code></strong>，权限太松 ssh 直接拒绝读取</li>
-<li><code>Host</code> 一行可以多别名空格分隔：<code>Host blog blog2 mysite</code> 三个名字都连同一台</li>
-<li>行内 4-空格缩进非语法必须，但<strong>强烈建议</strong>——stanza 边界清晰，picker 的 awk 解析也稳</li>
-<li>项目 / 客户多时用 <code>Include ~/.ssh/config.d/*.conf</code> 拆文件（工作的、个人的、临时的分开）</li>
-</ul> </div> </div> </article><article class="card card-shell" data-href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/argon2/" class="tag" data-astro-cid-d6qgp232>#argon2</a><a href="/tags/base64/" class="tag" data-astro-cid-d6qgp232>#base64</a><a href="/tags/password-hash/" class="tag" data-astro-cid-d6qgp232>#password-hash</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232>Argon2id PHC 串拆解：salt 来源与 Base64 编码</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP <code>password_hash($pwd, PASSWORD_ARGON2ID)</code> 吐出来这种东西：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$argon2id$v=19$m=65536,t=4,p=1$UlhrVTlVbVI2S08wa2szSQ$gGGk/8NtsxcSbFOxcSkWOSf3fFE/a2KbMEqRiTrFmes</span></span></code></pre>
-<p>这是 <a href="https://github.com/P-H-C/phc-string-format">PHC string format</a> —— 2013-2015 年那场 <strong>Password Hashing Competition</strong> 顺带产出的字符串格式规范（竞赛本身是算法选秀，Argon2 胜出后由 <a href="https://www.rfc-editor.org/rfc/rfc9106">RFC 9106</a> 标准化；格式规范是副产品，让所有现代密码 hash 都能用自包含字符串表达，便于跨算法升级 / 跨语言迁移）。6 段用 <code>$</code> 分隔。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$&#x3C;id>[$v=&#x3C;version>][$&#x3C;param>=&#x3C;value>(,&#x3C;param>=&#x3C;value>)*][$&#x3C;salt>[$&#x3C;hash>]]</span></span></code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>段</th><th>值</th><th>含义</th></tr></thead><tbody><tr><td>算法</td><td><code>argon2id</code></td><td>变体（不是 argon2i / argon2d）</td></tr><tr><td>版本</td><td><code>v=19</code></td><td>Argon2 v1.3（0x13）</td></tr><tr><td>参数</td><td><code>m=65536, t=4, p=1</code></td><td>内存 64 MiB、迭代 4 轮、并行 1</td></tr><tr><td>Salt</td><td><code>UlhrVTlVbVI2S08wa2szSQ</code></td><td>22 字符 → 解码后 16 字节</td></tr><tr><td>Hash</td><td><code>gGGk/8NtsxcSbFOxcSkWOSf3fFE/a2KbMEqRiTrFmes</code></td><td>43 字符 → 解码后 32 字节</td></tr></tbody></table>
-<h2 id="salt-必须来自-csprng">Salt 必须来自 CSPRNG</h2>
-<p><strong>CSPRNG</strong> = Cryptographically Secure Pseudo-Random Number Generator（密码学安全的伪随机数生成器）。判别标准：next-bit 不可预测 + 状态泄露不能反推历史输出 + seed 自身来自熵源。<code>rand()</code> / <code>mt_rand()</code> 都不满足。</p>
-<p><code>password_hash()</code> 内部路径：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>password_hash()</span></span>
-<span class="line"><span>  → php_password_make_salt()</span></span>
-<span class="line"><span>    → php_random_bytes_silent(16)</span></span>
-<span class="line"><span>      → getrandom(2) (Linux) / arc4random (macOS)</span></span>
-<span class="line"><span>        → OS 熵池（硬件中断、键盘 / 鼠标时序、磁盘 I/O 抖动）</span></span></code></pre>
-<p>等价于：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$salt </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> random_bytes</span><span style="color:#24292E">(</span><span style="color:#005CC5">16</span><span style="color:#24292E">);</span></span></code></pre>
-<p><strong>永远不要用以下函数生成 salt / token / key</strong>：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>不安全</th><th>替代</th></tr></thead><tbody><tr><td><code>rand()</code></td><td><code>random_int($min, $max)</code></td></tr><tr><td><code>mt_rand()</code></td><td><code>random_int($min, $max)</code></td></tr><tr><td><code>uniqid()</code></td><td><code>bin2hex(random_bytes(16))</code></td></tr><tr><td><code>md5(microtime())</code></td><td><code>random_bytes(N)</code></td></tr></tbody></table>
-<p><code>mt_rand()</code> 是 Mersenne Twister，速度快但<strong>状态可被反推</strong> —— 拿到约 624 个连续输出就能完全恢复内部状态、预测后续所有值。已有 <a href="https://github.com/openwall/php_mt_seed">php_mt_seed</a> 在毫秒级破解。</p>
-<p>salt 不需要保密（和 hash 一起明文存数据库），它的作用是：</p>
+<table><thead><tr><th>资源</th><th>DN42 用的段</th><th>备注</th></tr></thead><tbody><tr><td>ASN</td><td><code>4242420000–4242429999</code>（RFC 6996 私有段）</td><td>新人建议在 <code>4242420000–4242423999</code> 里挑</td></tr><tr><td>IPv4</td><td><code>172.20.0.0/14</code></td><td>默认分 /27（32 个地址）够用</td></tr><tr><td>IPv6</td><td>ULA <code>fd00::/8</code></td><td>默认分 /48</td></tr></tbody></table>
+<p>全用<strong>私有号段</strong>是刻意的：这样 DN42 的路由永远不会泄进公网 BGP 表、也不会跟公网 IP 撞车。代价是这些地址空间跟 ChaosVPN（<code>172.31.0.0/16</code>）、NeoNetwork 等<strong>兄弟网络重叠</strong>——DN42 只敢用 <code>172.20.0.0/14</code> 而非整个 <code>172.16/12</code>，就是给这些互联网络留位置，它们之间是打通的。</p>
+<p>AS / ASN / BGP 选路的基础概念这里不重复，见同目录 CN2 那篇（那篇讲的是运营商的<strong>真实</strong> ASN 就是线路名，这篇是你自己<strong>申请一个私有</strong> ASN 来玩，正好两面）。</p>
+<h2 id="加入四步">加入四步</h2>
 <ol>
-<li>让相同密码产生不同 hash，rainbow table 失效</li>
-<li>强制攻击者<strong>逐个</strong>密码爆破，不能批量</li>
+<li><strong>注册</strong>：按上面建好对象，提 PR，合并即「持号」。</li>
+<li><strong>找 peer</strong>：没有中心服务器，必须连另一个成员。新手直接连 <strong>Kioubit</strong>——它连接数最多、中心性最高，且有全自动 peering 向导（填 ASN + WireGuard 公钥 + 隧道 IP，几分钟出结果），所以大半个网都直连它。也可用官方 Peer Finder 挑低延迟的。</li>
+<li><strong>建隧道</strong>：主流是 WireGuard（好配、够安全），也支持 OpenVPN / GRE / IPsec。</li>
+<li><strong>跑 BGP</strong>：装 BIRD 或 FRR，跟 peer 起 eBGP 会话，把自己的段 announce 出去。</li>
 </ol>
-<h2 id="字节--字符编码的换算">字节 ↔ 字符：编码的换算</h2>
-<p>字节是 8 bit 的存储单位；字符是表示单位。两者的转换由编码定义。</p>
-<p><strong>为什么不能 1 字节 → 1 字符？</strong> 一个字节有 256 种值（0<del>255），但可打印 ASCII 只有 <strong>95 个</strong>（<code>0x20</code></del><code>0x7E</code>，即 128 个 7-bit ASCII 编码点扣掉 33 个控制符 —— <code>0x00~0x1F</code> + <code>0x7F</code>。控制符是 NUL / Tab / 换行 / Esc / DEL 等，不能透传文本，所以 128 根本不是候选档位）。1:1 至少缺 161 个对应。退一步：能不能扩到 256 字符？</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>候选方案</th><th>为什么不行</th></tr></thead><tbody><tr><td>全 256 ASCII</td><td><code>0x00~0x1F</code> 是 NUL / Tab / 换行 / Esc，终端、字符串、协议都会炸</td></tr><tr><td>Latin-1 全 256 字符</td><td>UTF-8 时代字节 <code>0x80~0xFF</code> 不是合法 UTF-8 序列，存数据库 / 走 JSON / 进 URL 全报错</td></tr><tr><td>强行透传二进制</td><td>URL、JSON、shell、HTTP header、email、<code>.env</code>、<code>grep</code> 输出全部假设 ASCII-safe</td></tr></tbody></table>
-<p>所以真正约束是：<strong>字符集必须落在「绝对安全的可打印 ASCII 子集」里</strong>。理论上界 95，实操还要扣掉 <code>"</code> <code>\</code> <code>&#x3C;</code> <code>></code> <code>&#x26;</code> <code>=</code> <code>+</code> <code>?</code> <code>#</code> 等在 URL / JSON / shell 里有特殊含义的字符，安全集合一般 60~80 个。各档编码的取舍：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>字符集大小</th><th>编码</th><th>bit/字符</th><th>膨胀率</th><th>16 字节后</th></tr></thead><tbody><tr><td>16</td><td>Hex</td><td>4</td><td>2×</td><td>32 字符</td></tr><tr><td>32</td><td>Base32</td><td>5</td><td>1.6×</td><td>26~32</td></tr><tr><td>64</td><td>Base64</td><td>6</td><td>1.33×</td><td>22~24</td></tr><tr><td>85</td><td>Base85 / Ascii85</td><td>6.4</td><td>1.25×</td><td>20~21</td></tr><tr><td>95</td><td>全可打印 ASCII 上界</td><td>~6.57</td><td>1.22×</td><td>20</td></tr></tbody></table>
-<p>Base64 字符表是 <code>A-Z a-z 0-9 + /</code>（62 个字母数字 + 2 个填空），「安全字符够多」+「6 bit 整齐对齐 24 bit 包」的双重最优解：再上一档要 128 字符，超出可打印 ASCII 上界；再下一档 32 字符膨胀率明显更高。</p>
-<p>Base64 把每 <strong>3 字节</strong> 打包成 <strong>4 字符</strong>，因为 <code>LCM(8, 6) = 24 bit</code> —— 字节 8 bit 和 Base64 字符 6 bit 不能整除，得找两边都数得齐的最小公共单位。24 bit 既是 3 个字节，也是 4 个 Base64 字符：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>[byte 1] [byte 2] [byte 3]      ← 24 bit</span></span>
-<span class="line"><span> 6 bit  6 bit  6 bit  6 bit</span></span>
-<span class="line"><span>[char 1][char 2][char 3][char 4]</span></span></code></pre>
-<p>试别的字节数都凑不齐：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>输入字节</th><th>bit</th><th>÷ 6 = 字符</th><th>问题</th></tr></thead><tbody><tr><td>1</td><td>8</td><td>1.33</td><td>余 2 bit，半字符存不下</td></tr><tr><td>2</td><td>16</td><td>2.67</td><td>余 4 bit，半字符存不下</td></tr><tr><td><strong>3</strong></td><td>24</td><td><strong>4</strong></td><td><strong>整除</strong></td></tr><tr><td>4</td><td>32</td><td>5.33</td><td>回到 8 bit 周期</td></tr></tbody></table>
-<p>所以 3 字节是「最小成块单位」，每 3 字节切一刀、吐 4 字符、循环。输入不是 3 的倍数时，结尾凑不齐 24 bit，要补 0 bit 到下一个 6 bit 边界，再用 <code>=</code> 标记「这是补的、不是真数据」 —— padding 的来历，下一节正好展开 PHC 为什么把 <code>=</code> 删了。</p>
-<p>所以 PHC 串里 16 字节 salt → 22 字符；32 字节 hash → 43 字符。反推也成立：看见 32 hex 是 MD5 / UUID（16 字节），64 hex 是 SHA256（32 字节）。</p>
-<h2 id="phc-的-base64-不带-padding">PHC 的 Base64 不带 padding</h2>
-<p>标准 Base64 末尾会用 <code>=</code> 补齐到 4 的倍数：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>16 字节 → 21.33 字符 → 22 字符 + `==` = 24 字符</span></span></code></pre>
-<p>PHC 格式<strong>故意去掉 <code>=</code></strong>：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th></th><th>标准 Base64</th><th>PHC Base64</th></tr></thead><tbody><tr><td>16 字节 salt</td><td><code>UlhrVTlVbVI2S08wa2szSQ==</code></td><td><code>UlhrVTlVbVI2S08wa2szSQ</code></td></tr></tbody></table>
-<p>理由：<code>=</code> 在 URL 里要转义、在 shell 里是赋值符。padding 是冗余信息（长度本来就能反推），删了不丢数据。</p>
-<p>PHP <code>base64_decode()</code> 两种都兼容。但 <strong>Python 严格</strong>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> base64</span></span>
-<span class="line"><span style="color:#24292E">base64.b64decode(</span><span style="color:#032F62">'UlhrVTlVbVI2S08wa2szSQ'</span><span style="color:#24292E">)     </span><span style="color:#6A737D"># binascii.Error</span></span>
-<span class="line"><span style="color:#24292E">base64.b64decode(</span><span style="color:#032F62">'UlhrVTlVbVI2S08wa2szSQ=='</span><span style="color:#24292E">)   </span><span style="color:#6A737D"># OK</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#24292E">s </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'UlhrVTlVbVI2S08wa2szSQ'</span></span>
-<span class="line"><span style="color:#24292E">base64.b64decode(s </span><span style="color:#D73A49">+</span><span style="color:#032F62"> '='</span><span style="color:#D73A49"> *</span><span style="color:#24292E"> (</span><span style="color:#D73A49">-</span><span style="color:#005CC5">len</span><span style="color:#24292E">(s) </span><span style="color:#D73A49">%</span><span style="color:#005CC5"> 4</span><span style="color:#24292E">))      </span><span style="color:#6A737D"># 手动补齐才能解</span></span></code></pre>
-<h2 id="bcrypt-的-base64-不是标准-base64">bcrypt 的 “Base64” 不是标准 Base64</h2>
-<p>bcrypt hash 里也有看似 Base64 的字段，但<strong>字母表不同</strong>：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>标准 Base64:  A B C D E F G H I J K ... + /</span></span>
-<span class="line"><span>bcrypt:       . / A B C D E F G H I ... 8 9</span></span>
-<span class="line"><span>              ↑ 起头就不一样</span></span></code></pre>
-<p>bcrypt 沿用 OpenBSD <code>crypt_blowfish</code> 的历史字母表，索引 0 是 <code>.</code> 不是 <code>A</code>。</p>
-<p>直接 <code>base64_decode($bcrypt_part)</code> 得到<strong>完全错误的字节</strong> —— silent failure，没有报错。要解 bcrypt 内部的 salt / hash 必须用专门的字母表映射，或者干脆别解（业务代码 <code>password_verify()</code> 就够了）。</p>
-<h2 id="主流-hash-格式的-salt-编码对比">主流 hash 格式的 salt 编码对比</h2>
-<p>放一起看，差异只在算法和字母表 —— <strong>salt 原始长度（16 字节 / 128 bit）和编码方式（base64 无 padding）三家全一致</strong>，这是密码学共识的”足够防 rainbow table”门槛：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Hash 格式</th><th>原始 salt</th><th>编码字母表</th><th>编码后字符数</th></tr></thead><tbody><tr><td><strong>argon2id</strong>（PHC）</td><td>16 字节</td><td>标准 <code>A-Z a-z 0-9 + /</code></td><td>22</td></tr><tr><td><strong>bcrypt</strong></td><td>16 字节</td><td>私有 <code>./ A-Z a-z 0-9</code></td><td>22</td></tr><tr><td><strong>scrypt / PBKDF2</strong>（PHC）</td><td>16 字节</td><td>标准</td><td>22</td></tr></tbody></table>
-<p>→ 这也解释了为什么把 bcrypt hash 喂给 <code>base64_decode()</code> silent failure：算法是 base64，但字母表对不上，输出字节全是垃圾。</p>
-<p><a href="https://www.rfc-editor.org/rfc/rfc9106">RFC 9106 (Argon2)</a> / <a href="https://github.com/P-H-C/phc-string-format/blob/master/phc-sf-spec.md">PHC string format spec</a> / <a href="https://www.password-hashing.net/">Password Hashing Competition 主页</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260521-pgrep-vs-ps-grep/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-pgrep-vs-ps-grep/" data-astro-cid-d6qgp232>pgrep / pkill 替代 ps | grep</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>按进程名 / 命令行查 PID，默认手势是 <code>pgrep</code>，不是 <code>ps | grep</code>。两个老问题 <code>pgrep</code> 一次性修了。</p>
-<h2 id="1-自匹配陷阱">1. 自匹配陷阱</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">ps</span><span style="color:#032F62"> aux</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#032F62"> node</span></span>
-<span class="line"><span style="color:#6A737D"># zhaoyifan  9012  ...  node server.js</span></span>
-<span class="line"><span style="color:#6A737D"># zhaoyifan 61234  ...  grep node                   ← grep 自己也被列出来</span></span></code></pre>
-<p><code>grep node</code> 这条命令行本身就含 <code>node</code>，会<strong>匹配到自己</strong>。古早绕过手段是 <code>grep '[n]ode'</code>——用字符类骗 grep 不匹配自己（字符串 <code>[n]ode</code> 在正则里展开成 <code>node</code>，但字面上不再包含 <code>node</code> 子串，所以 grep 自己那行不被匹配）。</p>
-<p>更隐蔽的问题是<strong>假阳性</strong>：<code>grep node</code> 不光匹配命令叫 <code>node</code> 的，<strong>还匹配整行任何字段含 <code>node</code> 的</strong>——USER 叫 <code>node</code> 的、路径含 <code>node-exporter</code> 的、TTY 含 <code>node</code> 的统统中招。</p>
-<p><code>pgrep</code> 设计上<strong>按字段查</strong>（默认匹配 process name，<code>-f</code> 匹配完整命令行），不是 grep 整行——既排除自己的 PID，也不会被 USER / 路径里的同字符串拐进去：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">pgrep</span><span style="color:#005CC5"> -lf</span><span style="color:#032F62"> node</span></span>
-<span class="line"><span style="color:#6A737D"># 9012 node server.js</span></span>
-<span class="line"><span style="color:#6F42C1">pgrep</span><span style="color:#005CC5"> -x</span><span style="color:#032F62"> node</span><span style="color:#6A737D">            # 精确等于（process name 完全匹配，不含参数）</span></span></code></pre>
-<h2 id="2-脚本里的退出码语义">2. 脚本里的退出码语义</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># pgrep —— 退出码即答案</span></span>
-<span class="line"><span style="color:#D73A49">if</span><span style="color:#6F42C1"> pgrep</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> caffeinate</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> /dev/null</span><span style="color:#24292E">; </span><span style="color:#D73A49">then</span><span style="color:#005CC5"> ...</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># ps | grep —— ps 永远 0，得靠 grep -q + 排除自己</span></span>
-<span class="line"><span style="color:#D73A49">if</span><span style="color:#6F42C1"> ps</span><span style="color:#032F62"> aux</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#005CC5"> -v</span><span style="color:#032F62"> grep</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#005CC5"> -q</span><span style="color:#032F62"> caffeinate</span><span style="color:#24292E">; </span><span style="color:#D73A49">then</span><span style="color:#005CC5"> ...</span></span></code></pre>
-<p><code>ps</code> 的工作是「打印出来」不是「找有没有」，所以没匹配也算成功——退出码语义全靠后面的 <code>grep</code> 承担。</p>
-<h2 id="配套-pkill--一步杀">配套 pkill —— 一步杀</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">pkill</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> caffeinate</span><span style="color:#6A737D">                  # 等价 kill $(pgrep -f caffeinate)</span></span>
-<span class="line"><span style="color:#6F42C1">pkill</span><span style="color:#005CC5"> -9</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> long-running-task</span><span style="color:#6A737D">        # SIGKILL 强杀</span></span>
-<span class="line"><span style="color:#6F42C1">pkill</span><span style="color:#005CC5"> -HUP</span><span style="color:#032F62"> nginx</span><span style="color:#6A737D">                     # 发 SIGHUP 让 nginx reload 配置（不止于杀）</span></span></code></pre>
-<p><code>pgrep</code> 和 <code>pkill</code> 共用同一套 flag 模型，会一个自动会另一个。</p>
-<h2 id="常用-flag">常用 flag</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>flag</th><th>作用</th></tr></thead><tbody><tr><td><code>-l</code></td><td>输出 PID + 进程名（不加只有 PID）</td></tr><tr><td><code>-f</code></td><td>匹配<strong>完整命令行</strong>而不止进程名——<code>caffeinate -i -t 300</code> 这种带参数的必须用 <code>-f</code></td></tr><tr><td><code>-x</code></td><td>精确匹配 process name（默认是子串匹配，没 <code>-x</code> 时 <code>pgrep ode</code> 也会命中 <code>node</code>）</td></tr><tr><td><code>-u &#x3C;user></code></td><td>限定某用户（多用户机才有意义；单用户 Mac 上等同不加）</td></tr><tr><td><code>-P &#x3C;ppid></code></td><td>找某 PPID 的所有<strong>子进程</strong>（debug 进程树用）</td></tr><tr><td><code>-n</code> / <code>-o</code></td><td>newest / oldest 各取一个</td></tr><tr><td><code>-d,</code></td><td>用逗号分隔多个 PID（喂给别的工具，见下）</td></tr><tr><td><code>-i</code></td><td>忽略大小写</td></tr></tbody></table>
-<h2 id="跟-ps-组合而不是-ps--grep">跟 ps 组合而不是 ps | grep</h2>
-<p>想看进程的 CPU / 内存 / start 时间，<strong>让 pgrep 出 PID、ps 取详情</strong>——把第 1 节那两个 grep bug 一起绕过：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">ps</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> "$(</span><span style="color:#6F42C1">pgrep</span><span style="color:#005CC5"> -d,</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> caffeinate)"</span><span style="color:#005CC5"> -o</span><span style="color:#032F62"> pid,ppid,user,%cpu,%mem,stat,start,command</span></span></code></pre>
-<p><code>pgrep -d,</code> 输出逗号分隔的 PID 列表，<code>ps -p</code> 直接吃。<code>ps</code> 本身的列<strong>不</strong>写死——<code>ps -axo pid,user,%cpu,...</code> 也能自由挑列；pgrep + ps -p 的核心优势是省掉 <code>| grep</code> 这一步，而不是控列。</p>
-<h2 id="平台差异">平台差异</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>工具</th><th align="center">macOS</th><th align="center">Linux</th><th align="center">BSD</th></tr></thead><tbody><tr><td><code>pgrep</code> / <code>pkill</code></td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td><code>pidof</code></td><td align="center">❌</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td><code>pwait</code></td><td align="center">❌</td><td align="center">✅</td><td align="center">✅</td></tr></tbody></table>
-<p><code>pidof</code> 是 Linux 独有的「按名字查 PID」简化版，macOS 上没有——用 <code>pgrep</code> 全平台通吃。</p>
-<p><code>man pgrep</code>、<code>man pkill</code> 看完整 flag。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260521-shellcheck/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-shellcheck/" data-astro-cid-d6qgp232>shellcheck —— 抓 set -e 漏过的坑</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>set -euo pipefail</code> 是 runtime 早退；<a href="https://www.shellcheck.net/">shellcheck</a> 是 parse 时静态分析——抓 <code>set -e</code> 漏过的写法层 bug。部署 / 迁移 / CI 脚本两个都要上。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> shellcheck</span><span style="color:#6A737D">     # 或：sudo apt install shellcheck</span></span>
-<span class="line"><span style="color:#6F42C1">shellcheck</span><span style="color:#032F62"> deploy.sh</span></span></code></pre>
-<h2 id="set--e-漏过的-5-条">set -e 漏过的 5 条</h2>
+<p>门槛不高：一台 24/7 在线的 Linux VPS + 会配 WireGuard 和 BGP 就够。</p>
+<h2 id="dn42us-不是官方入口">dn42.us 不是官方入口</h2>
+<p>官方主站是 <strong>dn42.eu</strong>（wiki + registry 说明都在这）。<strong>dn42.us</strong> 是成员 <code>xuu</code> 自建的一个节点门户，挂着他自己的 wiki / paste / git 镜像等服务——它本身就是「在 DN42 里对外提供服务」的活样板，别把它当成注册入口。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260622-turnkey-linux-appliances/" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="chip" data-astro-cid-d6qgp232>linux</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-22T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-22</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="tag" data-astro-cid-d6qgp232>#linux</a><a href="/tags/debian/" class="tag" data-astro-cid-d6qgp232>#debian</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260622-turnkey-linux-appliances/" data-astro-cid-d6qgp232>TurnKey Linux：预装好应用栈的 Debian 服务器镜像</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>想快速起一台 WordPress / Nextcloud / GitLab，从零装 Debian → 配栈 → 加固 → 设备份要几十步。<a href="https://www.turnkeylinux.org/">TurnKey Linux</a> 把这些提前做完，打包成 100+ 个开箱即用镜像（<em>appliance</em>）：下载 → 开机 → 向导设密码，几分钟能用。</p>
+<h2 id="不是黑箱底座就是一台纯-debian">不是黑箱：底座就是一台纯 Debian</h2>
+<p>除少数自研组件，底座是官方仓库里<strong>未改动的</strong> Debian 二进制包。所以全部 Debian 文档、<code>apt</code> 命令、排错经验都通用，维护起来跟一台普通 Debian 无异。当前主线 v18.x = Debian 12 (Bookworm)。</p>
+<p>每个镜像自带 TurnKey Core：</p>
 <ul>
-<li><strong>SC2155</strong> <code>local x=$(cmd)</code> —— <code>local</code> / <code>declare</code> / <code>export</code> 自身返回 0，里头 <code>$(cmd)</code> 失败被吞，<code>set -e</code> 也救不了。修：先 <code>local x</code> 再 <code>x=$(cmd)</code></li>
-<li><strong>SC2086</strong> unquoted <code>$VAR</code> —— <code>rm $FILE</code> 在 <code>FILE="a b"</code> 时删两个文件，word splitting / pathname expansion 会拆开。默认 <code>"$VAR"</code></li>
-<li><strong>SC2046</strong> unquoted <code>$(cmd)</code> —— 同上但是命令替换：<code>cd $(pwd)</code> 路径含空格时炸</li>
-<li><strong>SC2068</strong> <code>$@</code> 没加引号 —— 含空格的参数被再次拆开（<code>foo "a b" c</code> 传进去变 <code>a b c</code> 三个）。修：<code>"$@"</code></li>
-<li><strong>SC2059</strong> <code>printf "$msg"</code> —— <code>$msg</code> 含 <code>%</code> 时被当 format directive，输出错乱或 format string 注入。修：<code>printf "%s" "$msg"</code></li>
+<li><code>di-live</code> 安装器 + Python 配置控制台（网络 / 重启等基础操作）</li>
+<li>Webmin 网页管理：HTTPS <code>:12321</code></li>
+<li><strong>每日自动装安全补丁</strong></li>
+<li>TKLBAM：一键加密备份（基于 Duplicity），文件 + 数据库 + 包状态一起存，可整机恢复 / 迁移</li>
 </ul>
-<h2 id="关掉警告">关掉警告</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 单行</span></span>
-<span class="line"><span style="color:#6A737D"># shellcheck disable=SC2155</span></span>
-<span class="line"><span style="color:#D73A49">local</span><span style="color:#24292E"> x</span><span style="color:#D73A49">=</span><span style="color:#24292E">$(</span><span style="color:#6F42C1">some_legit_command</span><span style="color:#24292E">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># 整文件（紧跟 shebang）</span></span>
-<span class="line"><span style="color:#6A737D">#!/usr/bin/env bash</span></span>
-<span class="line"><span style="color:#6A737D"># shellcheck disable=SC2086,SC2046</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#6A737D"># ~/.shellcheckrc 或项目根 .shellcheckrc</span></span>
-<span class="line"><span style="color:#24292E">disable</span><span style="color:#D73A49">=</span><span style="color:#032F62">SC1090-SC1100</span></span></code></pre>
-<p><code>disable=all</code>（v0.8+）关全部——通常意味着该重写。</p>
-<h2 id="ci">CI</h2>
-<p>GitHub Actions 一行：<code>shellcheck **/*.sh</code>（ubuntu runner 自带）。pre-commit 用 <a href="https://github.com/koalaman/shellcheck-precommit"><code>koalaman/shellcheck-precommit</code></a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260520-dogfooding/" data-astro-cid-d6qgp232> <a href="/tags/english/" class="chip" data-astro-cid-d6qgp232>english</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-20</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/english/" class="tag" data-astro-cid-d6qgp232>#english</a><a href="/tags/jargon/" class="tag" data-astro-cid-d6qgp232>#jargon</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260520-dogfooding/" data-astro-cid-d6qgp232>dogfooding</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>软件工程黑话之一。直译”吃自己的狗粮”，指：</p>
+<p>代价是继承了 Debian <strong>stable</strong> 的反直觉默认：软件版本冻结，<code>apt upgrade</code> 只打安全补丁、不升应用大版本。想要新版应用得等官方出新的大版本镜像，别指望 <code>apt</code> 升上去。</p>
+<h2 id="部署vm--容器--云怎么选">部署：VM / 容器 / 云怎么选</h2>
+<p>同一份 rootfs 被 TKLDev 导出成多种格式，按平台挑：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>目标平台</th><th>用哪个格式</th><th>怎么上</th></tr></thead><tbody><tr><td>VirtualBox / VMware</td><td><strong>OVA</strong>（v14.0 起官方推荐）</td><td>双击或导入向导，转换几分钟</td></tr><tr><td>Proxmox / KVM / Hyper-V</td><td>通用 hybrid <strong>ISO</strong></td><td>挂载启动，跑 <code>di-live</code> 装到磁盘</td></tr><tr><td>Proxmox（更省事）</td><td><strong>LXC 模板</strong></td><td>webUI 加 TurnKey channel 直接拉</td></tr><tr><td>OpenStack</td><td><strong>qcow2</strong></td><td>上传镜像</td></tr><tr><td>云</td><td>预建 <strong>AMI</strong> 等</td><td>市场直接开</td></tr></tbody></table>
+<p>非 headless 构建（ISO/OVA）在<strong>首次开机</strong>跑向导设 root / 应用密码 + 网络；headless 构建（LXC/云/Docker）在<strong>首次登录</strong>初始化，随机 root 密码要去日志里读。之后应用走 <code>https://&#x3C;ip>/</code>，系统管理走 Webmin <code>https://&#x3C;ip>:12321</code>。</p>
 <blockquote>
-<p><strong>公司内部员工把自己开发的产品当日常工具用，靠真实使用暴露 QA / metrics 抓不到的体验问题。</strong></p>
+<p>KVM/QEMU 不需要特殊格式，官方明确「直接用 ISO 就行」。</p>
 </blockquote>
-<p>更体面的同义说法是 <em>drinking your own champagne</em>。</p>
-<p>1988 年微软内部一封题为 “Eating our own Dog Food” 的邮件（经理 Paul Maritz 发出）让这个说法在科技圈固定下来，沿用至今。</p>
-<h2 id="为什么-qa--单元测试替代不了">为什么 QA / 单元测试替代不了</h2>
-<p>QA 跟着 checklist 点一遍验<strong>功能存在</strong>；dogfooding 验<strong>长期真实使用下的体感</strong> —— 慢、绕路、别扭、不直觉。这些既不会触发断言，也写不进测试用例。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>行为</th><th>算 dogfooding 吗</th></tr></thead><tbody><tr><td>团队每天用自己写的内部 CRM</td><td>✅</td></tr><tr><td>自己做金融 SaaS 但从不开账户跑投顾流程</td><td>❌</td></tr><tr><td>QA 跟着用例点一遍</td><td>❌（缺「真实工作场景 + 长期使用」）</td></tr></tbody></table>
-<h2 id="失败模式internal-build--public-build">失败模式：internal build ≠ public build</h2>
-<p>dogfooding 失效的经典姿势是：<strong>自己用的版本跟客户拿到的不是同一个</strong>。</p>
-<p>Anthropic 在 2026-04-23 关于 Claude Code 质量退化的 <a href="https://www.anthropic.com/engineering/april-23-postmortem">postmortem</a> 里坦白：员工用的是带内部 flag 的 test build，客户用的是 public build。其中一个缓存清理 bug 在 internal build 里被另一个并行实验掩盖了，员工 dogfooding 完全没暴露问题，客户端持续退化超过两周才定位。</p>
-<p>改进措施第一条：<strong>让内部员工用 exact public build</strong>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260520-utf8mb4-0900-ai-ci/" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="chip" data-astro-cid-d6qgp232>mysql</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-20</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/mysql/" class="tag" data-astro-cid-d6qgp232>#mysql</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260520-utf8mb4-0900-ai-ci/" data-astro-cid-d6qgp232>MySQL utf8mb4_0900_ai_ci 拼读</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>后缀是<strong>正交标志</strong>，按 <code>&#x3C;charset>_&#x3C;Unicode 版本>_&#x3C;accent>_&#x3C;case></code> 拆读：</p>
+<h2 id="docker-也能跑但那是胖容器且官方已掉队">Docker 也能跑，但那是「胖容器」且官方已掉队</h2>
+<p>Docker 镜像本质就是「文件系统 + 元数据」，从那份 rootfs 再导一个天经地义——但和 Docker 的哲学天生不合：</p>
 <ul>
-<li><code>utf8mb4</code>：字符集</li>
-<li><code>0900</code>：Unicode 9.0 UCA（Unicode Collation Algorithm）</li>
-<li><code>ai</code>：<em>accent insensitive</em>，重音不敏感</li>
-<li><code>ci</code>：<em>case insensitive</em>，大小写不敏感</li>
+<li>标准容器跑<strong>一个进程</strong>（PID 1 = 应用）；TurnKey 是<strong>一整套系统</strong>（init + cron + ssh + Webmin + 应用 + 数据库），只能做成 <em>full-OS system container</em>，行为像 LXC。用 <code>/usr/sbin/start.sh</code> 一次拉起所有服务再 drop 到 shell，退出 shell 服务就停，日常得靠 SSH。</li>
+<li>TurnKey 用 <strong>systemd</strong> 管服务，Docker 默认不支持 → 报 <code>System has not been booted with systemd as init system (PID 1)</code>。官网自己标注 Docker 文档 <strong>“does not work as intended”</strong>，社区反馈构建已坏。</li>
 </ul>
-<p>换后两位就拼出整个网格：<code>_as_cs</code>（严格区分）、<code>_as_ci</code>（保重音忽略大小写）、<code>_bin</code>（纯二进制）。</p>
-<p>非显然之处在它<strong>真正按 UCA 处理 Unicode 等价</strong>，老的 <code>utf8mb4_general_ci</code> 全部按字节比，结果不可预测：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#032F62"> 'café'</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'cafe'</span><span style="color:#24292E">;   </span><span style="color:#6A737D">-- 1（_ai_ci 忽略重音；general_ci 为 0）</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#032F62"> 'ß'</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'ss'</span><span style="color:#24292E">;         </span><span style="color:#6A737D">-- 1（UCA 定义为等价；general_ci 为 0）</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#032F62"> 'Ａ'</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> 'A'</span><span style="color:#24292E">;         </span><span style="color:#6A737D">-- 1（全角 = 半角；general_ci 为 0）</span></span>
-<span class="line"><span style="color:#D73A49">SELECT</span><span style="color:#032F62"> '😀'</span><span style="color:#D73A49"> &#x3C;</span><span style="color:#032F62"> '😁'</span><span style="color:#24292E">;        </span><span style="color:#6A737D">-- 按 Unicode 9.0 顺序可预测；general_ci 不可预测</span></span></code></pre>
-<p>8.0 把默认从 <code>utf8mb4_general_ci</code> 换到这里就是为了这条「正确性」。Unicode 出新版时会跟进新 collation（如未来 <code>utf8mb4_1400_ai_ci</code>），<strong>版本号 pin 在 collation 名里</strong>，老 collation 永久保留，不会改语义破坏老库。</p>
-<p>参考 <a href="https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-sets.html">Unicode Character Sets · MySQL 8 docs</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260519-llm-orchestration-layers/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-19T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-19</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/langgraph/" class="tag" data-astro-cid-d6qgp232>#langgraph</a><a href="/tags/python/" class="tag" data-astro-cid-d6qgp232>#python</a><a href="/tags/architecture/" class="tag" data-astro-cid-d6qgp232>#architecture</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260519-llm-orchestration-layers/" data-astro-cid-d6qgp232>LLM 应用编排三层：Workflow / Agent / Function Calling</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>讨论 LLM 应用编排，<strong>workflow、agent、function calling</strong> 是三个绕不过去的基础词；外加一个编排框架（LangGraph / CrewAI / Pydantic AI / OpenAI Agents SDK 任选其一）就构成完整讨论。它们<strong>不是平行关系</strong> —— 先分清各自位置，再谈选型，问题会简单很多。</p>
-<h2 id="三层位置图">三层位置图</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>[ 应用形态 ]  Workflow（图固定） /  Agent（图运行时才长出来）</span></span>
-<span class="line"><span>                              ↓ 用</span></span>
-<span class="line"><span>[ 编排框架 ]  LangGraph：节点 + 边 + 共享 state</span></span>
-<span class="line"><span>                              ↓ 调</span></span>
-<span class="line"><span>[ LLM 协议 ]  Function Calling：强约束 JSON schema</span></span></code></pre>
+<p>结论：想把 TurnKey 容器化，真正顺的是 <strong>LXC（Proxmox）不是 Docker</strong>；需要 Docker 生态时直接找单应用官方镜像（<code>nextcloud</code>、<code>gitlab/gitlab-ce</code>）。</p>
+<h2 id="tkldev整个库可复现的根子">TKLDev：整个库可复现的根子</h2>
+<p>「全开源、可复现」不是口号——TKL 用一个叫 <strong>TKLDev 的 appliance</strong>（一台专门用来 build 的机器）产出库里全部镜像。每个 appliance 不是手工装出来的一坨，而是一个小 git 仓库里的<strong>声明式配方</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>组成</th><th>作用</th></tr></thead><tbody><tr><td><code>Makefile</code></td><td>入口；声明继承链（你的 app → <code>common</code> → <code>core</code>），别的不用重写</td></tr><tr><td><code>plan/</code></td><td>要装的 Debian 包清单（支持 cpp 式条件），等于 <code>apt install</code> 的声明版</td></tr><tr><td><code>conf.d/</code></td><td>构建期跑的编号 shell 脚本，做配置（建库、设服务、加固）</td></tr><tr><td><code>overlay/</code></td><td>文件系统覆盖层，按目标路径摆好、构建时拷进根文件系统</td></tr><tr><td><code>removelist</code></td><td>要从镜像里删掉的文件</td></tr></tbody></table>
+<p>因为有继承，做一个自定义 appliance 往往只写几十行。构建：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> core</span><span style="color:#6A737D">            # 或你自己的 product 仓库</span></span>
+<span class="line"><span style="color:#6F42C1">make</span><span style="color:#6A737D">               # 从源码构建，产出 build/product.iso</span></span>
+<span class="line"><span style="color:#6F42C1">make</span><span style="color:#032F62"> clean</span><span style="color:#6A737D">         # 清理重来</span></span></code></pre>
+<p>底层靠 <code>fab</code>（把装包 + 配置 + 打包串成可复现流水线）和 <code>deck</code>（基于 overlay 的分层快照，反复 build 时秒回滚）。要定制自己的加固 / 内部证书版镜像、又想像官方一样可复现可分发，就用它——思路和 Dockerfile / Nix / Packer 同源：把「怎么造一台机器」写成代码。</p>
+<p>源与文档：<a href="https://www.turnkeylinux.org/">https://www.turnkeylinux.org/</a> · <a href="https://www.turnkeylinux.org/docs/tkldev">TKLDev 文档</a></p> </div> </div> </article><article class="card card-shell" data-href="/posts/260620-spec-kit-vs-superpowers-vs-gstack/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-20</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/claude-code/" class="tag" data-astro-cid-d6qgp232>#claude-code</a><a href="/tags/agent/" class="tag" data-astro-cid-d6qgp232>#agent</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260620-spec-kit-vs-superpowers-vs-gstack/" data-astro-cid-d6qgp232>spec-kit vs. superpowers vs. gstack:三种 coding agent 工作流框架</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>三个都是套在 coding agent(主要是 Claude Code) 外面的工作流框架，但把它们放一起比不是因为像，而是因为<strong>它们赌的「正确性从哪来」是三个不同的答案</strong>:spec-kit 赌<strong>规格</strong>,superpowers 赌<strong>流程纪律</strong>,gstack 赌<strong>多视角评审</strong>。选型不是比谁命令多，是认领你当前最缺哪一种。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>框架</th><th>出身</th><th>赌注</th><th>载体</th></tr></thead><tbody><tr><td>spec-kit</td><td>GitHub 官方</td><td>规格是可执行的唯一真理</td><td><code>specify</code> CLI + <code>/speckit.*</code> 命令</td></tr><tr><td>superpowers</td><td>Jesse Vincent (obra)</td><td>流程纪律逼出质量</td><td>自动触发的 skills 插件</td></tr><tr><td>gstack</td><td>Garry Tan (YC)</td><td>多角色评审补单视角盲区</td><td>23 个纯 Markdown slash command</td></tr></tbody></table>
+<p>三者都是 MIT，都不止支持 Claude Code(各自能跨 7-30+ 个 agent),都不锁厂商——这些都不是差异点，差异全在下面。</p>
+<h2 id="spec-kit规格是唯一真理来源">spec-kit:规格是唯一真理来源</h2>
+<p>GitHub 官方的 <strong>Spec-Driven Development</strong>。核心主张一句话：<strong>规格是源码，代码是规格的编译产物</strong>。你维护的是 <code>spec.md</code> 不是 <code>.py</code>;改需求改 spec，再 implement。产物 <code>spec.md → plan.md → tasks.md</code> 被当成 agent 无关的规格层——换 agent 不换规格。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#032F62"> tool</span><span style="color:#032F62"> install</span><span style="color:#032F62"> specify-cli</span><span style="color:#005CC5"> --from</span><span style="color:#032F62"> git+https://github.com/github/spec-kit.git@vX.Y.Z</span></span>
+<span class="line"><span style="color:#6F42C1">specify</span><span style="color:#032F62"> init</span><span style="color:#032F62"> my-project</span><span style="color:#005CC5"> --integration</span><span style="color:#032F62"> copilot</span></span></code></pre>
+<p>然后在 agent 里按顺序走命令，每步落一个文件：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>/speckit.constitution   # 立项目宪法 (不可动的原则)</span></span>
+<span class="line"><span>/speckit.specify        # 写「做什么 / 为什么」→ spec.md</span></span>
+<span class="line"><span>/speckit.clarify        # 澄清模糊点 (可选，建议 plan 前跑)</span></span>
+<span class="line"><span>/speckit.plan           # 定技术栈方案 → plan.md</span></span>
+<span class="line"><span>/speckit.tasks          # 拆可执行任务 → tasks.md</span></span>
+<span class="line"><span>/speckit.implement      # 执行全部任务</span></span></code></pre>
+<p>最适合：需求先行、跨会话、多文件的功能开发，团队要一层标准化的规格。</p>
+<h2 id="superpowers用流程纪律逼出质量">superpowers:用流程纪律逼出质量</h2>
+<p>Jesse Vincent(GitHub <code>obra</code>) 的 <strong>skills 框架</strong>。它不给你命令表，给一套<strong>自动触发</strong>的 skills——agent 一旦识别到该用某 skill 就必须用，把「偷懒跳步」这条路堵死。内核是真正的红绿 TDD + 每个任务派新鲜子代理，两段式审查 (先查规格符合、再查代码质量)。</p>
+<p>Claude Code 装法一行：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">/plugin</span><span style="color:#032F62"> install</span><span style="color:#032F62"> superpowers@claude-plugins-official</span></span></code></pre>
+<p>强制流水线 (skills 依次自动登场):</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>brainstorming               # 苏格拉底式追问，细化想法 → design doc</span></span>
+<span class="line"><span>using-git-worktrees         # 设计批准后开隔离工作区</span></span>
+<span class="line"><span>writing-plans               # 拆成 2-5 分钟的小任务，带确切路径 + 完整代码</span></span>
+<span class="line"><span>subagent-driven-development # 每任务派新鲜子代理，两段式 review</span></span>
+<span class="line"><span>test-driven-development     # RED → GREEN → REFACTOR，先写失败测试</span></span>
+<span class="line"><span>requesting-code-review      # 对着 plan 审，critical 问题卡住不放行</span></span></code></pre>
+<p>最适合：在意测试纪律和执行严谨度，想防 agent「不写测试 / 静默改需求」。</p>
+<h2 id="gstack把一个-agent-变成一支团队">gstack:把一个 agent 变成一支团队</h2>
+<p>Garry Tan(YC 总裁) 的设置：<strong>23 个专家 + 8 个 power tool</strong>,全是纯 Markdown slash command，无专有 runtime。它赌<strong>结构化 prompt 而非自建工具</strong>才是对的抽象层——每个角色只约束 agent 这一阶段盯一件事，靠视角切换补单一视角的盲区。</p>
+<p>装法 (全局装 + <code>./setup</code>):</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#005CC5"> --single-branch</span><span style="color:#005CC5"> --depth</span><span style="color:#005CC5"> 1</span><span style="color:#032F62"> https://github.com/garrytan/gstack.git</span><span style="color:#032F62"> ~/.claude/skills/gstack</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#24292E">  &#x26;&#x26; </span><span style="color:#005CC5">cd</span><span style="color:#032F62"> ~/.claude/skills/gstack</span><span style="color:#24292E"> &#x26;&#x26; </span><span style="color:#6F42C1">./setup</span></span></code></pre>
+<p>一个 Sprint 里角色依次登场 (Think → Plan → Build → Review → Test → Ship → Reflect):</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>/office-hours       # YC 办公时间：这产品该不该做</span></span>
+<span class="line"><span>/plan-ceo-review    # CEO:重想问题本身</span></span>
+<span class="line"><span>/plan-eng-review    # 工程经理：锁架构 + 测试策略</span></span>
+<span class="line"><span>/plan-design-review # 设计师：评设计维度，抓 AI slop</span></span>
+<span class="line"><span>/review             # Staff 工程师：挖生产级 bug</span></span>
+<span class="line"><span>/qa                 # QA:真开浏览器点流程，修完再验</span></span>
+<span class="line"><span>/cso                # 安全官:OWASP + STRIDE 审计</span></span>
+<span class="line"><span>/ship               # 发布工程师：测试 + PR + 覆盖率</span></span></code></pre>
+<p>外加 <code>/codex</code>(拉 OpenAI Codex 做跨模型二次 review)、<code>/careful</code> <code>/freeze</code> <code>/guard</code>(危险命令 / 目录锁护栏) 这类 power tool。最适合：一个人当全栈团队，要多视角决策 + 质量 / 安全 / 发布把关。</p>
+<h2 id="组合与选型">组合与选型</h2>
+<p>三者不互斥，常叠着用：<strong>gstack 多角色起草 → superpowers 头脑风暴 + TDD 执行 → spec-kit 固化成 spec/plan/tasks</strong>。但别为叠而叠，先认领你当前最缺的那一环。</p>
+<p>口诀：<strong>缺规格标准化用 spec-kit，缺执行纪律用 superpowers，缺多视角把关用 gstack。</strong></p> </div> </div> </article><article class="card card-shell" data-href="/posts/260619-gitignore-slash-rules/" data-astro-cid-d6qgp232> <a href="/tags/git/" class="chip" data-astro-cid-d6qgp232>git</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-19T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-19</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260619-gitignore-slash-rules/" data-astro-cid-d6qgp232>gitignore 里斜杠的位置决定匹配范围</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>gitignore 的匹配范围全看斜杠在哪，记两条：</p>
 <ul>
-<li><strong>Function Calling</strong>：LLM API 的协议能力，给 LLM 一份 JSON Schema，逼它按 schema 输出。<strong>最底层、最稳定</strong>，OpenAI / Anthropic / Gemini 都有。</li>
-<li><strong>LangGraph</strong>：本文用的编排框架（同族还有 CrewAI / Pydantic AI / OpenAI Agents SDK 等），把流程画成「节点 + 边 + 共享 state」。<strong>工具层</strong>，本身不发明能力，只是把节点间的传递标准化。下面的位置图和分水岭判断对其他框架同样适用。</li>
-<li><strong>Workflow / Agent</strong>：两种应用形态，区别只有一个 —— <strong>控制流在你的代码手里，还是在 LLM 手里</strong>。抽象层的差异见 <a href="./260518-agent-vs-workflow">Workflow vs Agent 的本质差异</a>。</li>
+<li><strong>结尾 <code>/</code></strong> = 只匹配目录;不带 = 文件、目录通吃。</li>
+<li><strong>开头 / 中间有 <code>/</code></strong> = 锚定到仓库根目录;pattern 里完全没有斜杠 = 任意层级都匹配。</li>
 </ul>
-<p>关键认知：Workflow 和 Agent <strong>不是 LangGraph 提供的「模式开关」</strong>，是你用同一套 LangGraph + Function Calling <strong>拼出来的两种不同形态</strong>。LangGraph 两种都能做，分水岭在你怎么写边。</p>
-<h2 id="function-calling-是两种形态共用的底层">Function Calling 是两种形态共用的底层</h2>
-<p>同一个 function calling API，两种用法决定你做出的是 workflow 还是 agent：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>维度</th><th>Workflow 用法</th><th>Agent 用法</th></tr></thead><tbody><tr><td>给 LLM 几个 function</td><td>1 个（= 输出 schema）</td><td>N 个（每个工具一个）</td></tr><tr><td><code>tool_choice</code></td><td><code>required</code>，必须调</td><td><code>auto</code>，LLM 自己挑</td></tr><tr><td>function 的角色</td><td>数据合同</td><td>可调用工具</td></tr><tr><td>下一步谁定</td><td>Python 看返回字段</td><td>LLM 看 observation 决定</td></tr><tr><td>LangChain 写法</td><td><code>llm.with_structured_output(Schema)</code></td><td><code>llm.bind_tools([t1, t2, ...])</code></td></tr></tbody></table>
-<p>底层 HTTP 请求几乎一样，差别只在<strong>给几个 tool</strong>、<strong><code>tool_choice</code> 设成什么</strong>。</p>
+<h2 id="结尾斜杠对文件加--是静默-bug">结尾斜杠：对文件加 <code>/</code> 是静默 bug</h2>
+<p><code>.idea</code> 是目录，<code>.idea/</code> 和 <code>.idea</code> 效果一样——但 <code>/</code> 更精确，显式表达「我忽略的是目录」,哪天真有个叫 <code>.idea</code> 的文件不会被误伤。JetBrains / GitHub 模板都用 <code>.idea/</code>。</p>
+<p>反过来对文件就是坑：<code>.DS_Store</code> 是 macOS 生成的<strong>文件</strong>,写成 <code>.DS_Store/</code> 会<strong>匹配不到任何东西</strong>(没有叫这名的目录),规则静默失效、不报错。目标是文件时绝不能加 <code>/</code>。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">.idea/</span><span style="color:#6A737D">         # 目录 → 带斜杠更严谨</span></span>
+<span class="line"><span style="color:#6F42C1">.DS_Store</span><span style="color:#6A737D">      # 文件 → 加斜杠就失效</span></span></code></pre>
+<h2 id="开头斜杠monorepo-的陷阱">开头斜杠:monorepo 的陷阱</h2>
+<p><code>node_modules/</code>(无开头斜杠) 匹配任意深度，等价于 <code>**/node_modules/</code>——所以 <code>**/</code> 在这里是多余的。<code>/node_modules/</code> 只锚定根目录那一个，子包里的会漏掉。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>node_modules/                ← /node_modules/ 只命中这个</span></span>
+<span class="line"><span>packages/app/node_modules/   ← 只有无斜杠写法 / **/ 才命中</span></span></code></pre>
+<p>monorepo(pnpm / turborepo 子包) 一定用能匹配嵌套的 <code>node_modules/</code>,别写 <code>/node_modules/</code>。</p>
+<p><code>**/</code> 真正有用是「中间匹配多层」:<code>docs/**/tmp</code>(docs 下任意深度的 tmp)、<code>src/**/*.log</code>。</p>
+<p><code>.DS_Store</code>、<code>.idea/</code> 这类跟项目无关的编辑器 / 系统噪音，放全局 ignore(<code>git config --global core.excludesFile</code>) 一次，所有仓库都干净。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260617-nerd/" data-astro-cid-d6qgp232> <a href="/tags/english/" class="chip" data-astro-cid-d6qgp232>english</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-17T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-17</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/english/" class="tag" data-astro-cid-d6qgp232>#english</a><a href="/tags/jargon/" class="tag" data-astro-cid-d6qgp232>#jargon</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260617-nerd/" data-astro-cid-d6qgp232>nerd</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>装 <a href="https://www.nerdfonts.com/">Nerd Fonts</a> 时顺手查的词。最反常识的一点先记住：</p>
 <blockquote>
-<p>一句话：<strong>function calling 是协议层；workflow / agent 是你怎么用这个协议</strong>。</p>
+<p><strong>nerd 不是任何东西的首字母缩写，是一个被「造」出来的词。</strong></p>
 </blockquote>
-<h2 id="demo分水岭具体在代码哪一行">demo：分水岭具体在代码哪一行</h2>
-<p>配套两个文件，<strong>同一段业务逻辑（理财顾问会议笔记 → 抽字段 → 合规检查 → 分支生成文档）、两种控制流形态</strong>，对照看一目了然：</p>
+<p>很多人以为它是 acronym（比如流传的 “Northern Electric Research and Development”），全是 folk etymology（民间附会）。真实出处是 1950 年 Dr. Seuss（苏斯博士）童书 <em>If I Ran the Zoo</em> 里他自造的一个生物名，次年被学生俚语借去当「书呆子」用，固定至今。</p>
+<h2 id="词义随圈子翻转">词义随圈子翻转</h2>
 <ul>
-<li><a href="./260519-llm-orchestration-layers/financial_workflow.py"><code>financial_workflow.py</code></a> —— workflow 版，每个关键点标 <code>[WORKFLOW vs AGENT]</code> 告诉你这一行换成 agent 会变什么样</li>
-<li><a href="./260519-llm-orchestration-layers/financial_agent.py"><code>financial_agent.py</code></a> —— 同业务的 agent 版，每个关键点标 <code>[WORKFLOW → AGENT]</code> 给出实际改造结果</li>
+<li>原意带贬义：书呆子、不擅社交、土气。</li>
+<li>科技圈现在基本是 <strong>褒义甚至自豪的自称</strong>：某领域的狂热钻研者。<code>a computer nerd</code> / <code>a math nerd</code>。说 “I’m a nerd” 是骄傲，不是骂人。</li>
 </ul>
-<p>workflow 文件里三段注释对应三个设计决策，正好覆盖上面三层：</p>
-<ol>
-<li><strong>Function Calling 层</strong> —— <code>with_structured_output(Pydantic)</code> 锁死 LLM 返回 schema，下游节点拿到的是类型化对象，不是裸文本要 <code>json.loads</code> 加 <code>try/except</code></li>
-<li><strong>LangGraph 层</strong> —— <code>state</code> 是节点间的「信封」，节点 <code>return dict</code> 由 LangGraph 自动 merge，加节点 / 改顺序 / 插 human-in-the-loop 都不动函数签名</li>
-<li><strong>应用形态层（分水岭）</strong> —— <code>add_conditional_edges</code> 的路由参数：是你的 Python 函数 → workflow；是 <code>tools_condition</code>（读 LLM last message 判定）→ agent</li>
-</ol>
-<p>对照两个文件最直接的三组改造：</p>
+<p><code>nerdfonts.com</code> 的命名就是这层自嘲幽默——「只有我们这些爱折腾终端的 nerd 才在意的字体」。</p>
+<h2 id="近义词别混">近义词别混</h2>
 
 
 
@@ -1263,74 +299,261 @@
 
 
 
-<table><thead><tr><th>Workflow 里</th><th>Agent 里换成</th></tr></thead><tbody><tr><td><code>route_by_risk</code> Python 路由函数</td><td><code>tools_condition</code>（读 LLM <code>tool_calls</code>）</td></tr><tr><td><code>TypedDict</code> 业务字段 state</td><td><code>MessagesState</code>（只有 <code>messages</code> 列表）</td></tr><tr><td><code>(state) → dict</code> 节点签名</td><td><code>@tool</code> 装饰的业务函数</td></tr></tbody></table>
-<p>那一瞬间失去的代码控制力 = agent 多出来的不确定性的具体形态，也是你为什么需要 trace / eval / guardrail 那一整套基础设施的根因。</p>
-<h2 id="跑起来">跑起来</h2>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">python</span><span style="color:#005CC5"> -m</span><span style="color:#032F62"> venv</span><span style="color:#032F62"> .venv</span><span style="color:#24292E"> &#x26;&#x26; </span><span style="color:#005CC5">source</span><span style="color:#032F62"> .venv/bin/activate</span></span>
-<span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> requirements.txt</span></span>
-<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "OPENAI_API_KEY=sk-xxx"</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> .env</span></span>
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>词</th><th>含义</th><th>色彩</th></tr></thead><tbody><tr><td><strong>nerd</strong></td><td>技术 / 学术钻研者</td><td>中性 → 褒义</td></tr><tr><td><strong>geek</strong></td><td>极客，痴迷某领域</td><td>偏褒义</td></tr><tr><td><strong>dork</strong></td><td>笨拙、傻气</td><td>偏贬义</td></tr><tr><td><strong>dweeb</strong></td><td>呆子</td><td>贬义</td></tr></tbody></table>
+<p>口诀：<strong>nerd / geek 在科技圈是夸，dork / dweeb 是损人。</strong></p> </div> </div> </article><article class="card card-shell" data-href="/posts/260616-cn2-gia-9929-cmin2/" data-astro-cid-d6qgp232> <a href="/tags/network/" class="chip" data-astro-cid-d6qgp232>network</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-16T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-16</time> <span class="updated" data-astro-cid-d6qgp232>
+updated <time datetime="2026-07-06T00:00:00.000Z" data-astro-cid-d6qgp232>2026-07-06</time> </span> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/network/" class="tag" data-astro-cid-d6qgp232>#network</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260616-cn2-gia-9929-cmin2/" data-astro-cid-d6qgp232>CN2 GIA / 9929 / CMIN2：三网回国线路分层</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>回国线路好坏，本质是数据包<strong>进国内后走「精品网」还是「普通骨干网」</strong>——三网都能按 <strong>普通线 / 优质线 / 顶级线</strong> 三档理解（VPS、跨境专线圈的俗称）。看线的前提：<strong>回程比去程重要</strong>——下载占 90%+，回程决定体感。</p>
+<h2 id="as-号就是线路名的真身">AS 号就是线路名的真身</h2>
+<p><em>AS</em>（Autonomous System，自治系统）= 由同一机构统一管理、对外采用统一路由策略的一组网络。互联网是「网络的网络」，每个大网络就是一个 AS。</p>
+<ul>
+<li><em>ASN</em>（AS 号）是网络层的身份证，全球唯一；BGP 选路靠它：IP 像门牌号定位主机，ASN 像区域号——BGP 先决定送到哪个 AS，再在 AS 内细分到具体地址。</li>
+<li>ASN 原本 16 位（1–65535），号段不够用扩成了 32 位——移动的 AS58453 / AS58807 就是 32 位号，所以位数明显比电信 AS4809 长。</li>
+</ul>
+<p>所谓 CN2 GIA、9929、CMIN2，本质就是 AS4809、AS9929、AS58807——运营商不同精品骨干网的「身份证号」。</p>
+<h2 id="精品网-vs-普通骨干差在哪">精品网 vs 普通骨干：差在哪</h2>
+<p>普通骨干（电信 163、联通 169、移动 CMNET）是共享、超售的大网，国际带宽受限，晚高峰拥堵、抖动大。精品网是<strong>独立轻负载链路</strong>，绕开大量公共交换点（IX），<strong>一跳入境、一跳落地</strong>，所以延迟低、丢包少、高峰稳——代价是带宽小、价格贵。这就是 CN2 GIA 被当成回国「黄金标准」的根因。</p>
+<p>优质线是<strong>半程精品</strong>：只在出国段走精品网，国内段仍回普通骨干（电信 CN2 GT 典型——国内段走 163，出境才汇入 CN2），比纯普通线好，但高峰国内段仍会堵；顶级线<strong>全程精品</strong>、不降级，才是天花板。</p>
+<h2 id="三网分层总表">三网分层总表</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>运营商</th><th>普通线（普通骨干）</th><th>优质线（半程精品）</th><th>顶级线（全程精品）</th></tr></thead><tbody><tr><td>电信</td><td>163（AS4134）</td><td>CN2 GT（AS4809，国内仍走 163）</td><td><strong>CN2 GIA</strong>（AS4809）</td></tr><tr><td>联通</td><td>169（AS4837）</td><td>—（无 GT 式半程档）</td><td><strong>9929 / CUII</strong>（AS9929）</td></tr><tr><td>移动</td><td>CMNET（AS9808）</td><td>CMI（AS58453）</td><td><strong>CMIN2</strong>（AS58807，CMI 的 N2 精品网）</td></tr></tbody></table>
+<p>综合性能大致：<strong>CN2 GIA ≈ 9929 ≥ CMIN2 > CN2 GT / CTGNet > 163 / 169 / CMNET</strong>。</p>
+<p>商家宣传只说「CN2」是泛称，要追问是 GT 还是 GIA——两者差价常有 2–3 倍。</p>
+<p>选线一句话：电信用户选 CN2 GIA，联通用户选 9929，移动用户选 CMIN2；三网优化 VPS 就是按运营商把三条线分流，是目前回国线路的天花板。</p>
+<h2 id="怎么自测拿到的是哪条线">怎么自测拿到的是哪条线</h2>
+<p>两个工具都跑在被测的境外 VPS 上：</p>
+<p><strong><a href="https://nodequality.com/">NodeQuality</a></strong>——一键综合测评，除硬件 / IP 质量外，其 <code>backroute_trace</code> 会自动判断三网回程各走哪条骨干，最省事：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">bash</span><span style="color:#032F62"> &#x3C;(</span><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -sL</span><span style="color:#032F62"> https://run.nodequality.com)</span></span></code></pre>
+<p><strong><a href="https://github.com/nxtrace/NTrace-core">NextTrace</a></strong>（<code>nexttrace</code>）——想手动细看回程路径用它，每跳直接标 AS 号 + 地理位置，比裸 <code>traceroute</code> 清楚。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260615-xxd-hex-dump/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-15T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-15</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260615-xxd-hex-dump/" data-astro-cid-d6qgp232>xxd —— 字节级显微镜，看出 BOM / CRLF / 不可见字符</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>文本工具看不出问题 (多了空格？BOM?tab 还是空格？CRLF 还是 LF?) 时，用 <code>xxd</code> 把真实字节 dump 出来。它随 Vim 分发，Linux / mac 基本自带。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#032F62"> file.sh</span></span>
+<span class="line"><span style="color:#6A737D"># 00000000: 2321 2f62 696e 2f62 6173 680a       #!/bin/bash.</span></span>
+<span class="line"><span style="color:#6A737D">#           └偏移   └每字节 hex(两字节一组)     └ASCII(不可打印显示 .)</span></span></code></pre>
+<p>三列：<strong>偏移地址</strong> / <strong>每字节十六进制</strong> / <strong>对应 ASCII</strong>(不可打印字符用 <code>.</code> 占位)。行尾那个 <code>0a</code> 就是 LF;如果是 <code>0d0a</code> 就是 CRLF——这是肉眼分不出、<code>xxd</code> 一眼看穿的典型场景。查 UTF-8 BOM 同理：<code>head -c3 file | xxd</code> 出现 <code>efbbbf</code> 即有 <a href="260612-utf8-bom-breaks-tools.md">BOM</a>。</p>
+<p>常用 flag:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#005CC5"> -l</span><span style="color:#005CC5"> 16</span><span style="color:#032F62"> file</span><span style="color:#6A737D">       # 只看前 16 字节(-l = length)</span></span>
+<span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#005CC5"> -s</span><span style="color:#005CC5"> 100</span><span style="color:#032F62"> file</span><span style="color:#6A737D">      # 从第 100 字节开始(-s = seek)</span></span>
+<span class="line"><span style="color:#005CC5">echo</span><span style="color:#005CC5"> -n</span><span style="color:#032F62"> hi</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> xxd</span><span style="color:#6A737D">     # 看一段文本的字节: 6869</span></span></code></pre>
+<p><code>-r</code>(reverse) 能把 hex dump 还原成二进制，于是 <code>xxd</code> 成了简易二进制编辑器——dump、改 hex、再写回：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#032F62"> file</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> dump.hex</span><span style="color:#6A737D">      # 导出</span></span>
+<span class="line"><span style="color:#6A737D"># 编辑 dump.hex 改某个字节</span></span>
+<span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> dump.hex</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> file</span><span style="color:#6A737D">   # 还原写回</span></span></code></pre>
+<p>同类：<code>od -c</code>、<code>hexdump -C</code>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260613-shebang-env-bash/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-13T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-13</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260613-shebang-env-bash/" data-astro-cid-d6qgp232>#!/bin/bash vs #!/usr/bin/env bash</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>区别就一句：<code>#!/bin/bash</code> 写死路径只认 <code>/bin/bash</code>，<code>#!/usr/bin/env bash</code> 让 <code>env</code> 去 <code>$PATH</code> 里找第一个 <code>bash</code>。</p>
+<p>为什么要绕 <code>env</code>：shebang 那行<strong>只接受绝对路径，自己不查 PATH</strong>。但 <code>bash</code> 在各机器路径不一（<code>/bin</code>、<code>/usr/bin</code>、<code>/opt/homebrew/bin</code>…），写死就不通用。<code>env</code> 几乎永远在固定的 <code>/usr/bin/env</code>,而它<strong>能</strong>查 PATH——于是用「固定位置的 env」把「查 PATH」这个能力接进 shebang。<code>python3</code> / <code>node</code> 同理。</p>
+<p>macOS 上这不是风格问题而是会报错。Apple 不用 GPLv3，自带的 <code>/bin/bash</code> 冻结在 <strong>3.2（2007 年）</strong>;Homebrew 装的新 bash（5.x）在 <code>/opt/homebrew/bin/bash</code>,排在 PATH 前面：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "/bin/bash → $(</span><span style="color:#6F42C1">/bin/bash</span><span style="color:#005CC5"> --version</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> head</span><span style="color:#005CC5"> -1</span><span style="color:#032F62">)"</span></span>
+<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "env bash  → $(</span><span style="color:#6F42C1">env</span><span style="color:#032F62"> bash </span><span style="color:#005CC5">--version</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> head</span><span style="color:#005CC5"> -1</span><span style="color:#032F62">)"</span></span>
+<span class="line"><span style="color:#6A737D"># /bin/bash → GNU bash, version 3.2.57(1)-release</span></span>
+<span class="line"><span style="color:#6A737D"># env bash  → GNU bash, version 5.3.9(1)-release</span></span></code></pre>
+<p>同一台机器差两个大版本。脚本一旦用到 <code>declare -A</code>（关联数组）、<code>mapfile</code> 这类 bash 4+ 特性，<code>#!/bin/bash</code> 在 mac 上直接 <code>command not found</code>,必须 <code>#!/usr/bin/env bash</code> 才跑到 5.x。</p>
+<p>代价是 <code>env bash</code> 跟着 PATH 走——PATH 被改就换了 bash。所以反过来，<strong>要绝对确定环境</strong>的场景（root cron、系统安装脚本）才用写死的 <code>#!/bin/bash</code>,不受 PATH 干扰。</p>
+<p>还有第三种 <code>#!/bin/sh</code>——它跑的根本不一定是 bash。<code>sh</code> 是<strong>接口名</strong>(POSIX shell),实现各发行版不同:Debian / Ubuntu 是 <code>dash</code>,macOS 是一份独立的 bash 3.2 拷贝。而且 <strong>bash 以 <code>sh</code> 名字被调用时自动进入 POSIX 模式</strong>,关掉 <code>[[ ]]</code>、<code>declare -A</code>、数组等 <em>bashism</em>。于是高频翻车：脚本写 <code>#!/bin/sh</code> 却用了数组，在 mac(sh 是宽松的 bash) 侥幸能跑，push 到 Debian CI(sh 是 dash) 立刻 <code>[[: not found</code>——「本地能跑」不等于「符合 POSIX」,两边的 <code>sh</code> 是不同程序。</p>
+<p>口诀：要 bash 特性 → <code>#!/usr/bin/env bash</code>(默认);锁死环境 (root cron / 安装脚本)→ <code>#!/bin/bash</code>;只用 POSIX、求最大可移植 → <code>#!/bin/sh</code>(配 <code>shellcheck</code> 抓 bashism)。</p>
+<p>顺带 <code>env</code> 还能临时改环境跑命令，调「环境变量导致的 bug」常用：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">env</span><span style="color:#032F62"> FOO=bar</span><span style="color:#032F62"> ./script.sh</span><span style="color:#6A737D">   # 只给这次运行设 FOO，不污染当前 shell</span></span>
+<span class="line"><span style="color:#6F42C1">env</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> bash</span><span style="color:#6A737D">               # -i 空环境启动</span></span>
+<span class="line"><span style="color:#6F42C1">env</span><span style="color:#005CC5"> -u</span><span style="color:#032F62"> PATH</span><span style="color:#032F62"> command</span><span style="color:#6A737D">       # -u 临时删掉某变量</span></span></code></pre> </div> </div> </article><article class="card card-shell" data-href="/posts/260612-utf8-bom-breaks-tools/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-12T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-12</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260612-utf8-bom-breaks-tools/" data-astro-cid-d6qgp232>UTF-8 的 BOM 没用，还会静默破坏脚本和 JSON</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><em>BOM</em>(Byte Order Mark) 是文件最开头一段<strong>肉眼不可见</strong>的字节，本职是标记编码的字节序:UTF-16 用 <code>FE FF</code>(大端)/ <code>FF FE</code>(小端) 告诉读取方高位在前还是低位在前。</p>
+<p>关键非显然点：<strong>UTF-8 根本没有字节序问题</strong>——它的码元就是单字节，不存在「谁在前」。所以 UTF-8 的 BOM(<code>EF BB BF</code>) 纯属多余，标准也不推荐。但 Windows 系工具 (记事本、旧 Excel、部分 .NET) 会自动加，于是这三个看不见的字节就成了静默 bug 源：</p>
+<ul>
+<li><strong>shebang 失效</strong>:第一行变成 <code>&#x3C;BOM>#!/bin/bash</code>,内核读头两字节看到的是 BOM 不是 <code>#!</code>,脚本不被当可执行 (参见 <a href="260610-shebang-kernel-magic.md">shebang 是 magic number</a>)。</li>
+<li><strong>JSON 解析报错</strong>:<code>json.loads</code> / 严格 parser 把开头 BOM 当非法字符。</li>
+<li><strong>PHP “headers already sent”</strong>:<code>&#x3C;?php</code> 前那三个 BOM 字节被当作输出先发出去，之后 <code>header()</code> / <code>setcookie()</code> 全废。</li>
+</ul>
+<p>都因为字节在位置 0、又看不见，排查起来格外费时。检测和清除：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">head</span><span style="color:#005CC5"> -c3</span><span style="color:#032F62"> file</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> xxd</span><span style="color:#6A737D">                  # efbbbf 就是有 UTF-8 BOM</span></span>
+<span class="line"><span style="color:#6F42C1">sed</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> '1s/^\xEF\xBB\xBF//'</span><span style="color:#032F62"> file</span><span style="color:#6A737D">      # 删掉开头 BOM</span></span>
+<span class="line"><span style="color:#6F42C1">file</span><span style="color:#032F62"> file</span><span style="color:#6A737D">                            # 输出含 "with BOM" 也能认</span></span></code></pre>
+<p>一句话:Unix 工具链默认无 BOM,UTF-8 存盘一律选「无 BOM」那个选项。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260610-shebang-kernel-magic/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-10T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-10</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260610-shebang-kernel-magic/" data-astro-cid-d6qgp232>shebang 是内核认的 magic number，不是 shell 语法</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>#!</code> 不是 bash 的语法，而是文件开头的 <strong>magic number</strong>:字节 <code>0x23 0x21</code>。当你 <code>./script</code> 执行一个文件，是 Linux 内核的 <code>execve(2)</code> 读头两个字节，看到 <code>#!</code> 就把后面那行当解释器路径，改成执行「解释器 + 脚本路径」。名字 = <code>#</code>(sharp) + <code>!</code>(bang)。</p>
+<p>这带来几个非显然的硬约束：</p>
+<ul>
+<li><strong>必须是文件最开头</strong>——<code>#!</code> 前面不能有空行、空格或 BOM，否则内核认不出，文件会被当普通数据。</li>
+<li><strong>解释器后只允许一个参数</strong>。<code>#!/usr/bin/env python -u</code> 里 <code>python -u</code> 在多数系统被当作<strong>单个</strong>参数传给 <code>env</code>,于是去找名叫 <code>"python -u"</code> 的程序、失败。要传 flag 得在脚本内另想办法，别堆在 shebang 上。</li>
+<li>没有 shebang 的可执行文件，内核 <code>execve</code> 直接 <code>ENOEXEC</code>,是调用它的 shell 兜底用 <code>/bin/sh</code> 跑——所以「没写 shebang 也能跑」靠的是 shell 不是内核。</li>
+</ul>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">head</span><span style="color:#005CC5"> -c2</span><span style="color:#032F62"> script.sh</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> xxd</span><span style="color:#6A737D">   # 00000000: 2321  →  #!</span></span></code></pre>
+<p>选 <code>#!/bin/bash</code> 还是 <code>#!/usr/bin/env bash</code>,见 <a href="260613-shebang-env-bash.md">shebang vs env bash</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260608-plutil-vs-plistbuddy/" data-astro-cid-d6qgp232> <a href="/tags/macos/" class="chip" data-astro-cid-d6qgp232>macos</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-08T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-08</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/macos/" class="tag" data-astro-cid-d6qgp232>#macos</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260608-plutil-vs-plistbuddy/" data-astro-cid-d6qgp232>plutil vs PlistBuddy</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>macOS 自带两个改 <code>.plist</code> 的命令行工具，功能重叠却谁也没淘汰谁——因为出身不同：</p>
+<ul>
+<li><code>/usr/bin/plutil</code>：给开发者的<strong>文件级</strong>工具，在 <code>PATH</code> 里，Apple 主推、文档全。强项是校验和编码转换。</li>
+<li><code>/usr/libexec/PlistBuddy</code>：早期系统安装器留下的<strong>键值级</strong>编辑器。<code>libexec</code> = 内部 helper，故意不进 <code>PATH</code>，文档几乎没有，但改深层嵌套最顺手。</li>
+</ul>
+<p>（plist = Apple 的配置文件格式，相当于苹果版 JSON/YAML；一个格式两种编码：XML 可读 / binary 紧凑。）</p>
+<h2 id="改一个嵌套值两种风格">改一个嵌套值：两种风格</h2>
+<p>PlistBuddy 用类 DSL 命令，<code>:</code> 表层级，<code>Set</code> 不用声明类型：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">/usr/libexec/PlistBuddy</span><span style="color:#005CC5"> -c</span><span style="color:#032F62"> "Print :Server:Port"</span><span style="color:#032F62"> demo.plist</span><span style="color:#6A737D">     # 8080</span></span>
+<span class="line"><span style="color:#6F42C1">/usr/libexec/PlistBuddy</span><span style="color:#005CC5"> -c</span><span style="color:#032F62"> "Set :Server:Port 9090"</span><span style="color:#032F62"> demo.plist</span></span></code></pre>
+<p>plutil 用选项参数，<code>.</code> 表层级，且<strong>必须声明类型</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">plutil</span><span style="color:#005CC5"> -replace</span><span style="color:#032F62"> Server.Port</span><span style="color:#005CC5"> -integer</span><span style="color:#005CC5"> 7070</span><span style="color:#032F62"> demo.plist</span></span>
+<span class="line"><span style="color:#6F42C1">plutil</span><span style="color:#005CC5"> -extract</span><span style="color:#032F62"> Server.Port</span><span style="color:#032F62"> raw</span><span style="color:#032F62"> demo.plist</span><span style="color:#6A737D">                     # 7070</span></span></code></pre>
+<p>两个都能读写任意路径的 plist，binary 编码也能直接改（不用先转 XML）。</p>
+<h2 id="只有-plutil-能做的校验--转码">只有 plutil 能做的：校验 + 转码</h2>
+<p>这是 PlistBuddy 没有的能力，CI / 构建脚本里最常用：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">plutil</span><span style="color:#005CC5"> -lint</span><span style="color:#032F62"> demo.plist</span><span style="color:#6A737D">               # demo.plist: OK   ← 语法体检</span></span>
+<span class="line"><span style="color:#6F42C1">plutil</span><span style="color:#005CC5"> -convert</span><span style="color:#032F62"> binary1</span><span style="color:#032F62"> demo.plist</span><span style="color:#6A737D">    # XML → binary</span></span>
+<span class="line"><span style="color:#6F42C1">plutil</span><span style="color:#005CC5"> -convert</span><span style="color:#032F62"> xml1</span><span style="color:#032F62"> demo.plist</span><span style="color:#6A737D">       # binary → XML（方便 diff）</span></span>
+<span class="line"><span style="color:#6F42C1">plutil</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> demo.plist</span><span style="color:#6A737D">                  # 人类可读打印，binary 也认</span></span></code></pre>
+<p><code>plutil -p</code> 把 binary 也解出来给你看：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>{</span></span>
+<span class="line"><span>  "CFBundleVersion" => "1.0"</span></span>
+<span class="line"><span>  "Server" => {</span></span>
+<span class="line"><span>    "Port" => 9090</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<h2 id="怎么选">怎么选</h2>
+<ul>
+<li><strong>体检 / 转码 / 在 CI 里跑</strong> → <code>plutil</code>，<code>-lint</code> 和 <code>-convert</code> 是它独有</li>
+<li><strong>改具体值、尤其深层嵌套</strong> → <code>PlistBuddy</code>，<code>Set/Add/Delete :a:b</code> 比 <code>-replace a.b -type</code> 少打字、不用记类型</li>
+</ul>
+<p>顺带：Apple 已预告未来 <code>defaults</code> 命令只认 preferences domain，按文件路径乱改 plist 的老用法要迁到这两个工具——所以它们短期不会消失。</p>
+<p>See <code>man plutil</code> / <code>/usr/libexec/PlistBuddy -h</code>.</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260604-git-interpret-trailers/" data-astro-cid-d6qgp232> <a href="/tags/git/" class="chip" data-astro-cid-d6qgp232>git</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-04T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-04</time> <span class="updated" data-astro-cid-d6qgp232>
+updated <time datetime="2026-07-06T00:00:00.000Z" data-astro-cid-d6qgp232>2026-07-06</time> </span> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260604-git-interpret-trailers/" data-astro-cid-d6qgp232>git interpret-trailers：读写 commit message trailer 的官方工具</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><em>trailer</em> 是 commit message 末尾形如邮件头的 <code>Key: Value</code> 行——<code>Signed-off-by</code> / <code>Reviewed-by</code> / <code>Co-authored-by</code>。读写交给 <code>git interpret-trailers</code>,<strong>别 grep/awk</strong>:按字段位置取值会 silently drop(同 <a href="191203-author-stats.md">按作者统计</a> 的定界符坑),只有 git 知道哪些行真是 trailer。</p>
+<p>判定很严，同时满足才算 trailer、否则当正文:<strong>连续的含 <code>:</code> 行 + 前面隔一个空行 + 位于消息末尾</strong>(或 <code>format-patch</code> 的 <code>---</code> 前)。所以 body 中段的 <code>URL: ...</code>、或紧贴正文没空行的，都不算——这是手写 parser 最易错处。</p>
+<p><strong>读</strong>用 <code>--parse</code>,只吐已有 trailer、忽略配置：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> log</span><span style="color:#005CC5"> --format=%B</span><span style="color:#005CC5"> -n1</span><span style="color:#032F62"> HEAD</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> git</span><span style="color:#032F62"> interpret-trailers</span><span style="color:#005CC5"> --parse</span></span></code></pre>
+<p><strong>写</strong>用 <code>--trailer</code>,默认追加在 trailer 块末;与最后一条完全相同则不重复加：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> interpret-trailers</span><span style="color:#005CC5"> --in-place</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">  --trailer</span><span style="color:#032F62"> 'Reviewed-by: Bob &#x3C;bob@example.com>'</span><span style="color:#032F62"> msg.txt</span></span></code></pre>
+<p>用 <code>trailer.*</code> 配置把常用 key 定义成简写。<strong>别名必须是完整 key 的前缀</strong>(大小写不敏感)——所以 <code>ack</code> 能映射 <code>Acked-by</code>,却没法拿 <code>sign</code> 映射 <code>Reviewed-by</code>。再配 <code>.cmd</code> 让别名自带取值逻辑，<code>--trailer ack</code> 不给值也能生成：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#032F62"> trailer.ack.key</span><span style="color:#032F62"> 'Acked-by'</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#032F62"> trailer.ack.cmd</span><span style="color:#032F62"> 'echo "$(git config user.name) &#x3C;$(git config user.email)>"'</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> interpret-trailers</span><span style="color:#005CC5"> --trailer</span><span style="color:#032F62"> ack</span><span style="color:#6A737D">   # 自动补 Acked-by: 你的名字 &#x3C;邮箱></span></span></code></pre>
+<p><code>.ifexists</code> / <code>.ifmissing</code> 再单独控这个别名的重复与缺失行为。</p>
+<p>最常见是 <code>commit-msg</code> 钩子里自动补 trailer(<code>$1</code> 是 git 传入的消息文件，<code>--trim-empty</code> 丢掉空值行):</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6A737D">#!/bin/sh</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> interpret-trailers</span><span style="color:#005CC5"> --trim-empty</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">  --trailer</span><span style="color:#032F62"> "git-version: $(</span><span style="color:#6F42C1">git</span><span style="color:#032F62"> describe)"</span><span style="color:#032F62"> "</span><span style="color:#005CC5">$1</span><span style="color:#032F62">"</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> "</span><span style="color:#005CC5">$1</span><span style="color:#032F62">.new"</span><span style="color:#24292E"> &#x26;&#x26; </span><span style="color:#6F42C1">mv</span><span style="color:#032F62"> "</span><span style="color:#005CC5">$1</span><span style="color:#032F62">.new"</span><span style="color:#032F62"> "</span><span style="color:#005CC5">$1</span><span style="color:#032F62">"</span></span></code></pre>
+<p><code>git help interpret-trailers</code> 看全。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260603-reviewdog-lint-to-pr/" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="chip" data-astro-cid-d6qgp232>devops</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-03T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-03</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="tag" data-astro-cid-d6qgp232>#devops</a><a href="/tags/ci/" class="tag" data-astro-cid-d6qgp232>#ci</a><a href="/tags/lint/" class="tag" data-astro-cid-d6qgp232>#lint</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260603-reviewdog-lint-to-pr/" data-astro-cid-d6qgp232>reviewdog：把 linter 输出贴成 PR 行内评论</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://github.com/reviewdog/reviewdog">reviewdog</a> 是一个通用适配器：吃任意 linter 的 stdout，按 <em>errorformat</em> 解析，然后把结果作为 <strong>PR 行内评论</strong>贴回 GitHub / GitLab。它自己不做静态分析，只解决”已有的 lint 结果怎么进 review”这一段。</p>
+<p>价值全在它默认<strong>只报 diff 改动的行</strong>。整仓库跑 lint 有两个老问题：老代码一堆历史 warning 淹没真正要看的；报错埋在 CI 日志里 reviewer 根本不点开。reviewdog 用 <code>-filter-mode</code> 把结果过滤到本次改动，再走 review API 顶到代码行上，两个问题一起消。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># PHPStan checkstyle 输出 → 只评论本次 PR 改动行</span></span>
+<span class="line"><span style="color:#6F42C1">vendor/bin/phpstan</span><span style="color:#032F62"> analyse</span><span style="color:#005CC5"> --error-format=checkstyle</span><span style="color:#D73A49"> |</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#6F42C1">  reviewdog</span><span style="color:#005CC5"> -f=checkstyle</span><span style="color:#005CC5"> -reporter=github-pr-review</span></span></code></pre>
+<p><code>-f</code> 选输入格式：内置一批（<code>-f=golint</code> / <code>-f=checkstyle</code>…，<code>reviewdog -list</code> 看全），没有就用 <code>-efm='%f:%l:%c: %m'</code> 自定义 scanf 风格的 pattern。</p>
+<h2 id="-filter-mode-决定报多少"><code>-filter-mode</code> 决定报多少</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>值</th><th>报什么</th></tr></thead><tbody><tr><td><code>added</code>（默认）</td><td>只报新增 / 修改的行</td></tr><tr><td><code>diff_context</code></td><td>改动行 ±N 行（默认 N=3）的上下文内</td></tr><tr><td><code>file</code></td><td>只要文件被改了，整文件的问题都报</td></tr><tr><td><code>nofilter</code></td><td>全报，不过滤</td></tr></tbody></table>
+<p>默认 <code>added</code> 是最克制的，新加的代码出新问题才说话——这正是”零历史噪音”的来源。本地想在 push 前自查，用 <code>-diff</code> 喂一份 diff：<code>reviewdog -diff="git diff origin/main"</code>。</p>
+<h2 id="两个-github-reporterauth-不一样">两个 GitHub reporter，auth 不一样</h2>
+<p><code>-reporter</code> 有十来个（<code>gitlab-mr-discussion</code> / <code>bitbucket-code-report</code> / <code>gerrit-change-review</code>…），GitHub 上常用的两个<strong>底层 API 不同，因此认证和能力都不同</strong>，选错会白配半天：</p>
+<ul>
+<li><strong><code>github-pr-review</code></strong>：走普通 review-comment API，只要一个 PAT（<code>REVIEWDOG_GITHUB_API_TOKEN</code>，private 仓库需 <code>repo</code> scope）。<strong>不依赖 reviewdog 的服务器</strong>，而且支持 <strong>code suggestion</strong>（评论里带可一键 apply 的改法）。</li>
+<li><strong><code>github-pr-check</code></strong>：走 GitHub <strong>Check API</strong>，能在 PR 顶部生成正经的 check 状态（可当 merge 门禁）。代价是 Check Runs 这套 API 普通 PAT 调不动——要么在 Actions 里用 <code>secrets.GITHUB_TOKEN</code>，要么装 reviewdog 的 GitHub App 配 <code>REVIEWDOG_TOKEN</code>。<strong>不支持 code suggestion</strong>。</li>
+</ul>
+<p>口诀：想要能一键采纳的修改建议、配置最省 → <code>github-pr-review</code>；想要红绿状态做 merge gate → <code>github-pr-check</code>。</p>
+<h2 id="同类工具其实是两条线">同类工具其实是两条线</h2>
+<p>reviewdog 属于 <strong>rule-based</strong> 那条——规则确定、几乎零误判，只把已有 linter 接进 review。同线还有 <a href="https://github.com/super-linter/super-linter">Super-Linter</a>（一个容器塞几十种 linter，开箱即用）和 <a href="https://www.sonarsource.com/products/sonarcloud/">SonarQube/SonarCloud</a>（带质量看板、覆盖率、quality gate，重）。</p>
+<p>另一条是 <strong>AI-based</strong>：<a href="https://www.coderabbit.ai/">CodeRabbit</a>、<a href="https://github.com/qodo-ai/pr-agent">Qodo</a> 读 diff 给自然语言评论，能看出逻辑层面的问题，但有概率出错。两条线不冲突：rule-based 兜底确定性问题，AI-based 补人类视角。</p>
+<p>装：<code>brew install reviewdog/tap/reviewdog</code>。文档：<a href="https://github.com/reviewdog/reviewdog">https://github.com/reviewdog/reviewdog</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260603-git-fixup-autosquash/" data-astro-cid-d6qgp232> <a href="/tags/git/" class="chip" data-astro-cid-d6qgp232>git</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-03T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-03</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260603-git-fixup-autosquash/" data-astro-cid-d6qgp232>git commit --fixup 配 rebase autosquash 收拢历史</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>code review 改意见时，最容易留下 <code>fix typo</code>、<code>address review</code> 这种噪音 commit。<code>--fixup</code> + autosquash 让每个补丁自动并回它对应的原始 commit，历史只剩有意义的那几个。</p>
+<p>发现 commit <code>A</code> 要补个改动时，不要新开一个独立 commit，而是：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> commit</span><span style="color:#005CC5"> --fixup</span><span style="color:#032F62"> A</span><span style="color:#6A737D">      # message 自动写成 "fixup! &#x3C;A 的标题>"</span></span></code></pre>
+<p><code>A</code> 是占位符，换成目标 commit 的任意 <em>commit-ish</em>:hash(<code>abc1234</code>)、<code>HEAD~2</code>、分支名，或 <code>:/登录</code> 模糊匹配 message。下文 <code>A</code> / <code>B</code> 同理，只是示意图里给 commit 起的标签。</p>
+<p>之后一把 rebase 收拢：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> rebase</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> A^</span></span></code></pre>
+<p>打开 todo 时 git 已经<strong>自动</strong>把 <code>fixup!</code> 那条挪到 <code>A</code> 正下方、并标好 <code>fixup</code> 动作，直接存盘退出即可吃进 <code>A</code>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>pick   A   feat: 登录接口</span></span>
+<span class="line"><span>fixup  A'  fixup! feat: 登录接口   ← 自动排序 + 自动标记</span></span>
+<span class="line"><span>pick   B   feat: 注册接口</span></span></code></pre>
+<p><code>~/.gitconfig</code> 里这行是关键——它让 <code>rebase -i</code> <strong>默认</strong>就开自动排序，否则每次得手动加 <code>--autosquash</code>,或在编辑器里自己挪行：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#6F42C1">[rebase]</span></span>
+<span class="line"><span style="color:#D73A49">  autosquash</span><span style="color:#24292E"> = true</span></span></code></pre>
+<p>两个易混点：</p>
+<ul>
+<li><strong><code>--fixup</code> vs <code>--squash</code></strong>:<code>fixup!</code> 丢弃补丁的 message，完全用原 commit 的;<code>squash!</code> 把两条 message 拼起来让你编辑。改 bug 用 fixup，要补充说明用 squash。</li>
+<li><strong>autosquash 只改 <code>-i</code> 的默认行为</strong>,不是全自动——仍要你手动触发一次 <code>git rebase -i</code>,它只负责把 <code>fixup!</code>/<code>squash!</code> 排到位。</li>
+</ul>
+<p><code>--fixup</code> 还能直接指向”动了哪个文件就修哪个 commit”:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> commit</span><span style="color:#005CC5"> --fixup</span><span style="color:#032F62"> :/登录</span><span style="color:#6A737D">    # 模糊匹配最近 message 含"登录"的 commit</span></span></code></pre>
+<p>See <code>man git-rebase</code> → <code>--autosquash</code>,<code>man git-commit</code> → <code>--fixup</code>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260603-git-includeif-identity/" data-astro-cid-d6qgp232> <a href="/tags/git/" class="chip" data-astro-cid-d6qgp232>git</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-03T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-03</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/git/" class="tag" data-astro-cid-d6qgp232>#git</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260603-git-includeif-identity/" data-astro-cid-d6qgp232>git 按目录自动切换提交身份 (includeIf)</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>多身份 (公司 / 个人) 最容易出的事是忘记切换、用错 email 提交。<code>includeIf</code> 让 git 按<strong>仓库所在目录</strong>自动加载对应身份，零手动操作。</p>
+<p><code>~/.gitconfig</code>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#6F42C1">[user]</span></span>
+<span class="line"><span style="color:#D73A49"> name</span><span style="color:#24292E"> = Your Name        </span><span style="color:#6A737D"># 默认 name;故意不写 email</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> financial_workflow.py</span><span style="color:#6A737D">   # workflow 版：固定流程，编译期就能 draw_ascii</span></span>
-<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> financial_agent.py</span><span style="color:#6A737D">      # agent 版：LLM 决定每一步，stream 打印实际 loop</span></span></code></pre>
-<p>样本对白故意写满合规雷点（<code>绝对能保证 8% 复利</code> / <code>从来没跌过</code> / 未审批私募），所以默认走 P1 分支。把这些词删掉重跑，能看到 safe 分支怎么走。两个文件用同一段样本，方便对照输出。</p>
-<h2 id="相关词地图">相关词地图</h2>
-<p>上面三层每层都有兄弟词，列在这里方便选型时快速定位 —— 每个词的展开看各自的笔记。</p>
-<h3 id="应用形态层workflow--agent-同族">应用形态层（Workflow / Agent 同族）</h3>
+<span class="line"><span style="color:#6F42C1">[includeIf "gitdir:~/work/"]</span></span>
+<span class="line"><span style="color:#D73A49"> path</span><span style="color:#24292E"> = ~/.gitconfig_work</span></span>
+<span class="line"><span style="color:#6F42C1">[includeIf "gitdir:~/personal/"]</span></span>
+<span class="line"><span style="color:#D73A49"> path</span><span style="color:#24292E"> = ~/.gitconfig_personal</span></span></code></pre>
+<p><code>~/.gitconfig_work</code> / <code>~/.gitconfig_personal</code> 各放一行 email:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#6F42C1">[user]</span></span>
+<span class="line"><span style="color:#D73A49"> email</span><span style="color:#24292E"> = you@company.com</span></span></code></pre>
+<p>防呆关键：<strong>全局不设默认 email</strong>。任何没被规则覆盖的目录会直接报 <code>unable to auto-detect email address</code> 拒绝提交——把”忘记”变成”无法继续”,而不是悄悄用错身份提交后才发现。这一步才是护城河，<code>includeIf</code> 本身 google 5 秒可查。</p>
+<p>三个坑：</p>
 <ul>
-<li>Anthropic <a href="https://www.anthropic.com/research/building-effective-agents">《Building Effective Agents》</a> 给的 workflow 五模式：<strong>Prompt chaining / Routing / Parallelization / Orchestrator-workers / Evaluator-optimizer</strong></li>
-<li>Agent 经典模式：<strong>ReAct / Reflexion / Plan-and-Execute / Multi-agent / Swarm</strong></li>
-<li>语义重叠但定位不同：<strong>Assistant / Copilot / Chatbot / Autonomous agent</strong></li>
+<li><strong>路径结尾的 <code>/</code> 必须有</strong>:<code>gitdir:~/work/</code> 匹配该目录下所有 repo;漏了 <code>/</code> 只精确匹配 <code>~/work</code> 这一个 repo。</li>
+<li><strong>多条命中时后写的赢</strong>:git 按出现顺序逐个 include，后面覆盖前面;更具体的目录规则写在后面。</li>
+<li><strong>local 配置仍是最高优先级</strong>:某 repo 里 <code>git config --local user.email</code> 设过会盖掉 <code>includeIf</code>,这类历史 local 覆盖要清掉才轮到目录规则接管。</li>
 </ul>
-<h3 id="编排框架层langgraph-同族">编排框架层（LangGraph 同族）</h3>
+<p>验证别直接 <code>cd</code> 到父目录 (非 repo 测不出),建个临时 repo 看实际结果：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">mkdir</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> ~/work/.idtest</span><span style="color:#24292E"> &#x26;&#x26; </span><span style="color:#6F42C1">git</span><span style="color:#005CC5"> -C</span><span style="color:#032F62"> ~/work/.idtest</span><span style="color:#032F62"> init</span><span style="color:#005CC5"> -q</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#005CC5"> -C</span><span style="color:#032F62"> ~/work/.idtest</span><span style="color:#032F62"> config</span><span style="color:#032F62"> user.email</span><span style="color:#6A737D">   # → you@company.com</span></span>
+<span class="line"><span style="color:#6F42C1">rm</span><span style="color:#005CC5"> -rf</span><span style="color:#032F62"> ~/work/.idtest</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#005CC5"> --get-regexp</span><span style="color:#032F62"> includeIf</span><span style="color:#6A737D">  # 查所有规则</span></span></code></pre>
+<h2 id="另一种匹配hasconfig-按远程地址">另一种匹配:hasconfig 按远程地址</h2>
+<p>目录分不开时 (公司 / 个人 repo 混在一处),改用远程 URL 匹配：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#6F42C1">[includeIf "hasconfig:remote.*.url:git@github.com:acme/**"]</span></span>
+<span class="line"><span style="color:#D73A49"> path</span><span style="color:#24292E"> = ~/.gitconfig_work</span></span></code></pre>
 <ul>
-<li><strong>Python</strong>：LangChain / LangGraph / LlamaIndex / CrewAI / AutoGen / Pydantic AI / Haystack</li>
-<li><strong>TypeScript</strong>：Vercel AI SDK（底层 model 交互 + streaming）/ Mastra（建在 Vercel AI SDK 上加 workflows / RAG / memory，两者是分层不是并列）</li>
-<li><strong>厂商原生</strong>：OpenAI Agents SDK / Anthropic Claude Agent SDK / Google ADK / Microsoft Semantic Kernel</li>
+<li>通配符除标准 glob 外，多了 <code>**/</code> 和 <code>/**</code> 能<strong>跨多级路径</strong>匹配。<code>git@github.com:acme/**</code> = acme 这个 org 下所有 repo;<code>git@github.com:*/**</code> 则是 github 上所有 repo。</li>
+<li><strong>非显然点 (scan-ahead)</strong>:<code>gitdir:</code> 看路径就能判;但 remote URL 通常在 repo 的 <code>.git/config</code> 里，比全局 <code>includeIf</code> <strong>晚</strong>解析。git 对 <code>hasconfig</code> 特殊处理——第一次遇到这个条件时，会<strong>预扫描后面所有配置文件</strong>找 remote URL，所以晚定义的 local remote 照样命中。</li>
+<li><strong>代价</strong>:被它 include 进来的文件 (<code>~/.gitconfig_work</code>)<strong>禁止再声明任何 remote URL</strong>——否则「是否包含」会反过来取决于「被包含文件里的 remote」,形成死循环，git 直接禁掉这种写法。</li>
 </ul>
-<h3 id="llm-协议层function-calling-同族">LLM 协议层（Function Calling 同族）</h3>
-<ul>
-<li>同义 / 近义：<strong>Tool use</strong>（Anthropic 叫法）/ <strong>Tool calling</strong></li>
-<li>强约束输出：<strong>Structured Outputs / JSON mode / Guided decoding</strong></li>
-<li>新协议：<strong>MCP</strong>（Model Context Protocol，Anthropic 推的跨厂商 tool/resource 标准协议）</li>
-<li>相邻能力：<strong>Computer Use / Prompt Caching</strong></li>
-</ul>
-<h3 id="常被一起提其实在别层的词">常被一起提、其实在别层的词</h3>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>词</th><th>实际位置</th><th>关系</th></tr></thead><tbody><tr><td><strong>RAG / Retrieval</strong></td><td>另一种应用形态</td><td>和 workflow/agent 不互斥，可做节点也可做 tool</td></tr><tr><td><strong>Memory</strong></td><td>跨会话状态</td><td>和 LangGraph 的 state（会话内）不是一回事</td></tr><tr><td><strong>Tracing / Eval / Guardrails</strong></td><td>基础设施层（LangSmith / Langfuse / Arize / Helicone）</td><td>Agent 多起来后这层比框架更重要</td></tr><tr><td><strong>CoT / ToT / Self-consistency</strong></td><td>Prompt engineering 技巧</td><td>和编排同层但更内层</td></tr><tr><td><strong>Embeddings / Vector DB</strong></td><td>检索基础设施</td><td>服务 RAG，不参与编排</td></tr></tbody></table> </div> </div> </article> </section><p class="more" data-astro-cid-j7pv25f6> <a href="/archives/" data-astro-cid-j7pv25f6>→ browse all 92 notes in archives</a> </p><script>
+<p>按目录 (<code>gitdir:</code>) 仍是最简单可靠的默认，只有目录无法区分时才上 <code>hasconfig</code>。</p>
+<p>See <code>man git-config</code> → “Conditional includes”。</p> </div> </div> </article> </section><p class="more" data-astro-cid-j7pv25f6> <a href="/archives/" data-astro-cid-j7pv25f6>→ browse all 111 notes in archives</a> </p><script>
       (() => {
         const ROW = 8;       // grid-auto-rows unit, in px
         const GAP = 24;      // visual vertical gap between cards, in px (8×3)

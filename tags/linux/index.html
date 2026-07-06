@@ -8,7 +8,104 @@
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#linux</h1> <p class="page-lede" data-astro-cid-tge3q7ae>1 note</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/220728-pkgs-org-installed-packages/" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="chip" data-astro-cid-d6qgp232>linux</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="tag" data-astro-cid-d6qgp232>#linux</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-pkgs-org-installed-packages/" data-astro-cid-d6qgp232>查 Linux 包：pkgs.org 找上游 + rpm/dpkg 看本地</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>排查”这台机器上 X 是哪个版本""我想装的版本哪个发行版有”——两边问题，两类工具。</p>
+    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#linux</h1> <p class="page-lede" data-astro-cid-tge3q7ae>2 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260622-turnkey-linux-appliances/" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="chip" data-astro-cid-d6qgp232>linux</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-22T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-22</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="tag" data-astro-cid-d6qgp232>#linux</a><a href="/tags/debian/" class="tag" data-astro-cid-d6qgp232>#debian</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260622-turnkey-linux-appliances/" data-astro-cid-d6qgp232>TurnKey Linux：预装好应用栈的 Debian 服务器镜像</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>想快速起一台 WordPress / Nextcloud / GitLab，从零装 Debian → 配栈 → 加固 → 设备份要几十步。<a href="https://www.turnkeylinux.org/">TurnKey Linux</a> 把这些提前做完，打包成 100+ 个开箱即用镜像（<em>appliance</em>）：下载 → 开机 → 向导设密码，几分钟能用。</p>
+<h2 id="不是黑箱底座就是一台纯-debian">不是黑箱：底座就是一台纯 Debian</h2>
+<p>除少数自研组件，底座是官方仓库里<strong>未改动的</strong> Debian 二进制包。所以全部 Debian 文档、<code>apt</code> 命令、排错经验都通用，维护起来跟一台普通 Debian 无异。当前主线 v18.x = Debian 12 (Bookworm)。</p>
+<p>每个镜像自带 TurnKey Core：</p>
+<ul>
+<li><code>di-live</code> 安装器 + Python 配置控制台（网络 / 重启等基础操作）</li>
+<li>Webmin 网页管理：HTTPS <code>:12321</code></li>
+<li><strong>每日自动装安全补丁</strong></li>
+<li>TKLBAM：一键加密备份（基于 Duplicity），文件 + 数据库 + 包状态一起存，可整机恢复 / 迁移</li>
+</ul>
+<p>代价是继承了 Debian <strong>stable</strong> 的反直觉默认：软件版本冻结，<code>apt upgrade</code> 只打安全补丁、不升应用大版本。想要新版应用得等官方出新的大版本镜像，别指望 <code>apt</code> 升上去。</p>
+<h2 id="部署vm--容器--云怎么选">部署：VM / 容器 / 云怎么选</h2>
+<p>同一份 rootfs 被 TKLDev 导出成多种格式，按平台挑：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>目标平台</th><th>用哪个格式</th><th>怎么上</th></tr></thead><tbody><tr><td>VirtualBox / VMware</td><td><strong>OVA</strong>（v14.0 起官方推荐）</td><td>双击或导入向导，转换几分钟</td></tr><tr><td>Proxmox / KVM / Hyper-V</td><td>通用 hybrid <strong>ISO</strong></td><td>挂载启动，跑 <code>di-live</code> 装到磁盘</td></tr><tr><td>Proxmox（更省事）</td><td><strong>LXC 模板</strong></td><td>webUI 加 TurnKey channel 直接拉</td></tr><tr><td>OpenStack</td><td><strong>qcow2</strong></td><td>上传镜像</td></tr><tr><td>云</td><td>预建 <strong>AMI</strong> 等</td><td>市场直接开</td></tr></tbody></table>
+<p>非 headless 构建（ISO/OVA）在<strong>首次开机</strong>跑向导设 root / 应用密码 + 网络；headless 构建（LXC/云/Docker）在<strong>首次登录</strong>初始化，随机 root 密码要去日志里读。之后应用走 <code>https://&#x3C;ip>/</code>，系统管理走 Webmin <code>https://&#x3C;ip>:12321</code>。</p>
+<blockquote>
+<p>KVM/QEMU 不需要特殊格式，官方明确「直接用 ISO 就行」。</p>
+</blockquote>
+<h2 id="docker-也能跑但那是胖容器且官方已掉队">Docker 也能跑，但那是「胖容器」且官方已掉队</h2>
+<p>Docker 镜像本质就是「文件系统 + 元数据」，从那份 rootfs 再导一个天经地义——但和 Docker 的哲学天生不合：</p>
+<ul>
+<li>标准容器跑<strong>一个进程</strong>（PID 1 = 应用）；TurnKey 是<strong>一整套系统</strong>（init + cron + ssh + Webmin + 应用 + 数据库），只能做成 <em>full-OS system container</em>，行为像 LXC。用 <code>/usr/sbin/start.sh</code> 一次拉起所有服务再 drop 到 shell，退出 shell 服务就停，日常得靠 SSH。</li>
+<li>TurnKey 用 <strong>systemd</strong> 管服务，Docker 默认不支持 → 报 <code>System has not been booted with systemd as init system (PID 1)</code>。官网自己标注 Docker 文档 <strong>“does not work as intended”</strong>，社区反馈构建已坏。</li>
+</ul>
+<p>结论：想把 TurnKey 容器化，真正顺的是 <strong>LXC（Proxmox）不是 Docker</strong>；需要 Docker 生态时直接找单应用官方镜像（<code>nextcloud</code>、<code>gitlab/gitlab-ce</code>）。</p>
+<h2 id="tkldev整个库可复现的根子">TKLDev：整个库可复现的根子</h2>
+<p>「全开源、可复现」不是口号——TKL 用一个叫 <strong>TKLDev 的 appliance</strong>（一台专门用来 build 的机器）产出库里全部镜像。每个 appliance 不是手工装出来的一坨，而是一个小 git 仓库里的<strong>声明式配方</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>组成</th><th>作用</th></tr></thead><tbody><tr><td><code>Makefile</code></td><td>入口；声明继承链（你的 app → <code>common</code> → <code>core</code>），别的不用重写</td></tr><tr><td><code>plan/</code></td><td>要装的 Debian 包清单（支持 cpp 式条件），等于 <code>apt install</code> 的声明版</td></tr><tr><td><code>conf.d/</code></td><td>构建期跑的编号 shell 脚本，做配置（建库、设服务、加固）</td></tr><tr><td><code>overlay/</code></td><td>文件系统覆盖层，按目标路径摆好、构建时拷进根文件系统</td></tr><tr><td><code>removelist</code></td><td>要从镜像里删掉的文件</td></tr></tbody></table>
+<p>因为有继承，做一个自定义 appliance 往往只写几十行。构建：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> core</span><span style="color:#6A737D">            # 或你自己的 product 仓库</span></span>
+<span class="line"><span style="color:#6F42C1">make</span><span style="color:#6A737D">               # 从源码构建，产出 build/product.iso</span></span>
+<span class="line"><span style="color:#6F42C1">make</span><span style="color:#032F62"> clean</span><span style="color:#6A737D">         # 清理重来</span></span></code></pre>
+<p>底层靠 <code>fab</code>（把装包 + 配置 + 打包串成可复现流水线）和 <code>deck</code>（基于 overlay 的分层快照，反复 build 时秒回滚）。要定制自己的加固 / 内部证书版镜像、又想像官方一样可复现可分发，就用它——思路和 Dockerfile / Nix / Packer 同源：把「怎么造一台机器」写成代码。</p>
+<p>源与文档：<a href="https://www.turnkeylinux.org/">https://www.turnkeylinux.org/</a> · <a href="https://www.turnkeylinux.org/docs/tkldev">TKLDev 文档</a></p> </div> </div> </article><article class="card card-shell" data-href="/posts/220728-pkgs-org-installed-packages/" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="chip" data-astro-cid-d6qgp232>linux</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/linux/" class="tag" data-astro-cid-d6qgp232>#linux</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-pkgs-org-installed-packages/" data-astro-cid-d6qgp232>查 Linux 包：pkgs.org 找上游 + rpm/dpkg 看本地</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>排查”这台机器上 X 是哪个版本""我想装的版本哪个发行版有”——两边问题，两类工具。</p>
 <p><a href="https://pkgs.org/">pkgs.org</a> 把主流发行版（CentOS/RHEL/Fedora/Debian/Ubuntu/openSUSE/Arch…）的官方仓库索引到一起，按包名搜能直接看到各发行版各版本提供的版本号、依赖、下载链接。比挨个翻 <code>apt search</code> / <code>yum search</code> 快，也方便确认”上游有没有这个版本”。</p>
 <p>本地查”装了什么版本”：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Red Hat / CentOS / Fedora (rpm 系)</span></span>

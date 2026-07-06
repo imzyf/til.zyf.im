@@ -8,7 +8,69 @@
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#github</h1> <p class="page-lede" data-astro-cid-tge3q7ae>2 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260515-github-url-hidden-params/" data-astro-cid-d6qgp232> <a href="/tags/github/" class="chip" data-astro-cid-d6qgp232>github</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-15T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-15</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/github/" class="tag" data-astro-cid-d6qgp232>#github</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260515-github-url-hidden-params/" data-astro-cid-d6qgp232>GitHub URL 隐藏参数：`.diff` / `?w=1` / `compare@{时间}` 工作流</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>GitHub 网页 URL 上有一组 2012 年就存在、UI 从没暴露过的参数。LLM 工作流让它们价值翻倍 —— <code>curl</code> 一个 <code>.diff</code> URL 直接拿到纯文本 diff 喂给 prompt，比让 LLM 自己抓网页快也准。下面所有链接都点得开（用 <code>laravel/framework</code> 演示）。</p>
+    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#github</h1> <p class="page-lede" data-astro-cid-tge3q7ae>3 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260603-linguist-generated/" data-astro-cid-d6qgp232> <a href="/tags/github/" class="chip" data-astro-cid-d6qgp232>github</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-03T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-03</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/github/" class="tag" data-astro-cid-d6qgp232>#github</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260603-linguist-generated/" data-astro-cid-d6qgp232>折叠生成文件：linguist-generated vs gitlab-generated</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>生成文件（<code>dist/</code>、<code>*.min.js</code>、lock 文件）有两个麻烦：把仓库语言占比统计带歪，把 PR diff 撑出几千行。两个平台都在 <code>.gitattributes</code> 里解决，但<strong>机制差别比想象大</strong>——GitHub 一个 attribute 全包，GitLab 按用途拆成三套，标错只生效一半。</p>
+<h2 id="githublinguist--一个搞定两件事">GitHub：<code>linguist-*</code> 一个搞定两件事</h2>
+<p>GitHub 的语言统计和 diff 折叠都归 <a href="https://github.com/github-linguist/linguist">Linguist</a> 一套管，所以 <code>linguist-generated</code> <strong>一标同时</strong>踢出语言统计 + 折叠 diff：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>dist/* linguist-generated</span></span>
+<span class="line"><span>package-lock.json -linguist-generated   # 前导 - = 反向排除</span></span></code></pre>
+<p>同家族还有 <code>linguist-vendored</code>（第三方库）、<code>linguist-documentation</code>（文档）、<code>linguist-language=PHP</code>（改判语言）。判准：<strong>generated = 机器产物，vendored = 别人的代码</strong>，都被踢出统计，区别只在 diff 折不折叠。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>attribute</th><th>不计统计</th><th>diff 折叠</th></tr></thead><tbody><tr><td><code>linguist-generated</code></td><td>✅</td><td>✅</td></tr><tr><td><code>linguist-vendored</code></td><td>✅</td><td>❌</td></tr><tr><td><code>linguist-documentation</code></td><td>✅</td><td>❌</td></tr></tbody></table>
+<h2 id="gitlab三套各管一摊">GitLab：三套各管一摊</h2>
+<p>GitLab 只有<strong>两个</strong> <code>gitlab-</code> 专属 attribute，各自只干一件事；<strong>语言统计反而借用 GitHub 的 <code>linguist-*</code></strong>——它的统计引擎 <a href="https://github.com/go-enry/go-enry">go-enry</a> 是 Linguist 的 Go 移植，认 <code>linguist-</code> 前缀。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>用途</th><th>GitLab 用什么</th></tr></thead><tbody><tr><td>MR diff 折叠</td><td><code>gitlab-generated</code>（专属）</td></tr><tr><td>语法高亮改判</td><td><code>gitlab-language=prolog</code>（专属，<code>=text</code> 关高亮）</td></tr><tr><td>语言统计排除/改判</td><td><code>linguist-generated</code> / <code>linguist-vendored</code> / …</td></tr></tbody></table>
+<p><strong>最大的坑</strong>：在 GitLab 标 <code>gitlab-generated</code> 只折叠了 diff，文件照样算进语言占比；想同时从统计里拿掉，得再补一条 <code>linguist-generated</code>。和 GitHub 一个 attribute 全包正相反。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>*.min.js gitlab-generated      # 只折叠 diff</span></span>
+<span class="line"><span>*.min.js linguist-generated    # 才会从语言统计条消失</span></span></code></pre>
+<p>另注：GitLab 会自动识别部分生成文件（protobuf 产物、<code>go generate</code> 的 Go 文件、source map），不标也可能折叠，这也是”有的折有的没折”不一致反馈的来源（<a href="https://gitlab.com/gitlab-org/gitlab/-/issues/572763">#572763</a>）。</p>
+<h2 id="共同点都是-gitattributes-的-override">共同点：都是 <code>.gitattributes</code> 的 override</h2>
+<p><code>linguist-*</code> / <code>gitlab-*</code> 和 LFS 的 <a href="260603-git-lfs.md"><code>filter=lfs</code></a>、文件锁 <code>lockable</code>、行尾 <code>text=auto</code> 堆在同一个文件。记法：<strong>git 原生 attribute（<code>filter</code> / <code>text</code> / <code>merge</code>）各平台通用；带平台前缀的只在对应平台网页生效</strong>，换到本地仓库一律失效。</p>
+<p>See <a href="https://github.com/github-linguist/linguist/blob/main/docs/overrides.md">Linguist overrides</a> / <a href="https://docs.gitlab.com/user/project/repository/files/git_attributes/">GitLab Git attributes</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260515-github-url-hidden-params/" data-astro-cid-d6qgp232> <a href="/tags/github/" class="chip" data-astro-cid-d6qgp232>github</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-15T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-15</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/github/" class="tag" data-astro-cid-d6qgp232>#github</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260515-github-url-hidden-params/" data-astro-cid-d6qgp232>GitHub URL 隐藏参数：`.diff` / `?w=1` / `compare@{时间}` 工作流</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>GitHub 网页 URL 上有一组 2012 年就存在、UI 从没暴露过的参数。LLM 工作流让它们价值翻倍 —— <code>curl</code> 一个 <code>.diff</code> URL 直接拿到纯文本 diff 喂给 prompt，比让 LLM 自己抓网页快也准。下面所有链接都点得开（用 <code>laravel/framework</code> 演示）。</p>
 <p><strong><code>.diff</code> / <code>.patch</code></strong> —— 任何 PR / commit / compare 页 URL 加扩展名，返回纯文本：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -L</span><span style="color:#032F62"> https://github.com/laravel/framework/pull/10000.diff</span></span>
 <span class="line"><span style="color:#6F42C1">curl</span><span style="color:#005CC5"> -L</span><span style="color:#032F62"> https://github.com/laravel/framework/pull/10000.patch</span></span></code></pre>

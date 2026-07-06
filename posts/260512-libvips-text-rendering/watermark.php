@@ -1,6 +1,6 @@
 <?php
 // 给一张图加右下角文字水印
-// 用法: php watermark.php <input> <output.png>
+// 用法：php watermark.php <input> <output.png>
 
 require __DIR__ . '/vendor/autoload.php';
 

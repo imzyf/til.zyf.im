@@ -533,7 +533,7 @@
 <span class="line"><span>│   libpng  libjpeg(IJG)  libwebp  libavif  FreeType            │</span></span>
 <span class="line"><span>├──────────────────────────────────────────────────────────────┤</span></span>
 <span class="line"><span>│ Layer 5  系统库                                                │</span></span>
-<span class="line"><span>│   zlib（libpng 依赖）  fontconfig（FreeType 字体查找）         │</span></span>
+<span class="line"><span>│   zlib（libpng 依赖）fontconfig（FreeType 字体查找）         │</span></span>
 <span class="line"><span>└──────────────────────────────────────────────────────────────┘</span></span></code></pre>
 <p>两个非显然结论：</p>
 <p><strong>Layer 4 是共享的</strong> —— 三个 C 引擎最终都调 libpng / libjpeg / libwebp 读写格式字节。所以问「GD 能不能输出 WebP」本质是问「GD 编译时有没有 link libwebp」，而不是 GD 算法层面的能力。<code>apt install php-gd</code> 把 libpng / libjpeg 作为依赖一起拉进来，要 WebP 还得加 <code>--with-webp</code> 重编。Imagick 多出来的 HEIC / PSD 也只是它在 Layer 3 自己挂了更多 codec wrapper，不是 Layer 4 神奇变多。</p>
