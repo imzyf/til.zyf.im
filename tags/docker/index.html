@@ -1,14 +1,13 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged docker"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#docker · TIL</title><link rel="stylesheet" href="/_astro/Base.BW7bO-F5.css">
-<style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
-.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
-</style></head> <body>  <script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="Notes tagged docker"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#docker · TIL</title><link rel="stylesheet" href="/_astro/Base.DQYaApxQ.css"><style>.note-stack[data-astro-cid-aezt6mnq]{flex-direction:column;gap:1.4rem;display:flex}.back[data-astro-cid-aezt6mnq]{border-top:1px solid var(--rule);color:var(--muted);margin-top:2.5rem;padding-top:1rem;font-size:.85rem}
+.card[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.85rem;min-width:0;display:flex}.card-body[data-astro-cid-e6jgshqh],.prose[data-astro-cid-e6jgshqh]{min-width:0}.card-meta[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.25rem;display:flex}.meta[data-astro-cid-e6jgshqh]{color:var(--muted);flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0;font-size:.78rem;display:flex}.meta[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-e6jgshqh]{flex-wrap:wrap;gap:.4rem;display:inline-flex}.tag[data-astro-cid-e6jgshqh]{color:var(--muted);padding:.05rem;font-size:.78rem}.updated[data-astro-cid-e6jgshqh]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh]{letter-spacing:-.005em;margin:0;font-size:1.4rem;font-weight:700;line-height:1.3}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]{color:var(--fg)}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-e6jgshqh]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-e6jgshqh] h1,.prose[data-astro-cid-e6jgshqh] h2{margin:1rem 0 .4rem;font-size:1rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] h3,.prose[data-astro-cid-e6jgshqh] h4,.prose[data-astro-cid-e6jgshqh] h5,.prose[data-astro-cid-e6jgshqh] h6{margin:.85rem 0 .3rem;font-size:.95rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] p{margin:.65rem 0}.prose[data-astro-cid-e6jgshqh] p:first-child{margin-top:0}.prose[data-astro-cid-e6jgshqh] p:last-child{margin-bottom:0}.prose[data-astro-cid-e6jgshqh] ul,.prose[data-astro-cid-e6jgshqh] ol{margin:.6rem 0;padding-left:1.4rem}.prose[data-astro-cid-e6jgshqh] li{margin:.2rem 0}.prose[data-astro-cid-e6jgshqh] pre{padding:.7rem .85rem;font-size:.82rem}.prose[data-astro-cid-e6jgshqh] code{font-size:.85em}.prose[data-astro-cid-e6jgshqh] blockquote{border-left:2px solid var(--rule);color:var(--muted);margin:.7rem 0;padding-left:.8rem;font-style:italic}.prose[data-astro-cid-e6jgshqh] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-e6jgshqh]{font-size:.88rem;margin:.5rem 0 0!important}.read-more[data-astro-cid-e6jgshqh]{white-space:nowrap}
+</style></head><body><script>
       (() => {
         const T = 24;
         const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#docker</h1> <p class="page-lede" data-astro-cid-tge3q7ae>2 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/221117-dockerfile-easy-to-confuse-instructions/" data-astro-cid-d6qgp232> <a href="/tags/docker/" class="chip" data-astro-cid-d6qgp232>docker</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-11-17T00:00:00.000Z" data-astro-cid-d6qgp232>2022-11-17</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/docker/" class="tag" data-astro-cid-d6qgp232>#docker</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/221117-dockerfile-easy-to-confuse-instructions/" data-astro-cid-d6qgp232>Dockerfile 中三组易混指令怎么选</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Dockerfile 里有几组指令名字相近、用途易混。按”什么时候执行 + 写到哪里”两条轴归位即可：</p>
+    </script><div class="site-header-bar"><header class="site-header"><div class="site-brand"><a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a><span class="site-tagline">want to remember, and might want to share.</span></div><nav class="site-nav"><a href="/archives/">archives</a><a href="/tags/" class="active">tags</a><a href="/search/">search</a></nav></header></div><main class="site-main width-note"><h1 class="page-title no-mark" data-astro-cid-aezt6mnq>#docker</h1><p class="page-lede" data-astro-cid-aezt6mnq>2 notes</p><div class="note-stack" data-astro-cid-aezt6mnq><article class="card card-shell" data-href="/posts/221117-dockerfile-easy-to-confuse-instructions/" data-astro-cid-e6jgshqh><a href="/tags/docker/" class="chip" data-astro-cid-e6jgshqh>docker</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2022-11-17T00:00:00.000Z" data-astro-cid-e6jgshqh>2022-11-17</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/docker/" class="tag" data-astro-cid-e6jgshqh>#docker</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/221117-dockerfile-easy-to-confuse-instructions/" data-astro-cid-e6jgshqh>Dockerfile 中三组易混指令怎么选</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>Dockerfile 里有几组指令名字相近、用途易混。按“什么时候执行 + 写到哪里”两条轴归位即可：</p>
 <ul>
 <li><strong>构建时执行</strong>（写进 image 层）：<code>RUN</code>、<code>COPY</code>、<code>ADD</code>、<code>ARG</code></li>
 <li><strong>运行时执行</strong>（启动 container 时跑）：<code>CMD</code>、<code>ENTRYPOINT</code></li>
@@ -25,36 +24,36 @@
 <p>口诀：<strong>默认用 <code>COPY</code>，确实需要解压本地归档时才上 <code>ADD</code></strong>。远程文件用 <code>RUN curl -O</code> 更显式、更可控。</p>
 <h2 id="run-vs-cmd-vs-entrypoint">RUN vs CMD vs ENTRYPOINT</h2>
 <p><code>RUN</code> 在构建时执行并提交一层。<code>CMD</code> 和 <code>ENTRYPOINT</code> 都只描述启动命令，区别在能不能被 <code>docker run</code> 的尾参覆盖：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>指令</th><th>何时跑</th><th>默认参数？</th><th>被尾参覆盖？</th></tr></thead><tbody><tr><td><code>RUN</code></td><td>构建时</td><td>—</td><td>—</td></tr><tr><td><code>ENTRYPOINT</code></td><td>启动时</td><td>否</td><td>不会（除非 <code>--entrypoint</code>）</td></tr><tr><td><code>CMD</code></td><td>启动时</td><td>是</td><td>会</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>何时跑</th>
+<th>默认参数？</th>
+<th>被尾参覆盖？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RUN</code></td>
+<td>构建时</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>ENTRYPOINT</code></td>
+<td>启动时</td>
+<td>否</td>
+<td>不会（除非 <code>--entrypoint</code>）</td>
+</tr>
+<tr>
+<td><code>CMD</code></td>
+<td>启动时</td>
+<td>是</td>
+<td>会</td>
+</tr>
+</tbody>
+</table>
 <p>两种写法行为不同：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ENTRYPOINT</span><span style="color:#24292E"> [</span><span style="color:#032F62">"/scripts/entrypoint.sh"</span><span style="color:#24292E">]    # exec form</span></span>
 <span class="line"><span style="color:#D73A49">CMD</span><span style="color:#032F62"> "/scripts/start-fpm.sh"</span><span style="color:#24292E">              # shell form</span></span></code></pre>
@@ -65,47 +64,48 @@
 <p>口诀：<strong>主程序用 <code>ENTRYPOINT</code> exec form；可被覆盖的默认参数走 <code>CMD</code> exec form</strong>。两个都用 shell form 会丢掉信号转发，容器收不到 <code>docker stop</code> 的 <code>SIGTERM</code>，10 秒后被 <code>SIGKILL</code> 强杀。</p>
 <h2 id="label-vs-arg-vs-env">LABEL vs ARG vs ENV</h2>
 <p>三者都是 “声明值”，但生命周期完全不同：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>指令</th><th>构建时可见？</th><th>运行时可见？</th><th>写进 image？</th></tr></thead><tbody><tr><td><code>ARG</code></td><td>是</td><td>否</td><td>否（但值会出现在 <code>docker history</code>，<strong>别塞密钥</strong>）</td></tr><tr><td><code>ENV</code></td><td>是（声明之后的层）</td><td>是（容器环境变量）</td><td>是</td></tr><tr><td><code>LABEL</code></td><td>否</td><td>否</td><td>是（仅元数据，<code>docker inspect</code> 可见）</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>构建时可见？</th>
+<th>运行时可见？</th>
+<th>写进 image？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ARG</code></td>
+<td>是</td>
+<td>否</td>
+<td>否（但值会出现在 <code>docker history</code>，<strong>别塞密钥</strong>）</td>
+</tr>
+<tr>
+<td><code>ENV</code></td>
+<td>是（声明之后的层）</td>
+<td>是（容器环境变量）</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>LABEL</code></td>
+<td>否</td>
+<td>否</td>
+<td>是（仅元数据，<code>docker inspect</code> 可见）</td>
+</tr>
+</tbody>
+</table>
 <p><code>ARG</code> 还有一条作用域陷阱：<strong><code>FROM</code> 之前声明的 <code>ARG</code> 只能在 <code>FROM</code> 行里展开</strong>，要在后续指令里用同名 ARG，得在 <code>FROM</code> 之后<strong>再声明一次</strong>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PHP_VERSION=8.3</span></span>
 <span class="line"><span style="color:#D73A49">FROM</span><span style="color:#24292E"> php:${PHP_VERSION}-fpm    # OK，这里能用</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PHP_VERSION                # 必须重新声明，下面才能用</span></span>
 <span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> echo </span><span style="color:#032F62">"Building PHP ${PHP_VERSION}"</span></span></code></pre>
-<p>口诀：<strong>版本号 / 镜像 tag 用 <code>ARG</code>；运行时配置（端口、路径、非密钥配置）用 <code>ENV</code>；作者 / VCS 地址 / 镜像描述用 <code>LABEL</code></strong>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/221109-laradock-patterns/" data-astro-cid-d6qgp232> <a href="/tags/docker/" class="chip" data-astro-cid-d6qgp232>docker</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-11-09T00:00:00.000Z" data-astro-cid-d6qgp232>2022-11-09</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/docker/" class="tag" data-astro-cid-d6qgp232>#docker</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/221109-laradock-patterns/" data-astro-cid-d6qgp232>Laradock 偷师：6 个值得抄走的 Docker 工程模式</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://github.com/laradock/laradock">Laradock</a> 是 PHP/Laravel 的 docker-compose 全家桶模板。近年活跃度下降，新 Laravel 项目更多用 <a href="https://laravel.com/docs/sail">Sail</a>。但它的 Dockerfile / compose 配置里有些经过多年打磨的模式，值得偷师——以下 6 条不限 PHP 场景。</p>
+<p>口诀：<strong>版本号 / 镜像 tag 用 <code>ARG</code>；运行时配置（端口、路径、非密钥配置）用 <code>ENV</code>；作者 / VCS 地址 / 镜像描述用 <code>LABEL</code></strong>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/221109-laradock-patterns/" data-astro-cid-e6jgshqh><a href="/tags/docker/" class="chip" data-astro-cid-e6jgshqh>docker</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2022-11-09T00:00:00.000Z" data-astro-cid-e6jgshqh>2022-11-09</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/docker/" class="tag" data-astro-cid-e6jgshqh>#docker</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/221109-laradock-patterns/" data-astro-cid-e6jgshqh>Laradock 偷师：6 个值得抄走的 Docker 工程模式</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><a href="https://github.com/laradock/laradock">Laradock</a> 是 PHP/Laravel 的 docker-compose 全家桶模板。近年活跃度下降，新 Laravel 项目更多用 <a href="https://laravel.com/docs/sail">Sail</a>。但它的 Dockerfile / compose 配置里有些经过多年打磨的模式，值得偷师——以下 6 条不限 PHP 场景。</p>
 <h2 id="1-puidpgid容器用户对齐宿主否则-bind-mount-文件全是-root">1. PUID/PGID：容器用户对齐宿主，否则 bind mount 文件全是 root</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PUID=1000</span></span>
 <span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> PGID=1000</span></span>
-<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> groupadd -g ${PGID} laradock &#x26;&#x26; \</span></span>
+<span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> groupadd -g ${PGID} laradock &amp;&amp; \</span></span>
 <span class="line"><span style="color:#24292E">    useradd -l -u ${PUID} -g laradock -m laradock</span></span></code></pre>
 <p>容器默认 root 跑，写到 bind mount 的文件宿主端归 root 所有——开发者下次 <code>vim</code> 撞 permission denied，<code>rm</code> 要 sudo。把 host 的 <code>id -u</code> / <code>id -g</code> 通过 <code>.env</code> 注入 ARG，容器内建同 uid 用户，文件落地就是宿主用户。<strong>Linux dev 必踩</strong>；Mac/Win 因 Docker Desktop 自动做 uid 映射，不会感受到这个坑。</p>
 <h2 id="2-debian_frontendnoninteractive-写-run-不写-env">2. <code>DEBIAN_FRONTEND=noninteractive</code> 写 RUN 不写 ENV</h2>
@@ -115,7 +115,7 @@
 <span class="line"><span style="color:#6A737D"># 这样：只作用于该层 build</span></span>
 <span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata</span></span></code></pre>
 <p><code>ENV</code> 写进的是镜像层、运行时也生效——之后 <code>docker exec</code> 进容器手动装东西时，所有交互配置询问也被跳过（默认值生效），可能错过冲突选项或时区选择。<code>RUN</code> 内赋值只对那一条命令生效，构建期免提示、运行期保留交互。Docker 官方 <a href="https://docs.docker.com/develop/develop-images/instructions/#env">Dockerfile best practices · ENV</a> 同此建议。</p>
-<h2 id="3-extra_hosts-dockerhost-把容器访问宿主统一掉">3. <code>extra_hosts: dockerhost</code> 把”容器访问宿主”统一掉</h2>
+<h2 id="3-extra_hosts-dockerhost-把容器访问宿主统一掉">3. <code>extra_hosts: dockerhost</code> 把“容器访问宿主”统一掉</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">extra_hosts</span><span style="color:#24292E">:</span></span>
 <span class="line"><span style="color:#24292E">  - </span><span style="color:#032F62">"dockerhost:${DOCKER_HOST_IP}"</span></span>
 <span class="line"><span style="color:#6A737D">  # Linux 20.10+ 现在还可以这样：</span></span>
@@ -124,7 +124,7 @@
 <h2 id="4-arg-install_xxxfalse-的-opt-in-扩展矩阵">4. <code>ARG INSTALL_XXX=false</code> 的 opt-in 扩展矩阵</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#D73A49">ARG</span><span style="color:#24292E"> INSTALL_XDEBUG=false</span></span>
 <span class="line"><span style="color:#D73A49">RUN</span><span style="color:#24292E"> if [ ${INSTALL_XDEBUG} = true ]; then \</span></span>
-<span class="line"><span style="color:#24292E">    pecl install xdebug &#x26;&#x26; docker-php-ext-enable xdebug; \</span></span>
+<span class="line"><span style="color:#24292E">    pecl install xdebug &amp;&amp; docker-php-ext-enable xdebug; \</span></span>
 <span class="line"><span style="color:#24292E">fi</span></span></code></pre>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="dotenv"><code><span class="line"><span style="color:#E36209">WORKSPACE_INSTALL_XDEBUG</span><span style="color:#D73A49">=</span><span style="color:#24292E">true</span></span>
 <span class="line"><span style="color:#E36209">PHP_FPM_INSTALL_XDEBUG</span><span style="color:#D73A49">=</span><span style="color:#24292E">true</span></span></code></pre>
@@ -135,7 +135,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># 开发再 enable</span></span>
 <span class="line"><span style="color:#6F42C1">docker-php-ext-enable</span><span style="color:#032F62"> xdebug</span></span></code></pre>
-<p>PHP 扩展本质是 <code>.so</code> + 一行 <code>extension=xdebug.so</code> ini 引用。<code>docker-php-ext-disable</code> 只移走 ini，<code>.so</code> 还在。开发/生产同一个镜像，不为”是否带 xdebug”重编两套——秒级切换。这条 official PHP image 自带，跟 Laradock 无关，但 Laradock 大量在用，是个被低估的工具。</p>
+<p>PHP 扩展本质是 <code>.so</code> + 一行 <code>extension=xdebug.so</code> ini 引用。<code>docker-php-ext-disable</code> 只移走 ini，<code>.so</code> 还在。开发/生产同一个镜像，不为“是否带 xdebug”重编两套——秒级切换。这条 official PHP image 自带，跟 Laradock 无关，但 Laradock 大量在用，是个被低估的工具。</p>
 <h2 id="6-db--cache-用命名-volume不要-bind-mount">6. db / cache 用命名 volume，不要 bind mount</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">services</span><span style="color:#24292E">:</span></span>
 <span class="line"><span style="color:#22863A">  mysql</span><span style="color:#24292E">:</span></span>
@@ -151,7 +151,8 @@
 <li><strong>备份 / 迁移有现成模式</strong> —— named volume 跑一次 helper 容器就能打包；bind mount 还得另处理 owner</li>
 <li><strong>权限不打架</strong> —— 容器里 mysql uid 999 经常 chown 不动 host 目录；named volume 由容器自己初始化，没这层</li>
 </ul>
-<p><strong>规则</strong>：源码 bind mount，数据卷（mysql / postgres / redis / elasticsearch）走 named volume。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+<p><strong>规则</strong>：源码 bind mount，数据卷（mysql / postgres / redis / elasticsearch）走 named volume。</p>
+</div></div></article></div><p class="back" data-astro-cid-aezt6mnq><a href="/tags/" data-astro-cid-aezt6mnq>← all tags</a> · <a href="/" data-astro-cid-aezt6mnq>index</a></p></main><footer class="site-footer"><span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span><span>·</span><span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span><span>·</span><span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span></footer><script>
       (() => {
         const enhance = () => {
           const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
@@ -202,7 +203,7 @@
           enhance();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const BUDGET = 360;
         const collapse = () => {
@@ -249,7 +250,7 @@
           run();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const mark = () => {
           const here = location.host;
@@ -274,4 +275,4 @@
           mark();
         }
       })();
-    </script> </body> </html>
+    </script></body></html>

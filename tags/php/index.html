@@ -1,19 +1,18 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged php"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#php · TIL</title><link rel="stylesheet" href="/_astro/Base.BW7bO-F5.css">
-<style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
-.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
-</style></head> <body>  <script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="Notes tagged php"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#php · TIL</title><link rel="stylesheet" href="/_astro/Base.DQYaApxQ.css"><style>.note-stack[data-astro-cid-aezt6mnq]{flex-direction:column;gap:1.4rem;display:flex}.back[data-astro-cid-aezt6mnq]{border-top:1px solid var(--rule);color:var(--muted);margin-top:2.5rem;padding-top:1rem;font-size:.85rem}
+.card[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.85rem;min-width:0;display:flex}.card-body[data-astro-cid-e6jgshqh],.prose[data-astro-cid-e6jgshqh]{min-width:0}.card-meta[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.25rem;display:flex}.meta[data-astro-cid-e6jgshqh]{color:var(--muted);flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0;font-size:.78rem;display:flex}.meta[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-e6jgshqh]{flex-wrap:wrap;gap:.4rem;display:inline-flex}.tag[data-astro-cid-e6jgshqh]{color:var(--muted);padding:.05rem;font-size:.78rem}.updated[data-astro-cid-e6jgshqh]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh]{letter-spacing:-.005em;margin:0;font-size:1.4rem;font-weight:700;line-height:1.3}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]{color:var(--fg)}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-e6jgshqh]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-e6jgshqh] h1,.prose[data-astro-cid-e6jgshqh] h2{margin:1rem 0 .4rem;font-size:1rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] h3,.prose[data-astro-cid-e6jgshqh] h4,.prose[data-astro-cid-e6jgshqh] h5,.prose[data-astro-cid-e6jgshqh] h6{margin:.85rem 0 .3rem;font-size:.95rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] p{margin:.65rem 0}.prose[data-astro-cid-e6jgshqh] p:first-child{margin-top:0}.prose[data-astro-cid-e6jgshqh] p:last-child{margin-bottom:0}.prose[data-astro-cid-e6jgshqh] ul,.prose[data-astro-cid-e6jgshqh] ol{margin:.6rem 0;padding-left:1.4rem}.prose[data-astro-cid-e6jgshqh] li{margin:.2rem 0}.prose[data-astro-cid-e6jgshqh] pre{padding:.7rem .85rem;font-size:.82rem}.prose[data-astro-cid-e6jgshqh] code{font-size:.85em}.prose[data-astro-cid-e6jgshqh] blockquote{border-left:2px solid var(--rule);color:var(--muted);margin:.7rem 0;padding-left:.8rem;font-style:italic}.prose[data-astro-cid-e6jgshqh] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-e6jgshqh]{font-size:.88rem;margin:.5rem 0 0!important}.read-more[data-astro-cid-e6jgshqh]{white-space:nowrap}
+</style></head><body><script>
       (() => {
         const T = 24;
         const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#php</h1> <p class="page-lede" data-astro-cid-tge3q7ae>20 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260525-binary-safe/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/password-hash/" class="tag" data-astro-cid-d6qgp232>#password-hash</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260525-binary-safe/" data-astro-cid-d6qgp232>二进制安全 是什么意思</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://www.php.net/manual/en/function.crypt.php">PHP 文档里 <code>crypt()</code></a> 顶上挂着一行：</p>
+    </script><div class="site-header-bar"><header class="site-header"><div class="site-brand"><a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a><span class="site-tagline">want to remember, and might want to share.</span></div><nav class="site-nav"><a href="/archives/">archives</a><a href="/tags/" class="active">tags</a><a href="/search/">search</a></nav></header></div><main class="site-main width-note"><h1 class="page-title no-mark" data-astro-cid-aezt6mnq>#php</h1><p class="page-lede" data-astro-cid-aezt6mnq>20 notes</p><div class="note-stack" data-astro-cid-aezt6mnq><article class="card card-shell" data-href="/posts/260525-binary-safe/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-25</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a><a href="/tags/password-hash/" class="tag" data-astro-cid-e6jgshqh>#password-hash</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260525-binary-safe/" data-astro-cid-e6jgshqh>二进制安全 是什么意思</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><a href="https://www.php.net/manual/en/function.crypt.php">PHP 文档里 <code>crypt()</code></a> 顶上挂着一行：</p>
 <blockquote>
 <p>Warning: This function is not (yet) binary safe!</p>
 </blockquote>
 <p>binary safe 指函数能完整处理任意字节序列，含 NUL 字节（<code>\0</code>、<code>0x00</code>）。失安全的两种姿势：<strong>遇 <code>\0</code> 截断</strong>、<strong>结果随 locale 变化</strong>。</p>
-<h2 id="crypt-怎么不-binary-safe">crypt() 怎么”不 binary safe”</h2>
+<h2 id="crypt-怎么不-binary-safe">crypt() 怎么“不 binary safe”</h2>
 <p>底层是 C <code>crypt(3)</code>，C 字符串以 <code>\0</code> 终止：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$salt </span><span style="color:#D73A49">=</span><span style="color:#032F62"> '$2y$10$'</span><span style="color:#D73A49"> .</span><span style="color:#005CC5"> str_repeat</span><span style="color:#24292E">(</span><span style="color:#032F62">'a'</span><span style="color:#24292E">, </span><span style="color:#005CC5">22</span><span style="color:#24292E">);</span></span>
 <span class="line"><span style="color:#005CC5">crypt</span><span style="color:#24292E">(</span><span style="color:#032F62">"secret</span><span style="color:#005CC5">\0</span><span style="color:#032F62">extra1"</span><span style="color:#24292E">, $salt) </span><span style="color:#D73A49">===</span><span style="color:#005CC5"> crypt</span><span style="color:#24292E">(</span><span style="color:#032F62">"secret</span><span style="color:#005CC5">\0</span><span style="color:#032F62">extra2"</span><span style="color:#24292E">, $salt);  </span><span style="color:#6A737D">// true</span></span></code></pre>
@@ -23,82 +22,83 @@
 <span class="line"><span style="color:#005CC5">password_hash</span><span style="color:#24292E">(</span><span style="color:#005CC5">base64_encode</span><span style="color:#24292E">($key), </span><span style="color:#005CC5">PASSWORD_BCRYPT</span><span style="color:#24292E">);</span></span></code></pre>
 <p>更对路的做法：哈希二进制 key 别走 <code>crypt</code> 家族，用 <code>hash_hmac('sha256', $msg, $key)</code>，它本身 binary safe。</p>
 <h2 id="yet-是什么意思">“(yet)” 是什么意思</h2>
-<p>不是 typo —— 是文档作者留的”想修但修不动”的尾巴。<code>crypt()</code> 走 libc，要 binary safe 得绕开 libc 自己实现一份，跨平台一致性破坏。从 PHP 4 挂到 PHP 8，括号里这两字大概会一直挂下去。</p>
+<p>不是 typo —— 是文档作者留的“想修但修不动”的尾巴。<code>crypt()</code> 走 libc，要 binary safe 得绕开 libc 自己实现一份，跨平台一致性破坏。从 PHP 4 挂到 PHP 8，括号里这两字大概会一直挂下去。</p>
 <h2 id="不-binary-safe-分两类">不 binary safe 分两类</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>类型</th><th>典型函数</th><th>触发</th></tr></thead><tbody><tr><td><code>\0</code> 截断</td><td><code>crypt()</code>、所有 fs 路径参数（<code>fopen</code> / <code>include</code> / <code>file_get_contents</code>）</td><td>入参含 <code>\0</code></td></tr><tr><td>locale 依赖</td><td><code>strcoll</code></td><td>字节落在 <code>0x80-0xFF</code></td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>典型函数</th>
+<th>触发</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\0</code> 截断</td>
+<td><code>crypt()</code>、所有 fs 路径参数（<code>fopen</code> / <code>include</code> / <code>file_get_contents</code>）</td>
+<td>入参含 <code>\0</code></td>
+</tr>
+<tr>
+<td>locale 依赖</td>
+<td><code>strcoll</code></td>
+<td>字节落在 <code>0x80-0xFF</code></td>
+</tr>
+</tbody>
+</table>
 <p>路径那条历史上是 <a href="https://nvd.nist.gov/vuln/detail/CVE-2006-7243">CVE-2006-7243</a> —— <code>include $_GET['page'] . '.php'</code> + 攻击者传 <code>evil.so\0</code> 能绕扩展名白名单包含任意文件。PHP 5.3.4 起 fs 函数拒收含 <code>\0</code> 的路径（PHP 8.0 起直接抛 <code>TypeError</code>），但<strong>拼接前先过用户输入</strong>仍是写代码的人的责任。</p>
 <p>locale 那条更隐蔽 —— <code>strcoll</code> 按 <code>LC_COLLATE</code> 排序，同样两字节给相反答案：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#005CC5">setlocale</span><span style="color:#24292E">(</span><span style="color:#005CC5">LC_COLLATE</span><span style="color:#24292E">, </span><span style="color:#032F62">'C'</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// > 0（按字节 0xE4 > 0x7A）</span></span>
+<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// &gt; 0（按字节 0xE4 &gt; 0x7A）</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#005CC5">setlocale</span><span style="color:#24292E">(</span><span style="color:#005CC5">LC_COLLATE</span><span style="color:#24292E">, </span><span style="color:#032F62">'de_DE.UTF-8'</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// &#x3C; 0（德语排序 ä 紧挨 a，在 z 前）</span></span></code></pre>
+<span class="line"><span style="color:#005CC5">strcoll</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\xE4</span><span style="color:#032F62">"</span><span style="color:#24292E">, </span><span style="color:#032F62">"z"</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// &lt; 0（德语排序 ä 紧挨 a，在 z 前）</span></span></code></pre>
 <p>同一段代码在 CI（默认 <code>C</code>）、生产容器（可能装了 <code>de_DE.UTF-8</code>）、本地 mac 跑出不同结果，debug 极难找。要可移植的国际化排序走 <code>Collator</code>（intl 扩展）显式给 locale；要大小写转换走 <code>mb_strtolower($s, 'UTF-8')</code> 明确指定编码 —— <code>strtolower</code> 自 PHP 8.2 起只处理 ASCII，对非 ASCII 字节原样返回。</p>
 <h2 id="哪些是-binary-safe-的">哪些是 binary safe 的</h2>
-<p><code>strlen</code> <code>strpos</code> <code>strrpos</code> <code>substr</code> <code>str_replace</code> <code>strcmp</code> <code>strncmp</code> <code>explode</code> <code>implode</code> <code>hash</code> <code>hash_hmac</code> <code>fread</code> <code>fwrite</code> <code>md5</code> <code>sha1</code> —— 核心字符串和 hash 族基本全是。判别口诀：函数文档说”以字节为单位”且不依赖 locale。</p>
+<p><code>strlen</code> <code>strpos</code> <code>strrpos</code> <code>substr</code> <code>str_replace</code> <code>strcmp</code> <code>strncmp</code> <code>explode</code> <code>implode</code> <code>hash</code> <code>hash_hmac</code> <code>fread</code> <code>fwrite</code> <code>md5</code> <code>sha1</code> —— 核心字符串和 hash 族基本全是。判别口诀：函数文档说“以字节为单位”且不依赖 locale。</p>
 <blockquote>
 <p><code>strcmp()</code> 是 binary safe，但<strong>不是 constant-time</strong> —— 校验 token / HMAC / CSRF 用 <code>hash_equals()</code>，否则吃时序攻击。两个正交属性，别混。</p>
 </blockquote>
-<p><code>mb_*</code> 系列是<strong>多字节安全</strong>（认得 UTF-8 多字节序列），不等于”任意二进制安全” —— 喂非法 UTF-8 字节会报警或返回 <code>false</code>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/argon2/" class="tag" data-astro-cid-d6qgp232>#argon2</a><a href="/tags/base64/" class="tag" data-astro-cid-d6qgp232>#base64</a><a href="/tags/password-hash/" class="tag" data-astro-cid-d6qgp232>#password-hash</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-d6qgp232>Argon2id PHC 串拆解：salt 来源与 Base64 编码</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP <code>password_hash($pwd, PASSWORD_ARGON2ID)</code> 吐出来这种东西：</p>
+<p><code>mb_*</code> 系列是<strong>多字节安全</strong>（认得 UTF-8 多字节序列），不等于“任意二进制安全” —— 喂非法 UTF-8 字节会报警或返回 <code>false</code>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-21</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a><a href="/tags/argon2/" class="tag" data-astro-cid-e6jgshqh>#argon2</a><a href="/tags/base64/" class="tag" data-astro-cid-e6jgshqh>#base64</a><a href="/tags/password-hash/" class="tag" data-astro-cid-e6jgshqh>#password-hash</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260521-argon2id-phc-anatomy/" data-astro-cid-e6jgshqh>Argon2id PHC 串拆解：salt 来源与 Base64 编码</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>PHP <code>password_hash($pwd, PASSWORD_ARGON2ID)</code> 吐出来这种东西：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$argon2id$v=19$m=65536,t=4,p=1$UlhrVTlVbVI2S08wa2szSQ$gGGk/8NtsxcSbFOxcSkWOSf3fFE/a2KbMEqRiTrFmes</span></span></code></pre>
 <p>这是 <a href="https://github.com/P-H-C/phc-string-format">PHC string format</a> —— 2013-2015 年那场 <strong>Password Hashing Competition</strong> 顺带产出的字符串格式规范（竞赛本身是算法选秀，Argon2 胜出后由 <a href="https://www.rfc-editor.org/rfc/rfc9106">RFC 9106</a> 标准化；格式规范是副产品，让所有现代密码 hash 都能用自包含字符串表达，便于跨算法升级 / 跨语言迁移）。6 段用 <code>$</code> 分隔。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$&#x3C;id>[$v=&#x3C;version>][$&#x3C;param>=&#x3C;value>(,&#x3C;param>=&#x3C;value>)*][$&#x3C;salt>[$&#x3C;hash>]]</span></span></code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>段</th><th>值</th><th>含义</th></tr></thead><tbody><tr><td>算法</td><td><code>argon2id</code></td><td>变体（不是 argon2i / argon2d）</td></tr><tr><td>版本</td><td><code>v=19</code></td><td>Argon2 v1.3（0x13）</td></tr><tr><td>参数</td><td><code>m=65536, t=4, p=1</code></td><td>内存 64 MiB、迭代 4 轮、并行 1</td></tr><tr><td>Salt</td><td><code>UlhrVTlVbVI2S08wa2szSQ</code></td><td>22 字符 → 解码后 16 字节</td></tr><tr><td>Hash</td><td><code>gGGk/8NtsxcSbFOxcSkWOSf3fFE/a2KbMEqRiTrFmes</code></td><td>43 字符 → 解码后 32 字节</td></tr></tbody></table>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>$&lt;id&gt;[$v=&lt;version&gt;][$&lt;param&gt;=&lt;value&gt;(,&lt;param&gt;=&lt;value&gt;)*][$&lt;salt&gt;[$&lt;hash&gt;]]</span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>段</th>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法</td>
+<td><code>argon2id</code></td>
+<td>变体（不是 argon2i / argon2d）</td>
+</tr>
+<tr>
+<td>版本</td>
+<td><code>v=19</code></td>
+<td>Argon2 v1.3（0x13）</td>
+</tr>
+<tr>
+<td>参数</td>
+<td><code>m=65536, t=4, p=1</code></td>
+<td>内存 64 MiB、迭代 4 轮、并行 1</td>
+</tr>
+<tr>
+<td>Salt</td>
+<td><code>UlhrVTlVbVI2S08wa2szSQ</code></td>
+<td>22 字符 → 解码后 16 字节</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td><code>gGGk/8NtsxcSbFOxcSkWOSf3fFE/a2KbMEqRiTrFmes</code></td>
+<td>43 字符 → 解码后 32 字节</td>
+</tr>
+</tbody>
+</table>
 <h2 id="salt-必须来自-csprng">Salt 必须来自 CSPRNG</h2>
 <p><strong>CSPRNG</strong> = Cryptographically Secure Pseudo-Random Number Generator（密码学安全的伪随机数生成器）。判别标准：next-bit 不可预测 + 状态泄露不能反推历史输出 + seed 自身来自熵源。<code>rand()</code> / <code>mt_rand()</code> 都不满足。</p>
 <p><code>password_hash()</code> 内部路径：</p>
@@ -110,32 +110,32 @@
 <p>等价于：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$salt </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> random_bytes</span><span style="color:#24292E">(</span><span style="color:#005CC5">16</span><span style="color:#24292E">);</span></span></code></pre>
 <p><strong>永远不要用以下函数生成 salt / token / key</strong>：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>不安全</th><th>替代</th></tr></thead><tbody><tr><td><code>rand()</code></td><td><code>random_int($min, $max)</code></td></tr><tr><td><code>mt_rand()</code></td><td><code>random_int($min, $max)</code></td></tr><tr><td><code>uniqid()</code></td><td><code>bin2hex(random_bytes(16))</code></td></tr><tr><td><code>md5(microtime())</code></td><td><code>random_bytes(N)</code></td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>不安全</th>
+<th>替代</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rand()</code></td>
+<td><code>random_int($min, $max)</code></td>
+</tr>
+<tr>
+<td><code>mt_rand()</code></td>
+<td><code>random_int($min, $max)</code></td>
+</tr>
+<tr>
+<td><code>uniqid()</code></td>
+<td><code>bin2hex(random_bytes(16))</code></td>
+</tr>
+<tr>
+<td><code>md5(microtime())</code></td>
+<td><code>random_bytes(N)</code></td>
+</tr>
+</tbody>
+</table>
 <p><code>mt_rand()</code> 是 Mersenne Twister，速度快但<strong>状态可被反推</strong> —— 拿到约 624 个连续输出就能完全恢复内部状态、预测后续所有值。已有 <a href="https://github.com/openwall/php_mt_seed">php_mt_seed</a> 在毫秒级破解。</p>
 <p>salt 不需要保密（和 hash 一起明文存数据库），它的作用是：</p>
 <ol>
@@ -145,141 +145,141 @@
 <h2 id="字节--字符编码的换算">字节 ↔ 字符：编码的换算</h2>
 <p>字节是 8 bit 的存储单位；字符是表示单位。两者的转换由编码定义。</p>
 <p><strong>为什么不能 1 字节 → 1 字符？</strong> 一个字节有 256 种值（0<del>255），但可打印 ASCII 只有 <strong>95 个</strong>（<code>0x20</code></del><code>0x7E</code>，即 128 个 7-bit ASCII 编码点扣掉 33 个控制符 —— <code>0x00~0x1F</code> + <code>0x7F</code>。控制符是 NUL / Tab / 换行 / Esc / DEL 等，不能透传文本，所以 128 根本不是候选档位）。1:1 至少缺 161 个对应。退一步：能不能扩到 256 字符？</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>候选方案</th><th>为什么不行</th></tr></thead><tbody><tr><td>全 256 ASCII</td><td><code>0x00~0x1F</code> 是 NUL / Tab / 换行 / Esc，终端、字符串、协议都会炸</td></tr><tr><td>Latin-1 全 256 字符</td><td>UTF-8 时代字节 <code>0x80~0xFF</code> 不是合法 UTF-8 序列，存数据库 / 走 JSON / 进 URL 全报错</td></tr><tr><td>强行透传二进制</td><td>URL、JSON、shell、HTTP header、email、<code>.env</code>、<code>grep</code> 输出全部假设 ASCII-safe</td></tr></tbody></table>
-<p>所以真正约束是：<strong>字符集必须落在「绝对安全的可打印 ASCII 子集」里</strong>。理论上界 95，实操还要扣掉 <code>"</code> <code>\</code> <code>&#x3C;</code> <code>></code> <code>&#x26;</code> <code>=</code> <code>+</code> <code>?</code> <code>#</code> 等在 URL / JSON / shell 里有特殊含义的字符，安全集合一般 60~80 个。各档编码的取舍：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>字符集大小</th><th>编码</th><th>bit/字符</th><th>膨胀率</th><th>16 字节后</th></tr></thead><tbody><tr><td>16</td><td>Hex</td><td>4</td><td>2×</td><td>32 字符</td></tr><tr><td>32</td><td>Base32</td><td>5</td><td>1.6×</td><td>26~32</td></tr><tr><td>64</td><td>Base64</td><td>6</td><td>1.33×</td><td>22~24</td></tr><tr><td>85</td><td>Base85 / Ascii85</td><td>6.4</td><td>1.25×</td><td>20~21</td></tr><tr><td>95</td><td>全可打印 ASCII 上界</td><td>~6.57</td><td>1.22×</td><td>20</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>候选方案</th>
+<th>为什么不行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全 256 ASCII</td>
+<td><code>0x00~0x1F</code> 是 NUL / Tab / 换行 / Esc，终端、字符串、协议都会炸</td>
+</tr>
+<tr>
+<td>Latin-1 全 256 字符</td>
+<td>UTF-8 时代字节 <code>0x80~0xFF</code> 不是合法 UTF-8 序列，存数据库 / 走 JSON / 进 URL 全报错</td>
+</tr>
+<tr>
+<td>强行透传二进制</td>
+<td>URL、JSON、shell、HTTP header、email、<code>.env</code>、<code>grep</code> 输出全部假设 ASCII-safe</td>
+</tr>
+</tbody>
+</table>
+<p>所以真正约束是：<strong>字符集必须落在「绝对安全的可打印 ASCII 子集」里</strong>。理论上界 95，实操还要扣掉 <code>"</code> <code>\</code> <code>&lt;</code> <code>&gt;</code> <code>&amp;</code> <code>=</code> <code>+</code> <code>?</code> <code>#</code> 等在 URL / JSON / shell 里有特殊含义的字符，安全集合一般 60~80 个。各档编码的取舍：</p>
+<table>
+<thead>
+<tr>
+<th>字符集大小</th>
+<th>编码</th>
+<th>bit/字符</th>
+<th>膨胀率</th>
+<th>16 字节后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>Hex</td>
+<td>4</td>
+<td>2×</td>
+<td>32 字符</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Base32</td>
+<td>5</td>
+<td>1.6×</td>
+<td>26~32</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Base64</td>
+<td>6</td>
+<td>1.33×</td>
+<td>22~24</td>
+</tr>
+<tr>
+<td>85</td>
+<td>Base85 / Ascii85</td>
+<td>6.4</td>
+<td>1.25×</td>
+<td>20~21</td>
+</tr>
+<tr>
+<td>95</td>
+<td>全可打印 ASCII 上界</td>
+<td>~6.57</td>
+<td>1.22×</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
 <p>Base64 字符表是 <code>A-Z a-z 0-9 + /</code>（62 个字母数字 + 2 个填空），「安全字符够多」+「6 bit 整齐对齐 24 bit 包」的双重最优解：再上一档要 128 字符，超出可打印 ASCII 上界；再下一档 32 字符膨胀率明显更高。</p>
 <p>Base64 把每 <strong>3 字节</strong> 打包成 <strong>4 字符</strong>，因为 <code>LCM(8, 6) = 24 bit</code> —— 字节 8 bit 和 Base64 字符 6 bit 不能整除，得找两边都数得齐的最小公共单位。24 bit 既是 3 个字节，也是 4 个 Base64 字符：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>[byte 1] [byte 2] [byte 3]      ← 24 bit</span></span>
 <span class="line"><span> 6 bit  6 bit  6 bit  6 bit</span></span>
 <span class="line"><span>[char 1][char 2][char 3][char 4]</span></span></code></pre>
 <p>试别的字节数都凑不齐：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>输入字节</th><th>bit</th><th>÷ 6 = 字符</th><th>问题</th></tr></thead><tbody><tr><td>1</td><td>8</td><td>1.33</td><td>余 2 bit，半字符存不下</td></tr><tr><td>2</td><td>16</td><td>2.67</td><td>余 4 bit，半字符存不下</td></tr><tr><td><strong>3</strong></td><td>24</td><td><strong>4</strong></td><td><strong>整除</strong></td></tr><tr><td>4</td><td>32</td><td>5.33</td><td>回到 8 bit 周期</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>输入字节</th>
+<th>bit</th>
+<th>÷ 6 = 字符</th>
+<th>问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8</td>
+<td>1.33</td>
+<td>余 2 bit，半字符存不下</td>
+</tr>
+<tr>
+<td>2</td>
+<td>16</td>
+<td>2.67</td>
+<td>余 4 bit，半字符存不下</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>24</td>
+<td><strong>4</strong></td>
+<td><strong>整除</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>32</td>
+<td>5.33</td>
+<td>回到 8 bit 周期</td>
+</tr>
+</tbody>
+</table>
 <p>所以 3 字节是「最小成块单位」，每 3 字节切一刀、吐 4 字符、循环。输入不是 3 的倍数时，结尾凑不齐 24 bit，要补 0 bit 到下一个 6 bit 边界，再用 <code>=</code> 标记「这是补的、不是真数据」 —— padding 的来历，下一节正好展开 PHC 为什么把 <code>=</code> 删了。</p>
 <p>所以 PHC 串里 16 字节 salt → 22 字符；32 字节 hash → 43 字符。反推也成立：看见 32 hex 是 MD5 / UUID（16 字节），64 hex 是 SHA256（32 字节）。</p>
 <h2 id="phc-的-base64-不带-padding">PHC 的 Base64 不带 padding</h2>
 <p>标准 Base64 末尾会用 <code>=</code> 补齐到 4 的倍数：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>16 字节 → 21.33 字符 → 22 字符 + `==` = 24 字符</span></span></code></pre>
 <p>PHC 格式<strong>故意去掉 <code>=</code></strong>：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th></th><th>标准 Base64</th><th>PHC Base64</th></tr></thead><tbody><tr><td>16 字节 salt</td><td><code>UlhrVTlVbVI2S08wa2szSQ==</code></td><td><code>UlhrVTlVbVI2S08wa2szSQ</code></td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>标准 Base64</th>
+<th>PHC Base64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16 字节 salt</td>
+<td><code>UlhrVTlVbVI2S08wa2szSQ==</code></td>
+<td><code>UlhrVTlVbVI2S08wa2szSQ</code></td>
+</tr>
+</tbody>
+</table>
 <p>理由：<code>=</code> 在 URL 里要转义、在 shell 里是赋值符。padding 是冗余信息（长度本来就能反推），删了不丢数据。</p>
 <p>PHP <code>base64_decode()</code> 两种都兼容。但 <strong>Python 严格</strong>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> base64</span></span>
@@ -296,67 +296,68 @@
 <p>bcrypt 沿用 OpenBSD <code>crypt_blowfish</code> 的历史字母表，索引 0 是 <code>.</code> 不是 <code>A</code>。</p>
 <p>直接 <code>base64_decode($bcrypt_part)</code> 得到<strong>完全错误的字节</strong> —— silent failure，没有报错。要解 bcrypt 内部的 salt / hash 必须用专门的字母表映射，或者干脆别解（业务代码 <code>password_verify()</code> 就够了）。</p>
 <h2 id="主流-hash-格式的-salt-编码对比">主流 hash 格式的 salt 编码对比</h2>
-<p>放一起看，差异只在算法和字母表 —— <strong>salt 原始长度（16 字节 / 128 bit）和编码方式（base64 无 padding）三家全一致</strong>，这是密码学共识的”足够防 rainbow table”门槛：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Hash 格式</th><th>原始 salt</th><th>编码字母表</th><th>编码后字符数</th></tr></thead><tbody><tr><td><strong>argon2id</strong>（PHC）</td><td>16 字节</td><td>标准 <code>A-Z a-z 0-9 + /</code></td><td>22</td></tr><tr><td><strong>bcrypt</strong></td><td>16 字节</td><td>私有 <code>./ A-Z a-z 0-9</code></td><td>22</td></tr><tr><td><strong>scrypt / PBKDF2</strong>（PHC）</td><td>16 字节</td><td>标准</td><td>22</td></tr></tbody></table>
+<p>放一起看，差异只在算法和字母表 —— <strong>salt 原始长度（16 字节 / 128 bit）和编码方式（base64 无 padding）三家全一致</strong>，这是密码学共识的“足够防 rainbow table”门槛：</p>
+<table>
+<thead>
+<tr>
+<th>Hash 格式</th>
+<th>原始 salt</th>
+<th>编码字母表</th>
+<th>编码后字符数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>argon2id</strong>（PHC）</td>
+<td>16 字节</td>
+<td>标准 <code>A-Z a-z 0-9 + /</code></td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>bcrypt</strong></td>
+<td>16 字节</td>
+<td>私有 <code>./ A-Z a-z 0-9</code></td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>scrypt / PBKDF2</strong>（PHC）</td>
+<td>16 字节</td>
+<td>标准</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
 <p>→ 这也解释了为什么把 bcrypt hash 喂给 <code>base64_decode()</code> silent failure：算法是 base64，但字母表对不上，输出字节全是垃圾。</p>
-<p><a href="https://www.rfc-editor.org/rfc/rfc9106">RFC 9106 (Argon2)</a> / <a href="https://github.com/P-H-C/phc-string-format/blob/master/phc-sf-spec.md">PHC string format spec</a> / <a href="https://www.password-hashing.net/">Password Hashing Competition 主页</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260512-libvips-text-rendering/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-12T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-12</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260512-libvips-text-rendering/" data-astro-cid-d6qgp232>PHP libvips 写文字：Pango 接管 layout，不用算 bbox</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="200416-php-gd-text-bbox-alignment">GD 那一套 baseline / bbox / 减偏移</a> 在 libvips 里<strong>不存在</strong>。<code>Image::text()</code> 走 <em>Pango</em> 做 layout —— 你给一个 <code>width</code> 框 + <code>align</code> 方向，结果 image 直接拿到 <code>$txt->width</code> / <code>$txt->height</code>，没有 baseline 这回事。</p>
+<p><a href="https://www.rfc-editor.org/rfc/rfc9106">RFC 9106 (Argon2)</a> / <a href="https://github.com/P-H-C/phc-string-format/blob/master/phc-sf-spec.md">PHC string format spec</a> / <a href="https://www.password-hashing.net/">Password Hashing Competition 主页</a>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260512-libvips-text-rendering/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-12T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-12</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260512-libvips-text-rendering/" data-astro-cid-e6jgshqh>PHP libvips 写文字：Pango 接管 layout，不用算 bbox</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><a href="200416-php-gd-text-bbox-alignment">GD 那一套 baseline / bbox / 减偏移</a> 在 libvips 里<strong>不存在</strong>。<code>Image::text()</code> 走 <em>Pango</em> 做 layout —— 你给一个 <code>width</code> 框 + <code>align</code> 方向，结果 image 直接拿到 <code>$txt-&gt;width</code> / <code>$txt-&gt;height</code>，没有 baseline 这回事。</p>
 <h2 id="pango-是什么">Pango 是什么</h2>
 <p>GNOME 项目下的<strong>文字 layout 库</strong>。渲染一段文字本来要分两步，libvips 把第一步外包给了它：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>阶段</th><th>做什么</th><th>谁来做</th></tr></thead><tbody><tr><td><strong>Layout</strong></td><td>选字体、断行、字距、对齐、Bidi（阿拉伯/希伯来从右到左）、CJK 换行规则、emoji shaping</td><td><strong>Pango</strong></td></tr><tr><td><strong>Rasterize</strong></td><td>把矢量字形画成像素</td><td>FreeType / Cairo</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>做什么</th>
+<th>谁来做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Layout</strong></td>
+<td>选字体、断行、字距、对齐、Bidi（阿拉伯/希伯来从右到左）、CJK 换行规则、emoji shaping</td>
+<td><strong>Pango</strong></td>
+</tr>
+<tr>
+<td><strong>Rasterize</strong></td>
+<td>把矢量字形画成像素</td>
+<td>FreeType / Cairo</td>
+</tr>
+</tbody>
+</table>
 <p>GD 的 <code>imagettftext</code> 只做第二步 —— 调用方必须自己算宽高、自己拆行、自己处理对齐，所以才有 <code>imagettfbbox</code> 8 元素数组、baseline 减偏移那堆脏活。libvips 直接传 <code>width: 800, align: 'high'</code>，Pango 帮你折行 + 对齐，结果 image 的 <code>width</code> / <code>height</code> 就是排版后的真实尺寸 —— baseline 这个概念在调用方完全不出现。</p>
 <p>额外 bonus：开 <code>rgba: true</code> 之后可以传 <strong>Pango markup</strong>，单段里混排粗体 / 颜色 / 字号：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$txt </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> Image</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">text</span><span style="color:#24292E">(</span></span>
-<span class="line"><span style="color:#032F62">    '&#x3C;span foreground="red" weight="bold">警告&#x3C;/span> 内容超过限制'</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#24292E">    [</span><span style="color:#032F62">'font'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 'Sans 20'</span><span style="color:#24292E">, </span><span style="color:#032F62">'rgba'</span><span style="color:#D73A49"> =></span><span style="color:#005CC5"> true</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#032F62">    '&lt;span foreground="red" weight="bold"&gt;警告&lt;/span&gt; 内容超过限制'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    [</span><span style="color:#032F62">'font'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#032F62"> 'Sans 20'</span><span style="color:#24292E">, </span><span style="color:#032F62">'rgba'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#005CC5"> true</span><span style="color:#24292E">]</span></span>
 <span class="line"><span style="color:#24292E">);</span></span></code></pre>
 <p>GD 想做这个得渲染 N 次再拼。</p>
 <h2 id="实际用法右下角水印">实际用法：右下角水印</h2>
@@ -365,69 +366,69 @@
 <span class="line"></span>
 <span class="line"><span style="color:#24292E">$bg  </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> Image</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">newFromFile</span><span style="color:#24292E">(</span><span style="color:#032F62">'photo.jpg'</span><span style="color:#24292E">);</span></span>
 <span class="line"><span style="color:#24292E">$txt </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> Image</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">text</span><span style="color:#24292E">(</span><span style="color:#032F62">'© 2026'</span><span style="color:#24292E">, [</span></span>
-<span class="line"><span style="color:#032F62">    'font'</span><span style="color:#D73A49">  =></span><span style="color:#032F62"> 'Sans Bold 24'</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">    'width'</span><span style="color:#D73A49"> =></span><span style="color:#24292E"> $bg</span><span style="color:#D73A49">-></span><span style="color:#24292E">width </span><span style="color:#D73A49">-</span><span style="color:#005CC5"> 40</span><span style="color:#24292E">,   </span><span style="color:#6A737D">// 框内自动 word-wrap</span></span>
-<span class="line"><span style="color:#032F62">    'align'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 'high'</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">    'rgba'</span><span style="color:#D73A49">  =></span><span style="color:#005CC5"> true</span><span style="color:#24292E">,              </span><span style="color:#6A737D">// 不开是灰度 mask，没法合到彩图</span></span>
+<span class="line"><span style="color:#032F62">    'font'</span><span style="color:#D73A49">  =&gt;</span><span style="color:#032F62"> 'Sans Bold 24'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    'width'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#24292E"> $bg</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">width </span><span style="color:#D73A49">-</span><span style="color:#005CC5"> 40</span><span style="color:#24292E">,   </span><span style="color:#6A737D">// 框内自动 word-wrap</span></span>
+<span class="line"><span style="color:#032F62">    'align'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#032F62"> 'high'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    'rgba'</span><span style="color:#D73A49">  =&gt;</span><span style="color:#005CC5"> true</span><span style="color:#24292E">,              </span><span style="color:#6A737D">// 不开是灰度 mask，没法合到彩图</span></span>
 <span class="line"><span style="color:#24292E">]);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">$bg</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">composite</span><span style="color:#24292E">($txt, </span><span style="color:#032F62">'over'</span><span style="color:#24292E">, [</span></span>
-<span class="line"><span style="color:#032F62">    'x'</span><span style="color:#D73A49"> =></span><span style="color:#005CC5"> 20</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">    'y'</span><span style="color:#D73A49"> =></span><span style="color:#24292E"> $bg</span><span style="color:#D73A49">-></span><span style="color:#24292E">height </span><span style="color:#D73A49">-</span><span style="color:#24292E"> $txt</span><span style="color:#D73A49">-></span><span style="color:#24292E">height </span><span style="color:#D73A49">-</span><span style="color:#005CC5"> 20</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#24292E">])</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">writeToFile</span><span style="color:#24292E">(</span><span style="color:#032F62">'out.png'</span><span style="color:#24292E">);</span></span></code></pre>
+<span class="line"><span style="color:#24292E">$bg</span><span style="color:#D73A49">-&gt;</span><span style="color:#6F42C1">composite</span><span style="color:#24292E">($txt, </span><span style="color:#032F62">'over'</span><span style="color:#24292E">, [</span></span>
+<span class="line"><span style="color:#032F62">    'x'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#005CC5"> 20</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    'y'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#24292E"> $bg</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">height </span><span style="color:#D73A49">-</span><span style="color:#24292E"> $txt</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">height </span><span style="color:#D73A49">-</span><span style="color:#005CC5"> 20</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">])</span><span style="color:#D73A49">-&gt;</span><span style="color:#6F42C1">writeToFile</span><span style="color:#24292E">(</span><span style="color:#032F62">'out.png'</span><span style="color:#24292E">);</span></span></code></pre>
 <p>GD 同场景要：<code>imagettfbbox</code> 拿 8 元素 → <code>$bbox[2] - $bbox[0]</code> 算宽 → <code>$bg_w - $width - 20</code> 算 x → 还要担心 baseline 跟图像 y 轴方向相反。libvips 一步：<code>align: high</code>。</p>
 <p><code>Image::text()</code> 关键 options（<a href="https://www.libvips.org/API/current/ctor.Image.text.html">官方文档</a>）：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Option</th><th>作用</th><th>默认</th></tr></thead><tbody><tr><td><code>font</code></td><td>Fontconfig 名，如 <code>'Sans Bold 24'</code> / <code>'Noto Serif CJK SC 18'</code></td><td>—</td></tr><tr><td><code>fontfile</code></td><td>加载非系统字体的 <code>.ttf</code> 路径，需配合 <code>font</code> 用名字引用</td><td>—</td></tr><tr><td><code>width</code></td><td>换行宽度（像素），超过按 word boundary 折行</td><td>不换行</td></tr><tr><td><code>align</code></td><td><code>'low'</code> / <code>'centre'</code> / <code>'high'</code> —— 多行的水平对齐</td><td>—</td></tr><tr><td><code>justify</code></td><td>两端对齐（拉伸词间空格），bool</td><td><code>false</code></td></tr><tr><td><code>spacing</code></td><td>行距（像素）</td><td>字体自然行距</td></tr><tr><td><code>dpi</code></td><td>渲染 DPI，影响实际像素大小</td><td>72</td></tr><tr><td><code>rgba</code></td><td>出彩色 / emoji / Pango markup，不开是 8-bit 灰度 mask</td><td><code>false</code></td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>作用</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>font</code></td>
+<td>Fontconfig 名，如 <code>'Sans Bold 24'</code> / <code>'Noto Serif CJK SC 18'</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>fontfile</code></td>
+<td>加载非系统字体的 <code>.ttf</code> 路径，需配合 <code>font</code> 用名字引用</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>换行宽度（像素），超过按 word boundary 折行</td>
+<td>不换行</td>
+</tr>
+<tr>
+<td><code>align</code></td>
+<td><code>'low'</code> / <code>'centre'</code> / <code>'high'</code> —— 多行的水平对齐</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>justify</code></td>
+<td>两端对齐（拉伸词间空格），bool</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>spacing</code></td>
+<td>行距（像素）</td>
+<td>字体自然行距</td>
+</tr>
+<tr>
+<td><code>dpi</code></td>
+<td>渲染 DPI，影响实际像素大小</td>
+<td>72</td>
+</tr>
+<tr>
+<td><code>rgba</code></td>
+<td>出彩色 / emoji / Pango markup，不开是 8-bit 灰度 mask</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <p><strong>部署成本</strong>是 libvips 在 PHP 圈用得不如 GD 普及的主因 —— <code>ext-gd</code> 几乎随 PHP 自动装好，libvips 要：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Debian/Ubuntu</span></span>
 <span class="line"><span style="color:#6F42C1">apt</span><span style="color:#032F62"> install</span><span style="color:#032F62"> libvips42</span><span style="color:#032F62"> libvips-dev</span></span>
@@ -439,7 +440,8 @@
 <span class="line"><span style="color:#6F42C1">pecl</span><span style="color:#032F62"> install</span><span style="color:#032F62"> vips</span><span style="color:#6A737D">                                # 传统 C extension</span></span>
 <span class="line"><span style="color:#6A737D"># 或开 FFI（PHP 7.4+），用 jcupitt/php-vips 包，无需编译扩展</span></span>
 <span class="line"><span style="color:#6F42C1">composer</span><span style="color:#032F62"> require</span><span style="color:#032F62"> jcupitt/vips</span></span></code></pre>
-<p>容器里加一行 <code>apt install libvips42</code> 就够，但这一行常被忘。装上之后水印 / 缩略图 / 多行排版量大时，libvips 的内存占用和吞吐都比 GD 强一个数量级 —— 它是流水线架构，不像 GD 把整张图按解压尺寸驻留内存。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260508-php-install-tools/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-08T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-08</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260508-php-install-tools/" data-astro-cid-d6qgp232>PHP 安装工具的几条路径</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP 安装按”装什么 + 在哪装”分四条路径，每条各自的工具：</p>
+<p>容器里加一行 <code>apt install libvips42</code> 就够，但这一行常被忘。装上之后水印 / 缩略图 / 多行排版量大时，libvips 的内存占用和吞吐都比 GD 强一个数量级 —— 它是流水线架构，不像 GD 把整张图按解压尺寸驻留内存。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260508-php-install-tools/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-08T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-08</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260508-php-install-tools/" data-astro-cid-e6jgshqh>PHP 安装工具的几条路径</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>PHP 安装按“装什么 + 在哪装”分四条路径，每条各自的工具：</p>
 <p>纯 PHP 代码（复制即用）</p>
 <ul>
 <li><strong><a href="https://pear.php.net/">PEAR</a></strong> — <em>PHP Extension and Application Repository</em>。最早的类库分发，用前要 <code>include</code>。已被 Composer 取代，基本退场。</li>
@@ -470,8 +472,8 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># C 扩展（Docker），以装 gd 为例——需要系统库 + configure</span></span>
 <span class="line"><span style="color:#6F42C1">apt-get</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -y</span><span style="color:#032F62"> libfreetype-dev</span><span style="color:#032F62"> libjpeg-dev</span><span style="color:#032F62"> libpng-dev</span><span style="color:#005CC5"> \</span></span>
-<span class="line"><span style="color:#24292E">  &#x26;&#x26; </span><span style="color:#6F42C1">docker-php-ext-configure</span><span style="color:#032F62"> gd</span><span style="color:#005CC5"> --with-freetype</span><span style="color:#005CC5"> --with-jpeg</span><span style="color:#005CC5"> \</span></span>
-<span class="line"><span style="color:#24292E">  &#x26;&#x26; </span><span style="color:#6F42C1">docker-php-ext-install</span><span style="color:#032F62"> gd</span><span style="color:#6A737D">            # 官方：3 步联动</span></span>
+<span class="line"><span style="color:#24292E">  &amp;&amp; </span><span style="color:#6F42C1">docker-php-ext-configure</span><span style="color:#032F62"> gd</span><span style="color:#005CC5"> --with-freetype</span><span style="color:#005CC5"> --with-jpeg</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#24292E">  &amp;&amp; </span><span style="color:#6F42C1">docker-php-ext-install</span><span style="color:#032F62"> gd</span><span style="color:#6A737D">            # 官方：3 步联动</span></span>
 <span class="line"><span style="color:#6F42C1">install-php-extensions</span><span style="color:#032F62"> gd</span><span style="color:#6A737D">                 # 友好封装：1 行搞定</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># PHAR CLI 工具</span></span>
@@ -482,38 +484,39 @@
 <li><strong>C 扩展，裸机</strong> → PIE（PECL 已 deprecated）</li>
 <li><strong>C 扩展，Docker</strong> → install-php-extensions</li>
 <li><strong>PHAR CLI 工具</strong> → PHIVE</li>
-</ul> </div> </div> </article><article class="card card-shell" data-href="/posts/250526-image-processing-stack/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2025-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2025-05-26</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/250526-image-processing-stack/" data-astro-cid-d6qgp232>PHP 图像处理：GD / Imagick / libvips 选型与层级</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP 圈做图像处理有三个 native 选择 —— GD、Imagick、libvips。它们看起来功能重叠（都能 resize / 转格式 / 合成），关键差异不在「支持哪些格式」（最终都调 libpng / libjpeg / libwebp 同一层 codec），而在 <strong>C 引擎怎么调度内存</strong>，以及<strong>它们在调用链里所处的层级</strong>。</p>
+</ul>
+</div></div></article><article class="card card-shell" data-href="/posts/250526-image-processing-stack/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2025-05-26T00:00:00.000Z" data-astro-cid-e6jgshqh>2025-05-26</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/250526-image-processing-stack/" data-astro-cid-e6jgshqh>PHP 图像处理：GD / Imagick / libvips 选型与层级</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>PHP 圈做图像处理有三个 native 选择 —— GD、Imagick、libvips。它们看起来功能重叠（都能 resize / 转格式 / 合成），关键差异不在「支持哪些格式」（最终都调 libpng / libjpeg / libwebp 同一层 codec），而在 <strong>C 引擎怎么调度内存</strong>，以及<strong>它们在调用链里所处的层级</strong>。</p>
 <h2 id="三个-lib-对比">三个 lib 对比</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Lib</th><th>安装</th><th>内存模型</th><th>适用</th></tr></thead><tbody><tr><td><strong>GD</strong></td><td><code>apt install php-gd</code>（PHP 自带 ext）</td><td>整张图按解压尺寸驻留</td><td>90% 项目默认</td></tr><tr><td><strong>Imagick</strong></td><td><code>apt install imagemagick php-imagick</code></td><td>整图驻留，内存最大</td><td>要 HEIC / PSD / PDF / 色彩配置文件</td></tr><tr><td><strong>libvips</strong></td><td><code>apt install libvips42</code> + <code>composer require jcupitt/vips</code></td><td><strong>流水线</strong>，按 chunk 处理</td><td>高吞吐缩略图、大图（> 4K）</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>Lib</th>
+<th>安装</th>
+<th>内存模型</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GD</strong></td>
+<td><code>apt install php-gd</code>（PHP 自带 ext）</td>
+<td>整张图按解压尺寸驻留</td>
+<td>90% 项目默认</td>
+</tr>
+<tr>
+<td><strong>Imagick</strong></td>
+<td><code>apt install imagemagick php-imagick</code></td>
+<td>整图驻留，内存最大</td>
+<td>要 HEIC / PSD / PDF / 色彩配置文件</td>
+</tr>
+<tr>
+<td><strong>libvips</strong></td>
+<td><code>apt install libvips42</code> + <code>composer require jcupitt/vips</code></td>
+<td><strong>流水线</strong>，按 chunk 处理</td>
+<td>高吞吐缩略图、大图（&gt; 4K）</td>
+</tr>
+</tbody>
+</table>
 <p>GD 的「整张图驻留」是常被忽略的成本：一张 4000×3000 的 JPEG 压缩后 2 MB，解压到内存是 <code>4000 × 3000 × 4 byte</code> ≈ <strong>46 MB raw</strong>。PHP-FPM 默认 <code>memory_limit = 128M</code>，并发处理两三张就 OOM kill。libvips 是 demand-driven streaming，同一张图峰值内存可压到几 MB（<a href="260512-libvips-text-rendering">详见 libvips 写文字那篇</a>）。</p>
 <p>Imagick 在 2026 仍是「功能最全但坑最多」 —— CVE 历史长，上游 <code>policy.xml</code> 默认禁用一堆 coder（PDF / PS / HTTPS / MSL），运维要反向解锁才能用全。容器镜像也最大。除非真要 HEIC / PSD，否则 GD 或 libvips 更划算。</p>
 <h2 id="调用层级">调用层级</h2>
@@ -539,58 +542,61 @@
 <p><strong>Layer 4 是共享的</strong> —— 三个 C 引擎最终都调 libpng / libjpeg / libwebp 读写格式字节。所以问「GD 能不能输出 WebP」本质是问「GD 编译时有没有 link libwebp」，而不是 GD 算法层面的能力。<code>apt install php-gd</code> 把 libpng / libjpeg 作为依赖一起拉进来，要 WebP 还得加 <code>--with-webp</code> 重编。Imagick 多出来的 HEIC / PSD 也只是它在 Layer 3 自己挂了更多 codec wrapper，不是 Layer 4 神奇变多。</p>
 <p><strong>Layer 1 跟 Layer 2/3 解耦</strong> —— Intervention v3 是 driver-swappable，业务代码写在 Layer 1 抽象层，未来从 GD 升 libvips 只换 driver 注册不动业务：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#6A737D">// config/image.php</span></span>
-<span class="line"><span style="color:#032F62">'driver'</span><span style="color:#D73A49"> =></span><span style="color:#6F42C1"> env</span><span style="color:#24292E">(</span><span style="color:#032F62">'IMAGE_DRIVER'</span><span style="color:#24292E">, </span><span style="color:#032F62">'gd'</span><span style="color:#24292E">),   </span><span style="color:#6A737D">// 切 'imagick' / 'vips' 不动业务代码</span></span></code></pre>
-<p>写代码时该有意识地利用这一层 —— 直接 <code>imagecreatefromjpeg()</code> 把自己钉死在 Layer 2 上，迁移成本就再也下不来了。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/250420-shivammathur-brew-tap/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2024-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2024-05-20</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/macos/" class="tag" data-astro-cid-d6qgp232>#macos</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/250420-shivammathur-brew-tap/" data-astro-cid-d6qgp232>macOS 多版本 PHP：shivammathur brew tap</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Homebrew <code>core</code> 只供应当前 stable 一个 PHP（当下是 8.5），多项目共存——老 Laravel 跑 7.4、新项目用 8.3——就走不通，必须从 <a href="https://github.com/shivammathur/homebrew-php"><code>shivammathur/php</code></a> tap 拉版本化 formula。覆盖 5.6 → 8.6，每个主版本另带 <code>-debug</code> / <code>-zts</code> / <code>-debug-zts</code> 三个变体。</p>
+<span class="line"><span style="color:#032F62">'driver'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#6F42C1"> env</span><span style="color:#24292E">(</span><span style="color:#032F62">'IMAGE_DRIVER'</span><span style="color:#24292E">, </span><span style="color:#032F62">'gd'</span><span style="color:#24292E">),   </span><span style="color:#6A737D">// 切 'imagick' / 'vips' 不动业务代码</span></span></code></pre>
+<p>写代码时该有意识地利用这一层 —— 直接 <code>imagecreatefromjpeg()</code> 把自己钉死在 Layer 2 上，迁移成本就再也下不来了。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/250420-shivammathur-brew-tap/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2024-05-20T00:00:00.000Z" data-astro-cid-e6jgshqh>2024-05-20</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a><a href="/tags/macos/" class="tag" data-astro-cid-e6jgshqh>#macos</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/250420-shivammathur-brew-tap/" data-astro-cid-e6jgshqh>macOS 多版本 PHP：shivammathur brew tap</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>Homebrew <code>core</code> 只供应当前 stable 一个 PHP（当下是 8.5），多项目共存——老 Laravel 跑 7.4、新项目用 8.3——就走不通，必须从 <a href="https://github.com/shivammathur/homebrew-php"><code>shivammathur/php</code></a> tap 拉版本化 formula。覆盖 5.6 → 8.6，每个主版本另带 <code>-debug</code> / <code>-zts</code> / <code>-debug-zts</code> 三个变体。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> tap</span><span style="color:#032F62"> shivammathur/php</span></span>
 <span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> php@7.4</span><span style="color:#032F62"> php@8.3</span></span>
-<span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> unlink</span><span style="color:#032F62"> php@7.4</span><span style="color:#24292E"> &#x26;&#x26; </span><span style="color:#6F42C1">brew</span><span style="color:#032F62"> link</span><span style="color:#005CC5"> --overwrite</span><span style="color:#032F62"> php@8.3</span><span style="color:#6A737D">   # 切换默认</span></span>
+<span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> unlink</span><span style="color:#032F62"> php@7.4</span><span style="color:#24292E"> &amp;&amp; </span><span style="color:#6F42C1">brew</span><span style="color:#032F62"> link</span><span style="color:#005CC5"> --overwrite</span><span style="color:#032F62"> php@8.3</span><span style="color:#6A737D">   # 切换默认</span></span>
 <span class="line"><span style="color:#6F42C1">/opt/homebrew/opt/php@7.4/bin/php</span><span style="color:#005CC5"> -v</span><span style="color:#6A737D">                   # 或走绝对路径免 link</span></span></code></pre>
 <p>C 扩展（imagick / redis / xdebug …）配套用 <a href="https://github.com/shivammathur/homebrew-extensions"><code>shivammathur/extensions</code></a> tap。命名是「扩展 × PHP 版本」笛卡尔积——每个组合一个独立 formula，PHP 版本必须随扩展名一起写出，所以多版本同装 N 个扩展就是 N×M 个 bottle。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> tap</span><span style="color:#032F62"> shivammathur/extensions</span></span>
 <span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> shivammathur/extensions/imagick@8.3</span></span>
 <span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> shivammathur/extensions/xdebug@7.4</span></span></code></pre>
 <p>为什么不直接 <code>pie install imagick/imagick</code> / <code>pecl install imagick</code>：macOS 上自编扩展要先把 <code>imagemagick</code> / <code>phpize</code> / <code>autoconf</code> / OpenSSL header 这套链拉齐，ImageMagick 6 与 7 不兼容、<code>oniguruma</code> 之类间接依赖踩坑率高。brew bottle 直接装预编译产物，把 C 工具链问题外包给 tap 维护者；代价是扩展和某个 <code>php@x.y</code> 强绑死，切 PHP 版本得相应换扩展 formula。</p>
-<p>只装一个 PHP 留 <code>core</code> 的 <code>php</code> 就够，多版本 + 扩展才进 tap。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/210720-php-invoke-callable-object/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-07-20T00:00:00.000Z" data-astro-cid-d6qgp232>2021-07-20</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210720-php-invoke-callable-object/" data-astro-cid-d6qgp232>PHP __invoke：实例 callable，相当于带状态闭包</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>__invoke</code> 是 PHP 的 magic method —— 类里定义了它，实例就能当函数直接调用：</p>
+<p>只装一个 PHP 留 <code>core</code> 的 <code>php</code> 就够，多版本 + 扩展才进 tap。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/210720-php-invoke-callable-object/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2021-07-20T00:00:00.000Z" data-astro-cid-e6jgshqh>2021-07-20</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/210720-php-invoke-callable-object/" data-astro-cid-e6jgshqh>PHP __invoke：实例 callable，相当于带状态闭包</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>__invoke</code> 是 PHP 的 magic method —— 类里定义了它，实例就能当函数直接调用：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Adder</span><span style="color:#24292E"> {</span></span>
 <span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> function</span><span style="color:#005CC5"> __construct</span><span style="color:#24292E">(</span><span style="color:#D73A49">private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> $base) {}</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> function</span><span style="color:#005CC5"> __invoke</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> $x)</span><span style="color:#D73A49">:</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> { </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> $this</span><span style="color:#D73A49">-></span><span style="color:#24292E">base </span><span style="color:#D73A49">+</span><span style="color:#24292E"> $x; }</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> function</span><span style="color:#005CC5"> __invoke</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> $x)</span><span style="color:#D73A49">:</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> { </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> $this</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">base </span><span style="color:#D73A49">+</span><span style="color:#24292E"> $x; }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E">$add5 </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#005CC5"> Adder</span><span style="color:#24292E">(</span><span style="color:#005CC5">5</span><span style="color:#24292E">);</span></span>
 <span class="line"><span style="color:#24292E">$add5(</span><span style="color:#005CC5">3</span><span style="color:#24292E">);                     </span><span style="color:#6A737D">// 8</span></span>
 <span class="line"><span style="color:#005CC5">is_callable</span><span style="color:#24292E">($add5);           </span><span style="color:#6A737D">// true</span></span></code></pre>
-<p>价值不在”语法甜”，在<strong>承载状态的 closure</strong>。原生 closure 用 <code>use ($base)</code> 捕获变量；<code>__invoke</code> 用 <code>__construct</code> 注入依赖、<code>$this</code> 持有任意复杂状态，还能继承、被 mock、实现接口。</p>
+<p>价值不在“语法甜”，在<strong>承载状态的 closure</strong>。原生 closure 用 <code>use ($base)</code> 捕获变量；<code>__invoke</code> 用 <code>__construct</code> 注入依赖、<code>$this</code> 持有任意复杂状态，还能继承、被 mock、实现接口。</p>
 <h2 id="单动作-controllerlaravel">单动作 controller（Laravel）</h2>
 <p>路由绑类不绑方法，文件 = 端点。一个 controller 做一件事，不再有 8 个 action 挤一个 class：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> ShowProfile</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Controller</span></span>
 <span class="line"><span style="color:#24292E">{</span></span>
 <span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> function</span><span style="color:#005CC5"> __invoke</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> $id)</span></span>
 <span class="line"><span style="color:#24292E">    {</span></span>
-<span class="line"><span style="color:#D73A49">        return</span><span style="color:#6F42C1"> view</span><span style="color:#24292E">(</span><span style="color:#032F62">'user.profile'</span><span style="color:#24292E">, [</span><span style="color:#032F62">'user'</span><span style="color:#D73A49"> =></span><span style="color:#005CC5"> User</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">findOrFail</span><span style="color:#24292E">($id)]);</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#6F42C1"> view</span><span style="color:#24292E">(</span><span style="color:#032F62">'user.profile'</span><span style="color:#24292E">, [</span><span style="color:#032F62">'user'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#005CC5"> User</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">findOrFail</span><span style="color:#24292E">($id)]);</span></span>
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#005CC5">Route</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(</span><span style="color:#032F62">'user/{id}'</span><span style="color:#24292E">, </span><span style="color:#005CC5">ShowProfile</span><span style="color:#D73A49">::class</span><span style="color:#24292E">);</span></span></code></pre>
 <p>文档：<a href="https://laravel.com/docs/controllers#single-action-controllers">Single Action Controllers | Laravel</a>。</p>
 <h2 id="策略--provider-对象">策略 / provider 对象</h2>
-<p>需要”可配置的函数”时 —— 查表、解析、路由匹配 —— 比 closure 更适合，因为有完整 OOP toolkit 可用。AWS SDK 的 <a href="https://github.com/aws/aws-sdk-php/blob/master/src/Endpoint/PatternEndpointProvider.php"><code>PatternEndpointProvider</code></a> 就是这个套路：构造时吃配置 patterns，调用时按 <code>service/region</code> 查规则、返回 endpoint：</p>
+<p>需要“可配置的函数”时 —— 查表、解析、路由匹配 —— 比 closure 更适合，因为有完整 OOP toolkit 可用。AWS SDK 的 <a href="https://github.com/aws/aws-sdk-php/blob/master/src/Endpoint/PatternEndpointProvider.php"><code>PatternEndpointProvider</code></a> 就是这个套路：构造时吃配置 patterns，调用时按 <code>service/region</code> 查规则、返回 endpoint：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$provider </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#005CC5"> PatternEndpointProvider</span><span style="color:#24292E">($patterns);</span></span>
-<span class="line"><span style="color:#24292E">$endpoint </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $provider([</span><span style="color:#032F62">'service'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 's3'</span><span style="color:#24292E">, </span><span style="color:#032F62">'region'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 'us-east-1'</span><span style="color:#24292E">]);</span></span></code></pre>
-<p>调用方不必知道里面是查表、远程 fetch 还是 ML 推理 —— 签名永远是”参数 in, 结果 out”。换实现不动 caller。</p>
+<span class="line"><span style="color:#24292E">$endpoint </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $provider([</span><span style="color:#032F62">'service'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#032F62"> 's3'</span><span style="color:#24292E">, </span><span style="color:#032F62">'region'</span><span style="color:#D73A49"> =&gt;</span><span style="color:#032F62"> 'us-east-1'</span><span style="color:#24292E">]);</span></span></code></pre>
+<p>调用方不必知道里面是查表、远程 fetch 还是 ML 推理 —— 签名永远是“参数 in, 结果 out”。换实现不动 caller。</p>
 <h2 id="一个坑callable--closure">一个坑：<code>callable</code> ≠ <code>Closure</code></h2>
 <p><code>is_callable($obj)</code> 返回 <code>true</code>，但 <code>$obj instanceof Closure</code> 是 <code>false</code>。type-hint 写 <code>Closure</code> 会拒掉 <code>__invoke</code>-able 对象，写 <code>callable</code> 才接受：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> run</span><span style="color:#24292E">(</span><span style="color:#D73A49">callable</span><span style="color:#24292E"> $fn) { </span><span style="color:#D73A49">return</span><span style="color:#24292E"> $fn(</span><span style="color:#005CC5">1</span><span style="color:#24292E">); }     </span><span style="color:#6A737D">// ✅ 接受 Adder 实例</span></span>
 <span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> run</span><span style="color:#24292E">(</span><span style="color:#005CC5">Closure</span><span style="color:#24292E"> $fn)  { </span><span style="color:#D73A49">return</span><span style="color:#24292E"> $fn(</span><span style="color:#005CC5">1</span><span style="color:#24292E">); }     </span><span style="color:#6A737D">// ❌ TypeError</span></span></code></pre>
 <p>要把 <code>__invoke</code> 对象转成真正的 <code>Closure</code> 实例（比如某 API 强制 <code>Closure</code> 入参），用：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$closure </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> Closure</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">fromCallable</span><span style="color:#24292E">($add5);  </span><span style="color:#6A737D">// PHP 7.1+</span></span>
-<span class="line"><span style="color:#24292E">$closure </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $add5(</span><span style="color:#D73A49">...</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// PHP 8.1+ first-class callable</span></span></code></pre> </div> </div> </article><article class="card card-shell" data-href="/posts/210719-php-strict-types-call-site/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2021-07-19T00:00:00.000Z" data-astro-cid-d6qgp232>2021-07-19</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/210719-php-strict-types-call-site/" data-astro-cid-d6qgp232>PHP strict_types 看调用方，不看声明方</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>declare(strict_types=1)</code> 关掉 PHP 的隐式类型转换 —— 函数 type-hint 写 <code>int $x</code>，不再吞 <code>1.0</code> / <code>"15"</code> / <code>true</code>，传错直接 <code>TypeError</code>：</p>
+<span class="line"><span style="color:#24292E">$closure </span><span style="color:#D73A49">=</span><span style="color:#24292E"> $add5(</span><span style="color:#D73A49">...</span><span style="color:#24292E">);                    </span><span style="color:#6A737D">// PHP 8.1+ first-class callable</span></span></code></pre>
+</div></div></article><article class="card card-shell" data-href="/posts/210719-php-strict-types-call-site/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2021-07-19T00:00:00.000Z" data-astro-cid-e6jgshqh>2021-07-19</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/210719-php-strict-types-call-site/" data-astro-cid-e6jgshqh>PHP strict_types 看调用方，不看声明方</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>declare(strict_types=1)</code> 关掉 PHP 的隐式类型转换 —— 函数 type-hint 写 <code>int $x</code>，不再吞 <code>1.0</code> / <code>"15"</code> / <code>true</code>，传错直接 <code>TypeError</code>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">declare</span><span style="color:#24292E">(</span><span style="color:#005CC5">strict_types</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
 <span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> add</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> $a, </span><span style="color:#D73A49">int</span><span style="color:#24292E"> $b)</span><span style="color:#D73A49">:</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> { </span><span style="color:#D73A49">return</span><span style="color:#24292E"> $a </span><span style="color:#D73A49">+</span><span style="color:#24292E"> $b; }</span></span>
 <span class="line"><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#005CC5">1.0</span><span style="color:#24292E">, </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">);</span></span>
 <span class="line"><span style="color:#6A737D">// PHP Fatal error: Uncaught TypeError: add(): Argument #1 ($a) must be of type int, float given</span></span></code></pre>
 <p>不写 declare 行（默认 weak mode）时 <code>add(1.0, 2.0)</code> 返回 <code>int(3)</code>，安静吞掉。</p>
 <h2 id="反直觉点strict-看-caller不看-callee">反直觉点：strict 看 caller，不看 callee</h2>
-<p>文件级声明会让人下意识以为”哪边定义函数 / 类，哪边的 mode 控制类型检查”。<strong>反了</strong>：检查谁，看 <strong>call site 所在文件</strong>的 declare。</p>
+<p>文件级声明会让人下意识以为“哪边定义函数 / 类，哪边的 mode 控制类型检查”。<strong>反了</strong>：检查谁，看 <strong>call site 所在文件</strong>的 declare。</p>
 <p><code>A.php</code> 严格 / <code>B.php</code> 默认：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#6A737D">// A.php</span></span>
 <span class="line"><span style="color:#D73A49">declare</span><span style="color:#24292E">(</span><span style="color:#005CC5">strict_types</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
@@ -608,22 +614,22 @@
 <span class="line"><span style="color:#D73A49">require</span><span style="color:#032F62"> 'A.php'</span><span style="color:#24292E">;</span></span>
 <span class="line"><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#005CC5">1.0</span><span style="color:#24292E">, </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">);  </span><span style="color:#6A737D">// ❌ TypeError —— B 声明了 strict，调用按 strict 检查</span></span></code></pre>
 <p>实际后果：第三方库无论自家标了多少 <code>strict_types</code>，决定你调它会不会抛 <code>TypeError</code> 的是<strong>你自己文件顶部那行</strong>。Composer 装回来的 <code>vendor/</code> 大概率是 strict，但你在 weak 文件里传 <code>1.0</code> 给它的 <code>int</code> 参数，PHP 不会拦。</p>
-<p>要”全项目 strict”，每个 <code>.php</code> 顶部都得写一遍。靠 <a href="https://github.com/PHP-CS-Fixer/PHP-CS-Fixer">php-cs-fixer</a> 的 <code>declare_strict_types</code> rule 或 <a href="https://github.com/symplify/easy-coding-standard">symplify/easy-coding-standard</a> 自动补，别手写。</p>
+<p>要“全项目 strict”，每个 <code>.php</code> 顶部都得写一遍。靠 <a href="https://github.com/PHP-CS-Fixer/PHP-CS-Fixer">php-cs-fixer</a> 的 <code>declare_strict_types</code> rule 或 <a href="https://github.com/symplify/easy-coding-standard">symplify/easy-coding-standard</a> 自动补，别手写。</p>
 <h2 id="写法约束">写法约束</h2>
-<p>必须是脚本里<strong>最早</strong>的语句（<code>&#x3C;?php</code> 后第一行，前面不能有 <code>use</code> / 注释外的任何内容）：</p>
+<p>必须是脚本里<strong>最早</strong>的语句（<code>&lt;?php</code> 后第一行，前面不能有 <code>use</code> / 注释外的任何内容）：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>PHP Fatal error: strict_types declaration must be the very first statement in the script</span></span></code></pre>
 <p>不能用 block 形式：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">declare</span><span style="color:#24292E">(</span><span style="color:#005CC5">strict_types</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">) { </span><span style="color:#D73A49">...</span><span style="color:#24292E"> }   </span><span style="color:#6A737D">// ❌ must not use block mode</span></span></code></pre>
-<p>declare 行<strong>只</strong>作用于当前文件，不会污染 require / include 进来的脚本 —— 这正是允许逐文件渐进迁移的设计。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/200810-composer-vendor-git-submodule-trap/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-08-10T00:00:00.000Z" data-astro-cid-d6qgp232>2020-08-10</time> <span class="updated" data-astro-cid-d6qgp232>
-updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-20</time> </span> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200810-composer-vendor-git-submodule-trap/" data-astro-cid-d6qgp232>Composer vendor 提交进 git 的 submodule 陷阱</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Composer 官方 FAQ 答案是<strong>别 commit <code>vendor/</code></strong>：仓库膨胀、依赖历史在你 repo 里重演一遍、<code>vendor/&#x3C;pkg>/.git</code> 会被 git 当 submodule。最佳实践是 CI / 部署脚本里跑 <code>composer install</code>。</p>
+<p>declare 行<strong>只</strong>作用于当前文件，不会污染 require / include 进来的脚本 —— 这正是允许逐文件渐进迁移的设计。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/200810-composer-vendor-git-submodule-trap/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2020-08-10T00:00:00.000Z" data-astro-cid-e6jgshqh>2020-08-10</time><span class="updated" data-astro-cid-e6jgshqh>updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-20</time></span><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/200810-composer-vendor-git-submodule-trap/" data-astro-cid-e6jgshqh>Composer vendor 提交进 git 的 submodule 陷阱</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>Composer 官方 FAQ 答案是<strong>别 commit <code>vendor/</code></strong>：仓库膨胀、依赖历史在你 repo 里重演一遍、<code>vendor/&lt;pkg&gt;/.git</code> 会被 git 当 submodule。最佳实践是 CI / 部署脚本里跑 <code>composer install</code>。</p>
 <p>但有些场景必须把 <code>vendor/</code> 进 git —— 离线 / 无 composer 的生产机、内网部署、国内网络拉国外包不稳 —— 这时 submodule 这条会静默出事：git 不报错，部署后才发现包是空的。</p>
 <h2 id="静默踩坑">静默踩坑</h2>
-<p><code>composer install</code> 在两种情况下会留下 <code>vendor/&#x3C;pkg>/.git</code>：</p>
+<p><code>composer install</code> 在两种情况下会留下 <code>vendor/&lt;pkg&gt;/.git</code>：</p>
 <ul>
 <li>包没发 dist tarball，只能从 git 拉 source</li>
 <li>显式 <code>--prefer-source</code>，或 <code>composer.json</code> 配了 <code>"preferred-install": "source"</code></li>
 </ul>
-<p><code>git add vendor/</code> 看到子目录里有 <code>.git</code>，不会把里面的代码加进来，<strong>而是记一条 gitlink</strong>。git index 里每个条目都带一个类 Unix 八进制 mode —— <code>100644</code> 普通文件、<code>100755</code> 可执行、<code>120000</code> 符号链接、<strong><code>160000</code> gitlink</strong>（指向另一个 git 仓库的某个 commit，即 submodule 引用）。<code>git add</code> 撞到带 <code>.git</code> 的子目录就自动选 <code>160000</code>，记一条 <code>&#x3C;sha> vendor/foo</code>，里面文件一行不进。</p>
+<p><code>git add vendor/</code> 看到子目录里有 <code>.git</code>，不会把里面的代码加进来，<strong>而是记一条 gitlink</strong>。git index 里每个条目都带一个类 Unix 八进制 mode —— <code>100644</code> 普通文件、<code>100755</code> 可执行、<code>120000</code> 符号链接、<strong><code>160000</code> gitlink</strong>（指向另一个 git 仓库的某个 commit，即 submodule 引用）。<code>git add</code> 撞到带 <code>.git</code> 的子目录就自动选 <code>160000</code>，记一条 <code>&lt;sha&gt; vendor/foo</code>，里面文件一行不进。</p>
 <p><code>git commit</code> 通过，<code>git push</code> 通过，部署机 <code>git pull</code> 拉出来 —— 那个包目录是空的，运行时 <code>class not found</code>。报错栈帧跟 composer 无关，定位常要绕半天。</p>
 <p>两个诊断信号：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> ls-files</span><span style="color:#005CC5"> -s</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#005CC5"> 160000</span></span>
@@ -648,12 +654,12 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <h2 id="已经踩了">已经踩了</h2>
 <p>vendor 已经以 gitlink 形式 commit 进去了，清掉重 add：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> rm</span><span style="color:#005CC5"> -r</span><span style="color:#005CC5"> --cached</span><span style="color:#032F62"> vendor</span></span>
-<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> '/vendor/**/.git'</span><span style="color:#D73A49"> >></span><span style="color:#032F62"> .gitignore</span></span>
+<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> '/vendor/**/.git'</span><span style="color:#D73A49"> &gt;&gt;</span><span style="color:#032F62"> .gitignore</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> add</span><span style="color:#032F62"> vendor</span><span style="color:#032F62"> .gitignore</span></span>
 <span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> commit</span><span style="color:#005CC5"> -m</span><span style="color:#032F62"> "track vendor as files, not submodules"</span></span></code></pre>
 <p><code>--cached</code> 只动 index 不删工作区文件，关键参数 —— 丢了会把磁盘上的 vendor 一起删掉。</p>
-<p>See <a href="https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md">Composer FAQ: Should I commit the dependencies in my vendor directory?</a>.</p> </div> </div> </article><article class="card card-shell" data-href="/posts/200526-phpstorm-xdebug-name-match/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2020-05-26</time> <span class="updated" data-astro-cid-d6qgp232>
-updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-20</time> </span> <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-d6qgp232>#phpstorm</a><a href="/tags/xdebug/" class="tag" data-astro-cid-d6qgp232>#xdebug</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200526-phpstorm-xdebug-name-match/" data-astro-cid-d6qgp232>PhpStorm + Xdebug 容器联调，3 个名字必须对齐</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PhpStorm 容器化 Xdebug 跑不通，最常见的根因不是端口、不是网络，而是 3 个魔法字符串没对齐 —— 错位时 IDE 静默忽略，没有任何报错。挨个对完，剩下的就是常规网络问题。</p>
+<p>See <a href="https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md">Composer FAQ: Should I commit the dependencies in my vendor directory?</a>.</p>
+</div></div></article><article class="card card-shell" data-href="/posts/200526-phpstorm-xdebug-name-match/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2020-05-26T00:00:00.000Z" data-astro-cid-e6jgshqh>2020-05-26</time><span class="updated" data-astro-cid-e6jgshqh>updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-20</time></span><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-e6jgshqh>#phpstorm</a><a href="/tags/xdebug/" class="tag" data-astro-cid-e6jgshqh>#xdebug</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/200526-phpstorm-xdebug-name-match/" data-astro-cid-e6jgshqh>PhpStorm + Xdebug 容器联调，3 个名字必须对齐</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>PhpStorm 容器化 Xdebug 跑不通，最常见的根因不是端口、不是网络，而是 3 个魔法字符串没对齐 —— 错位时 IDE 静默忽略，没有任何报错。挨个对完，剩下的就是常规网络问题。</p>
 <h2 id="前置mode--触发方式">前置：mode + 触发方式</h2>
 <p>Xdebug 3 默认完全 disabled，要先开 mode；然后选 <em>trigger</em> 还是 <em>always</em>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#D73A49">xdebug.mode</span><span style="color:#24292E">=debug</span></span>
@@ -662,10 +668,10 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <li><code>trigger</code>：只有请求带 <code>XDEBUG_SESSION</code> cookie / GET / POST / env 时才挂 debug；其他请求零开销。HTTP 场景永远选这个</li>
 <li><code>yes</code>：所有请求都进 debug session。每个请求都要给 IDE 发 connect，开发体感慢；只在 CLI 一次性脚本场景用（见最后一节）</li>
 </ul>
-<h2 id="1-servername--servers--name">1. <code>serverName</code> ↔ Servers > Name</h2>
+<h2 id="1-servername--servers--name">1. <code>serverName</code> ↔ Servers &gt; Name</h2>
 <p>容器内 PHP 通过环境变量告诉 Xdebug “我是哪个项目”：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#24292E">PHP_IDE_CONFIG</span><span style="color:#D73A49">=</span><span style="color:#24292E">serverName</span><span style="color:#D73A49">=</span><span style="color:#032F62">laradock</span></span></code></pre>
-<p><code>Preferences > PHP > Servers</code> 里那条 Server 的 <strong>Name</strong> 字段必须<strong>完全等于</strong> <code>serverName=</code> 的值（这里是 <code>laradock</code>）。匹配上之后 PhpStorm 才会用这条 Server 上配的 <em>path mapping</em> 把容器里的 <code>/var/www/...</code> 翻译回宿主项目根，断点才落在正确文件上。</p>
+<p><code>Preferences &gt; PHP &gt; Servers</code> 里那条 Server 的 <strong>Name</strong> 字段必须<strong>完全等于</strong> <code>serverName=</code> 的值（这里是 <code>laradock</code>）。匹配上之后 PhpStorm 才会用这条 Server 上配的 <em>path mapping</em> 把容器里的 <code>/var/www/...</code> 翻译回宿主项目根，断点才落在正确文件上。</p>
 <p><strong>失败模式</strong>：debug session 建立成功（右下角图标变绿、Variables 面板出现），但断点永远不停 —— path mapping 找不到对应 Server，PhpStorm 不知道容器路径对应宿主哪个文件。</p>
 <h2 id="2-xdebugidekey--xdebug_session-value--run-configuration-ide-key">2. <code>xdebug.idekey</code> ↔ <code>XDEBUG_SESSION</code> value ↔ Run Configuration IDE key</h2>
 <p>三处的 IDE key 必须一致，默认值约定俗成是 <code>PHPSTORM</code>：</p>
@@ -673,7 +679,7 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <ul>
 <li>浏览器：Xdebug helper 扩展给请求加 <code>Cookie: XDEBUG_SESSION=PHPSTORM</code></li>
 <li>CLI：<code>XDEBUG_SESSION=PHPSTORM php some-script.php</code></li>
-<li>PhpStorm：<code>Run > Edit Configurations > PHP Remote Debug</code> 里 IDE key 填 <code>PHPSTORM</code></li>
+<li>PhpStorm：<code>Run &gt; Edit Configurations &gt; PHP Remote Debug</code> 里 IDE key 填 <code>PHPSTORM</code></li>
 </ul>
 <p>cookie / env 的 <strong>value</strong> 同时承担两个角色 —— 触发 <code>start_with_request=trigger</code> 模式启动 session，且把 value 当作本次 session 的 IDE key 上报给 IDE。</p>
 <p><strong>失败模式</strong>：连接建立、断点也命中，但 PhpStorm 把 session 路由给错的 Run Configuration —— 看不到该 config 里配的环境变量、看不到自定义 evaluator。多人共享一台 Xdebug proxy 时尤其容易撞。</p>
@@ -704,7 +710,8 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <li>三对名字（serverName / idekey / client_host）逐一对齐</li>
 <li>Server 里 path mapping 设了容器 ↔ 宿主路径</li>
 </ol>
-<p>排到 4 还不行，看 <code>Help > Show Log in Finder</code> 的 <code>idea.log</code>，搜 <code>xdebug</code> —— 99% 能直接定位到具体 mismatch。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/200416-php-gd-text-bbox-alignment/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-04-16T00:00:00.000Z" data-astro-cid-d6qgp232>2020-04-16</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200416-php-gd-text-bbox-alignment/" data-astro-cid-d6qgp232>PHP GD 文字对齐：imagettfbbox 8 元素 + 坐标系是相对 baseline</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>GD 写文字最容易踩的坑：<code>imagettftext($img, $size, $angle, $x, $y, ...)</code> 里的 <code>$y</code> <strong>不是文字顶部、也不是中线</strong>，而是 <em>baseline</em>——拉丁字母 <code>Hxg</code> 中 <code>H</code> 的脚底。所以 <code>imagettftext($img, 12, 0, 0, 0, ...)</code> 写出来的字会<strong>完全跑到画布上方</strong>消失。</p>
+<p>排到 4 还不行，看 <code>Help &gt; Show Log in Finder</code> 的 <code>idea.log</code>，搜 <code>xdebug</code> —— 99% 能直接定位到具体 mismatch。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/200416-php-gd-text-bbox-alignment/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2020-04-16T00:00:00.000Z" data-astro-cid-e6jgshqh>2020-04-16</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/200416-php-gd-text-bbox-alignment/" data-astro-cid-e6jgshqh>PHP GD 文字对齐：imagettfbbox 8 元素 + 坐标系是相对 baseline</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>GD 写文字最容易踩的坑：<code>imagettftext($img, $size, $angle, $x, $y, ...)</code> 里的 <code>$y</code> <strong>不是文字顶部、也不是中线</strong>，而是 <em>baseline</em>——拉丁字母 <code>Hxg</code> 中 <code>H</code> 的脚底。所以 <code>imagettftext($img, 12, 0, 0, 0, ...)</code> 写出来的字会<strong>完全跑到画布上方</strong>消失。</p>
 <p><code>imagettfbbox</code> 返回的也是 baseline 坐标系下的 8 元素：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>索引   含义        典型值（angle=0）</span></span>
 <span class="line"><span>[0]   左下 x        0</span></span>
@@ -730,16 +737,17 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <h2 id="隐藏坑">隐藏坑</h2>
 <ul>
 <li><strong>descender 不算 bounding box</strong>：g/p/q/y 的下伸尾巴在 bbox 外，多行排版按 bbox 算行高会让下行字头部蹭到上行尾巴。靠 <code>$size * 1.2</code> 这种经验系数加行距更稳</li>
-<li><strong><code>$angle</code> 旋转的是文字，不是 bbox 坐标系含义</strong>——bbox 永远按”如果这段文字是水平正向的”来给点，旋转后想知道屏幕坐标得自己用 <code>$angle</code> 套旋转矩阵</li>
+<li><strong><code>$angle</code> 旋转的是文字，不是 bbox 坐标系含义</strong>——bbox 永远按“如果这段文字是水平正向的”来给点，旋转后想知道屏幕坐标得自己用 <code>$angle</code> 套旋转矩阵</li>
 <li><strong>PHP 8.0 起 <code>imagettfbbox</code> / <code>imagettftext</code> 是 <code>imageftbbox</code> / <code>imagefttext</code> 的别名</strong>——行为一致，新代码两套都行</li>
 </ul>
-<p>字体文件路径必须是真实可读的 <code>.ttf</code> / <code>.otf</code>，相对路径默认相对 CWD 不是 script 目录——线上跑用 <code>__DIR__ . '/font.ttf'</code> 兜底。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/200415-composer-ignore-platform-reqs-pitfall/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-04-15T00:00:00.000Z" data-astro-cid-d6qgp232>2020-04-15</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200415-composer-ignore-platform-reqs-pitfall/" data-astro-cid-d6qgp232>Composer `--ignore-platform-reqs` 是安静的 bug 触发器</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>经典踩坑：本地 PHP 7.1，要装的包声明需要 PHP 7.4，<code>composer require</code> 直接拒：</p>
+<p>字体文件路径必须是真实可读的 <code>.ttf</code> / <code>.otf</code>，相对路径默认相对 CWD 不是 script 目录——线上跑用 <code>__DIR__ . '/font.ttf'</code> 兜底。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/200415-composer-ignore-platform-reqs-pitfall/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2020-04-15T00:00:00.000Z" data-astro-cid-e6jgshqh>2020-04-15</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/200415-composer-ignore-platform-reqs-pitfall/" data-astro-cid-e6jgshqh>Composer `--ignore-platform-reqs` 是安静的 bug 触发器</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>经典踩坑：本地 PHP 7.1，要装的包声明需要 PHP 7.4，<code>composer require</code> 直接拒：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Your requirements could not be resolved to an installable set of packages.</span></span>
-<span class="line"><span>- hellogerard/jobby requires php >=7.4</span></span></code></pre>
+<span class="line"><span>- hellogerard/jobby requires php &gt;=7.4</span></span></code></pre>
 <p>Google 第一条答案是加 <code>--ignore-platform-reqs</code>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">composer</span><span style="color:#032F62"> require</span><span style="color:#032F62"> hellogerard/jobby</span><span style="color:#005CC5"> --ignore-platform-reqs</span></span></code></pre>
 <p>报错没了，包装上了，看起来一切正常 —— 直到运行时撞上 <code>PHP Fatal error: Cannot use null coalescing assignment operator (??=)</code> 之类，因为这是 PHP 7.4 才有的语法。</p>
-<p><code>--ignore-platform-reqs</code> 字面就是”不检查平台依赖”，它把 <code>composer.json</code> 里 <code>"require": { "php": ">=7.4" }</code> 这条约束跳过去 —— composer 不知道这个包用了 7.4 才有的 syntax / API，硬装下去，运行才炸。<strong>安装时无错、运行时无关栈帧、<code>composer.lock</code> 还带着错版本 —— 是教科书级的静默 bug</strong>。</p>
+<p><code>--ignore-platform-reqs</code> 字面就是“不检查平台依赖”，它把 <code>composer.json</code> 里 <code>"require": { "php": "&gt;=7.4" }</code> 这条约束跳过去 —— composer 不知道这个包用了 7.4 才有的 syntax / API，硬装下去，运行才炸。<strong>安装时无错、运行时无关栈帧、<code>composer.lock</code> 还带着错版本 —— 是教科书级的静默 bug</strong>。</p>
 <p>正解：用目标 PHP 版本的 binary 跑 composer。Composer 本身是个 PHP 脚本，跟着哪个 PHP 走就按哪个 PHP 检查约束：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">which</span><span style="color:#032F62"> composer</span></span>
 <span class="line"><span style="color:#6A737D"># /usr/local/bin/composer</span></span>
@@ -749,27 +757,29 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># 内存不够时临时关掉 memory_limit</span></span>
 <span class="line"><span style="color:#6F42C1">/usr/local/opt/php@7.4/bin/php</span><span style="color:#005CC5"> -d</span><span style="color:#032F62"> memory_limit=</span><span style="color:#005CC5">-1</span><span style="color:#032F62"> /usr/local/bin/composer</span><span style="color:#032F62"> update</span><span style="color:#005CC5"> -vvv</span></span></code></pre>
-<p>如果之前误用 <code>--ignore-platform-reqs</code> 装过，<code>composer.lock</code> 已经被污染，要 <code>composer update --lock</code> 重生成约束树。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/200415-php-cli-introspection/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2020-04-15T00:00:00.000Z" data-astro-cid-d6qgp232>2020-04-15</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/200415-php-cli-introspection/" data-astro-cid-d6qgp232>PHP CLI 排查速查：`--ri` / `--re` / `php -a` 常被忽略</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>php</code> 的 CLI 选项里有几个 flag 大多数人不知道，能省一堆 <code>phpinfo() | grep</code>。</p>
-<p><strong><code>php --ri &#x3C;extension></code></strong> —— 看某个扩展的当前有效配置（合并所有 ini 之后的运行时值，不是源 ini 文件内容）：</p>
+<p>如果之前误用 <code>--ignore-platform-reqs</code> 装过，<code>composer.lock</code> 已经被污染，要 <code>composer update --lock</code> 重生成约束树。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/200415-php-cli-introspection/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2020-04-15T00:00:00.000Z" data-astro-cid-e6jgshqh>2020-04-15</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/200415-php-cli-introspection/" data-astro-cid-e6jgshqh>PHP CLI 排查速查：`--ri` / `--re` / `php -a` 常被忽略</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>php</code> 的 CLI 选项里有几个 flag 大多数人不知道，能省一堆 <code>phpinfo() | grep</code>。</p>
+<p><strong><code>php --ri &lt;extension&gt;</code></strong> —— 看某个扩展的当前有效配置（合并所有 ini 之后的运行时值，不是源 ini 文件内容）：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> --ri</span><span style="color:#032F62"> gd</span></span>
 <span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> --ri</span><span style="color:#032F62"> opcache</span></span></code></pre>
 <p>比 <code>php -i | grep -A 10 gd</code> 准 —— <code>--ri</code> 给的是 PHP 真正认到的值。</p>
-<p><strong><code>php --re &#x3C;extension></code></strong> —— 反射列出扩展提供的所有函数 / 类 / 常量，顺便确认装没装：</p>
+<p><strong><code>php --re &lt;extension&gt;</code></strong> —— 反射列出扩展提供的所有函数 / 类 / 常量，顺便确认装没装：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> --re</span><span style="color:#032F62"> decimal</span></span>
 <span class="line"><span style="color:#6A737D"># 没装时输出：Exception: Extension decimal does not exist</span></span></code></pre>
 <p><strong><code>php -a</code></strong> —— REPL 交互模式，带 tab 补全（函数 / 类 / 常量名），比 <code>php -r '...'</code> 拼字符串方便：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> -a</span></span>
-<span class="line"><span style="color:#6F42C1">php</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> date</span><span style="color:#24292E">(</span><span style="color:#6F42C1">'Y-m-d'</span><span style="color:#6F42C1">,</span><span style="color:#005CC5"> 1234567890</span><span style="color:#24292E">);</span></span></code></pre>
+<span class="line"><span style="color:#6F42C1">php</span><span style="color:#D73A49"> &gt;</span><span style="color:#032F62"> date</span><span style="color:#24292E">(</span><span style="color:#6F42C1">'Y-m-d'</span><span style="color:#6F42C1">,</span><span style="color:#005CC5"> 1234567890</span><span style="color:#24292E">);</span></span></code></pre>
 <p>需要 PHP build 时带 readline，Homebrew 装的 <code>php</code> 默认有。</p>
 <p><strong><code>php-fpm -tt</code></strong> —— FPM 配置语法检查 + dump 解析后的最终值（双 <code>t</code>，单 <code>t</code> 只验语法不 dump）：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">php-fpm</span><span style="color:#005CC5"> -tt</span><span style="color:#D73A49"> 2>&#x26;1</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#032F62"> memory_limit</span></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">php-fpm</span><span style="color:#005CC5"> -tt</span><span style="color:#D73A49"> 2&gt;&amp;1</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#032F62"> memory_limit</span></span></code></pre>
 <p>其他常用一行：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> --ini</span><span style="color:#6A737D">                                                  # ini 文件路径</span></span>
 <span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> -i</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#005CC5"> -E</span><span style="color:#032F62"> "Loaded Configuration|Scan this dir"</span><span style="color:#6A737D">      # ini 加载顺序</span></span>
 <span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> -m</span><span style="color:#6A737D">                                                     # 已加载模块</span></span>
 <span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> "echo ini_get('memory_limit');"</span><span style="color:#6A737D">                     # 看任意 ini 值</span></span>
 <span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> "phpinfo();"</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#032F62"> configure</span><span style="color:#6A737D">                       # 编译参数</span></span>
-<span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> "print_r(openssl_get_cert_locations());"</span><span style="color:#6A737D">            # openssl cert 路径</span></span></code></pre> </div> </div> </article><article class="card card-shell" data-href="/posts/190410-strpos-returns-zero/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2019-04-10T00:00:00.000Z" data-astro-cid-d6qgp232>2019-04-10</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/190410-strpos-returns-zero/" data-astro-cid-d6qgp232>PHP strpos 找到时返回 0</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>strpos($haystack, $needle): int|false</code> 找不到时返回 <code>false</code>，<strong>找到时返回位置 int</strong>——位置 <code>0</code> 在 <code>if</code> 里跟 <code>false</code> 等价，会被吞掉。</p>
+<span class="line"><span style="color:#6F42C1">php</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> "print_r(openssl_get_cert_locations());"</span><span style="color:#6A737D">            # openssl cert 路径</span></span></code></pre>
+</div></div></article><article class="card card-shell" data-href="/posts/190410-strpos-returns-zero/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2019-04-10T00:00:00.000Z" data-astro-cid-e6jgshqh>2019-04-10</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/190410-strpos-returns-zero/" data-astro-cid-e6jgshqh>PHP strpos 找到时返回 0</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>strpos($haystack, $needle): int|false</code> 找不到时返回 <code>false</code>，<strong>找到时返回位置 int</strong>——位置 <code>0</code> 在 <code>if</code> 里跟 <code>false</code> 等价，会被吞掉。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#24292E">$s </span><span style="color:#D73A49">=</span><span style="color:#032F62"> 'abc'</span><span style="color:#24292E">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> (</span><span style="color:#005CC5">strpos</span><span style="color:#24292E">($s, </span><span style="color:#032F62">'a'</span><span style="color:#24292E">)) {            </span><span style="color:#6A737D">// 不输出，0 被当 false</span></span>
@@ -780,57 +790,61 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <span class="line"><span style="color:#005CC5">    echo</span><span style="color:#032F62"> 'found'</span><span style="color:#24292E">;</span></span>
 <span class="line"><span style="color:#24292E">}</span></span></code></pre>
 <p>PHP 8.0+ 直接用 <code>str_contains($haystack, $needle): bool</code>，没有这个坑。</p>
-<p><a href="https://www.php.net/manual/zh/function.strpos.php">https://www.php.net/manual/zh/function.strpos.php</a></p> </div> </div> </article><article class="card card-shell" data-href="/posts/180505-phpstorm-multiple-class-definitions/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2018-05-05T00:00:00.000Z" data-astro-cid-d6qgp232>2018-05-05</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-d6qgp232>#phpstorm</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/180505-phpstorm-multiple-class-definitions/" data-astro-cid-d6qgp232>PhpStorm &quot;Multiple definitions exist for class&quot; 警告</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PhpStorm 报：</p>
+<p><a href="https://www.php.net/manual/zh/function.strpos.php">https://www.php.net/manual/zh/function.strpos.php</a></p>
+</div></div></article><article class="card card-shell" data-href="/posts/180505-phpstorm-multiple-class-definitions/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2018-05-05T00:00:00.000Z" data-astro-cid-e6jgshqh>2018-05-05</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-e6jgshqh>#phpstorm</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/180505-phpstorm-multiple-class-definitions/" data-astro-cid-e6jgshqh>PhpStorm &quot;Multiple definitions exist for class&quot; 警告</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>PhpStorm 报：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">Multiple</span><span style="color:#032F62"> definitions</span><span style="color:#032F62"> exist</span><span style="color:#032F62"> for</span><span style="color:#032F62"> class</span><span style="color:#032F62"> Foo</span><span style="color:#005CC5">\B</span><span style="color:#032F62">ar</span></span></code></pre>
 <p>自动跳转 / 补全在两个文件之间反复横跳 —— 同一份代码被索引了两遍。</p>
 <p>最常见场景：本地 dev 一个 package（<code>packages/foo/</code>），它又被 Composer path repository 或 symlink 挂进 <code>vendor/foo/</code>，PhpStorm 把两份都索引了。</p>
 <p><code>Cmd + O</code> 输入类名看候选列表，确认是哪两个文件，然后保留 source-of-truth 那份，另一份处理：</p>
 <ul>
-<li>项目内的副本：右键 dir → <code>Mark Directory as > Excluded</code></li>
-<li>系统级 Include Path 里的：<code>Settings > Languages &#x26; Frameworks > PHP > Include Path</code> 删条目</li>
+<li>项目内的副本：右键 dir → <code>Mark Directory as &gt; Excluded</code></li>
+<li>系统级 Include Path 里的：<code>Settings &gt; Languages &amp; Frameworks &gt; PHP &gt; Include Path</code> 删条目</li>
 </ul>
-<p>PhpStorm 会增量重建索引，不必走 <code>File > Invalidate Caches</code>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/180505-phpstorm-no-syntax-highlight/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2018-05-05T00:00:00.000Z" data-astro-cid-d6qgp232>2018-05-05</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-d6qgp232>#phpstorm</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/180505-phpstorm-no-syntax-highlight/" data-astro-cid-d6qgp232>PhpStorm 新建文件突然没有语法高亮</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>新建 <code>foo.php</code> 突然没语法高亮，删了重建还是没有，扩展名也没错 —— 大概率是某个 pattern 被误加进了 <code>Text</code> 文件类型的白名单。最常见的源头是某次手滑点了 <em>Override File Type → Text</em>，PhpStorm 就把这个 pattern 永久记下了。</p>
+<p>PhpStorm 会增量重建索引，不必走 <code>File &gt; Invalidate Caches</code>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/180505-phpstorm-no-syntax-highlight/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2018-05-05T00:00:00.000Z" data-astro-cid-e6jgshqh>2018-05-05</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-e6jgshqh>#phpstorm</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/180505-phpstorm-no-syntax-highlight/" data-astro-cid-e6jgshqh>PhpStorm 新建文件突然没有语法高亮</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>新建 <code>foo.php</code> 突然没语法高亮，删了重建还是没有，扩展名也没错 —— 大概率是某个 pattern 被误加进了 <code>Text</code> 文件类型的白名单。最常见的源头是某次手滑点了 <em>Override File Type → Text</em>，PhpStorm 就把这个 pattern 永久记下了。</p>
 <p>修复：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Settings > Editor > File Types > Recognized File Types > Text > Registered Patterns</span></span></code></pre>
-<p>删掉多余的 <code>*.php</code> / <code>foo.php</code> 即可。改动立刻生效，文件不用重开。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/180505-phpstorm-surround-on-typing/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2018-05-05T00:00:00.000Z" data-astro-cid-d6qgp232>2018-05-05</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-d6qgp232>#phpstorm</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/180505-phpstorm-surround-on-typing/" data-astro-cid-d6qgp232>PhpStorm 选中文本后输引号自动包裹</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>很多编辑器默认开启的 “选中 + 输引号 = 自动包裹” 在 PhpStorm 里默认<strong>关</strong>。开启路径：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Settings > Editor > General > Smart Keys > Surround selection on typing quote or brace</span></span></code></pre>
-<p>勾上后，选中一个 word 再敲 <code>'</code> <code>"</code> <code>(</code> <code>[</code> <code>{</code> 都会用对应符号把它包起来 —— 加日志、加翻译函数、试不同表达式优先级时省一大堆光标移动。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/170525-this-self-parent-static/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2017-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2017-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/170525-this-self-parent-static/" data-astro-cid-d6qgp232>this / self / parent / static 在 PHP 类内部的区别</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>类内部访问成员有 4 个关键字，差别在「指向哪个类」与「是否跟着子类走」（多态 / late static binding）：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>关键字</th><th>指向</th><th>LSB</th><th>静态方法可用</th></tr></thead><tbody><tr><td><code>self::</code></td><td><strong>写它的那个类</strong>（词法）</td><td>否</td><td>✓</td></tr><tr><td><code>parent::</code></td><td><code>self</code> 的父类</td><td>否</td><td>✓</td></tr><tr><td><code>static::</code></td><td><strong>实际调用时的类</strong>（<em>late static binding</em>，PHP 5.3+）</td><td>✓</td><td>✓</td></tr><tr><td><code>$this-></code></td><td>当前实例所属的类</td><td>✓</td><td>✗（静态方法里无 <code>$this</code>）</td></tr></tbody></table>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Settings &gt; Editor &gt; File Types &gt; Recognized File Types &gt; Text &gt; Registered Patterns</span></span></code></pre>
+<p>删掉多余的 <code>*.php</code> / <code>foo.php</code> 即可。改动立刻生效，文件不用重开。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/180505-phpstorm-surround-on-typing/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2018-05-05T00:00:00.000Z" data-astro-cid-e6jgshqh>2018-05-05</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a><a href="/tags/phpstorm/" class="tag" data-astro-cid-e6jgshqh>#phpstorm</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/180505-phpstorm-surround-on-typing/" data-astro-cid-e6jgshqh>PhpStorm 选中文本后输引号自动包裹</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>很多编辑器默认开启的 “选中 + 输引号 = 自动包裹” 在 PhpStorm 里默认<strong>关</strong>。开启路径：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Settings &gt; Editor &gt; General &gt; Smart Keys &gt; Surround selection on typing quote or brace</span></span></code></pre>
+<p>勾上后，选中一个 word 再敲 <code>'</code> <code>"</code> <code>(</code> <code>[</code> <code>{</code> 都会用对应符号把它包起来 —— 加日志、加翻译函数、试不同表达式优先级时省一大堆光标移动。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/170525-this-self-parent-static/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2017-05-25T00:00:00.000Z" data-astro-cid-e6jgshqh>2017-05-25</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/170525-this-self-parent-static/" data-astro-cid-e6jgshqh>this / self / parent / static 在 PHP 类内部的区别</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>类内部访问成员有 4 个关键字，差别在「指向哪个类」与「是否跟着子类走」（多态 / late static binding）：</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>指向</th>
+<th>LSB</th>
+<th>静态方法可用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self::</code></td>
+<td><strong>写它的那个类</strong>（词法）</td>
+<td>否</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>parent::</code></td>
+<td><code>self</code> 的父类</td>
+<td>否</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>static::</code></td>
+<td><strong>实际调用时的类</strong>（<em>late static binding</em>，PHP 5.3+）</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>$this-&gt;</code></td>
+<td>当前实例所属的类</td>
+<td>✓</td>
+<td>✗（静态方法里无 <code>$this</code>）</td>
+</tr>
+</tbody>
+</table>
 <p><code>self::</code> 和 <code>static::</code> 的差别只在被子类继承后才显现：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> A</span></span>
 <span class="line"><span style="color:#24292E">{</span></span>
@@ -843,72 +857,73 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <span class="line"><span style="color:#005CC5">var_dump</span><span style="color:#24292E">(</span><span style="color:#005CC5">B</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">newSelf</span><span style="color:#24292E">());   </span><span style="color:#6A737D">// object(A) — self 锁死在写它的 A 里</span></span>
 <span class="line"><span style="color:#005CC5">var_dump</span><span style="color:#24292E">(</span><span style="color:#005CC5">B</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">newStatic</span><span style="color:#24292E">()); </span><span style="color:#6A737D">// object(B) — static 跟着调用方</span></span></code></pre>
 <p>口诀：工厂方法要返回子类型 → <code>static::</code>；要锁定当前类不被覆盖 → <code>self::</code>。</p>
-<p><a href="https://stackoverflow.com/questions/151969/when-to-use-self-over-this">Stack Overflow: When to use self over $this?</a></p> </div> </div> </article><article class="card card-shell" data-href="/posts/170421-cgi-fastcgi-phpcgi-phpfpm/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2017-04-21T00:00:00.000Z" data-astro-cid-d6qgp232>2017-04-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/170421-cgi-fastcgi-phpcgi-phpfpm/" data-astro-cid-d6qgp232>CGI vs FastCGI vs PHP-CGI vs PHP-FPM</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP 处理 web 请求要解决两件事——和 web server 通信的<strong>协议</strong>、PHP 自己的<strong>进程管理</strong>。这四个名词分两组踩在这两件事上：协议层是 CGI / FastCGI，PHP 实现是 PHP-CGI / PHP-FPM。</p>
+<p><a href="https://stackoverflow.com/questions/151969/when-to-use-self-over-this">Stack Overflow: When to use self over $this?</a></p>
+</div></div></article><article class="card card-shell" data-href="/posts/170421-cgi-fastcgi-phpcgi-phpfpm/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2017-04-21T00:00:00.000Z" data-astro-cid-e6jgshqh>2017-04-21</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/170421-cgi-fastcgi-phpcgi-phpfpm/" data-astro-cid-e6jgshqh>CGI vs FastCGI vs PHP-CGI vs PHP-FPM</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>PHP 处理 web 请求要解决两件事——和 web server 通信的<strong>协议</strong>、PHP 自己的<strong>进程管理</strong>。这四个名词分两组踩在这两件事上：协议层是 CGI / FastCGI，PHP 实现是 PHP-CGI / PHP-FPM。</p>
 <h2 id="协议层">协议层</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th></th><th>CGI</th><th>FastCGI</th></tr></thead><tbody><tr><td>进程模型</td><td>每个请求 fork-and-exec 一次</td><td>master + 长驻 worker pool</td></tr><tr><td>启动开销</td><td>每次都加载解释器</td><td>解释器常驻内存</td></tr><tr><td>数据流</td><td>环境变量 + stdin/stdout</td><td>二进制协议复用 socket 连接</td></tr><tr><td>现状</td><td>历史遗留</td><td>现代 web 标准</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CGI</th>
+<th>FastCGI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进程模型</td>
+<td>每个请求 fork-and-exec 一次</td>
+<td>master + 长驻 worker pool</td>
+</tr>
+<tr>
+<td>启动开销</td>
+<td>每次都加载解释器</td>
+<td>解释器常驻内存</td>
+</tr>
+<tr>
+<td>数据流</td>
+<td>环境变量 + stdin/stdout</td>
+<td>二进制协议复用 socket 连接</td>
+</tr>
+<tr>
+<td>现状</td>
+<td>历史遗留</td>
+<td>现代 web 标准</td>
+</tr>
+</tbody>
+</table>
 <p>CGI 慢在反复 fork 和解释器反复初始化。FastCGI 把解释器留在内存，请求过来直接派给空闲 worker。</p>
 <h2 id="php-实现">PHP 实现</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th></th><th>PHP-CGI</th><th>PHP-FPM</th></tr></thead><tbody><tr><td>性质</td><td>PHP 的 CGI binary</td><td>PHP 官方 FastCGI 进程管理器</td></tr><tr><td>进程管理</td><td>无</td><td>master + 动态 worker pool</td></tr><tr><td>改 <code>php.ini</code></td><td>必须杀进程重启，PHP 会停服</td><td><code>kill -USR2</code> 平滑 reload，请求不中断</td></tr><tr><td>现状</td><td>淘汰</td><td>主流（Laravel / WordPress / 大多数 PHP 栈）</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>PHP-CGI</th>
+<th>PHP-FPM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性质</td>
+<td>PHP 的 CGI binary</td>
+<td>PHP 官方 FastCGI 进程管理器</td>
+</tr>
+<tr>
+<td>进程管理</td>
+<td>无</td>
+<td>master + 动态 worker pool</td>
+</tr>
+<tr>
+<td>改 <code>php.ini</code></td>
+<td>必须杀进程重启，PHP 会停服</td>
+<td><code>kill -USR2</code> 平滑 reload，请求不中断</td>
+</tr>
+<tr>
+<td>现状</td>
+<td>淘汰</td>
+<td>主流（Laravel / WordPress / 大多数 PHP 栈）</td>
+</tr>
+</tbody>
+</table>
 <p>PHP-FPM = PHP 解释器 + FastCGI 协议实现 + 进程管理。三件事的合体，不是单独某个组件。</p>
 <h2 id="实战nginx--php-fpm">实战：nginx + php-fpm</h2>
 <p>nginx 把 <code>.php</code> 请求按 FastCGI 协议丢给 php-fpm 的 socket：</p>
@@ -921,12 +936,14 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
 <p>php-fpm 那头按 pool 配置 worker 数（<code>pm.max_children</code> 等），nginx 不感知 PHP 进程。</p>
 <h2 id="怎么选">怎么选</h2>
 <p>现代栈一律 <strong>nginx + php-fpm</strong>，CGI / PHP-CGI 了解概念即可，生产不用。</p>
-<p>参考：<a href="https://segmentfault.com/q/1010000000256516">搞不清 FastCGI 与 PHP-fpm 之间是什么关系</a> · <a href="http://www.mike.org.cn/articles/what-is-cgi-fastcgi-php-fpm-spawn-fcgi/">CGI / FastCGI / PHP-CGI / PHP-FPM 是什么</a></p> </div> </div> </article><article class="card card-shell" data-href="/posts/170309-empty-zero-string/" data-astro-cid-d6qgp232> <a href="/tags/php/" class="chip" data-astro-cid-d6qgp232>php</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2017-03-09T00:00:00.000Z" data-astro-cid-d6qgp232>2017-03-09</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/php/" class="tag" data-astro-cid-d6qgp232>#php</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/170309-empty-zero-string/" data-astro-cid-d6qgp232>PHP empty(&#39;0.0&#39;) 不是空</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>PHP 的 <code>empty()</code> 把 <code>'0'</code>（字符串零）当空，但 <code>'0.0'</code>（字符串小数零）当<strong>非空</strong>。DB 里把 decimal 字段存成 string 时会咬人——查到 <code>'0.00'</code> 误以为有值。</p>
+<p>参考：<a href="https://segmentfault.com/q/1010000000256516">搞不清 FastCGI 与 PHP-fpm 之间是什么关系</a> · <a href="http://www.mike.org.cn/articles/what-is-cgi-fastcgi-php-fpm-spawn-fcgi/">CGI / FastCGI / PHP-CGI / PHP-FPM 是什么</a></p>
+</div></div></article><article class="card card-shell" data-href="/posts/170309-empty-zero-string/" data-astro-cid-e6jgshqh><a href="/tags/php/" class="chip" data-astro-cid-e6jgshqh>php</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2017-03-09T00:00:00.000Z" data-astro-cid-e6jgshqh>2017-03-09</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/php/" class="tag" data-astro-cid-e6jgshqh>#php</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/170309-empty-zero-string/" data-astro-cid-e6jgshqh>PHP empty(&#39;0.0&#39;) 不是空</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>PHP 的 <code>empty()</code> 把 <code>'0'</code>（字符串零）当空，但 <code>'0.0'</code>（字符串小数零）当<strong>非空</strong>。DB 里把 decimal 字段存成 string 时会咬人——查到 <code>'0.00'</code> 误以为有值。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#005CC5">empty</span><span style="color:#24292E">(</span><span style="color:#032F62">'0'</span><span style="color:#24292E">);           </span><span style="color:#6A737D">// true</span></span>
 <span class="line"><span style="color:#005CC5">empty</span><span style="color:#24292E">(</span><span style="color:#032F62">'0.0'</span><span style="color:#24292E">);         </span><span style="color:#6A737D">// false ← 反直觉</span></span>
 <span class="line"><span style="color:#005CC5">empty</span><span style="color:#24292E">((</span><span style="color:#D73A49">float</span><span style="color:#24292E">) </span><span style="color:#032F62">'0.0'</span><span style="color:#24292E">); </span><span style="color:#6A737D">// true</span></span></code></pre>
 <p>判断数值前先 cast：<code>empty((float) $value)</code>。</p>
-<p><a href="https://www.php.net/manual/zh/function.empty.php">https://www.php.net/manual/zh/function.empty.php</a></p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+<p><a href="https://www.php.net/manual/zh/function.empty.php">https://www.php.net/manual/zh/function.empty.php</a></p>
+</div></div></article></div><p class="back" data-astro-cid-aezt6mnq><a href="/tags/" data-astro-cid-aezt6mnq>← all tags</a> · <a href="/" data-astro-cid-aezt6mnq>index</a></p></main><footer class="site-footer"><span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span><span>·</span><span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span><span>·</span><span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span></footer><script>
       (() => {
         const enhance = () => {
           const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
@@ -977,7 +994,7 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
           enhance();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const BUDGET = 360;
         const collapse = () => {
@@ -1024,7 +1041,7 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
           run();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const mark = () => {
           const here = location.host;
@@ -1049,4 +1066,4 @@ updated <time datetime="2026-05-20T00:00:00.000Z" data-astro-cid-d6qgp232>2026-0
           mark();
         }
       })();
-    </script> </body> </html>
+    </script></body></html>

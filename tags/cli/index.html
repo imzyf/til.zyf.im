@@ -1,14 +1,13 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged cli"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#cli · TIL</title><link rel="stylesheet" href="/_astro/Base.BW7bO-F5.css">
-<style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
-.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
-</style></head> <body>  <script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="Notes tagged cli"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#cli · TIL</title><link rel="stylesheet" href="/_astro/Base.DQYaApxQ.css"><style>.note-stack[data-astro-cid-aezt6mnq]{flex-direction:column;gap:1.4rem;display:flex}.back[data-astro-cid-aezt6mnq]{border-top:1px solid var(--rule);color:var(--muted);margin-top:2.5rem;padding-top:1rem;font-size:.85rem}
+.card[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.85rem;min-width:0;display:flex}.card-body[data-astro-cid-e6jgshqh],.prose[data-astro-cid-e6jgshqh]{min-width:0}.card-meta[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.25rem;display:flex}.meta[data-astro-cid-e6jgshqh]{color:var(--muted);flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0;font-size:.78rem;display:flex}.meta[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-e6jgshqh]{flex-wrap:wrap;gap:.4rem;display:inline-flex}.tag[data-astro-cid-e6jgshqh]{color:var(--muted);padding:.05rem;font-size:.78rem}.updated[data-astro-cid-e6jgshqh]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh]{letter-spacing:-.005em;margin:0;font-size:1.4rem;font-weight:700;line-height:1.3}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]{color:var(--fg)}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-e6jgshqh]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-e6jgshqh] h1,.prose[data-astro-cid-e6jgshqh] h2{margin:1rem 0 .4rem;font-size:1rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] h3,.prose[data-astro-cid-e6jgshqh] h4,.prose[data-astro-cid-e6jgshqh] h5,.prose[data-astro-cid-e6jgshqh] h6{margin:.85rem 0 .3rem;font-size:.95rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] p{margin:.65rem 0}.prose[data-astro-cid-e6jgshqh] p:first-child{margin-top:0}.prose[data-astro-cid-e6jgshqh] p:last-child{margin-bottom:0}.prose[data-astro-cid-e6jgshqh] ul,.prose[data-astro-cid-e6jgshqh] ol{margin:.6rem 0;padding-left:1.4rem}.prose[data-astro-cid-e6jgshqh] li{margin:.2rem 0}.prose[data-astro-cid-e6jgshqh] pre{padding:.7rem .85rem;font-size:.82rem}.prose[data-astro-cid-e6jgshqh] code{font-size:.85em}.prose[data-astro-cid-e6jgshqh] blockquote{border-left:2px solid var(--rule);color:var(--muted);margin:.7rem 0;padding-left:.8rem;font-style:italic}.prose[data-astro-cid-e6jgshqh] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-e6jgshqh]{font-size:.88rem;margin:.5rem 0 0!important}.read-more[data-astro-cid-e6jgshqh]{white-space:nowrap}
+</style></head><body><script>
       (() => {
         const T = 24;
         const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#cli</h1> <p class="page-lede" data-astro-cid-tge3q7ae>1 note</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260519-rtk-per-command-parser/" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="chip" data-astro-cid-d6qgp232>ai</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-19T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-19</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/ai/" class="tag" data-astro-cid-d6qgp232>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-d6qgp232>#llm</a><a href="/tags/context-engineering/" class="tag" data-astro-cid-d6qgp232>#context-engineering</a><a href="/tags/cli/" class="tag" data-astro-cid-d6qgp232>#cli</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260519-rtk-per-command-parser/" data-astro-cid-d6qgp232>LLM CLI proxy：rtk 是命令字典而非算法</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://github.com/rtk-ai/rtk">rtk</a> 是夹在 AI 编码助手和 shell 之间的 Rust CLI proxy，宣称帮 LLM 省 60-90% 的 token。它做的是 <em>context compression</em> —— LLM 想跑 <code>git status</code>，rtk 把噪音过滤后再喂回去。看着像「魔法压缩算法」，拆开后发现根本不是。</p>
+    </script><div class="site-header-bar"><header class="site-header"><div class="site-brand"><a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a><span class="site-tagline">want to remember, and might want to share.</span></div><nav class="site-nav"><a href="/archives/">archives</a><a href="/tags/" class="active">tags</a><a href="/search/">search</a></nav></header></div><main class="site-main width-note"><h1 class="page-title no-mark" data-astro-cid-aezt6mnq>#cli</h1><p class="page-lede" data-astro-cid-aezt6mnq>1 note</p><div class="note-stack" data-astro-cid-aezt6mnq><article class="card card-shell" data-href="/posts/260519-rtk-per-command-parser/" data-astro-cid-e6jgshqh><a href="/tags/ai/" class="chip" data-astro-cid-e6jgshqh>ai</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-19T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-19</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/ai/" class="tag" data-astro-cid-e6jgshqh>#ai</a><a href="/tags/llm/" class="tag" data-astro-cid-e6jgshqh>#llm</a><a href="/tags/context-engineering/" class="tag" data-astro-cid-e6jgshqh>#context-engineering</a><a href="/tags/cli/" class="tag" data-astro-cid-e6jgshqh>#cli</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260519-rtk-per-command-parser/" data-astro-cid-e6jgshqh>LLM CLI proxy：rtk 是命令字典而非算法</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><a href="https://github.com/rtk-ai/rtk">rtk</a> 是夹在 AI 编码助手和 shell 之间的 Rust CLI proxy，宣称帮 LLM 省 60-90% 的 token。它做的是 <em>context compression</em> —— LLM 想跑 <code>git status</code>，rtk 把噪音过滤后再喂回去。看着像「魔法压缩算法」，拆开后发现根本不是。</p>
 <h2 id="核心一个-cli-工具一份手写-parser">核心：一个 CLI 工具一份手写 parser</h2>
 <p>rtk 没有通用压缩引擎。<code>src/cmds/</code> 下<strong>按工具切文件</strong>：</p>
 <ul>
@@ -20,7 +19,7 @@
 </ul>
 <p>约 45 个 parser 文件覆盖 100+ 子命令。每个文件用 match 分发子命令，里面写死「哪些字段是噪音、压缩后长什么样」—— 手写领域知识，不是算法推导。</p>
 <p>官网讲的 <em>filtering / grouping / truncation / dedup</em> 也不是引擎，只是 4 个共享字符串处理函数（<code>dedup_lines()</code> / <code>truncate_middle()</code> 之类）。parser 各自挑用哪几个 —— 同一函数在 <code>git diff</code> 里删 progress 行，在 docker logs 里折叠重复行。</p>
-<p>新加一种工具支持 = 提一个 PR 加一个 <code>&#x3C;tool>_cmd.rs</code>。changelog 看得清清楚楚：v0.38.0 加 GitLab <code>glab</code>、v0.40.0 加 Gradle，一条一条加。</p>
+<p>新加一种工具支持 = 提一个 PR 加一个 <code>&lt;tool&gt;_cmd.rs</code>。changelog 看得清清楚楚：v0.38.0 加 GitLab <code>glab</code>、v0.40.0 加 Gradle，一条一条加。</p>
 <h2 id="关键技巧拿机器格式做解析">关键技巧：拿机器格式做解析</h2>
 <p>rtk 的稳定性靠一个简单决定 —— <strong>不解析给人看的输出</strong>。常见命令几乎都有 <code>--porcelain</code> / <code>--json</code> / <code>--message-format</code> 之类的脚本契约，rtk 就走这条。</p>
 <p>机器契约是工具维护者给脚本用的稳定 API，UI 文案改了不影响。逆向人类输出（彩色、对齐、本地化）则一升级就崩。rtk 选前者 —— 这是它能跟着 100+ 工具活下去的根因，比任何「压缩算法」都重要。</p>
@@ -36,39 +35,40 @@
 <span class="line"><span>  ↓</span></span>
 <span class="line"><span>返给 LLM，LLM 完全不知道有中间层</span></span></code></pre>
 <h2 id="为什么不选其他路">为什么不选其他路</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>候选方案</th><th>为什么 rtk 没用</th></tr></thead><tbody><tr><td>gzip 通用压缩</td><td>LLM 不解压，喂进去还是压缩字节</td></tr><tr><td>让 LLM 自己 summarize</td><td>慢、贵、丢信息，summarize 本身吃 token</td></tr><tr><td>盲截前 N 行</td><td>没语义，可能切掉关键 error 行；切到的还是不稳的人类格式</td></tr><tr><td>per-command parser</td><td>&#x3C;10ms、确定性、保关键信号 —— 代价是每个工具都得单独写</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>候选方案</th>
+<th>为什么 rtk 没用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gzip 通用压缩</td>
+<td>LLM 不解压，喂进去还是压缩字节</td>
+</tr>
+<tr>
+<td>让 LLM 自己 summarize</td>
+<td>慢、贵、丢信息，summarize 本身吃 token</td>
+</tr>
+<tr>
+<td>盲截前 N 行</td>
+<td>没语义，可能切掉关键 error 行；切到的还是不稳的人类格式</td>
+</tr>
+<tr>
+<td>per-command parser</td>
+<td>&lt;10ms、确定性、保关键信号 —— 代价是每个工具都得单独写</td>
+</tr>
+</tbody>
+</table>
 <h2 id="推论">推论</h2>
 <ol>
 <li><strong>护城河是命令字典而非算法</strong>。任何人能写 <code>pytest_cmd.rs</code>，但要覆盖 90% 日常命令、跟着每个工具升级（git 改 porcelain、pytest 升级 reporter）才是真功夫。</li>
 <li><strong>工具支持决定收益</strong>。<code>rtk hugo</code>、<code>rtk astro</code> 不存在就是裸过。</li>
 <li><strong>永远滞后于命令本身</strong>。git 改了 porcelain 格式得等 rtk 跟上。</li>
 <li><strong>PreToolUse hook 才是 UX 关键</strong>。靠 prompt 教 LLM「记得用 rtk」不可靠；hook 把改写做在协议层，LLM 不感知。</li>
-</ol> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+</ol>
+</div></div></article></div><p class="back" data-astro-cid-aezt6mnq><a href="/tags/" data-astro-cid-aezt6mnq>← all tags</a> · <a href="/" data-astro-cid-aezt6mnq>index</a></p></main><footer class="site-footer"><span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span><span>·</span><span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span><span>·</span><span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span></footer><script>
       (() => {
         const enhance = () => {
           const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
@@ -119,7 +119,7 @@
           enhance();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const BUDGET = 360;
         const collapse = () => {
@@ -166,7 +166,7 @@
           run();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const mark = () => {
           const here = location.host;
@@ -191,4 +191,4 @@
           mark();
         }
       })();
-    </script> </body> </html>
+    </script></body></html>

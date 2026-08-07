@@ -1,14 +1,13 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged shell"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#shell · TIL</title><link rel="stylesheet" href="/_astro/Base.BW7bO-F5.css">
-<style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
-.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
-</style></head> <body>  <script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="Notes tagged shell"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#shell · TIL</title><link rel="stylesheet" href="/_astro/Base.DQYaApxQ.css"><style>.note-stack[data-astro-cid-aezt6mnq]{flex-direction:column;gap:1.4rem;display:flex}.back[data-astro-cid-aezt6mnq]{border-top:1px solid var(--rule);color:var(--muted);margin-top:2.5rem;padding-top:1rem;font-size:.85rem}
+.card[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.85rem;min-width:0;display:flex}.card-body[data-astro-cid-e6jgshqh],.prose[data-astro-cid-e6jgshqh]{min-width:0}.card-meta[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.25rem;display:flex}.meta[data-astro-cid-e6jgshqh]{color:var(--muted);flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0;font-size:.78rem;display:flex}.meta[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-e6jgshqh]{flex-wrap:wrap;gap:.4rem;display:inline-flex}.tag[data-astro-cid-e6jgshqh]{color:var(--muted);padding:.05rem;font-size:.78rem}.updated[data-astro-cid-e6jgshqh]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh]{letter-spacing:-.005em;margin:0;font-size:1.4rem;font-weight:700;line-height:1.3}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]{color:var(--fg)}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-e6jgshqh]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-e6jgshqh] h1,.prose[data-astro-cid-e6jgshqh] h2{margin:1rem 0 .4rem;font-size:1rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] h3,.prose[data-astro-cid-e6jgshqh] h4,.prose[data-astro-cid-e6jgshqh] h5,.prose[data-astro-cid-e6jgshqh] h6{margin:.85rem 0 .3rem;font-size:.95rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] p{margin:.65rem 0}.prose[data-astro-cid-e6jgshqh] p:first-child{margin-top:0}.prose[data-astro-cid-e6jgshqh] p:last-child{margin-bottom:0}.prose[data-astro-cid-e6jgshqh] ul,.prose[data-astro-cid-e6jgshqh] ol{margin:.6rem 0;padding-left:1.4rem}.prose[data-astro-cid-e6jgshqh] li{margin:.2rem 0}.prose[data-astro-cid-e6jgshqh] pre{padding:.7rem .85rem;font-size:.82rem}.prose[data-astro-cid-e6jgshqh] code{font-size:.85em}.prose[data-astro-cid-e6jgshqh] blockquote{border-left:2px solid var(--rule);color:var(--muted);margin:.7rem 0;padding-left:.8rem;font-style:italic}.prose[data-astro-cid-e6jgshqh] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-e6jgshqh]{font-size:.88rem;margin:.5rem 0 0!important}.read-more[data-astro-cid-e6jgshqh]{white-space:nowrap}
+</style></head><body><script>
       (() => {
         const T = 24;
         const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#shell</h1> <p class="page-lede" data-astro-cid-tge3q7ae>13 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260615-xxd-hex-dump/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-15T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-15</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260615-xxd-hex-dump/" data-astro-cid-d6qgp232>xxd —— 字节级显微镜，看出 BOM / CRLF / 不可见字符</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>文本工具看不出问题 (多了空格？BOM?tab 还是空格？CRLF 还是 LF?) 时，用 <code>xxd</code> 把真实字节 dump 出来。它随 Vim 分发，Linux / mac 基本自带。</p>
+    </script><div class="site-header-bar"><header class="site-header"><div class="site-brand"><a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a><span class="site-tagline">want to remember, and might want to share.</span></div><nav class="site-nav"><a href="/archives/">archives</a><a href="/tags/" class="active">tags</a><a href="/search/">search</a></nav></header></div><main class="site-main width-note"><h1 class="page-title no-mark" data-astro-cid-aezt6mnq>#shell</h1><p class="page-lede" data-astro-cid-aezt6mnq>13 notes</p><div class="note-stack" data-astro-cid-aezt6mnq><article class="card card-shell" data-href="/posts/260615-xxd-hex-dump/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-06-15T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-06-15</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260615-xxd-hex-dump/" data-astro-cid-e6jgshqh>xxd —— 字节级显微镜，看出 BOM / CRLF / 不可见字符</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>文本工具看不出问题 (多了空格？BOM?tab 还是空格？CRLF 还是 LF?) 时，用 <code>xxd</code> 把真实字节 dump 出来。它随 Vim 分发，Linux / mac 基本自带。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#032F62"> file.sh</span></span>
 <span class="line"><span style="color:#6A737D"># 00000000: 2321 2f62 696e 2f62 6173 680a       #!/bin/bash.</span></span>
 <span class="line"><span style="color:#6A737D">#           └偏移   └每字节 hex(两字节一组)     └ASCII(不可打印显示 .)</span></span></code></pre>
@@ -18,10 +17,11 @@
 <span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#005CC5"> -s</span><span style="color:#005CC5"> 100</span><span style="color:#032F62"> file</span><span style="color:#6A737D">      # 从第 100 字节开始(-s = seek)</span></span>
 <span class="line"><span style="color:#005CC5">echo</span><span style="color:#005CC5"> -n</span><span style="color:#032F62"> hi</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> xxd</span><span style="color:#6A737D">     # 看一段文本的字节: 6869</span></span></code></pre>
 <p><code>-r</code>(reverse) 能把 hex dump 还原成二进制，于是 <code>xxd</code> 成了简易二进制编辑器——dump、改 hex、再写回：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#032F62"> file</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> dump.hex</span><span style="color:#6A737D">      # 导出</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#032F62"> file</span><span style="color:#D73A49"> &gt;</span><span style="color:#032F62"> dump.hex</span><span style="color:#6A737D">      # 导出</span></span>
 <span class="line"><span style="color:#6A737D"># 编辑 dump.hex 改某个字节</span></span>
-<span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> dump.hex</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> file</span><span style="color:#6A737D">   # 还原写回</span></span></code></pre>
-<p>同类：<code>od -c</code>、<code>hexdump -C</code>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260613-shebang-env-bash/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-13T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-13</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260613-shebang-env-bash/" data-astro-cid-d6qgp232>#!/bin/bash vs #!/usr/bin/env bash</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>区别就一句：<code>#!/bin/bash</code> 写死路径只认 <code>/bin/bash</code>，<code>#!/usr/bin/env bash</code> 让 <code>env</code> 去 <code>$PATH</code> 里找第一个 <code>bash</code>。</p>
+<span class="line"><span style="color:#6F42C1">xxd</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> dump.hex</span><span style="color:#D73A49"> &gt;</span><span style="color:#032F62"> file</span><span style="color:#6A737D">   # 还原写回</span></span></code></pre>
+<p>同类：<code>od -c</code>、<code>hexdump -C</code>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260613-shebang-env-bash/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-06-13T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-06-13</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260613-shebang-env-bash/" data-astro-cid-e6jgshqh>#!/bin/bash vs #!/usr/bin/env bash</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>区别就一句：<code>#!/bin/bash</code> 写死路径只认 <code>/bin/bash</code>，<code>#!/usr/bin/env bash</code> 让 <code>env</code> 去 <code>$PATH</code> 里找第一个 <code>bash</code>。</p>
 <p>为什么要绕 <code>env</code>：shebang 那行<strong>只接受绝对路径，自己不查 PATH</strong>。但 <code>bash</code> 在各机器路径不一（<code>/bin</code>、<code>/usr/bin</code>、<code>/opt/homebrew/bin</code>…），写死就不通用。<code>env</code> 几乎永远在固定的 <code>/usr/bin/env</code>,而它<strong>能</strong>查 PATH——于是用「固定位置的 env」把「查 PATH」这个能力接进 shebang。<code>python3</code> / <code>node</code> 同理。</p>
 <p>macOS 上这不是风格问题而是会报错。Apple 不用 GPLv3，自带的 <code>/bin/bash</code> 冻结在 <strong>3.2（2007 年）</strong>;Homebrew 装的新 bash（5.x）在 <code>/opt/homebrew/bin/bash</code>,排在 PATH 前面：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "/bin/bash → $(</span><span style="color:#6F42C1">/bin/bash</span><span style="color:#005CC5"> --version</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> head</span><span style="color:#005CC5"> -1</span><span style="color:#032F62">)"</span></span>
@@ -35,18 +35,20 @@
 <p>顺带 <code>env</code> 还能临时改环境跑命令，调「环境变量导致的 bug」常用：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">env</span><span style="color:#032F62"> FOO=bar</span><span style="color:#032F62"> ./script.sh</span><span style="color:#6A737D">   # 只给这次运行设 FOO，不污染当前 shell</span></span>
 <span class="line"><span style="color:#6F42C1">env</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> bash</span><span style="color:#6A737D">               # -i 空环境启动</span></span>
-<span class="line"><span style="color:#6F42C1">env</span><span style="color:#005CC5"> -u</span><span style="color:#032F62"> PATH</span><span style="color:#032F62"> command</span><span style="color:#6A737D">       # -u 临时删掉某变量</span></span></code></pre> </div> </div> </article><article class="card card-shell" data-href="/posts/260612-utf8-bom-breaks-tools/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-12T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-12</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260612-utf8-bom-breaks-tools/" data-astro-cid-d6qgp232>UTF-8 的 BOM 没用，还会静默破坏脚本和 JSON</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><em>BOM</em>(Byte Order Mark) 是文件最开头一段<strong>肉眼不可见</strong>的字节，本职是标记编码的字节序:UTF-16 用 <code>FE FF</code>(大端)/ <code>FF FE</code>(小端) 告诉读取方高位在前还是低位在前。</p>
+<span class="line"><span style="color:#6F42C1">env</span><span style="color:#005CC5"> -u</span><span style="color:#032F62"> PATH</span><span style="color:#032F62"> command</span><span style="color:#6A737D">       # -u 临时删掉某变量</span></span></code></pre>
+</div></div></article><article class="card card-shell" data-href="/posts/260612-utf8-bom-breaks-tools/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-06-12T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-06-12</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260612-utf8-bom-breaks-tools/" data-astro-cid-e6jgshqh>UTF-8 的 BOM 没用，还会静默破坏脚本和 JSON</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><em>BOM</em>(Byte Order Mark) 是文件最开头一段<strong>肉眼不可见</strong>的字节，本职是标记编码的字节序:UTF-16 用 <code>FE FF</code>(大端)/ <code>FF FE</code>(小端) 告诉读取方高位在前还是低位在前。</p>
 <p>关键非显然点：<strong>UTF-8 根本没有字节序问题</strong>——它的码元就是单字节，不存在「谁在前」。所以 UTF-8 的 BOM(<code>EF BB BF</code>) 纯属多余，标准也不推荐。但 Windows 系工具 (记事本、旧 Excel、部分 .NET) 会自动加，于是这三个看不见的字节就成了静默 bug 源：</p>
 <ul>
-<li><strong>shebang 失效</strong>:第一行变成 <code>&#x3C;BOM>#!/bin/bash</code>,内核读头两字节看到的是 BOM 不是 <code>#!</code>,脚本不被当可执行 (参见 <a href="260610-shebang-kernel-magic.md">shebang 是 magic number</a>)。</li>
+<li><strong>shebang 失效</strong>:第一行变成 <code>&lt;BOM&gt;#!/bin/bash</code>,内核读头两字节看到的是 BOM 不是 <code>#!</code>,脚本不被当可执行 (参见 <a href="260610-shebang-kernel-magic.md">shebang 是 magic number</a>)。</li>
 <li><strong>JSON 解析报错</strong>:<code>json.loads</code> / 严格 parser 把开头 BOM 当非法字符。</li>
-<li><strong>PHP “headers already sent”</strong>:<code>&#x3C;?php</code> 前那三个 BOM 字节被当作输出先发出去，之后 <code>header()</code> / <code>setcookie()</code> 全废。</li>
+<li><strong>PHP “headers already sent”</strong>:<code>&lt;?php</code> 前那三个 BOM 字节被当作输出先发出去，之后 <code>header()</code> / <code>setcookie()</code> 全废。</li>
 </ul>
 <p>都因为字节在位置 0、又看不见，排查起来格外费时。检测和清除：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">head</span><span style="color:#005CC5"> -c3</span><span style="color:#032F62"> file</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> xxd</span><span style="color:#6A737D">                  # efbbbf 就是有 UTF-8 BOM</span></span>
 <span class="line"><span style="color:#6F42C1">sed</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> '1s/^\xEF\xBB\xBF//'</span><span style="color:#032F62"> file</span><span style="color:#6A737D">      # 删掉开头 BOM</span></span>
 <span class="line"><span style="color:#6F42C1">file</span><span style="color:#032F62"> file</span><span style="color:#6A737D">                            # 输出含 "with BOM" 也能认</span></span></code></pre>
-<p>一句话:Unix 工具链默认无 BOM,UTF-8 存盘一律选「无 BOM」那个选项。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260610-shebang-kernel-magic/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-10T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-10</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260610-shebang-kernel-magic/" data-astro-cid-d6qgp232>shebang 是内核认的 magic number，不是 shell 语法</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>#!</code> 不是 bash 的语法，而是文件开头的 <strong>magic number</strong>:字节 <code>0x23 0x21</code>。当你 <code>./script</code> 执行一个文件，是 Linux 内核的 <code>execve(2)</code> 读头两个字节，看到 <code>#!</code> 就把后面那行当解释器路径，改成执行「解释器 + 脚本路径」。名字 = <code>#</code>(sharp) + <code>!</code>(bang)。</p>
+<p>一句话:Unix 工具链默认无 BOM,UTF-8 存盘一律选「无 BOM」那个选项。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260610-shebang-kernel-magic/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-06-10T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-06-10</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260610-shebang-kernel-magic/" data-astro-cid-e6jgshqh>shebang 是内核认的 magic number，不是 shell 语法</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>#!</code> 不是 bash 的语法，而是文件开头的 <strong>magic number</strong>:字节 <code>0x23 0x21</code>。当你 <code>./script</code> 执行一个文件，是 Linux 内核的 <code>execve(2)</code> 读头两个字节，看到 <code>#!</code> 就把后面那行当解释器路径，改成执行「解释器 + 脚本路径」。名字 = <code>#</code>(sharp) + <code>!</code>(bang)。</p>
 <p>这带来几个非显然的硬约束：</p>
 <ul>
 <li><strong>必须是文件最开头</strong>——<code>#!</code> 前面不能有空行、空格或 BOM，否则内核认不出，文件会被当普通数据。</li>
@@ -54,48 +56,49 @@
 <li>没有 shebang 的可执行文件，内核 <code>execve</code> 直接 <code>ENOEXEC</code>,是调用它的 shell 兜底用 <code>/bin/sh</code> 跑——所以「没写 shebang 也能跑」靠的是 shell 不是内核。</li>
 </ul>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">head</span><span style="color:#005CC5"> -c2</span><span style="color:#032F62"> script.sh</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> xxd</span><span style="color:#6A737D">   # 00000000: 2321  →  #!</span></span></code></pre>
-<p>选 <code>#!/bin/bash</code> 还是 <code>#!/usr/bin/env bash</code>,见 <a href="260613-shebang-env-bash.md">shebang vs env bash</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260525-caffeinate/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a><a href="/tags/macos/" class="tag" data-astro-cid-d6qgp232>#macos</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260525-caffeinate/" data-astro-cid-d6qgp232>caffeinate：macOS 临时防睡眠</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>macOS 自带 <code>/usr/bin/caffeinate</code>，临时阻止系统进入睡眠。最常见用法是给一条长任务套一层 caffeinate，命令跑完它自己退：</p>
+<p>选 <code>#!/bin/bash</code> 还是 <code>#!/usr/bin/env bash</code>,见 <a href="260613-shebang-env-bash.md">shebang vs env bash</a>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260525-caffeinate/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-25</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a><a href="/tags/macos/" class="tag" data-astro-cid-e6jgshqh>#macos</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260525-caffeinate/" data-astro-cid-e6jgshqh>caffeinate：macOS 临时防睡眠</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>macOS 自带 <code>/usr/bin/caffeinate</code>，临时阻止系统进入睡眠。最常见用法是给一条长任务套一层 caffeinate，命令跑完它自己退：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> ./long-task.sh</span><span style="color:#6A737D">        # long-task.sh 跑完，防睡眠也撤销</span></span></code></pre>
 <p>核心设计：<strong>caffeinate 的生命周期跟着另一个进程走</strong>。子命令结束它跟着退，不会忘关导致整天不睡。</p>
 <h2 id="flag-阻止不同层级的睡">flag 阻止不同层级的「睡」</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>flag</th><th>阻止的层级</th></tr></thead><tbody><tr><td><code>-i</code></td><td>system idle sleep（默认，最常用）</td></tr><tr><td><code>-d</code></td><td>display sleep（屏幕睡）</td></tr><tr><td><code>-m</code></td><td>disk idle sleep（磁盘空闲休眠）</td></tr><tr><td><code>-s</code></td><td>system sleep —— <strong>仅在插电源时生效</strong></td></tr><tr><td><code>-u</code></td><td>user-active assertion（声明用户活跃；屏幕关着会唤醒；默认 5s）</td></tr><tr><td><code>-t &#x3C;秒></code></td><td>给 assertion 加上限，到点自动撤销</td></tr><tr><td><code>-w &#x3C;pid></code></td><td>跟某 PID 命运绑，那 PID 退出就退</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>flag</th>
+<th>阻止的层级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i</code></td>
+<td>system idle sleep（默认，最常用）</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>display sleep（屏幕睡）</td>
+</tr>
+<tr>
+<td><code>-m</code></td>
+<td>disk idle sleep（磁盘空闲休眠）</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td>system sleep —— <strong>仅在插电源时生效</strong></td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>user-active assertion（声明用户活跃；屏幕关着会唤醒；默认 5s）</td>
+</tr>
+<tr>
+<td><code>-t &lt;秒&gt;</code></td>
+<td>给 assertion 加上限，到点自动撤销</td>
+</tr>
+<tr>
+<td><code>-w &lt;pid&gt;</code></td>
+<td>跟某 PID 命运绑，那 PID 退出就退</td>
+</tr>
+</tbody>
+</table>
 <p><code>caffeinate</code> 不带任何 flag 等同于 <code>-i</code> —— 很多教程不点明，以为「随便加 caffeinate」就万事大吉，结果屏幕照睡。需要屏幕也亮着（演示 / 仪表盘看板 / 长亮场景）就显式加 <code>-d</code>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -di</span></span></code></pre>
 <h2 id="四种生命周期">四种生命周期</h2>
@@ -105,7 +108,7 @@
 <span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#005CC5"> -w</span><span style="color:#005CC5"> 12345</span><span style="color:#6A737D">         # 跟某已有 PID 命运绑，PID 退出就退</span></span>
 <span class="line"><span style="color:#6F42C1">caffeinate</span><span style="color:#005CC5"> -i</span><span style="color:#6A737D">                  # 永远不退，要 Ctrl+C</span></span></code></pre>
 <p><code>-w</code> 是事后补救手段：长任务已经在跑了才想起套 caffeinate，不用 kill 重启，<code>caffeinate -i -w "$!"</code> 抓刚 bg 的任务，或 <code>caffeinate -i -w $(pgrep -f long-task)</code> 抓按名找到的 PID。</p>
-<p>第四种是初学者最常踩的坑 —— 开了一个 <code>caffeinate -i</code> 然后 Ctrl+Z + <code>bg</code>（或一开始就 <code>&#x26;</code> 后台化），关掉那个终端 tab，zsh 默认 <code>nohup</code> on <strong>不向后台任务转发 SIGHUP</strong>，进程留在后台，Mac 几天不睡。避免方式：<strong>永远用前三种，绝不裸跑</strong>。即使「先开着以防万一」也强制带 <code>-t &#x3C;秒></code> 给个上限。</p>
+<p>第四种是初学者最常踩的坑 —— 开了一个 <code>caffeinate -i</code> 然后 Ctrl+Z + <code>bg</code>（或一开始就 <code>&amp;</code> 后台化），关掉那个终端 tab，zsh 默认 <code>nohup</code> on <strong>不向后台任务转发 SIGHUP</strong>，进程留在后台，Mac 几天不睡。避免方式：<strong>永远用前三种，绝不裸跑</strong>。即使「先开着以防万一」也强制带 <code>-t &lt;秒&gt;</code> 给个上限。</p>
 <p>怀疑有残留时：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">pgrep</span><span style="color:#005CC5"> -lf</span><span style="color:#032F62"> caffeinate</span><span style="color:#6A737D">     # 列出当前所有 caffeinate 进程及参数</span></span>
 <span class="line"><span style="color:#6F42C1">pkill</span><span style="color:#032F62"> caffeinate</span><span style="color:#6A737D">         # 全部杀掉（确认没有正在用的）</span></span></code></pre>
@@ -121,44 +124,45 @@
 <li><code>pmset</code> —— 改全局电源配置，持久（<code>sudo pmset -a sleep 0</code> 是核选项）</li>
 <li>Amphetamine / Lungo —— GUI 包装的 assertion，本质同 caffeinate</li>
 </ul>
-<p><code>man caffeinate</code> 看完整文档。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260525-tmux-detach/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-25</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260525-tmux-detach/" data-astro-cid-d6qgp232>tmux：detach 让进程独立于窗口</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>iTerm2 + tmux 不是二选一，是叠两层。iTerm2 画像素（terminal emulator），tmux 在里面再开一组逻辑终端（terminal multiplexer）—— <strong>核心收益是 <em>detach</em></strong>：关窗、断 SSH、合盖，里面的进程都不死，下次 <code>tmux a</code> 接回来。再加 session / window / pane 三层结构，一个工作区拆成多视图共存。</p>
+<p><code>man caffeinate</code> 看完整文档。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260525-tmux-detach/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-25T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-25</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260525-tmux-detach/" data-astro-cid-e6jgshqh>tmux：detach 让进程独立于窗口</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>iTerm2 + tmux 不是二选一，是叠两层。iTerm2 画像素（terminal emulator），tmux 在里面再开一组逻辑终端（terminal multiplexer）—— <strong>核心收益是 <em>detach</em></strong>：关窗、断 SSH、合盖，里面的进程都不死，下次 <code>tmux a</code> 接回来。再加 session / window / pane 三层结构，一个工作区拆成多视图共存。</p>
 <h2 id="iterm2-跟-tmux-各管什么">iTerm2 跟 tmux 各管什么</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>维度</th><th>iTerm2</th><th>tmux</th></tr></thead><tbody><tr><td>角色</td><td>terminal emulator</td><td>terminal multiplexer</td></tr><tr><td>实现</td><td>画 PTY master 端的像素</td><td>一个 server 进程持有多个 PTY pair</td></tr><tr><td>关掉窗口</td><td>里面 zsh 收 SIGHUP 死</td><td>client 断开，server 不受影响，PTY 和子进程继续跑</td></tr><tr><td>多窗口 / 分屏</td><td>原生 tab / split</td><td>session / window / pane 三层</td></tr><tr><td>多客户端 attach</td><td>不支持</td><td>同一 session 多客户端同时连（结对编程刚需）</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>iTerm2</th>
+<th>tmux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角色</td>
+<td>terminal emulator</td>
+<td>terminal multiplexer</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>画 PTY master 端的像素</td>
+<td>一个 server 进程持有多个 PTY pair</td>
+</tr>
+<tr>
+<td>关掉窗口</td>
+<td>里面 zsh 收 SIGHUP 死</td>
+<td>client 断开，server 不受影响，PTY 和子进程继续跑</td>
+</tr>
+<tr>
+<td>多窗口 / 分屏</td>
+<td>原生 tab / split</td>
+<td>session / window / pane 三层</td>
+</tr>
+<tr>
+<td>多客户端 attach</td>
+<td>不支持</td>
+<td>同一 session 多客户端同时连（结对编程刚需）</td>
+</tr>
+</tbody>
+</table>
 <p>tmux server 给每个 pane 自己 <code>openpty()</code> 拿一对 PTY，里面跑的 shell 以为自己面对真终端。client 跟 server 通过 socket（<code>/tmp/tmux-501/default</code>）通信 —— <strong>client 死了 server 不死</strong>，这是 detach 的根因。</p>
 <h2 id="三层结构">三层结构</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>server</span></span>
@@ -180,68 +184,68 @@
 <p>最后一条的 <code>-A</code> 是写脚本和 <code>.zshrc</code> 别名时的核心 —— 同一别名反复跑永远落到同一 session，不会因为重跑而创建第二个。</p>
 <h2 id="必记的-4-个-prefix-键">必记的 4 个 prefix 键</h2>
 <p><code>-CC</code> 模式下切 window / pane / 滚屏 / 复制全被 iTerm2 native 接管（⌘ 系列），不再需要记几十个 tmux 按键。剩下这 4 个还得手动：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>键</th><th>作用</th></tr></thead><tbody><tr><td><code>prefix + d</code></td><td>detach（最高频）</td></tr><tr><td><code>prefix + ?</code></td><td>列所有按键（忘了直接查）</td></tr><tr><td><code>prefix + :</code></td><td>进命令模式（什么都能干）</td></tr><tr><td><code>prefix + z</code></td><td>当前 pane 全屏 / 还原（看长输出用）</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prefix + d</code></td>
+<td>detach（最高频）</td>
+</tr>
+<tr>
+<td><code>prefix + ?</code></td>
+<td>列所有按键（忘了直接查）</td>
+</tr>
+<tr>
+<td><code>prefix + :</code></td>
+<td>进命令模式（什么都能干）</td>
+</tr>
+<tr>
+<td><code>prefix + z</code></td>
+<td>当前 pane 全屏 / 还原（看长输出用）</td>
+</tr>
+</tbody>
+</table>
 <p>默认 prefix 是 <code>Ctrl-b</code>，先按 prefix 松开，再按命令键，<strong>不是同时按</strong>。</p>
 <p>不用 <code>-CC</code>（远端 SSH / Ghostty / Alacritty）时按键多用一些 —— 那就靠 <code>prefix + ?</code> 现场查，不必硬记。</p>
 <h2 id="detach-能扛哪些场景">detach 能扛哪些场景</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#032F62"> a</span><span style="color:#005CC5"> -t</span><span style="color:#032F62"> mywork</span><span style="color:#6A737D">            # 合盖再开，session 状态完整</span></span></code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>场景</th><th>没 tmux</th><th>有 tmux</th></tr></thead><tbody><tr><td><code>⌘Q</code> 关 iTerm</td><td>进程收 SIGHUP 死</td><td>继续跑</td></tr><tr><td>SSH 断线</td><td>进程死</td><td>继续跑</td></tr><tr><td>Mac 空闲睡眠</td><td>全机 SIGSTOP 暂停</td><td>全机 SIGSTOP 暂停（tmux 不解决，需 caffeinate）</td></tr><tr><td>Mac 重启</td><td>进程必死</td><td>进程必死，session 元信息靠 tmux-resurrect</td></tr></tbody></table>
-<p>Mac 重启时 <code>tmux-resurrect</code> 能再画一遍 window / pane 布局，但<strong>默认只恢复布局不重起程序</strong> —— 除非 <code>@resurrect-processes</code> 配白名单（<code>'~vim->vim *' 'ssh->ssh'</code> 这种 pattern）。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>没 tmux</th>
+<th>有 tmux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>⌘Q</code> 关 iTerm</td>
+<td>进程收 SIGHUP 死</td>
+<td>继续跑</td>
+</tr>
+<tr>
+<td>SSH 断线</td>
+<td>进程死</td>
+<td>继续跑</td>
+</tr>
+<tr>
+<td>Mac 空闲睡眠</td>
+<td>全机 SIGSTOP 暂停</td>
+<td>全机 SIGSTOP 暂停（tmux 不解决，需 caffeinate）</td>
+</tr>
+<tr>
+<td>Mac 重启</td>
+<td>进程必死</td>
+<td>进程必死，session 元信息靠 tmux-resurrect</td>
+</tr>
+</tbody>
+</table>
+<p>Mac 重启时 <code>tmux-resurrect</code> 能再画一遍 window / pane 布局，但<strong>默认只恢复布局不重起程序</strong> —— 除非 <code>@resurrect-processes</code> 配白名单（<code>'~vim-&gt;vim *' 'ssh-&gt;ssh'</code> 这种 pattern）。</p>
 <h2 id="iterm2--tmux--cc">iTerm2 + tmux -CC</h2>
 <p>iTerm2 独有的 <code>-CC</code> 控制模式：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">tmux</span><span style="color:#005CC5"> -CC</span><span style="color:#032F62"> new-session</span><span style="color:#005CC5"> -A</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> mywork</span></span></code></pre>
@@ -252,57 +256,58 @@
 <p>每个项目目录一个独立 session，<code>tmux ls</code> 一眼看全。<code>caffeinate -i</code> 套在 tmux <strong>内层</strong> —— caffeinate 命脉跟 claude 进程绑，detach 不影响。<strong>反过来包错位</strong>（<code>caffeinate -i tmux ...</code>）会出问题：caffeinate 跟外层 tmux 命令绑，detach 后 caffeinate 退出，Mac 该睡照睡，session 里的 claude 被 SIGSTOP 暂停。</p>
 <p>tmux 和 caffeinate 是两条正交的防线：tmux 让 agent 跟窗口脱钩，caffeinate 让 Mac 不进睡眠，缺一边都漏。agent 的对话上下文不在 tmux 这一层 —— 它存在 Claude Code 自己的 session 文件里（路径按 cwd 编码，如 <code>~/.claude/projects/-Users-you-myproj/</code>），靠 <code>--resume</code> 接回。</p>
 <h2 id="同类怎么选">同类怎么选</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>选</th><th>何时</th></tr></thead><tbody><tr><td>tmux</td><td>远程 SSH / 长跑任务 / 多 client attach</td></tr><tr><td>screen</td><td>老服务器装不上 tmux 时的 fallback</td></tr><tr><td>Zellij</td><td>本地、不想写配置、要按键提示和悬浮 pane</td></tr><tr><td>WezTerm</td><td>本地、要 GPU 加速 + 内置多路复用</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>选</th>
+<th>何时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tmux</td>
+<td>远程 SSH / 长跑任务 / 多 client attach</td>
+</tr>
+<tr>
+<td>screen</td>
+<td>老服务器装不上 tmux 时的 fallback</td>
+</tr>
+<tr>
+<td>Zellij</td>
+<td>本地、不想写配置、要按键提示和悬浮 pane</td>
+</tr>
+<tr>
+<td>WezTerm</td>
+<td>本地、要 GPU 加速 + 内置多路复用</td>
+</tr>
+</tbody>
+</table>
 <p>screen 也能 detach + multi-attach（<code>screen -x</code>），但脚本化接口糙、配置默认值停留在 90 年代，agent 时代的工具链（mosh / overmind / 各家 AI CLI 的 tmux integration）几乎都只面向 tmux。</p>
-<p><code>man tmux</code> 看完整命令；按键速查见 <a href="https://tmuxcheatsheet.com/">tmux cheat sheet</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260522-fzf-ssh/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-22T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-22</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a><a href="/tags/ssh/" class="tag" data-astro-cid-d6qgp232>#ssh</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260522-fzf-ssh/" data-astro-cid-d6qgp232>fzf 一行做 SSH host picker</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>~/.ssh/config</code> 已经把所有 host 写好了，fzf 把它当数据源就有了 picker，preview 窗口顺便显示选中 host 的完整配置：</p>
+<p><code>man tmux</code> 看完整命令；按键速查见 <a href="https://tmuxcheatsheet.com/">tmux cheat sheet</a>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260522-fzf-ssh/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-22T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-22</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a><a href="/tags/ssh/" class="tag" data-astro-cid-e6jgshqh>#ssh</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260522-fzf-ssh/" data-astro-cid-e6jgshqh>fzf 一行做 SSH host picker</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>~/.ssh/config</code> 已经把所有 host 写好了，fzf 把它当数据源就有了 picker，preview 窗口顺便显示选中 host 的完整配置：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">s</span><span style="color:#24292E">() {</span></span>
 <span class="line"><span style="color:#D73A49">  local</span><span style="color:#24292E"> config</span><span style="color:#D73A49">=</span><span style="color:#032F62">"${</span><span style="color:#24292E">HOME</span><span style="color:#032F62">}/.ssh/config"</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-f</span><span style="color:#032F62"> "</span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] </span><span style="color:#D73A49">||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "no </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
-<span class="line"><span style="color:#005CC5">  command</span><span style="color:#005CC5"> -v</span><span style="color:#032F62"> fzf</span><span style="color:#D73A49"> ></span><span style="color:#032F62">/dev/null</span><span style="color:#D73A49"> ||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "fzf not installed"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
+<span class="line"><span style="color:#005CC5">  command</span><span style="color:#005CC5"> -v</span><span style="color:#032F62"> fzf</span><span style="color:#D73A49"> &gt;</span><span style="color:#032F62">/dev/null</span><span style="color:#D73A49"> ||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "fzf not installed"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">  local</span><span style="color:#24292E"> hosts</span></span>
-<span class="line"><span style="color:#24292E">  hosts</span><span style="color:#D73A49">=</span><span style="color:#24292E">$(</span><span style="color:#6F42C1">awk</span><span style="color:#032F62"> 'tolower($1)=="host" &#x26;&#x26; $2 !~ /\*/ {print $2}'</span><span style="color:#032F62"> "</span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">)</span></span>
-<span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-z</span><span style="color:#032F62"> "</span><span style="color:#24292E">$hosts</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] &#x26;&#x26; { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "no hosts in </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
+<span class="line"><span style="color:#24292E">  hosts</span><span style="color:#D73A49">=</span><span style="color:#24292E">$(</span><span style="color:#6F42C1">awk</span><span style="color:#032F62"> 'tolower($1)=="host" &amp;&amp; $2 !~ /\*/ {print $2}'</span><span style="color:#032F62"> "</span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-z</span><span style="color:#032F62"> "</span><span style="color:#24292E">$hosts</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] &amp;&amp; { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "no hosts in </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#24292E">; </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">  local</span><span style="color:#24292E"> host</span></span>
 <span class="line"><span style="color:#24292E">  host</span><span style="color:#D73A49">=</span><span style="color:#24292E">$(</span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "</span><span style="color:#24292E">$hosts</span><span style="color:#032F62">"</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> fzf</span><span style="color:#005CC5"> \</span></span>
-<span class="line"><span style="color:#005CC5">    --preview</span><span style="color:#032F62"> "awk '/^Host / &#x26;&#x26; </span><span style="color:#005CC5">\$</span><span style="color:#032F62">2 == </span><span style="color:#005CC5">\"</span><span style="color:#032F62">{}</span><span style="color:#005CC5">\"</span><span style="color:#032F62"> {p=1; next} /^Host / {p=0} p' </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">    --preview</span><span style="color:#032F62"> "awk '/^Host / &amp;&amp; </span><span style="color:#005CC5">\$</span><span style="color:#032F62">2 == </span><span style="color:#005CC5">\"</span><span style="color:#032F62">{}</span><span style="color:#005CC5">\"</span><span style="color:#032F62"> {p=1; next} /^Host / {p=0} p' </span><span style="color:#24292E">$config</span><span style="color:#032F62">"</span><span style="color:#005CC5"> \</span></span>
 <span class="line"><span style="color:#005CC5">    --preview-window</span><span style="color:#032F62"> 'right:50%'</span><span style="color:#24292E">)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-n</span><span style="color:#032F62"> "</span><span style="color:#24292E">$host</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] &#x26;&#x26; </span><span style="color:#6F42C1">ssh</span><span style="color:#032F62"> "</span><span style="color:#24292E">$host</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#24292E">  [[ </span><span style="color:#D73A49">-n</span><span style="color:#032F62"> "</span><span style="color:#24292E">$host</span><span style="color:#032F62">"</span><span style="color:#24292E"> ]] &amp;&amp; </span><span style="color:#6F42C1">ssh</span><span style="color:#032F62"> "</span><span style="color:#24292E">$host</span><span style="color:#032F62">"</span></span>
 <span class="line"><span style="color:#24292E">}</span></span></code></pre>
 <p>跑 <code>s</code> → fzf 弹列表 → 选 → SSH 上。光标停某个 host 时<strong>右半屏实时显示该 host 的 <code>HostName</code> / <code>User</code> / <code>Port</code> / <code>IdentityFile</code></strong>，连之前一眼确认是不是要那台。</p>
 <p>几个细节：</p>
 <ul>
 <li>三个 fail-fast 检查（config 文件存在 / fzf 命令在 / awk 出非空），任一项不满足立刻报具体原因，不静默退出</li>
 <li><code>awk tolower($1)=="host"</code> 大小写不敏感识别（ssh config 本身就不区分），过滤 <code>Host *.dev</code> 这种通配符规则，<code>$2</code> 取 host 别名</li>
-<li>preview 那条 awk 是个状态机：匹配到 <code>Host &#x3C;选中></code> 起 <code>p=1</code> 开始打印，遇到下一个 <code>Host</code> 行 <code>p=0</code> 停止——精确抓单段配置，比 <code>grep -A 10</code> 更准（不会跨到下一段）</li>
+<li>preview 那条 awk 是个状态机：匹配到 <code>Host &lt;选中&gt;</code> 起 <code>p=1</code> 开始打印，遇到下一个 <code>Host</code> 行 <code>p=0</code> 停止——精确抓单段配置，比 <code>grep -A 10</code> 更准（不会跨到下一段）</li>
 <li>preview 字符串的转义陷阱：外层用 <code>"..."</code> 让 fzf 展开 <code>{}</code> 和 shell 展开 <code>$config</code>，内层 <code>\$2</code> / <code>\"</code> 转义是为了让 shell 把 <code>$2</code> 和 <code>"</code> 原样递给 awk</li>
 <li><code>[[ -n "$host" ]]</code> 空选保护，避免 <code>ssh ""</code> 报错</li>
 </ul>
@@ -325,7 +330,8 @@
 <li><code>Host</code> 一行可以多别名空格分隔：<code>Host blog blog2 mysite</code> 三个名字都连同一台</li>
 <li>行内 4-空格缩进非语法必须，但<strong>强烈建议</strong>——stanza 边界清晰，picker 的 awk 解析也稳</li>
 <li>项目 / 客户多时用 <code>Include ~/.ssh/config.d/*.conf</code> 拆文件（工作的、个人的、临时的分开）</li>
-</ul> </div> </div> </article><article class="card card-shell" data-href="/posts/260521-pgrep-vs-ps-grep/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-pgrep-vs-ps-grep/" data-astro-cid-d6qgp232>pgrep / pkill 替代 ps | grep</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>按进程名 / 命令行查 PID，默认手势是 <code>pgrep</code>，不是 <code>ps | grep</code>。两个老问题 <code>pgrep</code> 一次性修了。</p>
+</ul>
+</div></div></article><article class="card card-shell" data-href="/posts/260521-pgrep-vs-ps-grep/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-21</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260521-pgrep-vs-ps-grep/" data-astro-cid-e6jgshqh>pgrep / pkill 替代 ps | grep</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>按进程名 / 命令行查 PID，默认手势是 <code>pgrep</code>，不是 <code>ps | grep</code>。两个老问题 <code>pgrep</code> 一次性修了。</p>
 <h2 id="1-自匹配陷阱">1. 自匹配陷阱</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">ps</span><span style="color:#032F62"> aux</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#032F62"> node</span></span>
 <span class="line"><span style="color:#6A737D"># zhaoyifan  9012  ...  node server.js</span></span>
@@ -338,7 +344,7 @@
 <span class="line"><span style="color:#6F42C1">pgrep</span><span style="color:#005CC5"> -x</span><span style="color:#032F62"> node</span><span style="color:#6A737D">            # 精确等于（process name 完全匹配，不含参数）</span></span></code></pre>
 <h2 id="2-脚本里的退出码语义">2. 脚本里的退出码语义</h2>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># pgrep —— 退出码即答案</span></span>
-<span class="line"><span style="color:#D73A49">if</span><span style="color:#6F42C1"> pgrep</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> caffeinate</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> /dev/null</span><span style="color:#24292E">; </span><span style="color:#D73A49">then</span><span style="color:#005CC5"> ...</span></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#6F42C1"> pgrep</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> caffeinate</span><span style="color:#D73A49"> &gt;</span><span style="color:#032F62"> /dev/null</span><span style="color:#24292E">; </span><span style="color:#D73A49">then</span><span style="color:#005CC5"> ...</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># ps | grep —— ps 永远 0，得靠 grep -q + 排除自己</span></span>
 <span class="line"><span style="color:#D73A49">if</span><span style="color:#6F42C1"> ps</span><span style="color:#032F62"> aux</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#005CC5"> -v</span><span style="color:#032F62"> grep</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#005CC5"> -q</span><span style="color:#032F62"> caffeinate</span><span style="color:#24292E">; </span><span style="color:#D73A49">then</span><span style="color:#005CC5"> ...</span></span></code></pre>
@@ -349,85 +355,86 @@
 <span class="line"><span style="color:#6F42C1">pkill</span><span style="color:#005CC5"> -HUP</span><span style="color:#032F62"> nginx</span><span style="color:#6A737D">                     # 发 SIGHUP 让 nginx reload 配置（不止于杀）</span></span></code></pre>
 <p><code>pgrep</code> 和 <code>pkill</code> 共用同一套 flag 模型，会一个自动会另一个。</p>
 <h2 id="常用-flag">常用 flag</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>flag</th><th>作用</th></tr></thead><tbody><tr><td><code>-l</code></td><td>输出 PID + 进程名（不加只有 PID）</td></tr><tr><td><code>-f</code></td><td>匹配<strong>完整命令行</strong>而不止进程名——<code>caffeinate -i -t 300</code> 这种带参数的必须用 <code>-f</code></td></tr><tr><td><code>-x</code></td><td>精确匹配 process name（默认是子串匹配，没 <code>-x</code> 时 <code>pgrep ode</code> 也会命中 <code>node</code>）</td></tr><tr><td><code>-u &#x3C;user></code></td><td>限定某用户（多用户机才有意义；单用户 Mac 上等同不加）</td></tr><tr><td><code>-P &#x3C;ppid></code></td><td>找某 PPID 的所有<strong>子进程</strong>（debug 进程树用）</td></tr><tr><td><code>-n</code> / <code>-o</code></td><td>newest / oldest 各取一个</td></tr><tr><td><code>-d,</code></td><td>用逗号分隔多个 PID（喂给别的工具，见下）</td></tr><tr><td><code>-i</code></td><td>忽略大小写</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>flag</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-l</code></td>
+<td>输出 PID + 进程名（不加只有 PID）</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>匹配<strong>完整命令行</strong>而不止进程名——<code>caffeinate -i -t 300</code> 这种带参数的必须用 <code>-f</code></td>
+</tr>
+<tr>
+<td><code>-x</code></td>
+<td>精确匹配 process name（默认是子串匹配，没 <code>-x</code> 时 <code>pgrep ode</code> 也会命中 <code>node</code>）</td>
+</tr>
+<tr>
+<td><code>-u &lt;user&gt;</code></td>
+<td>限定某用户（多用户机才有意义；单用户 Mac 上等同不加）</td>
+</tr>
+<tr>
+<td><code>-P &lt;ppid&gt;</code></td>
+<td>找某 PPID 的所有<strong>子进程</strong>（debug 进程树用）</td>
+</tr>
+<tr>
+<td><code>-n</code> / <code>-o</code></td>
+<td>newest / oldest 各取一个</td>
+</tr>
+<tr>
+<td><code>-d,</code></td>
+<td>用逗号分隔多个 PID（喂给别的工具，见下）</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td>忽略大小写</td>
+</tr>
+</tbody>
+</table>
 <h2 id="跟-ps-组合而不是-ps--grep">跟 ps 组合而不是 ps | grep</h2>
 <p>想看进程的 CPU / 内存 / start 时间，<strong>让 pgrep 出 PID、ps 取详情</strong>——把第 1 节那两个 grep bug 一起绕过：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">ps</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> "$(</span><span style="color:#6F42C1">pgrep</span><span style="color:#005CC5"> -d,</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> caffeinate)"</span><span style="color:#005CC5"> -o</span><span style="color:#032F62"> pid,ppid,user,%cpu,%mem,stat,start,command</span></span></code></pre>
 <p><code>pgrep -d,</code> 输出逗号分隔的 PID 列表，<code>ps -p</code> 直接吃。<code>ps</code> 本身的列<strong>不</strong>写死——<code>ps -axo pid,user,%cpu,...</code> 也能自由挑列；pgrep + ps -p 的核心优势是省掉 <code>| grep</code> 这一步，而不是控列。</p>
 <h2 id="平台差异">平台差异</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>工具</th><th align="center">macOS</th><th align="center">Linux</th><th align="center">BSD</th></tr></thead><tbody><tr><td><code>pgrep</code> / <code>pkill</code></td><td align="center">✅</td><td align="center">✅</td><td align="center">✅</td></tr><tr><td><code>pidof</code></td><td align="center">❌</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td><code>pwait</code></td><td align="center">❌</td><td align="center">✅</td><td align="center">✅</td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th style="text-align: center">macOS</th>
+<th style="text-align: center">Linux</th>
+<th style="text-align: center">BSD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pgrep</code> / <code>pkill</code></td>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">✅</td>
+</tr>
+<tr>
+<td><code>pidof</code></td>
+<td style="text-align: center">❌</td>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">❌</td>
+</tr>
+<tr>
+<td><code>pwait</code></td>
+<td style="text-align: center">❌</td>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">✅</td>
+</tr>
+</tbody>
+</table>
 <p><code>pidof</code> 是 Linux 独有的「按名字查 PID」简化版，macOS 上没有——用 <code>pgrep</code> 全平台通吃。</p>
-<p><code>man pgrep</code>、<code>man pkill</code> 看完整 flag。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260521-shellcheck/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-21</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260521-shellcheck/" data-astro-cid-d6qgp232>shellcheck —— 抓 set -e 漏过的坑</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>set -euo pipefail</code> 是 runtime 早退；<a href="https://www.shellcheck.net/">shellcheck</a> 是 parse 时静态分析——抓 <code>set -e</code> 漏过的写法层 bug。部署 / 迁移 / CI 脚本两个都要上。</p>
+<p><code>man pgrep</code>、<code>man pkill</code> 看完整 flag。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260521-shellcheck/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-21T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-21</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260521-shellcheck/" data-astro-cid-e6jgshqh>shellcheck —— 抓 set -e 漏过的坑</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>set -euo pipefail</code> 是 runtime 早退；<a href="https://www.shellcheck.net/">shellcheck</a> 是 parse 时静态分析——抓 <code>set -e</code> 漏过的写法层 bug。部署 / 迁移 / CI 脚本两个都要上。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">brew</span><span style="color:#032F62"> install</span><span style="color:#032F62"> shellcheck</span><span style="color:#6A737D">     # 或：sudo apt install shellcheck</span></span>
 <span class="line"><span style="color:#6F42C1">shellcheck</span><span style="color:#032F62"> deploy.sh</span></span></code></pre>
 <h2 id="set--e-漏过的-5-条">set -e 漏过的 5 条</h2>
@@ -451,18 +458,20 @@
 <span class="line"><span style="color:#24292E">disable</span><span style="color:#D73A49">=</span><span style="color:#032F62">SC1090-SC1100</span></span></code></pre>
 <p><code>disable=all</code>（v0.8+）关全部——通常意味着该重写。</p>
 <h2 id="ci">CI</h2>
-<p>GitHub Actions 一行：<code>shellcheck **/*.sh</code>（ubuntu runner 自带）。pre-commit 用 <a href="https://github.com/koalaman/shellcheck-precommit"><code>koalaman/shellcheck-precommit</code></a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/220728-cdpath/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-cdpath/" data-astro-cid-d6qgp232>CDPATH：让 cd 自动搜多个父目录</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><code>cd foo</code> 默认只在当前目录找 <code>foo/</code>。<code>CDPATH</code> 给 cd 一份”备选父目录列表”，找不到就依次往里查：</p>
+<p>GitHub Actions 一行：<code>shellcheck **/*.sh</code>（ubuntu runner 自带）。pre-commit 用 <a href="https://github.com/koalaman/shellcheck-precommit"><code>koalaman/shellcheck-precommit</code></a>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/220728-cdpath/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-e6jgshqh>2022-07-28</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/220728-cdpath/" data-astro-cid-e6jgshqh>CDPATH：让 cd 自动搜多个父目录</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><code>cd foo</code> 默认只在当前目录找 <code>foo/</code>。<code>CDPATH</code> 给 cd 一份“备选父目录列表”，找不到就依次往里查：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D73A49">export</span><span style="color:#24292E"> CDPATH</span><span style="color:#D73A49">=</span><span style="color:#24292E">.:</span><span style="color:#D73A49">~</span><span style="color:#24292E">/projects:</span><span style="color:#D73A49">~</span><span style="color:#24292E">/work</span></span></code></pre>
 <p>之后无论在哪个目录：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> blog</span><span style="color:#6A737D">          # 命中 ~/projects/blog/</span></span>
 <span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> client-x</span><span style="color:#6A737D">      # 命中 ~/work/client-x/</span></span></code></pre>
 <p>三个坑：</p>
 <ul>
-<li><strong>第一项必须是 <code>.</code></strong>——否则 <code>cd subdir</code> 会优先去 CDPATH 列表里搜，遇到同名目录就把你”传送”到别处</li>
-<li><strong>CDPATH 命中时 <code>cd</code> 会把目标路径打到 stdout</strong>，会污染脚本里 <code>cd "$dir" &#x26;&#x26; do-something</code> 这类捕获 cd 输出的逻辑。<strong>脚本开头 <code>unset CDPATH</code></strong>，并用绝对路径不依赖它</li>
+<li><strong>第一项必须是 <code>.</code></strong>——否则 <code>cd subdir</code> 会优先去 CDPATH 列表里搜，遇到同名目录就把你“传送”到别处</li>
+<li><strong>CDPATH 命中时 <code>cd</code> 会把目标路径打到 stdout</strong>，会污染脚本里 <code>cd "$dir" &amp;&amp; do-something</code> 这类捕获 cd 输出的逻辑。<strong>脚本开头 <code>unset CDPATH</code></strong>，并用绝对路径不依赖它</li>
 <li><strong>不要塞太多目录</strong>——顺序匹配，列表越长越容易撞同名；3-5 个就到头</li>
 </ul>
-<p>适合场景：固定的几个 workspace 根目录（<code>~/code</code>、<code>~/work</code>、<code>~/oss</code>）。如果项目散得很（dotfiles 在 home、客户代码在 NAS、个人项目在 iCloud），用 <a href="https://github.com/ajeetdsouza/zoxide">zoxide</a> 这种基于 <em>frecency</em> 的跳转工具更顺手。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/220728-disk-space-deleted-files/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-disk-space-deleted-files/" data-astro-cid-d6qgp232>删了文件 df 不掉：lsof | grep deleted 找仍持有的进程</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>经典症状：<code>rm</code> 掉一个大日志，<code>df</code> 看磁盘空间没变。</p>
+<p>适合场景：固定的几个 workspace 根目录（<code>~/code</code>、<code>~/work</code>、<code>~/oss</code>）。如果项目散得很（dotfiles 在 home、客户代码在 NAS、个人项目在 iCloud），用 <a href="https://github.com/ajeetdsouza/zoxide">zoxide</a> 这种基于 <em>frecency</em> 的跳转工具更顺手。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/220728-disk-space-deleted-files/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-e6jgshqh>2022-07-28</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/220728-disk-space-deleted-files/" data-astro-cid-e6jgshqh>删了文件 df 不掉：lsof | grep deleted 找仍持有的进程</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>经典症状：<code>rm</code> 掉一个大日志，<code>df</code> 看磁盘空间没变。</p>
 <p>根因：unix 文件系统下 <code>rm</code> 做的只是 <em>unlink</em>——把目录项里的引用删掉。inode 真正释放要等到<strong>所有持有它的 file descriptor 都关闭</strong>。如果某个进程还开着这个文件（典型场景：app 把日志 open 后一直 append），inode 就一直挂在 fd 上不释放，磁盘空间也回不来。</p>
 <p>定位是哪个进程：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">lsof</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> grep</span><span style="color:#032F62"> deleted</span></span>
@@ -470,48 +479,51 @@
 <p>第 7 列就是占的字节数，第 1-2 列是进程名 + PID。两条出路：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># A. reload / 重启持有进程，让它关 fd</span></span>
 <span class="line"><span style="color:#6F42C1">nginx</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> reopen</span><span style="color:#6A737D">                  # nginx 专门有这个信号</span></span>
-<span class="line"><span style="color:#6F42C1">systemctl</span><span style="color:#032F62"> restart</span><span style="color:#D73A49"> &#x3C;</span><span style="color:#032F62">sv</span><span style="color:#24292E">c</span><span style="color:#D73A49">></span><span style="color:#6A737D">          # 通用兜底</span></span>
+<span class="line"><span style="color:#6F42C1">systemctl</span><span style="color:#032F62"> restart</span><span style="color:#D73A49"> &lt;</span><span style="color:#032F62">sv</span><span style="color:#24292E">c</span><span style="color:#D73A49">&gt;</span><span style="color:#6A737D">          # 通用兜底</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># B. 源头改成 truncate 而不是 rm</span></span>
 <span class="line"><span style="color:#6F42C1">truncate</span><span style="color:#005CC5"> -s</span><span style="color:#005CC5"> 0</span><span style="color:#032F62"> /var/log/access.log</span><span style="color:#6A737D">    # 文件保留，内容清空，进程继续写同一 inode</span></span>
-<span class="line"><span style="color:#D73A49">></span><span style="color:#24292E"> /var/log/access.log                </span><span style="color:#6A737D"># 同效果，shell 内置</span></span></code></pre>
-<p><strong>别用 <code>echo "" > file</code></strong>——会写一个换行符进去，不是真清空。</p>
-<p>预防：日志类场景上 <code>logrotate</code> 并开 <code>copytruncate</code> 选项，它就是为了解决 rotate 时进程仍持有老 fd 的问题。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/220728-job-control-bg-fg-nohup/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-job-control-bg-fg-nohup/" data-astro-cid-d6qgp232>shell job control:&amp; nohup Ctrl+Z fg bg jobs</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>把命令丢后台、再拽回前台的全套手势。</p>
-<p><code>&#x26;</code> 直接后台跑，但<strong>关 terminal 时会被 SIGHUP 打死</strong>——shell 退出会向自己所有子进程发 <em>HUP</em>。<code>nohup</code> 的作用就是让进程忽略 HUP，于是关 terminal 也不死：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cmd</span><span style="color:#24292E"> &#x26;                            </span><span style="color:#6A737D"># 后台跑，关终端就没了</span></span>
-<span class="line"><span style="color:#6F42C1">nohup</span><span style="color:#032F62"> cmd</span><span style="color:#24292E"> &#x26;                      </span><span style="color:#6A737D"># 关终端不死，stdout 默认写 nohup.out</span></span>
-<span class="line"><span style="color:#6F42C1">nohup</span><span style="color:#032F62"> cmd</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> out.log</span><span style="color:#D73A49"> 2>&#x26;1</span><span style="color:#24292E"> &#x26;       </span><span style="color:#6A737D"># 自己接管输出</span></span></code></pre>
+<span class="line"><span style="color:#D73A49">&gt;</span><span style="color:#24292E"> /var/log/access.log                </span><span style="color:#6A737D"># 同效果，shell 内置</span></span></code></pre>
+<p><strong>别用 <code>echo "" &gt; file</code></strong>——会写一个换行符进去，不是真清空。</p>
+<p>预防：日志类场景上 <code>logrotate</code> 并开 <code>copytruncate</code> 选项，它就是为了解决 rotate 时进程仍持有老 fd 的问题。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/220728-job-control-bg-fg-nohup/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-e6jgshqh>2022-07-28</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/220728-job-control-bg-fg-nohup/" data-astro-cid-e6jgshqh>shell job control:&amp; nohup Ctrl+Z fg bg jobs</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>把命令丢后台、再拽回前台的全套手势。</p>
+<p><code>&amp;</code> 直接后台跑，但<strong>关 terminal 时会被 SIGHUP 打死</strong>——shell 退出会向自己所有子进程发 <em>HUP</em>。<code>nohup</code> 的作用就是让进程忽略 HUP，于是关 terminal 也不死：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cmd</span><span style="color:#24292E"> &amp;                            </span><span style="color:#6A737D"># 后台跑，关终端就没了</span></span>
+<span class="line"><span style="color:#6F42C1">nohup</span><span style="color:#032F62"> cmd</span><span style="color:#24292E"> &amp;                      </span><span style="color:#6A737D"># 关终端不死，stdout 默认写 nohup.out</span></span>
+<span class="line"><span style="color:#6F42C1">nohup</span><span style="color:#032F62"> cmd</span><span style="color:#D73A49"> &gt;</span><span style="color:#032F62"> out.log</span><span style="color:#D73A49"> 2&gt;&amp;1</span><span style="color:#24292E"> &amp;       </span><span style="color:#6A737D"># 自己接管输出</span></span></code></pre>
 <p>已经在前台跑的命令想丢后台——按 <code>Ctrl+Z</code> 暂停（SIGTSTP），shell 把它放进 jobs 列表，然后 <code>bg</code> 让它在后台继续跑：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> long-running-cmd</span></span>
 <span class="line"><span style="color:#6F42C1">^Z</span></span>
 <span class="line"><span style="color:#24292E">[1]+ Stopped  long-running-cmd</span></span>
 <span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> bg</span><span style="color:#6A737D">                             # 继续在后台跑</span></span>
 <span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> jobs</span><span style="color:#005CC5"> -l</span><span style="color:#6A737D">                        # 看 jobs 列表（带 PID）</span></span>
-<span class="line"><span style="color:#24292E">[1]+ 12345 Running   long-running-cmd &#x26;</span></span>
+<span class="line"><span style="color:#24292E">[1]+ 12345 Running   long-running-cmd &amp;</span></span>
 <span class="line"><span style="color:#6F42C1">$</span><span style="color:#032F62"> fg</span><span style="color:#6A737D">                             # 拽回前台</span></span></code></pre>
 <p>多个 job 时用 <code>%N</code> 选：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">fg</span><span style="color:#032F62"> %1</span><span style="color:#6A737D">                            # 拽 job 1 回前台</span></span>
 <span class="line"><span style="color:#005CC5">fg</span><span style="color:#032F62"> %vim</span><span style="color:#6A737D">                          # 按命令名匹配</span></span>
 <span class="line"><span style="color:#005CC5">bg</span><span style="color:#032F62"> %2</span><span style="color:#6A737D">                            # 让 job 2 在后台继续</span></span>
 <span class="line"><span style="color:#005CC5">kill</span><span style="color:#032F62"> %1</span><span style="color:#6A737D">                          # 杀 job 1</span></span></code></pre>
-<p><code>nohup</code> 只挡 HUP，不解决长跑任务的”我下次想接回 session 看实时输出”。生产场景认真用 <code>tmux</code> / <code>screen</code> / systemd unit，nohup 是临时手段。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/220728-set-euo-pipefail/" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="chip" data-astro-cid-d6qgp232>shell</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-d6qgp232>2022-07-28</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/shell/" class="tag" data-astro-cid-d6qgp232>#shell</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/220728-set-euo-pipefail/" data-astro-cid-d6qgp232>shell 脚本必加 set -euo pipefail</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>bash 默认行为对脚本极不友好——命令失败默认继续往下跑、未定义变量默认空串、管道里前面命令失败被后面成功的命令掩盖。每个长一点的脚本开头都该加：</p>
+<p><code>nohup</code> 只挡 HUP，不解决长跑任务的“我下次想接回 session 看实时输出”。生产场景认真用 <code>tmux</code> / <code>screen</code> / systemd unit，nohup 是临时手段。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/220728-set-euo-pipefail/" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="chip" data-astro-cid-e6jgshqh>shell</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2022-07-28T00:00:00.000Z" data-astro-cid-e6jgshqh>2022-07-28</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/shell/" class="tag" data-astro-cid-e6jgshqh>#shell</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/220728-set-euo-pipefail/" data-astro-cid-e6jgshqh>shell 脚本必加 set -euo pipefail</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>bash 默认行为对脚本极不友好——命令失败默认继续往下跑、未定义变量默认空串、管道里前面命令失败被后面成功的命令掩盖。每个长一点的脚本开头都该加：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/usr/bin/env bash</span></span>
 <span class="line"><span style="color:#005CC5">set</span><span style="color:#005CC5"> -euo</span><span style="color:#032F62"> pipefail</span></span></code></pre>
 <p>各位含义：</p>
 <ul>
-<li><strong><code>-e</code>（<em>errexit</em>）</strong>：任一命令非零退出立即终止脚本。<strong>陷阱</strong>：在 <code>||</code> / <code>&#x26;&#x26;</code> / <code>if</code> / <code>while</code> 条件里的命令不算</li>
+<li><strong><code>-e</code>（<em>errexit</em>）</strong>：任一命令非零退出立即终止脚本。<strong>陷阱</strong>：在 <code>||</code> / <code>&amp;&amp;</code> / <code>if</code> / <code>while</code> 条件里的命令不算</li>
 <li><strong><code>-u</code>（<em>nounset</em>）</strong>：用未定义变量直接报错。把 <code>rm -rf /$UNDEFINED/</code> 这种灾难挡在执行前。可能未定义的变量用 <code>${VAR:-default}</code> 显式给默认值</li>
 <li><strong><code>-o pipefail</code></strong>：默认 <code>cmd1 | cmd2</code> 的退出码只看 <code>cmd2</code>——<code>curl bad-url | jq .</code> 即便 curl 失败也返 0。开 pipefail 后任一段失败整个 pipeline 就失败</li>
 <li><strong><code>-x</code>（<em>xtrace</em>）</strong>：执行前打印每条命令。debug 用，<strong>生产脚本别开</strong>——会在日志里泄露 password / token</li>
 </ul>
 <p>不开 errexit 时的手动错误处理：</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cmd</span><span style="color:#D73A49"> ||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "cmd failed: </span><span style="color:#005CC5">$?</span><span style="color:#032F62">"</span><span style="color:#D73A49"> >&#x26;2</span><span style="color:#24292E">; </span><span style="color:#005CC5">exit</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cmd</span><span style="color:#D73A49"> ||</span><span style="color:#24292E"> { </span><span style="color:#005CC5">echo</span><span style="color:#032F62"> "cmd failed: </span><span style="color:#005CC5">$?</span><span style="color:#032F62">"</span><span style="color:#D73A49"> &gt;&amp;2</span><span style="color:#24292E">; </span><span style="color:#005CC5">exit</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">; }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">if</span><span style="color:#D73A49"> !</span><span style="color:#6F42C1"> cmd</span><span style="color:#24292E">; </span><span style="color:#D73A49">then</span></span>
-<span class="line"><span style="color:#005CC5">  echo</span><span style="color:#032F62"> "cmd failed"</span><span style="color:#D73A49"> >&#x26;2</span></span>
+<span class="line"><span style="color:#005CC5">  echo</span><span style="color:#032F62"> "cmd failed"</span><span style="color:#D73A49"> &gt;&amp;2</span></span>
 <span class="line"><span style="color:#005CC5">  exit</span><span style="color:#005CC5"> 1</span></span>
 <span class="line"><span style="color:#D73A49">fi</span></span></code></pre>
-<p>errexit 不是银弹——在 pipeline、command substitution、subshell 等场景下都有边界，<code>set -e</code> 会”看起来开了实际没生效”。强约束脚本（部署 / 数据迁移）建议直接上 <a href="https://www.shellcheck.net/"><code>shellcheck</code></a> 做静态检查，比 <code>set -e</code> 兜底更可靠。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+<p>errexit 不是银弹——在 pipeline、command substitution、subshell 等场景下都有边界，<code>set -e</code> 会“看起来开了实际没生效”。强约束脚本（部署 / 数据迁移）建议直接上 <a href="https://www.shellcheck.net/"><code>shellcheck</code></a> 做静态检查，比 <code>set -e</code> 兜底更可靠。</p>
+</div></div></article></div><p class="back" data-astro-cid-aezt6mnq><a href="/tags/" data-astro-cid-aezt6mnq>← all tags</a> · <a href="/" data-astro-cid-aezt6mnq>index</a></p></main><footer class="site-footer"><span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span><span>·</span><span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span><span>·</span><span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span></footer><script>
       (() => {
         const enhance = () => {
           const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
@@ -562,7 +574,7 @@
           enhance();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const BUDGET = 360;
         const collapse = () => {
@@ -609,7 +621,7 @@
           run();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const mark = () => {
           const here = location.host;
@@ -634,4 +646,4 @@
           mark();
         }
       })();
-    </script> </body> </html>
+    </script></body></html>

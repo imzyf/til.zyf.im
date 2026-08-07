@@ -1,16 +1,15 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v6.2.2"><meta name="description" content="Notes tagged devops"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#devops · TIL</title><link rel="stylesheet" href="/_astro/Base.BW7bO-F5.css">
-<style>.note-stack[data-astro-cid-tge3q7ae]{display:flex;flex-direction:column;gap:1.4rem}.back[data-astro-cid-tge3q7ae]{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
-.card[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.85rem;min-width:0}.card-body[data-astro-cid-d6qgp232],.prose[data-astro-cid-d6qgp232]{min-width:0}.card-meta[data-astro-cid-d6qgp232]{display:flex;flex-direction:column;gap:.25rem}.meta[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;margin:0;display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.meta[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-d6qgp232]{display:inline-flex;gap:.4rem;flex-wrap:wrap}.tag[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.78rem;padding:.05rem}.updated[data-astro-cid-d6qgp232]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-d6qgp232] time[data-astro-cid-d6qgp232]{font-variant-numeric:tabular-nums}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232]{font-size:1.4rem;line-height:1.3;margin:0;font-weight:700;letter-spacing:-.005em}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]{color:var(--fg)}.card[data-astro-cid-d6qgp232] h2[data-astro-cid-d6qgp232] a[data-astro-cid-d6qgp232]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-d6qgp232]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-d6qgp232] h1,.prose[data-astro-cid-d6qgp232] h2{font-size:1rem;margin:1rem 0 .4rem;font-weight:700}.prose[data-astro-cid-d6qgp232] h3,.prose[data-astro-cid-d6qgp232] h4,.prose[data-astro-cid-d6qgp232] h5,.prose[data-astro-cid-d6qgp232] h6{font-size:.95rem;margin:.85rem 0 .3rem;font-weight:700}.prose[data-astro-cid-d6qgp232] p{margin:.65rem 0}.prose[data-astro-cid-d6qgp232] p:first-child{margin-top:0}.prose[data-astro-cid-d6qgp232] p:last-child{margin-bottom:0}.prose[data-astro-cid-d6qgp232] ul,.prose[data-astro-cid-d6qgp232] ol{padding-left:1.4rem;margin:.6rem 0}.prose[data-astro-cid-d6qgp232] li{margin:.2rem 0}.prose[data-astro-cid-d6qgp232] pre{font-size:.82rem;padding:.7rem .85rem}.prose[data-astro-cid-d6qgp232] code{font-size:.85em}.prose[data-astro-cid-d6qgp232] blockquote{border-left:2px solid var(--rule);padding-left:.8rem;color:var(--muted);margin:.7rem 0;font-style:italic}.prose[data-astro-cid-d6qgp232] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-d6qgp232]{margin:.5rem 0 0!important;font-size:.88rem}.read-more[data-astro-cid-d6qgp232]{white-space:nowrap}
-</style></head> <body>  <script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="Notes tagged devops"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>#devops · TIL</title><link rel="stylesheet" href="/_astro/Base.DQYaApxQ.css"><style>.note-stack[data-astro-cid-aezt6mnq]{flex-direction:column;gap:1.4rem;display:flex}.back[data-astro-cid-aezt6mnq]{border-top:1px solid var(--rule);color:var(--muted);margin-top:2.5rem;padding-top:1rem;font-size:.85rem}
+.card[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.85rem;min-width:0;display:flex}.card-body[data-astro-cid-e6jgshqh],.prose[data-astro-cid-e6jgshqh]{min-width:0}.card-meta[data-astro-cid-e6jgshqh]{flex-direction:column;gap:.25rem;display:flex}.meta[data-astro-cid-e6jgshqh]{color:var(--muted);flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0;font-size:.78rem;display:flex}.meta[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums;letter-spacing:.04em}.tags[data-astro-cid-e6jgshqh]{flex-wrap:wrap;gap:.4rem;display:inline-flex}.tag[data-astro-cid-e6jgshqh]{color:var(--muted);padding:.05rem;font-size:.78rem}.updated[data-astro-cid-e6jgshqh]{color:var(--muted);font-size:.74rem;font-style:italic}.updated[data-astro-cid-e6jgshqh] time[data-astro-cid-e6jgshqh]{font-variant-numeric:tabular-nums}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh]{letter-spacing:-.005em;margin:0;font-size:1.4rem;font-weight:700;line-height:1.3}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]{color:var(--fg)}.card[data-astro-cid-e6jgshqh] h2[data-astro-cid-e6jgshqh] a[data-astro-cid-e6jgshqh]:hover{color:var(--accent);text-decoration:none}.card-body[data-astro-cid-e6jgshqh]{font-size:.95rem;line-height:1.75}.prose[data-astro-cid-e6jgshqh] h1,.prose[data-astro-cid-e6jgshqh] h2{margin:1rem 0 .4rem;font-size:1rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] h3,.prose[data-astro-cid-e6jgshqh] h4,.prose[data-astro-cid-e6jgshqh] h5,.prose[data-astro-cid-e6jgshqh] h6{margin:.85rem 0 .3rem;font-size:.95rem;font-weight:700}.prose[data-astro-cid-e6jgshqh] p{margin:.65rem 0}.prose[data-astro-cid-e6jgshqh] p:first-child{margin-top:0}.prose[data-astro-cid-e6jgshqh] p:last-child{margin-bottom:0}.prose[data-astro-cid-e6jgshqh] ul,.prose[data-astro-cid-e6jgshqh] ol{margin:.6rem 0;padding-left:1.4rem}.prose[data-astro-cid-e6jgshqh] li{margin:.2rem 0}.prose[data-astro-cid-e6jgshqh] pre{padding:.7rem .85rem;font-size:.82rem}.prose[data-astro-cid-e6jgshqh] code{font-size:.85em}.prose[data-astro-cid-e6jgshqh] blockquote{border-left:2px solid var(--rule);color:var(--muted);margin:.7rem 0;padding-left:.8rem;font-style:italic}.prose[data-astro-cid-e6jgshqh] img{max-width:100%;height:auto}.read-more-line[data-astro-cid-e6jgshqh]{font-size:.88rem;margin:.5rem 0 0!important}.read-more[data-astro-cid-e6jgshqh]{white-space:nowrap}
+</style></head><body><script>
       (() => {
         const T = 24;
         const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
         sync();
         addEventListener('scroll', sync, { passive: true });
       })();
-    </script> <div class="site-header-bar"> <header class="site-header"> <div class="site-brand"> <a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a> <span class="site-tagline">want to remember, and might want to share.</span> </div> <nav class="site-nav"> <a href="/archives/">archives</a> <a href="/tags/" class="active">tags</a> <a href="/search/">search</a> </nav> </header> </div> <main class="site-main width-note">  <h1 class="page-title no-mark" data-astro-cid-tge3q7ae>#devops</h1> <p class="page-lede" data-astro-cid-tge3q7ae>3 notes</p> <div class="note-stack" data-astro-cid-tge3q7ae> <article class="card card-shell" data-href="/posts/260706-helm-package-manager/" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="chip" data-astro-cid-d6qgp232>devops</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-07-06T00:00:00.000Z" data-astro-cid-d6qgp232>2026-07-06</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="tag" data-astro-cid-d6qgp232>#devops</a><a href="/tags/kubernetes/" class="tag" data-astro-cid-d6qgp232>#kubernetes</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260706-helm-package-manager/" data-astro-cid-d6qgp232>Helm 不是 controller：模板引擎 + release 状态机</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p>Helm 常被说成「Kubernetes 的 apt / npm」——对，但这个类比藏了最关键的一点：<strong>Helm 是一次性的（one-shot）</strong>。<code>helm install</code> 把模板渲染成 YAML、提交给 apiserver、把这次结果记下来，然后就退出了。之后<strong>没有任何进程持续盯着 drift</strong>。这是理解 Helm 一切行为的锚点：它不是 controller、不是 GitOps，跟 Operator / ArgoCD 的持续 reconcile 是两码事。记住它，下面每个「反直觉」都顺理成章。</p>
+    </script><div class="site-header-bar"><header class="site-header"><div class="site-brand"><a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a><span class="site-tagline">want to remember, and might want to share.</span></div><nav class="site-nav"><a href="/archives/">archives</a><a href="/tags/" class="active">tags</a><a href="/search/">search</a></nav></header></div><main class="site-main width-note"><h1 class="page-title no-mark" data-astro-cid-aezt6mnq>#devops</h1><p class="page-lede" data-astro-cid-aezt6mnq>3 notes</p><div class="note-stack" data-astro-cid-aezt6mnq><article class="card card-shell" data-href="/posts/260706-helm-package-manager/" data-astro-cid-e6jgshqh><a href="/tags/devops/" class="chip" data-astro-cid-e6jgshqh>devops</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-07-06T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-07-06</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/devops/" class="tag" data-astro-cid-e6jgshqh>#devops</a><a href="/tags/kubernetes/" class="tag" data-astro-cid-e6jgshqh>#kubernetes</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260706-helm-package-manager/" data-astro-cid-e6jgshqh>Helm 不是 controller：模板引擎 + release 状态机</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p>Helm 常被说成「Kubernetes 的 apt / npm」——对，但这个类比藏了最关键的一点：<strong>Helm 是一次性的（one-shot）</strong>。<code>helm install</code> 把模板渲染成 YAML、提交给 apiserver、把这次结果记下来，然后就退出了。之后<strong>没有任何进程持续盯着 drift</strong>。这是理解 Helm 一切行为的锚点：它不是 controller、不是 GitOps，跟 Operator / ArgoCD 的持续 reconcile 是两码事。记住它，下面每个「反直觉」都顺理成章。</p>
 <h2 id="release-状态存在集群里不在你本地">release 状态存在集群里，不在你本地</h2>
-<p><code>helm install</code> 之后，状态被写进 release namespace 的一个 Secret，名字是 <code>sh.helm.release.v1.&#x3C;name>.v&#x3C;revision></code>。每 upgrade 一次多一个 revision Secret，<code>helm history</code> / <code>helm rollback</code> 就是读它们。内容是 <code>json.Marshal → gzip → base64</code>（Helm 3 默认 driver 从 Helm 2 的 ConfigMap 换成了 Secret）。想亲眼看：</p>
+<p><code>helm install</code> 之后，状态被写进 release namespace 的一个 Secret，名字是 <code>sh.helm.release.v1.&lt;name&gt;.v&lt;revision&gt;</code>。每 upgrade 一次多一个 revision Secret，<code>helm history</code> / <code>helm rollback</code> 就是读它们。内容是 <code>json.Marshal → gzip → base64</code>（Helm 3 默认 driver 从 Helm 2 的 ConfigMap 换成了 Secret）。想亲眼看：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">kubectl</span><span style="color:#032F62"> get</span><span style="color:#032F62"> secret</span><span style="color:#032F62"> sh.helm.release.v1.my-pg.v3</span><span style="color:#005CC5"> -o</span><span style="color:#032F62"> jsonpath='{.data.release}'</span><span style="color:#005CC5"> \</span></span>
 <span class="line"><span style="color:#D73A49">  |</span><span style="color:#6F42C1"> base64</span><span style="color:#005CC5"> -d</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> base64</span><span style="color:#005CC5"> -d</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> gunzip</span><span style="color:#6A737D">   # 两次 base64：先解 k8s Secret 层，再解 Helm 自己那层</span></span></code></pre>
 <p>两个非显然后果：① 这个 Secret 受 etcd ~1MB 上限约束，chart 塞太多东西（比如把大文件写进 ConfigMap 模板）会在 install 时炸；② 谁手滑删了它，Helm 就<strong>失忆</strong>——<code>helm list</code> 里 release 消失，但集群里的 Deployment 还在裸奔。换 driver 用 <code>HELM_DRIVER=secret|configmap|sql</code>（sql 是 beta，只支持 PostgreSQL）。</p>
@@ -32,40 +31,41 @@
 </ul>
 <h2 id="chart-存哪oci-已取代-indexyaml">chart 存哪：OCI 已取代 index.yaml</h2>
 <p>老式 repo 靠一个 <code>index.yaml</code> 索引（<code>helm repo add</code>）。3.8.0 起 <strong>OCI 支持转正 GA 且默认开启</strong>，底层是 ORAS——chart 像容器镜像一样 <code>helm push</code> / <code>pull</code> 到镜像仓库，没有 index.yaml。一个隐藏坑：OCI tag 不允许 <code>+</code>，Helm 会把 SemVer build metadata 里的 <code>+</code> 悄悄转成 <code>_</code>。</p>
-<p>一句话记牢：<strong>Helm 只在你敲命令的那一刻工作</strong>——渲染、提交、记账，然后什么都不管了。想要持续 reconcile 抹平 drift，那是 ArgoCD / Flux 的活。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260603-reviewdog-lint-to-pr/" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="chip" data-astro-cid-d6qgp232>devops</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-06-03T00:00:00.000Z" data-astro-cid-d6qgp232>2026-06-03</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="tag" data-astro-cid-d6qgp232>#devops</a><a href="/tags/ci/" class="tag" data-astro-cid-d6qgp232>#ci</a><a href="/tags/lint/" class="tag" data-astro-cid-d6qgp232>#lint</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260603-reviewdog-lint-to-pr/" data-astro-cid-d6qgp232>reviewdog：把 linter 输出贴成 PR 行内评论</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://github.com/reviewdog/reviewdog">reviewdog</a> 是一个通用适配器：吃任意 linter 的 stdout，按 <em>errorformat</em> 解析，然后把结果作为 <strong>PR 行内评论</strong>贴回 GitHub / GitLab。它自己不做静态分析，只解决”已有的 lint 结果怎么进 review”这一段。</p>
+<p>一句话记牢：<strong>Helm 只在你敲命令的那一刻工作</strong>——渲染、提交、记账，然后什么都不管了。想要持续 reconcile 抹平 drift，那是 ArgoCD / Flux 的活。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260603-reviewdog-lint-to-pr/" data-astro-cid-e6jgshqh><a href="/tags/devops/" class="chip" data-astro-cid-e6jgshqh>devops</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-06-03T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-06-03</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/devops/" class="tag" data-astro-cid-e6jgshqh>#devops</a><a href="/tags/ci/" class="tag" data-astro-cid-e6jgshqh>#ci</a><a href="/tags/lint/" class="tag" data-astro-cid-e6jgshqh>#lint</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260603-reviewdog-lint-to-pr/" data-astro-cid-e6jgshqh>reviewdog：把 linter 输出贴成 PR 行内评论</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><a href="https://github.com/reviewdog/reviewdog">reviewdog</a> 是一个通用适配器：吃任意 linter 的 stdout，按 <em>errorformat</em> 解析，然后把结果作为 <strong>PR 行内评论</strong>贴回 GitHub / GitLab。它自己不做静态分析，只解决“已有的 lint 结果怎么进 review”这一段。</p>
 <p>价值全在它默认<strong>只报 diff 改动的行</strong>。整仓库跑 lint 有两个老问题：老代码一堆历史 warning 淹没真正要看的；报错埋在 CI 日志里 reviewer 根本不点开。reviewdog 用 <code>-filter-mode</code> 把结果过滤到本次改动，再走 review API 顶到代码行上，两个问题一起消。</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># PHPStan checkstyle 输出 → 只评论本次 PR 改动行</span></span>
 <span class="line"><span style="color:#6F42C1">vendor/bin/phpstan</span><span style="color:#032F62"> analyse</span><span style="color:#005CC5"> --error-format=checkstyle</span><span style="color:#D73A49"> |</span><span style="color:#005CC5"> \</span></span>
 <span class="line"><span style="color:#6F42C1">  reviewdog</span><span style="color:#005CC5"> -f=checkstyle</span><span style="color:#005CC5"> -reporter=github-pr-review</span></span></code></pre>
 <p><code>-f</code> 选输入格式：内置一批（<code>-f=golint</code> / <code>-f=checkstyle</code>…，<code>reviewdog -list</code> 看全），没有就用 <code>-efm='%f:%l:%c: %m'</code> 自定义 scanf 风格的 pattern。</p>
 <h2 id="-filter-mode-决定报多少"><code>-filter-mode</code> 决定报多少</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>值</th><th>报什么</th></tr></thead><tbody><tr><td><code>added</code>（默认）</td><td>只报新增 / 修改的行</td></tr><tr><td><code>diff_context</code></td><td>改动行 ±N 行（默认 N=3）的上下文内</td></tr><tr><td><code>file</code></td><td>只要文件被改了，整文件的问题都报</td></tr><tr><td><code>nofilter</code></td><td>全报，不过滤</td></tr></tbody></table>
-<p>默认 <code>added</code> 是最克制的，新加的代码出新问题才说话——这正是”零历史噪音”的来源。本地想在 push 前自查，用 <code>-diff</code> 喂一份 diff：<code>reviewdog -diff="git diff origin/main"</code>。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>报什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>added</code>（默认）</td>
+<td>只报新增 / 修改的行</td>
+</tr>
+<tr>
+<td><code>diff_context</code></td>
+<td>改动行 ±N 行（默认 N=3）的上下文内</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>只要文件被改了，整文件的问题都报</td>
+</tr>
+<tr>
+<td><code>nofilter</code></td>
+<td>全报，不过滤</td>
+</tr>
+</tbody>
+</table>
+<p>默认 <code>added</code> 是最克制的，新加的代码出新问题才说话——这正是“零历史噪音”的来源。本地想在 push 前自查，用 <code>-diff</code> 喂一份 diff：<code>reviewdog -diff="git diff origin/main"</code>。</p>
 <h2 id="两个-github-reporterauth-不一样">两个 GitHub reporter，auth 不一样</h2>
 <p><code>-reporter</code> 有十来个（<code>gitlab-mr-discussion</code> / <code>bitbucket-code-report</code> / <code>gerrit-change-review</code>…），GitHub 上常用的两个<strong>底层 API 不同，因此认证和能力都不同</strong>，选错会白配半天：</p>
 <ul>
@@ -76,7 +76,8 @@
 <h2 id="同类工具其实是两条线">同类工具其实是两条线</h2>
 <p>reviewdog 属于 <strong>rule-based</strong> 那条——规则确定、几乎零误判，只把已有 linter 接进 review。同线还有 <a href="https://github.com/super-linter/super-linter">Super-Linter</a>（一个容器塞几十种 linter，开箱即用）和 <a href="https://www.sonarsource.com/products/sonarcloud/">SonarQube/SonarCloud</a>（带质量看板、覆盖率、quality gate，重）。</p>
 <p>另一条是 <strong>AI-based</strong>：<a href="https://www.coderabbit.ai/">CodeRabbit</a>、<a href="https://github.com/qodo-ai/pr-agent">Qodo</a> 读 diff 给自然语言评论，能看出逻辑层面的问题，但有概率出错。两条线不冲突：rule-based 兜底确定性问题，AI-based 补人类视角。</p>
-<p>装：<code>brew install reviewdog/tap/reviewdog</code>。文档：<a href="https://github.com/reviewdog/reviewdog">https://github.com/reviewdog/reviewdog</a>。</p> </div> </div> </article><article class="card card-shell" data-href="/posts/260526-task-make-alternative/" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="chip" data-astro-cid-d6qgp232>devops</a> <header class="card-meta" data-astro-cid-d6qgp232> <p class="meta" data-astro-cid-d6qgp232> <time datetime="2026-05-26T00:00:00.000Z" data-astro-cid-d6qgp232>2026-05-26</time>  <span class="tags" data-astro-cid-d6qgp232> <a href="/tags/devops/" class="tag" data-astro-cid-d6qgp232>#devops</a><a href="/tags/build-tool/" class="tag" data-astro-cid-d6qgp232>#build-tool</a> </span> </p> <h2 data-astro-cid-d6qgp232><a href="/posts/260526-task-make-alternative/" data-astro-cid-d6qgp232>Task：YAML 写的 Make 替代，自带 sh 解释器</a></h2> </header> <div class="card-body" data-astro-cid-d6qgp232> <div class="prose" data-astro-cid-d6qgp232> <p><a href="https://taskfile.dev/">Task</a> 是 Go 写的 task runner，单二进制 + YAML 配置，定位”现代 Make 替代”。同代工具里 <a href="https://github.com/casey/just">Just</a> 名气更大，但两者其实不在一条线上 —— Task 真正的差异点是<strong>自带 POSIX sh 解释器</strong>和<strong>原生增量 / 并行依赖</strong>，这两点决定了它能当轻量构建系统用，Just 不能。</p>
+<p>装：<code>brew install reviewdog/tap/reviewdog</code>。文档：<a href="https://github.com/reviewdog/reviewdog">https://github.com/reviewdog/reviewdog</a>。</p>
+</div></div></article><article class="card card-shell" data-href="/posts/260526-task-make-alternative/" data-astro-cid-e6jgshqh><a href="/tags/devops/" class="chip" data-astro-cid-e6jgshqh>devops</a><header class="card-meta" data-astro-cid-e6jgshqh><p class="meta" data-astro-cid-e6jgshqh><time datetime="2026-05-26T00:00:00.000Z" data-astro-cid-e6jgshqh>2026-05-26</time><span class="tags" data-astro-cid-e6jgshqh><a href="/tags/devops/" class="tag" data-astro-cid-e6jgshqh>#devops</a><a href="/tags/build-tool/" class="tag" data-astro-cid-e6jgshqh>#build-tool</a></span></p><h2 data-astro-cid-e6jgshqh><a href="/posts/260526-task-make-alternative/" data-astro-cid-e6jgshqh>Task：YAML 写的 Make 替代，自带 sh 解释器</a></h2></header><div class="card-body" data-astro-cid-e6jgshqh><div class="prose" data-astro-cid-e6jgshqh><p><a href="https://taskfile.dev/">Task</a> 是 Go 写的 task runner，单二进制 + YAML 配置，定位“现代 Make 替代”。同代工具里 <a href="https://github.com/casey/just">Just</a> 名气更大，但两者其实不在一条线上 —— Task 真正的差异点是<strong>自带 POSIX sh 解释器</strong>和<strong>原生增量 / 并行依赖</strong>，这两点决定了它能当轻量构建系统用，Just 不能。</p>
 <h2 id="make-真痛点不在-make-本身">Make 真痛点不在 Make 本身</h2>
 <p>GNU Make 三大平台都有，跨平台坑出在 Makefile 里每条命令依赖的<strong>宿主 shell 和 coreutils</strong>：</p>
 <ul>
@@ -86,7 +87,7 @@
 </ul>
 <p>要让一个 Makefile 跨 macOS / Linux 都跑通，迟早塞进 <code>ifeq ($(shell uname),Darwin)</code> 分支，维护成本爆炸。</p>
 <h2 id="task-解法bundled-sh--原生-incremental">Task 解法：bundled sh + 原生 incremental</h2>
-<p>Task 内嵌 <a href="https://github.com/mvdan/sh">mvdan/sh</a>，一个纯 Go 实现的 POSIX shell 解释器。<code>for f in src/*.go; do echo $f; done</code> 不再走 <code>/bin/sh</code>，macOS / Linux 行为一致，dash vs bash 的”在我机器上能跑”问题消失。</p>
+<p>Task 内嵌 <a href="https://github.com/mvdan/sh">mvdan/sh</a>，一个纯 Go 实现的 POSIX shell 解释器。<code>for f in src/*.go; do echo $f; done</code> 不再走 <code>/bin/sh</code>，macOS / Linux 行为一致，dash vs bash 的“在我机器上能跑”问题消失。</p>
 <p><strong>边界要写清楚</strong>：Task 只 bundle 了 shell <strong>语法</strong>，没 bundle coreutils。<code>rm</code> / <code>sed</code> / <code>find</code> 仍然调系统的那份 —— BSD <code>sed -i ''</code> vs GNU <code>sed -i</code> 的坑 Task 不替你解决，要么显式 <code>gsed</code>，要么改写成只用 POSIX 公共子集。这一点官方文档也提：<em>“any executables called must be available as a built-in or in the system’s PATH.”</em></p>
 <p>增量构建走 <code>sources</code> + <code>generates</code>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">version</span><span style="color:#24292E">: </span><span style="color:#032F62">'3'</span></span>
@@ -111,52 +112,52 @@
 </ul>
 <h2 id="跟-just-的分野">跟 Just 的分野</h2>
 <p>Just 和 Task 经常被并列推荐，但 Just README 自己写得很清楚：<em>“just is a command runner, not a build system, so it avoids much of make’s complexity and idiosyncrasies.”</em> —— <strong>故意不做依赖图也不做增量</strong>，任务每次从头跑。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>维度</th><th>Just</th><th>Task</th></tr></thead><tbody><tr><td>定位</td><td>command runner（不是 build system）</td><td>task runner + 轻量 build tool</td></tr><tr><td>Shell</td><td>走宿主 shell</td><td>自带 mvdan/sh，跨平台一致</td></tr><tr><td>依赖并行</td><td>串行</td><td>默认并行</td></tr><tr><td>增量跳过</td><td>无</td><td><code>sources</code> + <code>generates</code> checksum</td></tr><tr><td><code>--watch</code></td><td>无</td><td>内置</td></tr><tr><td>语法</td><td>自定义 DSL（精简 Makefile 风）</td><td>YAML</td></tr><tr><td>参数传递</td><td>位置参数一等公民：<code>just deploy prod</code></td><td>走变量：<code>task deploy ENV=prod</code></td></tr></tbody></table>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Just</th>
+<th>Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定位</td>
+<td>command runner（不是 build system）</td>
+<td>task runner + 轻量 build tool</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>走宿主 shell</td>
+<td>自带 mvdan/sh，跨平台一致</td>
+</tr>
+<tr>
+<td>依赖并行</td>
+<td>串行</td>
+<td>默认并行</td>
+</tr>
+<tr>
+<td>增量跳过</td>
+<td>无</td>
+<td><code>sources</code> + <code>generates</code> checksum</td>
+</tr>
+<tr>
+<td><code>--watch</code></td>
+<td>无</td>
+<td>内置</td>
+</tr>
+<tr>
+<td>语法</td>
+<td>自定义 DSL（精简 Makefile 风）</td>
+<td>YAML</td>
+</tr>
+<tr>
+<td>参数传递</td>
+<td>位置参数一等公民：<code>just deploy prod</code></td>
+<td>走变量：<code>task deploy ENV=prod</code></td>
+</tr>
+</tbody>
+</table>
 <p>判准：</p>
 <ul>
 <li>项目里命令独立、每次都该完整跑（lint、deploy、clear-cache） → Just，手感更轻</li>
@@ -164,7 +165,8 @@
 <li>命令需要传位置参数（<code>just deploy prod</code>） → Just 直观</li>
 <li>团队里 Makefile 已经在用 <code>sources / .PHONY / -j</code> 这些 Make 特性，想替换 → Task 一对一替</li>
 </ul>
-<p>装：<code>brew install go-task</code>。文档：<a href="https://taskfile.dev/">https://taskfile.dev/</a>。</p> </div> </div> </article> </div> <p class="back" data-astro-cid-tge3q7ae><a href="/tags/" data-astro-cid-tge3q7ae>← all tags</a> · <a href="/" data-astro-cid-tge3q7ae>index</a></p>  </main> <footer class="site-footer"> <span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span> <span>·</span> <span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span> <span>·</span> <span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span> </footer>  <script>
+<p>装：<code>brew install go-task</code>。文档：<a href="https://taskfile.dev/">https://taskfile.dev/</a>。</p>
+</div></div></article></div><p class="back" data-astro-cid-aezt6mnq><a href="/tags/" data-astro-cid-aezt6mnq>← all tags</a> · <a href="/" data-astro-cid-aezt6mnq>index</a></p></main><footer class="site-footer"><span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span><span>·</span><span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span><span>·</span><span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span></footer><script>
       (() => {
         const enhance = () => {
           const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
@@ -215,7 +217,7 @@
           enhance();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const BUDGET = 360;
         const collapse = () => {
@@ -262,7 +264,7 @@
           run();
         }
       })();
-    </script>  <script>
+    </script><script>
       (() => {
         const mark = () => {
           const here = location.host;
@@ -287,4 +289,4 @@
           mark();
         }
       })();
-    </script> </body> </html>
+    </script></body></html>
