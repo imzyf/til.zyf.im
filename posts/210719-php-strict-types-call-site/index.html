@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="关掉 PHP 的隐式类型转换 —— 函数 type-hint 写 ，不再吞 / / ，传错直接 ： 不写 declare 行（默认 weak mode）时 返回 ，安静吞掉。 ## 反直觉点：strict 看 caller，不看 callee 文件级声明会让人下意识以为&quot;哪边定义函数 / 类，哪边的 mode 控制类型…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>PHP strict_types 看调用方，不看声明方 · TIL</title><link rel="stylesheet" href="/_astro/Base.DQYaApxQ.css"><style>.note[data-astro-cid-n67f4zmd]{padding:2rem 2.1rem 1.8rem}@media (width<=640px){.note[data-astro-cid-n67f4zmd]{padding:1.4rem 1.4rem 1.3rem}}.note-meta[data-astro-cid-n67f4zmd]{border-bottom:1px dotted var(--rule);margin-bottom:1.75rem;padding-bottom:1rem}h1[data-astro-cid-n67f4zmd]{letter-spacing:-.01em;margin:0 0 .5rem;font-size:1.65rem;font-weight:700;line-height:1.25}.meta[data-astro-cid-n67f4zmd]{color:var(--muted);flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0;font-size:.88rem;display:flex}.tags[data-astro-cid-n67f4zmd]{flex-wrap:wrap;gap:.4rem;display:inline-flex}.tag[data-astro-cid-n67f4zmd]{color:var(--muted);padding:.15rem .1rem}.updated[data-astro-cid-n67f4zmd]{color:var(--muted);font-size:.82rem;font-style:italic}.updated[data-astro-cid-n67f4zmd] time[data-astro-cid-n67f4zmd]{font-variant-numeric:tabular-nums}.prose[data-astro-cid-n67f4zmd]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-n67f4zmd] h2{margin-top:2rem;font-size:1.2rem;font-weight:700}.prose[data-astro-cid-n67f4zmd] h3{margin-top:1.5rem;font-size:1.05rem}.prose[data-astro-cid-n67f4zmd] p{margin:1rem 0}.prose[data-astro-cid-n67f4zmd] ul,.prose[data-astro-cid-n67f4zmd] ol{margin:1rem 0;padding-left:1.5rem}.prose[data-astro-cid-n67f4zmd] li{margin:.3rem 0}.prose[data-astro-cid-n67f4zmd] blockquote{border-left:3px solid var(--rule);color:var(--muted);margin:1.2rem 0;padding-left:1rem;font-style:italic}.prose[data-astro-cid-n67f4zmd] img{max-width:100%;height:auto}.files[data-astro-cid-n67f4zmd]{border-top:1px dotted var(--rule);margin-top:2.5rem;padding-top:1rem}.files[data-astro-cid-n67f4zmd] h2[data-astro-cid-n67f4zmd]{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem;font-size:.82rem;font-weight:700}.files[data-astro-cid-n67f4zmd] ul[data-astro-cid-n67f4zmd]{flex-direction:column;gap:.2rem;margin:0;padding:0;list-style:none;display:flex}.files[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd] a[data-astro-cid-n67f4zmd]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-n67f4zmd]{border-top:1px dotted var(--rule);margin-top:2.5rem;padding-top:1rem}.related[data-astro-cid-n67f4zmd] h2[data-astro-cid-n67f4zmd]{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem;font-size:.82rem;font-weight:700}.related[data-astro-cid-n67f4zmd] ul[data-astro-cid-n67f4zmd]{flex-direction:column;gap:.25rem;margin:0;padding:0;list-style:none;display:flex}.related[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd]{grid-template-columns:6rem 1fr;align-items:baseline;gap:.75rem;display:grid}.related[data-astro-cid-n67f4zmd] .date[data-astro-cid-n67f4zmd]{color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.04em;font-size:.85rem}.related[data-astro-cid-n67f4zmd] .title[data-astro-cid-n67f4zmd]{color:var(--fg)}.related[data-astro-cid-n67f4zmd] .title[data-astro-cid-n67f4zmd]:hover{color:var(--accent)}@media (width<=640px){.related[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-n67f4zmd]{border-top:1px dotted var(--rule);color:var(--muted);margin-top:3rem;padding-top:1rem;font-size:.88rem}@media (width<=640px){h1[data-astro-cid-n67f4zmd]{font-size:1.4rem}.prose[data-astro-cid-n67f4zmd]{font-size:.95rem;line-height:1.75}}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v7.4.2"><meta name="description" content="关掉 PHP 的隐式类型转换 —— 函数 type-hint 写 ，不再吞 / / ，传错直接 ： 不写 declare 行（默认 weak mode）时 返回 ，安静吞掉。 ## 反直觉点：strict 看 caller，不看 callee 文件级声明会让人下意识以为&quot;哪边定义函数 / 类，哪边的 mode 控制类型…"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>PHP strict_types 看调用方，不看声明方 · TIL</title><link rel="stylesheet" href="/_astro/Base.86CneQbO.css"><style>.note[data-astro-cid-n67f4zmd]{padding:2rem 2.1rem 1.8rem}@media (width<=640px){.note[data-astro-cid-n67f4zmd]{padding:1.4rem 1.4rem 1.3rem}}.note-meta[data-astro-cid-n67f4zmd]{border-bottom:1px dotted var(--rule);margin-bottom:1.75rem;padding-bottom:1rem}h1[data-astro-cid-n67f4zmd]{letter-spacing:-.01em;margin:0 0 .5rem;font-size:1.65rem;font-weight:700;line-height:1.25}.meta[data-astro-cid-n67f4zmd]{color:var(--muted);flex-wrap:wrap;align-items:baseline;gap:.7rem;margin:0;font-size:.88rem;display:flex}.tags[data-astro-cid-n67f4zmd]{flex-wrap:wrap;gap:.4rem;display:inline-flex}.tag[data-astro-cid-n67f4zmd]{color:var(--muted);padding:.15rem .1rem}.updated[data-astro-cid-n67f4zmd]{color:var(--muted);font-size:.82rem;font-style:italic}.updated[data-astro-cid-n67f4zmd] time[data-astro-cid-n67f4zmd]{font-variant-numeric:tabular-nums}.prose[data-astro-cid-n67f4zmd]{font-size:1rem;line-height:1.8}.prose[data-astro-cid-n67f4zmd] h2{margin-top:2rem;font-size:1.2rem;font-weight:700}.prose[data-astro-cid-n67f4zmd] h3{margin-top:1.5rem;font-size:1.05rem}.prose[data-astro-cid-n67f4zmd] p{margin:1rem 0}.prose[data-astro-cid-n67f4zmd] ul,.prose[data-astro-cid-n67f4zmd] ol{margin:1rem 0;padding-left:1.5rem}.prose[data-astro-cid-n67f4zmd] li{margin:.3rem 0}.prose[data-astro-cid-n67f4zmd] blockquote{border-left:3px solid var(--rule);color:var(--muted);margin:1.2rem 0;padding-left:1rem;font-style:italic}.prose[data-astro-cid-n67f4zmd] img{max-width:100%;height:auto}.files[data-astro-cid-n67f4zmd]{border-top:1px dotted var(--rule);margin-top:2.5rem;padding-top:1rem}.files[data-astro-cid-n67f4zmd] h2[data-astro-cid-n67f4zmd]{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .5rem;font-size:.82rem;font-weight:700}.files[data-astro-cid-n67f4zmd] ul[data-astro-cid-n67f4zmd]{flex-direction:column;gap:.2rem;margin:0;padding:0;list-style:none;display:flex}.files[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd]{font-family:var(--mono);font-size:.88rem}.files[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd] a[data-astro-cid-n67f4zmd]:before{content:"↗ ";opacity:.55}.related[data-astro-cid-n67f4zmd]{border-top:1px dotted var(--rule);margin-top:2.5rem;padding-top:1rem}.related[data-astro-cid-n67f4zmd] h2[data-astro-cid-n67f4zmd]{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 .6rem;font-size:.82rem;font-weight:700}.related[data-astro-cid-n67f4zmd] ul[data-astro-cid-n67f4zmd]{flex-direction:column;gap:.25rem;margin:0;padding:0;list-style:none;display:flex}.related[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd]{grid-template-columns:6rem 1fr;align-items:baseline;gap:.75rem;display:grid}.related[data-astro-cid-n67f4zmd] .date[data-astro-cid-n67f4zmd]{color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.04em;font-size:.85rem}.related[data-astro-cid-n67f4zmd] .title[data-astro-cid-n67f4zmd]{color:var(--fg)}.related[data-astro-cid-n67f4zmd] .title[data-astro-cid-n67f4zmd]:hover{color:var(--accent)}@media (width<=640px){.related[data-astro-cid-n67f4zmd] li[data-astro-cid-n67f4zmd]{grid-template-columns:5rem 1fr;gap:.6rem}}.back[data-astro-cid-n67f4zmd]{border-top:1px dotted var(--rule);color:var(--muted);margin-top:3rem;padding-top:1rem;font-size:.88rem}@media (width<=640px){h1[data-astro-cid-n67f4zmd]{font-size:1.4rem}.prose[data-astro-cid-n67f4zmd]{font-size:.95rem;line-height:1.75}}
 </style></head><body><script>
       (() => {
         const T = 24;
-        const sync = () => document.body.classList.toggle('is-scrolled', window.scrollY > T);
+        const sync = () => document.body.classList.toggle("is-scrolled", window.scrollY > T);
         sync();
-        addEventListener('scroll', sync, { passive: true });
+        addEventListener("scroll", sync, { passive: true });
       })();
     </script><div class="site-header-bar"><header class="site-header"><div class="site-brand"><a href="/" class="site-title" aria-label="TIL — Today I Learned">T<span class="til-x"><span>oday</span></span><span class="til-x"><span>&nbsp;</span></span>I<span class="til-x"><span>&nbsp;</span></span>L<span class="til-x"><span>earned</span></span></a><span class="site-tagline">want to remember, and might want to share.</span></div><nav class="site-nav"><a href="/archives/">archives</a><a href="/tags/">tags</a><a href="/search/">search</a></nav></header></div><main class="site-main width-note"><article class="note card-shell" data-astro-cid-n67f4zmd><a href="/tags/php/" class="chip" data-astro-cid-n67f4zmd>php</a><header class="note-meta" data-astro-cid-n67f4zmd><h1 data-astro-cid-n67f4zmd>PHP strict_types 看调用方，不看声明方</h1><p class="meta" data-astro-cid-n67f4zmd><time datetime="2021-07-19T00:00:00.000Z" data-astro-cid-n67f4zmd>2021-07-19</time><span class="tags" data-astro-cid-n67f4zmd><a href="/tags/php/" class="tag" data-astro-cid-n67f4zmd>#php</a></span></p></header><div class="prose" data-astro-cid-n67f4zmd><p><code>declare(strict_types=1)</code> 关掉 PHP 的隐式类型转换 —— 函数 type-hint 写 <code>int $x</code>，不再吞 <code>1.0</code> / <code>"15"</code> / <code>true</code>，传错直接 <code>TypeError</code>：</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#D73A49">declare</span><span style="color:#24292E">(</span><span style="color:#005CC5">strict_types</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
@@ -41,38 +41,38 @@
 </div><p class="back" data-astro-cid-n67f4zmd><a href="/" data-astro-cid-n67f4zmd>← back to index</a></p></article></main><footer class="site-footer"><span>© <a href="https://zyf.im" target="_blank" rel="noopener noreferrer">ZYF.IM</a></span><span>·</span><span>source on <a href="https://github.com/imzyf/til.zyf.im" target="_blank" rel="noopener noreferrer">GitHub</a></span><span>·</span><span>designed &amp; built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a></span></footer><script>
       (() => {
         const enhance = () => {
-          const blocks = document.querySelectorAll('pre.astro-code, pre.shiki');
+          const blocks = document.querySelectorAll("pre.astro-code, pre.shiki");
           for (const pre of blocks) {
-            if (pre.parentElement?.classList.contains('code-block')) continue;
-            const lang = pre.getAttribute('data-language') || 'text';
+            if (pre.parentElement?.classList.contains("code-block")) continue;
+            const lang = pre.getAttribute("data-language") || "text";
 
-            const wrap = document.createElement('div');
-            wrap.className = 'code-block';
+            const wrap = document.createElement("div");
+            wrap.className = "code-block";
 
-            const header = document.createElement('div');
-            header.className = 'code-block-header';
+            const header = document.createElement("div");
+            header.className = "code-block-header";
 
-            const langSpan = document.createElement('span');
-            langSpan.className = 'code-block-lang';
+            const langSpan = document.createElement("span");
+            langSpan.className = "code-block-lang";
             langSpan.textContent = lang;
 
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = 'code-block-copy';
-            btn.setAttribute('aria-label', 'copy code to clipboard');
-            btn.textContent = 'copy';
-            btn.addEventListener('click', async () => {
-              const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "code-block-copy";
+            btn.setAttribute("aria-label", "copy code to clipboard");
+            btn.textContent = "copy";
+            btn.addEventListener("click", async () => {
+              const code = pre.querySelector("code")?.innerText ?? pre.innerText;
               try {
                 await navigator.clipboard.writeText(code);
-                btn.textContent = 'copied';
-                btn.classList.add('is-copied');
+                btn.textContent = "copied";
+                btn.classList.add("is-copied");
               } catch {
-                btn.textContent = 'failed';
+                btn.textContent = "failed";
               }
               setTimeout(() => {
-                btn.textContent = 'copy';
-                btn.classList.remove('is-copied');
+                btn.textContent = "copy";
+                btn.classList.remove("is-copied");
               }, 1500);
             });
 
@@ -83,8 +83,8 @@
             wrap.appendChild(pre);
           }
         };
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', enhance, { once: true });
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", enhance, { once: true });
         } else {
           enhance();
         }
@@ -93,10 +93,10 @@
       (() => {
         const BUDGET = 360;
         const collapse = () => {
-          const cards = document.querySelectorAll('.card[data-href]');
+          const cards = document.querySelectorAll(".card[data-href]");
           for (const card of cards) {
-            const prose = card.querySelector('.card-body > .prose');
-            if (!prose || prose.dataset.collapsed === '1') continue;
+            const prose = card.querySelector(".card-body > .prose");
+            if (!prose || prose.dataset.collapsed === "1") continue;
             const proseTop = prose.getBoundingClientRect().top;
             if (prose.getBoundingClientRect().height <= BUDGET) continue;
 
@@ -104,24 +104,27 @@
             let cutAt = -1;
             for (let i = 0; i < children.length; i++) {
               const r = children[i].getBoundingClientRect();
-              if (r.bottom - proseTop > BUDGET) { cutAt = i; break; }
+              if (r.bottom - proseTop > BUDGET) {
+                cutAt = i;
+                break;
+              }
             }
             if (cutAt === -1) continue;
             if (cutAt === 0) cutAt = 1;
 
             for (let i = cutAt; i < children.length; i++) {
-              children[i].style.display = 'none';
+              children[i].style.display = "none";
             }
 
-            const more = document.createElement('p');
-            more.className = 'read-more-line';
-            const a = document.createElement('a');
-            a.className = 'read-more';
+            const more = document.createElement("p");
+            more.className = "read-more-line";
+            const a = document.createElement("a");
+            a.className = "read-more";
             a.href = card.dataset.href;
-            a.textContent = 'read more →';
+            a.textContent = "read more →";
             more.appendChild(a);
             prose.appendChild(more);
-            prose.dataset.collapsed = '1';
+            prose.dataset.collapsed = "1";
           }
         };
         const run = () => {
@@ -130,8 +133,8 @@
             document.fonts.ready.then(collapse);
           }
         };
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', run, { once: true });
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", run, { once: true });
         } else {
           run();
         }
@@ -140,23 +143,27 @@
       (() => {
         const mark = () => {
           const here = location.host;
-          for (const a of document.querySelectorAll('a[href]')) {
-            if (a.dataset.extMarked === '1') continue;
-            const href = a.getAttribute('href');
+          for (const a of document.querySelectorAll("a[href]")) {
+            if (a.dataset.extMarked === "1") continue;
+            const href = a.getAttribute("href");
             if (!href) continue;
-            if (href.startsWith('#')) continue;
-            if (href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+            if (href.startsWith("#")) continue;
+            if (href.startsWith("mailto:") || href.startsWith("tel:")) continue;
             let url;
-            try { url = new URL(href, location.href); } catch { continue; }
-            if (url.protocol !== 'http:' && url.protocol !== 'https:') continue;
+            try {
+              url = new URL(href, location.href);
+            } catch {
+              continue;
+            }
+            if (url.protocol !== "http:" && url.protocol !== "https:") continue;
             if (url.host === here) continue;
-            a.target = '_blank';
-            a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
-            a.dataset.extMarked = '1';
+            a.target = "_blank";
+            a.rel = (a.rel ? a.rel + " " : "") + "noopener noreferrer";
+            a.dataset.extMarked = "1";
           }
         };
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', mark, { once: true });
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", mark, { once: true });
         } else {
           mark();
         }

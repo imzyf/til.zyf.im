@@ -6,7 +6,7 @@
 #   task build      # first run compiles; second run skips (sources unchanged)
 #   task ci         # lint + test run in parallel via deps
 
-version: '3'
+version: "3"
 
 tasks:
   default:
@@ -15,7 +15,7 @@ tasks:
   build:
     desc: compile (skips when sources unchanged)
     cmds: [go build -o bin/app ./cmd/app]
-    sources: ['**/*.go']
+    sources: ["**/*.go"]
     generates: [bin/app]
 
   test:
